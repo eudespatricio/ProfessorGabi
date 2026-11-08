@@ -61,9 +61,9 @@ self.addEventListener('install', (event) => {
     if (failed.length) {
       throw new Error(`sem rede para ${failed.length} arquivo(s) do CORE: ${failed.join(', ')}`);
     }
-    // O áudio é o que faz a Gabi falar com a voz da ElevenLabs no tablet.
-    // Se a rede estiver lenta, segue o jogo: o que faltar é cacheado ao tocar.
-    await precacheAudio(20000);
+    // Ativa a nova versão imediatamente sem travar a instalação em 20s de download de áudio.
+    // O pré-cache de áudio roda em segundo plano sem bloquear o boot nem a troca do SW.
+    precacheAudio(15000).catch(() => {});
     self.skipWaiting();
   })());
 });
@@ -91,15 +91,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // navegação: rede primeiro, cache como rede de segurança
+  // navegação: rede com timeout curto (1.2s) e cache como resposta imediata se o servidor demorar
   if (req.mode === 'navigate') {
     event.respondWith((async () => {
+      const ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      const timer = ctrl ? setTimeout(() => ctrl.abort(), 1200) : null;
       try {
-        const fresh = await fetch(req);
+        const fresh = await fetch(req, ctrl ? { signal: ctrl.signal } : undefined);
+        clearTimeout(timer);
         const cache = await caches.open(VERSION);
         cache.put('./index.html', fresh.clone()).catch(() => {});
         return fresh;
       } catch {
+        clearTimeout(timer);
         const cached = await caches.match('./index.html');
         return cached || new Response('Sem conexão', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
       }
