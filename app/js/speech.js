@@ -9,6 +9,22 @@ let current = null;
 let micPermission = 'unknown'; // unknown | granted | denied | unavailable
 let listenOverride = null;
 
+function setGabiListening(on) {
+  try {
+    if (typeof document === 'undefined') return;
+    document.body?.classList.toggle('gabi-listening', !!on);
+    document.querySelectorAll('.gabi').forEach((g) => {
+      if (on) {
+        if (!g.dataset.prevMood) g.dataset.prevMood = g.getAttribute('data-mood') || 'idle';
+        g.setAttribute('data-mood', 'listening');
+      } else if (g.getAttribute('data-mood') === 'listening') {
+        g.setAttribute('data-mood', g.dataset.prevMood || 'idle');
+        delete g.dataset.prevMood;
+      }
+    });
+  } catch { /* ignore */ }
+}
+
 /** Somente para testes automatizados: substitui a escuta por resultados fixos. */
 export function __setListenOverride(fn) { listenOverride = fn; }
 
@@ -42,6 +58,7 @@ export async function requestMic() {
 }
 
 export function abortListening() {
+  setGabiListening(false);
   if (current) {
     try { current.abort(); } catch { /* ignore */ }
     current = null;
@@ -71,6 +88,7 @@ export function listen({ lang = 'pt-BR', timeout = 12000, onPartial, onState, re
       settled = true;
       clearTimeout(timer);
       if (current === currentAttempt) current = null;
+      setGabiListening(false);
       onState?.('idle');
       resolve(payload);
     };
@@ -104,7 +122,10 @@ export function listen({ lang = 'pt-BR', timeout = 12000, onPartial, onState, re
       recognition.continuous = false;
       recognition.maxAlternatives = 3;
 
-      recognition.onstart = () => onState?.('listening');
+      recognition.onstart = () => {
+        setGabiListening(true);
+        onState?.('listening');
+      };
       recognition.onresult = (event) => {
         gotAny = true;
         const result = event.results[event.results.length - 1];

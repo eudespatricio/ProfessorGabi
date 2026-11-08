@@ -1,22 +1,30 @@
 /* Leitura guiada: ouve a criança, isola a sílaba que travou, modela e faz repetir.
    Funciona também sem microfone (modo "eu repeti"). */
-import { el, sleep, norm, lev } from './utils.js';
+import { el, sleep, norm, lev, readingKey } from './utils.js';
 import { speak, speakSyllables, stopSpeaking, sfx, haptic } from './audio.js';
 import { listen, asrSupported, getMicPermission, requestMic, asrErrorMessage } from './speech.js';
 import { splitSyllables } from './syllables.js';
 import * as store from './store.js';
 
 const key = (w) => norm(w).replace(/\s+/g, '');
+const rKey = (w) => readingKey(w).replace(/\s+/g, '');
 
-/** Comparação tolerante para sílaba/palavra falada. */
+/** Comparação tolerante para sílaba/palavra falada (inclui sílabas de 2 letras). */
 export function saidOk(said, target) {
   const a = key(said);
   const b = key(target);
   if (!a || !b) return false;
   if (a === b) return true;
+  const rkA = rKey(said);
+  const rkB = rKey(target);
+  if (rkA && rkB && (rkA === rkB || rkA.includes(rkB))) return true;
   if (a.includes(b)) return true;
-  const d = lev(a, b);
-  return d <= (b.length >= 5 ? 2 : 1) && b.length >= 3;
+  if (b.length === 2) {
+    // sílabas de 2 letras (ex: "to", "la", "pé"): aceita se a vogal bate ou distância <= 1 com mesma inicial/vogal
+    if (lev(rkA, rkB) <= 1 && (rkA[0] === rkB[0] || rkA.slice(-1) === rkB.slice(-1))) return true;
+  }
+  const d = lev(rkA || a, rkB || b);
+  return d <= (b.length >= 5 ? 2 : 1) && b.length >= 2;
 }
 
 /**

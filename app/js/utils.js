@@ -125,17 +125,25 @@ export function lev(a, b) {
 export function alignReading(target, transcript) {
   const T = words(target);
   const S = words(transcript);
+  const TK = T.map((w) => readingKey(w));
+  const SK = S.map((w) => readingKey(w));
+  const wordMatch = (i, j) => {
+    if (T[i] === S[j] || TK[i] === SK[j]) return true;
+    const minLen = Math.min(TK[i].length, SK[j].length);
+    if (minLen >= 4 && lev(TK[i], SK[j]) <= 1) return true;
+    return false;
+  };
   const n = T.length, m = S.length;
   const dp = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
   for (let i = n - 1; i >= 0; i--) {
     for (let j = m - 1; j >= 0; j--) {
-      dp[i][j] = T[i] === S[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+      dp[i][j] = wordMatch(i, j) ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
     }
   }
   const matchedIdx = new Set();
   let i = 0, j = 0;
   while (i < n && j < m) {
-    if (T[i] === S[j]) { matchedIdx.add(i); i++; j++; }
+    if (wordMatch(i, j)) { matchedIdx.add(i); i++; j++; }
     else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
     else j++;
   }

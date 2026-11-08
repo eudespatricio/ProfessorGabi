@@ -97,3 +97,18 @@ test('I7 & I8: Estado v2 e ausência de documentos obsoletos/efêmeros', () => {
     assert.ok(!fs.existsSync(path.join(ROOT, rel)), `Artefato obsoleto/efêmero presente: ${rel}`);
   }
 });
+
+test('I9 & I10: Sanitização OCR v36 e pacote de áudio/pedagogia/animações v37', async () => {
+  const { alignReading } = await import('../app/js/utils.js');
+  const { saidOk } = await import('../app/js/guided.js');
+
+  // Validação fonética infantil (readingKey em alignReading e saidOk para 2 letras)
+  const al = alignReading('O gato bebeu leite no sol', 'u gatu bebeu leiti nu sou');
+  assert.equal(al.accuracy, 1, 'alignReading deve aceitar variações fonéticas infantis (u/i/sou)');
+  assert.ok(saidOk('to', 'to'), 'saidOk deve aceitar sílaba de 2 letras exata');
+  assert.ok(saidOk('tu', 'to'), 'saidOk deve aceitar redução vocálica final em sílaba de 2 letras (to -> tu)');
+
+  const appCss = fs.readFileSync(path.join(APP, 'css', 'app.css'), 'utf8');
+  assert.ok(appCss.includes('scaleY(0.04)'), 'blink deve abrir os olhos por padrão (scaleY(0.04))');
+  assert.ok(!appCss.includes('prefers-reduced-motion'), 'prefers-reduced-motion global removido em favor de html.reduce-motion');
+});

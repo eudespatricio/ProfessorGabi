@@ -6,7 +6,7 @@ A Gabi é uma coruja professora que **fala, escuta a criança ler em voz alta, c
 
 ![Tela inicial](tests/screenshots/02-home.png)
 
-> **Estado atual (08/11/2026):** service worker `gabi-v36`, 14 unidades, 22 textos, 351 palavras, 1.116 clipes de áudio (23,6 MB em MP3, **4,1 MB em Opus**). O áudio Opus é pré-cacheado na instalação e sobrevive a atualizações. Cada lição termina com uma **revisão rápida** de 2 itens.
+> **Estado atual (08/11/2026):** service worker `gabi-v37`, 14 unidades, 22 textos, 351 palavras, 1.116 clipes de áudio (23,6 MB em MP3, **4,1 MB em Opus**). O áudio Opus é pré-cacheado na instalação e sobrevive a atualizações. Cada lição termina com uma **revisão rápida** de 2 itens.
 > Documentação completa em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md), ideias em [`docs/BACKLOG.md`](docs/BACKLOG.md) e critérios de qualidade em [`docs/QUALIDADE.md`](docs/QUALIDADE.md).
 
 ---
@@ -97,7 +97,7 @@ Requisitos: Node.js 20+ apenas para servir/testar. O app não tem dependências.
 app/                  PWA estática (sem build)
   index.html
   manifest.webmanifest
-  sw.js               service worker (gabi-v36)
+  sw.js               service worker (gabi-v37)
   css/                app.css (base/componentes) + game.css (jogo)
   js/                 25 módulos ES (telas, domínio, infraestrutura)
   audio/              1.116 clipes + index.json + opus/ (index-opus.json)

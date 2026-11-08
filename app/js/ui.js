@@ -11,6 +11,16 @@ export function gabiEl(mood = 'idle', cls = '') {
   return d;
 }
 
+/** Atualiza o humor (data-mood) de todas as Gabis visíveis na tela. */
+export function setGabiMood(mood = 'idle') {
+  try {
+    if (typeof document === 'undefined') return;
+    document.querySelectorAll('.gabi').forEach((g) => {
+      g.setAttribute('data-mood', mood);
+    });
+  } catch { /* ignore */ }
+}
+
 export function gabiSVG() {
   const id = `g${++uid}`;
   return `
@@ -25,8 +35,8 @@ export function gabiSVG() {
     <path d="M92 40 L102 12 L74 26 Z" fill="#C24E2E"/>
     <ellipse cx="60" cy="68" rx="42" ry="40" fill="url(#${id})"/>
     <ellipse cx="60" cy="83" rx="27" ry="23" fill="#FFEBD6"/>
-    <ellipse cx="19" cy="72" rx="9" ry="20" fill="#D9563A" transform="rotate(-8 19 72)"/>
-    <ellipse cx="101" cy="72" rx="9" ry="20" fill="#D9563A" transform="rotate(8 101 72)"/>
+    <ellipse class="wing wing--l" cx="19" cy="72" rx="9" ry="20" fill="#D9563A" transform="rotate(-8 19 72)"/>
+    <ellipse class="wing wing--r" cx="101" cy="72" rx="9" ry="20" fill="#D9563A" transform="rotate(8 101 72)"/>
     <g class="eyes-open">
       <circle cx="45" cy="59" r="16" fill="#FFFDF7"/>
       <circle cx="75" cy="59" r="16" fill="#FFFDF7"/>
@@ -41,7 +51,7 @@ export function gabiSVG() {
       <path d="M36 62 q9 -11 18 0" stroke="#2E2A26" stroke-width="4.5" fill="none" stroke-linecap="round"/>
       <path d="M66 62 q9 -11 18 0" stroke="#2E2A26" stroke-width="4.5" fill="none" stroke-linecap="round"/>
     </g>
-    <path d="M60 68 L51 77 Q60 84 69 77 Z" fill="#F5A623"/>
+    <path class="beak" d="M60 68 L51 77 Q60 84 69 77 Z" fill="#F5A623"/>
     <circle cx="27" cy="74" r="6" fill="#FF7A59" opacity=".45"/>
     <circle cx="93" cy="74" r="6" fill="#FF7A59" opacity=".45"/>
     <g stroke="#F5A623" stroke-width="4" stroke-linecap="round" fill="none">

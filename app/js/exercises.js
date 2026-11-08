@@ -65,7 +65,12 @@ function mountChoice(item, host, api) {
   const row = el('div', { class: 'row row--between mt' });
   row.append(el('div', { class: 'grow' }));
   row.append(el('button', {
-    class: 'btn btn--sm btn--soft', type: 'button', 'on:click': () => { stopSpeaking(); speak(item.say || item.prompt); },
+    class: 'btn btn--sm btn--soft', type: 'button',
+    'on:click': () => {
+      stopSpeaking();
+      if (item.sayParts?.length) speakSyllables(item.sayParts);
+      else speak(item.word || item.say || item.prompt);
+    },
   }, '🔊 Ouvir'));
   card.append(row);
   wrap.append(card);
@@ -111,11 +116,12 @@ function mountChoice(item, host, api) {
   }
 
   const showHint = () => {
-    // elimina uma alternativa errada e lê a pergunta devagar
+    // elimina uma alternativa errada e lê a palavra/sílabas devagar
     const buttons = [...options.children];
     const wrong = buttons.find((b, i) => i !== item.correct && !b.classList.contains('option--dim'));
     wrong?.classList.add('option--dim');
-    speak(item.say || item.prompt, { rate: 0.7 });
+    if (item.sayParts?.length) speakSyllables(item.sayParts);
+    else speak(item.word || item.say || item.prompt, { rate: 0.85 });
     return true;
   };
   return { showHint, destroy: () => stopSpeaking() };
@@ -141,6 +147,7 @@ export function groupPieces(pieces) {
 function mountBuild(item, host, api) {
   let attempts = 0;
   let locked = false;
+  let resetTimer = null;
   const slots = new Array(item.slots).fill(null);
 
   const wrap = el('div', { class: 'col' });
@@ -154,12 +161,37 @@ function mountBuild(item, host, api) {
     else card.append(el('div', { class: 'q-sub', text: 'Escute com atenção.' }));
     card.append(el('button', {
       class: 'btn btn--soft mt', type: 'button',
-      'on:click': () => { stopSpeaking(); speak(item.answer, { rate: 0.75 }); },
+      'on:click': () => { stopSpeaking(); speak(item.answer, { rate: 0.85 }); },
     }, '🔊 Ouvir a palavra'));
   }
   wrap.append(card);
 
   const slotsRow = el('div', { class: 'slots slots--drop' });
+  const clearBtn = el('button', {
+    class: 'btn btn--sm btn--ghost', type: 'button', hidden: true,
+    style: { alignSelf: 'center', marginTop: '-2px' },
+    'on:click': () => { if (!locked) { sfx('tap'); clearAllSlots(); } },
+  }, '🔄 Limpar');
+
+  function updateClearBtn() {
+    clearBtn.hidden = locked || !slots.some(Boolean);
+  }
+
+  function clearAllSlots() {
+    if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
+    slots.forEach((val, i) => {
+      if (!val) return;
+      slots[i] = null;
+      const s = slotEls[i];
+      s.textContent = '·';
+      s.classList.remove('slot--filled');
+      s.setAttribute('aria-label', `Espaço ${i + 1}`);
+      val.group.left++;
+      paintGroup(val.group);
+    });
+    updateClearBtn();
+  }
+
   const slotEls = slots.map((_, i) => {
     const s = el('button', { class: 'slot', type: 'button', 'aria-label': `Espaço ${i + 1}` }, '·');
     s.addEventListener('click', () => {
@@ -172,11 +204,12 @@ function mountBuild(item, host, api) {
       s.setAttribute('aria-label', `Espaço ${i + 1}`);
       val.group.left++;
       paintGroup(val.group);
+      updateClearBtn();
     });
     slotsRow.append(s);
     return s;
   });
-  wrap.append(slotsRow);
+  wrap.append(slotsRow, clearBtn);
 
   const tileRow = el('div', { class: 'tiles' });
   const groups = groupPieces(item.pieces);
@@ -211,6 +244,7 @@ function mountBuild(item, host, api) {
 
   function place(group) {
     if (locked || group.left <= 0) return;
+    if (resetTimer) { clearAllSlots(); }
     const free = slots.findIndex((s) => s === null);
     if (free < 0) return;
     slots[free] = { piece: group.piece, group };
@@ -221,6 +255,7 @@ function mountBuild(item, host, api) {
     s.setAttribute('aria-label', `Espaço ${free + 1}, ${group.piece}`);
     sfx('tap');
     paintGroup(group);
+    updateClearBtn();
     if (slots.every((x) => x)) check();
   }
 
@@ -228,6 +263,7 @@ function mountBuild(item, host, api) {
     const answer = slots.map((t) => t.piece).join('');
     if (stripAccents(answer) === stripAccents(item.answer)) {
       locked = true;
+      updateClearBtn();
       sfx('great'); haptic();
       slotsRow.style.borderColor = '#7fd3a8';
       slotsRow.style.background = '#eafaf0';
@@ -239,16 +275,20 @@ function mountBuild(item, host, api) {
         [{ transform: 'translateX(0)' }, { transform: 'translateX(-8px)' }, { transform: 'translateX(8px)' }, { transform: 'translateX(0)' }],
         { duration: 320 },
       );
+      resetTimer = setTimeout(() => {
+        resetTimer = null;
+        if (!locked) clearAllSlots();
+      }, 650);
       api.onWrong({ attempts, got: answer });
     }
   }
 
   const showHint = () => {
     const next = item.syllables?.[0] || item.answer[0];
-    speak(`A primeira parte é ${next}.`, { rate: 0.7 });
+    speak(next, { rate: 0.85 });
     return true;
   };
-  return { showHint, destroy: () => stopSpeaking() };
+  return { showHint, destroy: () => { clearTimeout(resetTimer); stopSpeaking(); } };
 }
 
 /* ============================ LEITURA EM VOZ ALTA ============================ */
@@ -455,21 +495,22 @@ function mountRead(item, host, api, { multiline = false } = {}) {
     }
     const target = lines[lineIdx];
     const best = bestAlternative(res.alternatives, target, similarity);
-    const accuracy = res.transcript ? similarity(res.transcript, target) : 0;
+    const chosenText = best.text || res.transcript || '';
+    const accuracy = chosenText ? Math.max(best.score ?? 0, similarity(chosenText, target)) : 0;
     const threshold = target.split(/\s+/).length > 3 ? 0.65 : 0.72;
-    const missedWords = best.text ? alignReading(target, best.text).missed : target.split(/\s+/);
+    const missedWords = chosenText ? alignReading(target, chosenText).missed : target.split(/\s+/);
 
-    if (res.transcript && accuracy >= threshold) {
+    if (chosenText && accuracy >= threshold) {
       markWords(lineIdx, []);
-      hint.textContent = res.transcript ? `Você leu: “${res.transcript}”` : '';
+      hint.textContent = chosenText ? `Você leu: “${chosenText}”` : '';
       sfx('ok');
       finishLine({ ok: true, accuracy, missed: [] });
     } else {
       attempts++;
       markWords(lineIdx, missedWords);
       sfx('soft');
-      hint.textContent = res.transcript ? `Quase! Ouvi: “${res.transcript}”` : asrErrorMessage(res.error || 'no-speech');
-      api.onWrong({ attempts, accuracy, missed: missedWords, read: best.text });
+      hint.textContent = chosenText ? `Quase! Ouvi: “${chosenText}”` : asrErrorMessage(res.error || 'no-speech');
+      api.onWrong({ attempts, accuracy, missed: missedWords, read: chosenText });
       retryBtn.hidden = false;
       if (attempts >= 3 && !continueBtn) {
         continueBtn = el('button', {
@@ -511,7 +552,7 @@ function mountRead(item, host, api, { multiline = false } = {}) {
         if (selfMode) applySelfMode(); else applyMicMode();
         paintLine(lineIdx);
         hint.textContent = 'Agora esta linha. Toque no microfone.';
-        if (multiline) speak('Agora esta linha. Leia em voz alta.', { rate: 0.9 });
+        if (multiline) speak(lines[lineIdx], { rate: 0.85 });
       } else {
         const avgAcc = results.reduce((a, r) => a + (r.accuracy || 0), 0) / results.length;
         const allOk = results.every((r) => r.ok);
@@ -536,15 +577,12 @@ function mountRead(item, host, api, { multiline = false } = {}) {
 
   if (selfMode) applySelfMode(); else applyMicMode();
   paintLine(0);
-  if (item.level === 1) {
-    autoSpeakTimer = setTimeout(() => { if (!locked) speak(lines[0], { rate: 0.62 }); }, 700);
-  }
 
   return {
     showHint: async () => {
       clearTimeout(autoSpeakTimer);
       usedHelp = true;
-      await speak(lines[lineIdx], { rate: 0.6 });
+      await speak(lines[lineIdx], { rate: 0.85 });
       return true;
     },
     destroy: () => { clearTimeout(autoSpeakTimer); locked = true; cancelledListen = true; abortListening(); stopSpeaking(); },

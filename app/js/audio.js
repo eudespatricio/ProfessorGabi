@@ -123,9 +123,16 @@ export function unlockAudio() {
   } catch { /* ignore */ }
 }
 
+function setGabiSpeaking(on) {
+  try {
+    if (typeof document !== 'undefined') document.body?.classList.toggle('gabi-speaking', !!on);
+  } catch { /* ignore */ }
+}
+
 export function stopSpeaking() {
   seq++;
   stopClip();
+  setGabiSpeaking(false);
   try { window.speechSynthesis?.cancel(); } catch { /* ignore */ }
 }
 
@@ -142,8 +149,10 @@ const clipKey = (t) => String(t || '').toLowerCase().replace(/[.!?…:;,]+$/g, '
 
 export function stopClip() {
   if (clipAudio) {
-    try { clipAudio.pause(); } catch { /* ignore */ }
+    const a = clipAudio;
     clipAudio = null;
+    try { a._cancel?.(); } catch { /* ignore */ }
+    try { a.pause(); } catch { /* ignore */ }
   }
 }
 
@@ -196,14 +205,19 @@ function playUrl(file, rate, kind) {
     let watchdog = null;
     clipAudio = a;
 
+    // Nitidez no áudio Opus 24 kbps: mantém 1.0 em velocidade normal para evitar artefato metálico
+    const effectiveRate = rate < 0.8 ? Math.max(0.85, rate) : 1.0;
+
     const finish = (ok, why) => {
       if (settled) return;
       settled = true;
       clearTimeout(watchdog);
+      a._cancel = null;
+      a.onloadedmetadata = null;
       a.onplaying = null;
       a.onended = null;
       a.onerror = null;
-      if (!ok) {
+      if (!ok && why !== 'stopped') {
         if (kind === 'opus') clipStats.opusFail++;
         else clipStats.mp3Fail++;
         note({ kind, file, why: why || 'erro' });
@@ -212,15 +226,27 @@ function playUrl(file, rate, kind) {
       resolve(ok);
     };
 
+    a._cancel = () => finish(false, 'stopped');
+
     watchdog = setTimeout(() => {
       if (started) return;
       try { a.pause(); } catch { /* ignore */ }
       finish(false, 'timeout');
-    }, 4000);
+    }, 1500);
 
     a.preload = 'auto';
-    a.playbackRate = Math.min(1.15, Math.max(0.7, rate));
-    a.onplaying = () => { started = true; clearTimeout(watchdog); };
+    a.onloadedmetadata = () => {
+      if (effectiveRate !== 1.0) {
+        try { a.playbackRate = effectiveRate; } catch { /* ignore */ }
+      }
+    };
+    a.onplaying = () => {
+      started = true;
+      clearTimeout(watchdog);
+      if (effectiveRate !== 1.0 && a.playbackRate !== effectiveRate) {
+        try { a.playbackRate = effectiveRate; } catch { /* ignore */ }
+      }
+    };
     a.onended = () => finish(true);
     a.onerror = () => finish(false, `media-${a.error?.code || 'error'}`);
     a.src = file;
@@ -306,66 +332,84 @@ export async function speak(text, opts = {}) {
   if (state.settings.muted) return { spoken: false, via: 'muted' };
   const rate = opts.rate ?? state.settings.rate ?? 0.9;
   const pitch = opts.pitch ?? state.settings.pitch ?? 1;
-  const my = ++seq;
-  if (opts.interrupt !== false) stopClip();
-  // 1) clipe neural gravado (ElevenLabs) — melhor qualidade e offline
-  if (opts.clip !== false && !opts.voiceURI) {
-    const played = await playClip(text, rate);
-    if (played) return { spoken: true, via: 'clip' };
-  }
-  if (my !== seq) return { spoken: false, via: 'superseded' };
-  // 2) voz do navegador como reserva
-  if (!ttsSupported()) return { spoken: false, via: 'unsupported' };
   if (opts.interrupt !== false) {
-    try { window.speechSynthesis.cancel(); } catch { /* ignore */ }
-    // no Android o motor de voz costuma engasgar se falarmos logo após cancel()
-    const isAndroid = /Android/i.test(navigator.userAgent || '');
-    await new Promise((r) => setTimeout(r, isAndroid ? 300 : 110));
+    stopClip();
+    try { window.speechSynthesis?.cancel(); } catch { /* ignore */ }
   }
-  if (my !== seq) return { spoken: false, via: 'superseded' };
-  if (!voices.length) await ensureVoices(2000);
-  if (!voices.length) await ensureVoices(700);
-  if (my !== seq) return { spoken: false, via: 'superseded' };
-  let voice = pickVoice();
-  if (opts.voiceURI) voice = voices.find((v) => v.voiceURI === opts.voiceURI) || voice;
-  if (!voice && voices.length) note({ kind: 'tts', why: 'sem voz pt-BR' });
-
-  const chunks = chunkText(text);
-  let any = false;
-  for (let i = 0; i < chunks.length; i++) {
-    if (my !== seq) return { spoken: any, via: 'superseded' };
-    let res = await speakOne(chunks[i], rate, pitch, voice);
-    if (!res.ok && my === seq && voice && RETRY_ERRORS.has(res.error)) {
-      // a voz escolhida pode não existir no tablet: tenta a voz padrão do sistema
-      lastSpeechError = res.error;
-      res = await speakOne(chunks[i], rate, pitch, null);
+  const my = ++seq;
+  setGabiSpeaking(true);
+  try {
+    // 1) clipe neural gravado (ElevenLabs) — melhor qualidade e offline
+    if (opts.clip !== false && !opts.voiceURI) {
+      const played = await playClip(text, rate);
+      if (played) return { spoken: true, via: 'clip' };
     }
-    // uma fala nova (ou stopSpeaking) pode ter interrompido esta: não conta como falha
-    if (my !== seq) return { spoken: any, via: 'superseded' };
-    if (res.ok) any = true;
-    else if (!IGNORED_SPEECH_ERRORS.has(res.error)) lastSpeechError = res.error;
-    if (i < chunks.length - 1) await new Promise((r) => setTimeout(r, 110));
+    if (my !== seq) return { spoken: false, via: 'superseded' };
+    // 2) voz do navegador como reserva
+    if (!ttsSupported()) return { spoken: false, via: 'unsupported' };
+    if (opts.interrupt !== false) {
+      // no Android o motor de voz costuma engasgar se falarmos logo após cancel()
+      const isAndroid = /Android/i.test(navigator.userAgent || '');
+      await new Promise((r) => setTimeout(r, isAndroid ? 300 : 110));
+    }
+    if (my !== seq) return { spoken: false, via: 'superseded' };
+    if (!voices.length) await ensureVoices(2000);
+    if (!voices.length) await ensureVoices(700);
+    if (my !== seq) return { spoken: false, via: 'superseded' };
+    let voice = pickVoice();
+    if (opts.voiceURI) voice = voices.find((v) => v.voiceURI === opts.voiceURI) || voice;
+    if (!voice && voices.length) note({ kind: 'tts', why: 'sem voz pt-BR' });
+
+    const chunks = chunkText(text);
+    let any = false;
+    for (let i = 0; i < chunks.length; i++) {
+      if (my !== seq) return { spoken: any, via: 'superseded' };
+      let res = await speakOne(chunks[i], rate, pitch, voice);
+      if (!res.ok && my === seq && voice && RETRY_ERRORS.has(res.error)) {
+        // a voz escolhida pode não existir no tablet: tenta a voz padrão do sistema
+        lastSpeechError = res.error;
+        res = await speakOne(chunks[i], rate, pitch, null);
+      }
+      // uma fala nova (ou stopSpeaking) pode ter interrompido esta: não conta como falha
+      if (my !== seq) return { spoken: any, via: 'superseded' };
+      if (res.ok) any = true;
+      else if (!IGNORED_SPEECH_ERRORS.has(res.error)) lastSpeechError = res.error;
+      if (i < chunks.length - 1) await new Promise((r) => setTimeout(r, 110));
+    }
+    if (any) {
+      clipStats.ttsOk++;
+      return { spoken: true, via: 'tts' };
+    }
+    clipStats.ttsFail++;
+    return { spoken: false, via: 'tts', error: lastSpeechError || 'no-start' };
+  } finally {
+    if (my === seq) setGabiSpeaking(false);
   }
-  if (any) {
-    clipStats.ttsOk++;
-    return { spoken: true, via: 'tts' };
-  }
-  clipStats.ttsFail++;
-  return { spoken: false, via: 'tts', error: lastSpeechError || 'no-start' };
 }
 
-/** Fala sílabas separadas, com pausa — para "ca... sa". */
+/** Fala sílabas separadas, com pausa — priorizando clipes neurais da ElevenLabs. */
 export async function speakSyllables(parts, opts = {}) {
   stopSpeaking();
+  if (state.settings.muted) return;
   const my = ++seq;
-  const voice = pickVoice();
-  const rate = opts.rate ?? Math.max(0.55, (state.settings.rate ?? 0.9) - 0.2);
-  await new Promise((r) => setTimeout(r, 220));
-  for (const p of parts) {
-    if (my !== seq) return;
-    await speakOne(String(p), rate, 1, voice);
-    if (my !== seq) return;
-    await new Promise((r) => setTimeout(r, 420));
+  setGabiSpeaking(true);
+  try {
+    const voice = pickVoice();
+    const rate = opts.rate ?? Math.max(0.55, (state.settings.rate ?? 0.9) - 0.2);
+    await new Promise((r) => setTimeout(r, 200));
+    for (const p of parts) {
+      if (my !== seq) return;
+      const syl = String(p || '').trim();
+      if (!syl) continue;
+      const played = await playClip(syl, 1);
+      if (!played && my === seq && ttsSupported()) {
+        await speakOne(syl, rate, 1, voice);
+      }
+      if (my !== seq) return;
+      await new Promise((r) => setTimeout(r, 380));
+    }
+  } finally {
+    if (my === seq) setGabiSpeaking(false);
   }
 }
 

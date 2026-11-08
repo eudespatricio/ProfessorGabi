@@ -103,3 +103,39 @@ def test_i9_ocr_edge_and_handwriting_sanitization():
     assert "stripLineEdgeNoise" in sb, "sanitizeOcr deve podar ruído de borda/espiral/ilustração por palavra"
     assert "MIN_LINE_CONF = 58" in sb, "MIN_LINE_CONF deve filtrar rabiscos manuscritos de baixa confiança"
 
+
+def test_i10_v37_audio_speech_pedagogy_and_animations():
+    """I10: Pacote v37 (8 itens) — áudio neural prioritário, validação fonética, auto-reset e animações SVG/CSS."""
+    audio = (APP / "js" / "audio.js").read_text(encoding="utf-8")
+    assert "a._cancel" in audio, "stopClip deve cancelar a Promise pendente em playUrl"
+    assert "1500" in audio, "Watchdog de playUrl deve ser 1500ms"
+    assert "playClip(syl, 1)" in audio, "speakSyllables deve priorizar clipes neurais via playClip"
+    assert "gabi-speaking" in audio, "speak/speakSyllables devem alternar classe gabi-speaking no body"
+
+    wc = (APP / "js" / "word-card.js").read_text(encoding="utf-8")
+    assert "speak(g.d" in wc and "speak(g.ex" not in wc, "word-card.js deve falar g.d (gravado) e nunca g.ex"
+
+    utils = (APP / "js" / "utils.js").read_text(encoding="utf-8")
+    assert "readingKey(w)" in utils, "alignReading deve usar readingKey para tolerância fonética infantil"
+
+    guided = (APP / "js" / "guided.js").read_text(encoding="utf-8")
+    assert "readingKey" in guided and "b.length >= 2" in guided, "saidOk deve usar readingKey e aceitar sílabas de 2 letras"
+
+    ex = (APP / "js" / "exercises.js").read_text(encoding="utf-8")
+    assert "best.score" in ex, "mountRead deve considerar best.score de bestAlternative"
+    assert "clearAllSlots" in ex and "650" in ex, "mountBuild deve limpar slots automaticamente após erro (650ms) e oferecer botão Limpar"
+
+    ui = (APP / "js" / "ui.js").read_text(encoding="utf-8")
+    assert "wing--l" in ui and "class=\"beak\"" in ui, "SVG da Gabi deve expor classes .wing e .beak"
+
+    speech = (APP / "js" / "speech.js").read_text(encoding="utf-8")
+    assert "gabi-listening" in speech and "listening" in speech, "speech.js deve ativar modo listening na Gabi ao abrir o microfone"
+
+    app_css = (APP / "css" / "app.css").read_text(encoding="utf-8")
+    polish_css = (APP / "css" / "polish.css").read_text(encoding="utf-8")
+    assert "scaleY(0.04)" in app_css, "@keyframes blink deve manter pálpebra aberta (0.04) por padrão e fechar (1) apenas no piscar"
+    assert "prefers-reduced-motion" not in app_css and "prefers-reduced-motion" not in polish_css, (
+        "Animações devem ser controladas por html.reduce-motion e não desativadas globalmente pelo Battery Saver do Android"
+    )
+
+

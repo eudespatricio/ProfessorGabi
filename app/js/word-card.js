@@ -12,6 +12,12 @@ export function showWordCard(raw) {
   if (!key) return;
   const g = GLOSSARY[key] || null;
   const syl = splitSyllables(key);
+  let defTimer = null;
+
+  const clearCardAudio = () => {
+    if (defTimer) { clearTimeout(defTimer); defTimer = null; }
+    stopSpeaking();
+  };
 
   const body = el('div', { class: 'col', style: { gap: '8px' } });
   body.append(el('div', { class: 'emoji-big', style: { fontSize: '48px', textAlign: 'center' }, text: (g && g.e) || emojiOf(key) }));
@@ -32,11 +38,17 @@ export function showWordCard(raw) {
   const actions = el('div', { class: 'row', style: { gap: '8px' } });
   actions.append(el('button', {
     class: 'btn btn--soft grow',
-    'on:click': () => { speak(key, { rate: 0.7 }); if (g) setTimeout(() => speak(g.ex, { rate: 0.78 }), 1700); },
+    'on:click': async () => {
+      clearCardAudio();
+      await speak(key, { rate: 0.85 });
+      if (g?.d) {
+        defTimer = setTimeout(() => { defTimer = null; speak(g.d, { rate: 0.9 }); }, 280);
+      }
+    },
   }, '🔊 Ouvir'));
   actions.append(el('button', {
     class: 'btn btn--primary grow',
-    'on:click': async () => { closeModal(); stopSpeaking(); await openGuided(key); },
+    'on:click': async () => { clearCardAudio(); closeModal(); await openGuided(key); },
   }, '👩‍🏫 Treinar sílabas'));
   body.append(actions);
 
@@ -44,5 +56,5 @@ export function showWordCard(raw) {
     title: 'Palavra',
     body,
     actions: [{ label: 'Fechar', value: true, primary: true }],
-  });
+  }).finally(clearCardAudio);
 }

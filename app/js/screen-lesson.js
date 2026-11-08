@@ -4,9 +4,38 @@ import * as store from './store.js';
 import { UNITS, getUnit, buildLesson, buildReviewItems, buildLessonReviewItems, buildDiagnostic, suggestUnitFromDiagnostic } from './curriculum.js';
 import { STICKER_BY_ID } from './content.js';
 import { mountExercise, mountTeach } from './exercises.js';
-import { speak, stopSpeaking, sfx, haptic } from './audio.js';
-import { feedbackFor, lessonSummary, readingFeedback, hintFor } from './tutor.js';
-import { gabiEl, confetti, flyingStars, starsHTML, clearScreen, hideTabbar, tabbar, toast, modal } from './ui.js';
+import { speak, speakSyllables, stopSpeaking, sfx, haptic } from './audio.js';
+import { feedbackFor, lessonSummary, lessonSummaryAudio, readingFeedback, hintFor } from './tutor.js';
+import { gabiEl, setGabiMood, confetti, flyingStars, starsHTML, clearScreen, hideTabbar, tabbar, toast, modal } from './ui.js';
+
+/** Toca o alvo neural do exercício sem concatenar textos variáveis que forçam Google TTS. */
+function speakExerciseTarget(item) {
+  if (!item) return;
+  if (item.sayParts?.length) {
+    speakSyllables(item.sayParts);
+    return;
+  }
+  if (item.type === 'read-text' && item.lines?.length) {
+    if (item.level === 1) speak(item.lines[0], { rate: 0.85 });
+    else speak('Vamos ler juntos.');
+    return;
+  }
+  if (item.type === 'read-phrase' && item.target) {
+    if (item.level === 1) speak(item.target, { rate: 0.85 });
+    else speak('Agora leia você.');
+    return;
+  }
+  if (item.type === 'read-word' && item.word) {
+    if (item.level === 1) speak(item.word, { rate: 0.85 });
+    else speak('Agora leia você.');
+    return;
+  }
+  if (item.word) {
+    speak(item.word, { rate: 0.9 });
+    return;
+  }
+  if (item.say) speak(item.say);
+}
 
 let playerAlive = 0;
 
@@ -72,15 +101,16 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
   const root = el('div', { class: 'lesson lesson--game' });
   const bar = el('div', { class: 'lesson__bar' });
   const backBtn = el('button', { class: 'btn--back', 'aria-label': 'Sair', 'on:click': tryExit }, '←');
+  const gabiMini = gabiEl('idle', 'gabi--sm');
   const dots = el('div', { class: 'dots grow' });
   const counter = el('div', { class: 'small muted nowrap' });
   const comboBadge = el('div', { class: 'combo', hidden: true, text: '🔥 x2' });
   const xpPill = el('div', { class: 'hud__xp', html: `⭐ <span>${store.state.progress.xp}</span>` });
   const replay = el('button', {
     class: 'btn--icon', 'aria-label': 'Ouvir de novo',
-    'on:click': () => { if (current?.say) { stopSpeaking(); speak(current.say); } },
+    'on:click': () => { if (current) { stopSpeaking(); speakExerciseTarget(current); } },
   }, '🔊');
-  bar.append(backBtn, dots, counter, comboBadge, xpPill, replay);
+  bar.append(backBtn, gabiMini, dots, counter, comboBadge, xpPill, replay);
   const body = el('div', { class: 'lesson__body' });
   const foot = el('div', { class: 'lesson__foot' });
   root.append(bar, body, foot);
@@ -137,12 +167,14 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
         el('div', { class: 'small muted', text: 'Fixando o que você acabou de aprender.' })));
     }
 
+    setGabiMood('idle');
     const hintBtn = el('button', {
       class: 'btn btn--soft', type: 'button',
       'on:click': async () => {
+        setGabiMood('thinking');
         const h = hintFor(current);
-        handle?.showHint?.();
-        if (h?.speak) speak(h.speak);
+        const handled = handle?.showHint?.();
+        if (!handled && h?.speak) speak(h.speak);
         const b = el('div', { class: 'feedback feedback--model', style: { marginTop: '10px' } },
           el('div', { class: 'feedback__icon', text: '💡' }),
           el('div', {}, el('div', { class: 'feedback__title', text: 'Dica da Gabi' }),
@@ -160,20 +192,22 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
       }, 'Pular revisão'));
     }
 
-    if (current.say) {
+    if (current.say || current.word || current.sayParts) {
       stopSpeaking();
-      setTimeout(() => { if (alive() && !locked) speak(current.say); }, 380);
+      setTimeout(() => { if (alive() && !locked) speakExerciseTarget(current); }, 380);
     }
   }
 
   function onWrong(info) {
     if (!alive() || finished) return;
     sfx('soft');
+    setGabiMood('thinking');
     if (current.type?.startsWith('read-')) {
       const fb = readingFeedback(info.accuracy || 0, info.missed || [], attemptsThis);
-      speak(`${fb.title} ${fb.text}`);
+      speak(fb.audio || 'Vamos ler juntos.');
     } else {
-      speak(feedbackFor(current, { ok: false }).text);
+      const fb = feedbackFor(current, { ok: false });
+      speak(fb.audio || 'Quase!');
     }
     const line = el('div', { class: 'feedback feedback--nudge', style: { marginTop: '12px' } },
       el('div', { class: 'feedback__icon', text: '🌱' }),
@@ -237,6 +271,7 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
     const fb = current.type?.startsWith('read-')
       ? readingFeedback(res.accuracy ?? (res.ok ? 1 : 0), res.missed || [], res.attempts ?? 0)
       : feedbackFor(current, res);
+    setGabiMood(fb.mood || (res.ok ? 'happy' : 'thinking'));
 
     const card = el('div', { class: `feedback ${res.ok ? 'feedback--ok' : 'feedback--nudge'}`, style: { marginTop: '14px' } },
       el('div', { class: 'feedback__icon', text: res.ok ? '🌟' : '🌱' }),
@@ -246,7 +281,7 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
         fb.rule ? el('div', { class: 'feedback__rule', text: fb.rule }) : null));
     body.append(card);
     card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    speak(`${fb.title} ${fb.text}`);
+    speak(fb.audio || (res.ok ? 'Muito bem!' : 'Vamos com calma.'));
 
     foot.innerHTML = '';
     const list = inReview ? reviewItems : items;
@@ -389,8 +424,10 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
     s.append(foot);
     confetti(o.stars >= 2 ? 26 : 12);
     sfx(o.stars >= 2 ? 'great' : 'ok');
-    speak(lessonSummary(o.stars, o.correct, o.total));
-    if (o.unitDone) setTimeout(() => speak('Você terminou esta unidade! Que conquista!'), 4200);
+    speak(lessonSummaryAudio(o.stars));
+    if (o.unitDone) {
+      setTimeout(() => { if (alive()) speak('Parabéns!'); }, 2600);
+    }
   }
 
   function renderPlacement(unitId, meta) {

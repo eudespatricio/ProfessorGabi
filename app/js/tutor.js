@@ -7,6 +7,9 @@ const PRAISE_FIRST = ['Isso!', 'Muito bem!', 'Boa!', 'Perfeito!', 'Uau, acertou!
 const PRAISE_AFTER = ['Agora sim!', 'Conseguiu!', 'Isso mesmo!', 'Olha só, você conseguiu!'];
 const NUDGE = ['Quase!', 'Vamos juntos.', 'Respira e olha de novo.', 'Tudo bem, é assim que se aprende.'];
 
+const NEURAL_PRAISE = ['Muito bem!', 'Isso!', 'Parabéns!', 'Boa leitura!', 'Você consegue!', 'Muito orgulho de você.'];
+const NEURAL_NUDGE = ['Quase!', 'Vamos com calma.', 'Vamos ler juntos.', 'Escute de novo.'];
+
 export function childName() {
   return (state.child?.name || '').trim();
 }
@@ -27,7 +30,7 @@ export function nudge() {
 
 /**
  * Monta o retorno pedagógico de um exercício.
- * @returns {{mood:'happy'|'thinking', title:string, text:string, rule:string}}
+ * @returns {{mood:'happy'|'thinking', title:string, text:string, rule:string, audio:string}}
  */
 export function feedbackFor(item, res) {
   const ex = item?.explain || {};
@@ -37,6 +40,7 @@ export function feedbackFor(item, res) {
       title: praise(res.attempts <= 1 && !res.helped),
       text: ex.ok || 'Você acertou!',
       rule: ex.rule || '',
+      audio: pick(NEURAL_PRAISE),
     };
   }
   return {
@@ -44,6 +48,7 @@ export function feedbackFor(item, res) {
     title: nudge(),
     text: ex.err || 'Vamos ver juntos de novo.',
     rule: ex.rule || '',
+    audio: pick(NEURAL_NUDGE),
   };
 }
 
@@ -54,28 +59,35 @@ export function lessonSummary(stars, correct, total) {
   return withName(`Você fez ${correct} de ${total}. O importante é não desistir: vamos treinar mais um pouquinho.`);
 }
 
+/** Clipe neural curto de encerramento da lição (evita voz robótica). */
+export function lessonSummaryAudio(stars) {
+  if (stars >= 3) return 'Muito orgulho de você.';
+  if (stars === 2) return 'Parabéns!';
+  return 'Você consegue!';
+}
+
 /** Dica específica por tipo de exercício. */
 export function hintFor(item) {
   const syl = item?.syllables?.join(' - ');
   switch (item?.type) {
     case 'count-syllables':
-      return { text: 'Bata palmas para cada pedacinho: ' + (syl || ''), speak: `Bata palmas: ${item.syllables?.join(', ')}.` };
+      return { text: 'Bata palmas para cada pedacinho: ' + (syl || ''), speak: 'Vamos bater palmas juntos.', syllables: item.syllables };
     case 'build-word':
-      return { text: 'Começa com: ' + (item.syllables?.[0] || ''), speak: `A primeira sílaba é ${item.syllables?.[0]}.` };
+      return { text: 'Começa com: ' + (item.syllables?.[0] || ''), speak: item.syllables?.[0] || item.word || 'Olhe a sílaba.' };
     case 'missing-syllable': {
       const s = item.syllables || [];
-      return { text: `${s[item.blankIndex - 1] || ''} … ${s[item.blankIndex + 1] || ''}`, speak: 'Escuta a palavra inteira: ' + (item.word || '') };
+      return { text: `${s[item.blankIndex - 1] || ''} … ${s[item.blankIndex + 1] || ''}`, speak: item.word || 'Olhe a sílaba.' };
     }
     case 'm-pb':
-      return { text: item.explain?.rule || 'M antes de P e B.', speak: item.explain?.rule || 'M antes de P e B.' };
+      return { text: item.explain?.rule || 'M antes de P e B.', speak: item.word || 'Olhe a sílaba.' };
     case 'read-word':
     case 'read-phrase':
     case 'read-text':
-      return { text: syl ? `Leia em pedacinhos: ${syl}` : 'Leia devagar, com calma.', speak: 'Leia devagar. Se precisar, eu leio junto.' };
+      return { text: syl ? `Leia em pedacinhos: ${syl}` : 'Leia devagar, com calma.', speak: 'Leia devagar.' };
     case 'dictation':
-      return { text: syl ? `Escute: ${syl}` : 'Escute de novo.', speak: `A palavra é ${item.word}.` };
+      return { text: syl ? `Escute: ${syl}` : 'Escute de novo.', speak: item.word || 'Escute de novo.' };
     default:
-      return { text: item?.explain?.rule || 'Pense no som das letras.', speak: item?.explain?.rule || '' };
+      return { text: item?.explain?.rule || 'Pense no som das letras.', speak: item?.word || 'Vamos com calma.' };
   }
 }
 
@@ -83,14 +95,14 @@ export function hintFor(item) {
 export function readingFeedback(accuracy, missed, attempts) {
   const total = Math.round(accuracy * 100);
   if (accuracy >= 0.85) {
-    return { mood: 'happy', title: praise(attempts <= 1), text: `Você leu ${total}% das palavras certinho.` };
+    return { mood: 'happy', title: praise(attempts <= 1), text: `Você leu ${total}% das palavras certinho.`, audio: 'Boa leitura!' };
   }
   if (accuracy >= 0.6) {
     const m = missed?.[0] ? ` A palavra “${missed[0]}” é a próxima conquista.` : '';
-    return { mood: 'happy', title: 'Boa leitura!', text: `Você acertou ${total}% das palavras.${m}` };
+    return { mood: 'happy', title: 'Boa leitura!', text: `Você acertou ${total}% das palavras.${m}`, audio: 'Muito bem!' };
   }
   const m = missed?.[0] ? `Vamos ouvir “${missed[0]}” juntos?` : 'Vamos ouvir de novo e ler juntos?';
-  return { mood: 'thinking', title: 'Vamos com calma', text: `Você leu ${total}%. ${m}` };
+  return { mood: 'thinking', title: 'Vamos com calma', text: `Você leu ${total}%. ${m}`, audio: 'Vamos ler juntos.' };
 }
 
 /** Frases de abertura por período do dia (variam a cada dia). */

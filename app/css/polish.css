@@ -7,9 +7,6 @@
 }
 #screen > .wrap { animation: screenIn .26s cubic-bezier(.2, .7, .2, 1); }
 html.reduce-motion #screen > .wrap { animation: none; }
-@media (prefers-reduced-motion: reduce) {
-  #screen > .wrap { animation: none; }
-}
 
 /* ---- baú do dia ---- */
 .chest-card { position: relative; overflow: hidden; }
@@ -38,11 +35,6 @@ html.reduce-motion #screen > .wrap { animation: none; }
   100% { opacity: 0; transform: scale(1); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .chest-card--opening,
-  .chest-card--opening .chest-card__icon,
-  .chest-card--opening::after { animation: none; }
-}
 html.reduce-motion .chest-card--opening,
 html.reduce-motion .chest-card--opening .chest-card__icon,
 html.reduce-motion .chest-card--opening::after { animation: none; }
@@ -74,7 +66,6 @@ html.reduce-motion .chest-card--opening::after { animation: none; }
 .modal__card { animation: modalCardIn .24s cubic-bezier(.2, .85, .25, 1); }
 html.reduce-motion .modal,
 html.reduce-motion .modal__card { animation: none; }
-@media (prefers-reduced-motion: reduce) {
-  .modal, .modal__card { animation: none; }
-  .adventure .cloud, .adventure .sun, .adventure::before { transform: none; }
-}
+html.reduce-motion .adventure .cloud,
+html.reduce-motion .adventure .sun,
+html.reduce-motion .adventure::before { transform: none; }
