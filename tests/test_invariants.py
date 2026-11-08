@@ -94,3 +94,12 @@ def test_i7_i8_no_mojibake_and_no_obsolete_docs():
     for p in check_files:
         txt = p.read_text(encoding="utf-8")
         assert not bad_re.search(txt), f"Mojibake detectado em {p.relative_to(ROOT)}"
+
+
+def test_i9_ocr_edge_and_handwriting_sanitization():
+    """I9: screen-book.js preserva coordenadas TSV (wordLefts/wordRights) e filtra ruído de espiral/ilustração."""
+    sb = (APP / "js" / "screen-book.js").read_text(encoding="utf-8")
+    assert "wordLefts" in sb and "wordRights" in sb, "parseTsvLines deve extrair coordenadas horizontais do TSV"
+    assert "stripLineEdgeNoise" in sb, "sanitizeOcr deve podar ruído de borda/espiral/ilustração por palavra"
+    assert "MIN_LINE_CONF = 58" in sb, "MIN_LINE_CONF deve filtrar rabiscos manuscritos de baixa confiança"
+

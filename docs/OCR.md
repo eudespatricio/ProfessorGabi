@@ -19,15 +19,16 @@ Ferramenta de comparação: `node tools/ocr-compare.mjs assets/pagina-teste.jpg`
 `worker.recognize(canvas, {}, { text: true, tsv: true })` — o **TSV** traz a confiança de cada palavra (0–100).
 `parseTsvLines()` agrupa as palavras por linha e calcula a confiança média da linha.
 
-## 3. Filtro de linhas
+## 3. Filtro de linhas e ruído de borda (`sanitizeOcr` + `stripLineEdgeNoise`)
 
 `sanitizeOcr(text, lines)`:
 
+- **poda de borda por distância horizontal e confiança (`stripLineEdgeNoise`)**: usa coordenadas `left`/`width` e confiança por palavra do TSV para descartar espiral de caderno à esquerda (`Ca`, `E A Fa EE cm`, `RO E FE á rm`), ilustrações à direita (`E Debe;`) e siglas maiúsculas perdidas no meio de frases;
 - descarta linha com menos de 2 palavras ou menos de 4 letras;
-- descarta linha com confiança **< 45** (ilustrações ficam entre 17 e 30; texto real, entre 75 e 96);
-- descarta linha sem forma de frase (muitos símbolos, poucas minúsculas, maiúsculas curtas demais);
-- mantém títulos curtos em maiúsculas, inclusive com hífen (“PLANTA-SE UMA ÁRVORE”);
-- se o filtro derrubar tudo, volta ao modo tolerante (página ruim).
+- descarta linha com confiança **< 58** (rabiscos manuscritos e ilustrações ficam entre 17 e 55; texto impresso fica entre 75 e 96);
+- descarta rodapés/cabeçalhos de livro didático (`Acervo Editora...`, `LEITURA`, `ATIVIDADE`, `LÍNGUA PORTUGUESA`, `Para Casa`);
+- descarta linha onde mais de 60% das palavras começam com maiúscula sem corpo de frase (`SUN À Fara Cara A`);
+- mantém títulos curtos de história (`Um presente inesperado`, `PLANTA-SE UMA ÁRVORE`).
 
 ## 4. Corretor de dicionário (`app/js/ocr-fix.js`)
 
@@ -70,6 +71,6 @@ Só troca quando **todas** valem:
 
 ## 6. Ajustes rápidos
 
-Em `screen-book.js`: `MIN_LINE_CONF` (45) e `maxW` (1700).
+Em `screen-book.js`: `MIN_LINE_CONF` (58) e `maxW` (1700).
 Em `ocr-fix.js`: `CONF_LIMIT` (85), `MAX_RANK` (6000), `MARGIN` (3), `MAX_FIXES` (8).
 Depois de mudar, rode `node tools/ocr.mjs assets/pagina-teste.jpg` e confira o texto.

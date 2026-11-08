@@ -1,13 +1,13 @@
 # ESTADO — Professor Gabi
 > Sobrescrito a cada versão (nunca append-only). Soma `ESTADO + MAPA + REJEITADOS < 150 linhas`.
 
-- **Data / Versão:** 2026-11-08 · App `v35` (`app/js/version.js`) · Service Worker `gabi-v35` (`app/sw.js`)
+- **Data / Versão:** 2026-11-08 · App `v36` (`app/js/version.js`) · Service Worker `gabi-v36` (`app/sw.js`)
 - **Resumo:** PWA offline-first de alfabetização em português (leitura guiada sílaba a sílaba, fala neural, escuta tolerante, OCR de livros e jogos) em ES Modules nativos sem bundler.
 
 ## 1. Números Canônicos (validados por `tests/invariants.test.mjs` e `tests/test_invariants.py`)
 | Métrica | Valor Real | Fonte Canônica |
 | --- | --- | --- |
-| Versão App / SW | `v35` / `gabi-v35` | `app/js/version.js` e `app/sw.js` |
+| Versão App / SW | `v36` / `gabi-v36` | `app/js/version.js` e `app/sw.js` |
 | Estado Local (`localStorage`) | `gabi.state.v1` (`STATE_VERSION = 2`) | `app/js/store.js` (`HISTORY_MAX = 300`) |
 | Currículo e Conteúdo | **14** unidades (`u1`–`u14`), **351** palavras, **22** histórias | `content/manifest.json` |
 | Dicionário Infantil (Glossário) | **351 / 351** definições (100% cobertura, 0 órfãos) | `app/js/glossary.js` |

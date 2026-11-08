@@ -89,3 +89,45 @@ test('segundo passe não troca palavra válida rara', () => {
   assert.match(out.text, /soltara/);
   assert.match(out.text, /fisionomias/);
 });
+
+test('sanitizeOcr remove espiral de caderno, rabiscos manuscritos e fragmentos de ilustração', async () => {
+  const { sanitizeOcr } = await import('../app/js/screen-book.js');
+  const noisyLines = [
+    { text: 'SUN À Fara Cara A', conf: 42, words: ['SUN', 'À', 'Fara', 'Cara', 'A'], wordConfs: [35, 40, 48, 52, 30] },
+    { text: 'LEITURA Lição incompleta d', conf: 51, words: ['LEITURA', 'Lição', 'incompleta', 'd'], wordConfs: [88, 45, 50, 22] },
+    {
+      text: 'o e Um presente inesperado E Debe;',
+      conf: 74,
+      words: ['o', 'e', 'Um', 'presente', 'inesperado', 'E', 'Debe;'],
+      wordConfs: [38, 41, 93, 96, 95, 44, 39],
+      wordLefts: [18, 42, 140, 195, 310, 920, 960],
+      wordRights: [30, 55, 180, 295, 430, 940, 1020],
+    },
+    {
+      text: 'Ca Hoje, na rua da escola, aconteceu uma cena interessante. Um',
+      conf: 86,
+      words: ['Ca', 'Hoje,', 'na', 'rua', 'da', 'escola,', 'aconteceu', 'uma', 'cena', 'interessante.', 'Um'],
+      wordConfs: [41, 95, 96, 96, 96, 95, 96, 96, 95, 96, 94],
+      wordLefts: [15, 140, 210, 250, 300, 340, 430, 560, 620, 690, 830],
+      wordRights: [40, 195, 240, 290, 330, 415, 545, 605, 675, 815, 870],
+    },
+    {
+      text: 'E A Fa EE cm gato branquinho e uma gata pretinha estavam cuidando de seu',
+      conf: 82,
+      words: ['E', 'A', 'Fa', 'EE', 'cm', 'gato', 'branquinho', 'e', 'uma', 'gata', 'pretinha', 'estavam', 'cuidando', 'de', 'seu'],
+      wordConfs: [32, 40, 38, 29, 44, 95, 94, 96, 96, 95, 94, 96, 95, 96, 95],
+    },
+    {
+      text: 'RO E FE á rm filhote quando um caminhão passou próximo aos três e freou.',
+      conf: 83,
+      words: ['RO', 'E', 'FE', 'á', 'rm', 'filhote', 'quando', 'um', 'caminhão', 'passou', 'próximo', 'aos', 'três', 'e', 'freou.'],
+      wordConfs: [30, 35, 28, 42, 39, 96, 96, 96, 95, 96, 95, 96, 95, 96, 95],
+    },
+    { text: 'Acervo Editora Núcleo', conf: 90, words: ['Acervo', 'Editora', 'Núcleo'], wordConfs: [90, 92, 89] },
+  ];
+  const res = sanitizeOcr('', noisyLines);
+  assert.ok(!/\b(SUN|Fara|Debe|EE|RO|FE|rm|cm|Acervo)\b/.test(res.text), `Ruído remanescente: ${res.text}`);
+  assert.match(res.text, /Um presente inesperado/);
+  assert.match(res.text, /Hoje, na rua da escola, aconteceu uma cena interessante\. Um gato branquinho/);
+  assert.match(res.text, /filhote quando um caminhão passou próximo aos três e freou\./);
+});

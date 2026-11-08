@@ -151,7 +151,7 @@ function sauvola(gray, w, h, window = 0) {
   return out;
 }
 
-/** Lê o TSV do Tesseract e agrupa as palavras por linha, com a confiança de cada uma. */
+/** Lê o TSV do Tesseract e agrupa as palavras por linha, com a confiança e posição de cada uma. */
 export function parseTsvLines(tsv) {
   if (!tsv) return [];
   const map = new Map();
@@ -162,15 +162,21 @@ export function parseTsvLines(tsv) {
     if (!text) continue;
     const key = `${c[1]}.${c[2]}.${c[3]}.${c[4]}`;
     let line = map.get(key);
-    if (!line) { line = { words: [], confs: [] }; map.set(key, line); }
+    if (!line) { line = { words: [], confs: [], lefts: [], rights: [] }; map.set(key, line); }
+    const left = Number(c[6]) || 0;
+    const width = Number(c[8]) || 0;
     line.words.push(text);
     line.confs.push(Number(c[10]));
+    line.lefts.push(left);
+    line.rights.push(left + width);
   }
   return [...map.values()].map((l) => ({
     text: l.words.join(' '),
     conf: Math.round(l.confs.reduce((a, b) => a + b, 0) / Math.max(1, l.confs.length)),
     words: l.words,
     wordConfs: l.confs,
+    wordLefts: l.lefts,
+    wordRights: l.rights,
   }));
 }
 
@@ -212,6 +218,90 @@ export function cleanOcr(text) {
 }
 
 const VOWEL = /[aeiouáàâãäéèêëíìîïóòôõöúùûü]/i;
+const VALID_1CHAR = new Set(['a', 'o', 'e', 'é', 'à', 'A', 'O', 'E', 'É', 'À']);
+const VALID_2CHAR = new Set([
+  'ao', 'as', 'às', 'da', 'de', 'do', 'em', 'eu', 'fé', 'há', 'ir', 'já', 'lá',
+  'lê', 'me', 'na', 'no', 'nó', 'os', 'ou', 'pé', 'pó', 'sê', 'sé', 'se', 'só',
+  'te', 'ti', 'tu', 'um', 'vá', 'vê', 'vi', 'vó', 'vô',
+]);
+
+function isNoiseWord(tok, conf = null) {
+  const bare = tok.replace(/[^\p{L}\p{N}-]/gu, '');
+  if (!bare) return true;
+  if (/^\d{1,3}$/.test(bare)) return true;
+  const letters = (bare.match(/\p{L}/gu) || []).length;
+  if (letters === 0) return true;
+  if (letters === 1 && !VALID_1CHAR.has(bare)) return true;
+  if (letters === 2) {
+    const low = bare.toLowerCase();
+    // Siglas/ruído de 2 letras ("RO", "FE", "EE", "Fa", "Ca", "cm", "rm") sem ser palavra funcional real
+    if (!VALID_2CHAR.has(low) && (!VOWEL.test(bare) || /^\p{Lu}{2}$/u.test(bare) || (conf != null && conf < 75))) {
+      return true;
+    }
+    if (!VALID_2CHAR.has(low) && /^\p{Lu}\p{Ll}$/u.test(bare)) return true;
+  }
+  if (letters > 2 && !VOWEL.test(bare)) return true;
+  if (/(.)\1{3,}/u.test(bare)) return true;
+  if (conf != null && conf < 55 && letters <= 3 && !STOPWORDS.has(stripAccents(bare).toLowerCase())) return true;
+  return false;
+}
+
+/** Remove ruído de borda/ilustração (palavras com baixa confiança, siglas soltas ou separadas por grande salto horizontal). */
+function stripLineEdgeNoise(line) {
+  if (!Array.isArray(line?.words) || !line.words.length) return line?.text || '';
+  const words = line.words;
+  const confs = line.wordConfs || [];
+  const lefts = line.wordLefts || [];
+  const rights = line.wordRights || [];
+
+  // 1) Se houver um salto horizontal grande (> 90px) separando um cluster curto de baixa confiança (ilustração/espiral) do texto principal, fica só com o bloco principal
+  let start = 0;
+  let end = words.length;
+  if (lefts.length === words.length && words.length >= 4) {
+    for (let i = 0; i < Math.min(5, words.length - 2); i++) {
+      const gap = lefts[i + 1] - rights[i];
+      const prefixConf = confs.slice(0, i + 1).reduce((a, b) => a + b, 0) / (i + 1);
+      if (gap > 85 && prefixConf < 78) start = i + 1;
+    }
+    for (let i = words.length - 1; i >= Math.max(start + 2, words.length - 5); i--) {
+      const gap = lefts[i] - rights[i - 1];
+      const suffixConf = confs.slice(i).reduce((a, b) => a + b, 0) / (words.length - i);
+      if (gap > 85 && suffixConf < 78) { end = i; break; }
+    }
+  }
+
+  const slicedWords = words.slice(start, end);
+  const slicedConfs = confs.slice(start, end);
+
+  // 2) Descarta prefixo/sufixo de tokens ruidosos (espiral do caderno, ícones, rabiscos na margem)
+  let s = 0;
+  while (s < slicedWords.length && (
+    isNoiseWord(slicedWords[s], slicedConfs[s])
+    || (slicedConfs[s] != null && slicedConfs[s] < 68 && slicedWords.length - s >= 4)
+  )) s++;
+
+  let e = slicedWords.length;
+  while (e > s && (
+    isNoiseWord(slicedWords[e - 1], slicedConfs[e - 1])
+    || (slicedConfs[e - 1] != null && slicedConfs[e - 1] < 62 && e - s >= 4)
+  )) e--;
+
+  // 3) Filtra tokens internos que são claramente ruído de OCR (ex.: "EE", "RO", "FE", "rm", "cm", "Debe;")
+  const kept = [];
+  for (let i = s; i < e; i++) {
+    const w = slicedWords[i];
+    const c = slicedConfs[i];
+    if (isNoiseWord(w, c)) continue;
+    // Palavra toda em maiúsculas (2–4 letras) perdida no meio de frase em minúsculas
+    const bare = w.replace(/[^\p{L}]/gu, '');
+    if (bare.length >= 2 && bare.length <= 4 && /^\p{Lu}+$/u.test(bare) && slicedWords.some((x) => /^\p{Ll}{3,}/u.test(x))) {
+      continue;
+    }
+    if (/;$/.test(w) && c != null && c < 75) continue;
+    kept.push(w);
+  }
+  return kept.join(' ');
+}
 
 function cleanOcrLine(line) {
   const tokens = line.split(/\s+/).filter(Boolean)
@@ -219,13 +309,24 @@ function cleanOcrLine(line) {
   const kept = [];
   for (const t of tokens) {
     if (!t) continue;
-    if (/^\d{1,3}$/.test(t)) continue; // número de página
-    const letters = (t.match(/\p{L}/gu) || []).length;
-    if (letters === 0) continue; // só símbolos
-    if (letters > 2 && !VOWEL.test(t)) continue; // "sdfg", "mnbk"
-    if (/(.)\1{3,}/u.test(t)) continue; // "looooot"
+    if (isNoiseWord(t, null)) continue;
     if ((t.match(/[^\p{L}\p{N}.,;:!?%°ºª-]/gu) || []).length > 1) continue;
     kept.push(t);
+  }
+  // Remove corridas de 2+ tokens curtos (1-2 letras) no início da linha ("Um E A Fa EE cm gato" -> "gato" ou preserva "Um gato")
+  while (kept.length >= 3) {
+    const w0 = kept[0].replace(/[^\p{L}]/gu, '');
+    const w1 = kept[1].replace(/[^\p{L}]/gu, '');
+    if (w0.length <= 2 && w1.length <= 2 && (/^\p{Lu}/u.test(w1) || !STOPWORDS.has(stripAccents(w1).toLowerCase()))) {
+      // Se a primeira é "Um"/"O"/"A" e logo depois vem lixo ("E A Fa"), remove o lixo na posição 1
+      if (/^(Um|Uma|O|A|Os|As)$/u.test(w0)) {
+        kept.splice(1, 1);
+        continue;
+      }
+      kept.shift();
+      continue;
+    }
+    break;
   }
   return kept.join(' ');
 }
@@ -234,21 +335,31 @@ const STOPWORDS = new Set(('a o e é de da do das dos que em um uma para com nã
   + 'foi ser sua seu suas seus ele ela eles elas isso isto aqui como mais mas já também muito bem eu você me lhe '
   + 'quando onde porque ainda depois antes sobre entre sem sob até cada todos todas outro outra').split(' '));
 
-const MIN_LINE_CONF = 45;
+const MIN_LINE_CONF = 58;
 
 /** Uma linha "de verdade" tem palavras com forma de palavra e, se for longa, palavras funcionais. */
 function looksLikeTextLine(cleaned) {
   const words = cleaned.split(' ').filter(Boolean);
   if (!words.length) return false;
+  // Descarta rodapés editoriais e cabeçalhos de seção de livro didático
+  if (/^(acervo\s+editora|editora\s+|atividades?\s+adicionais|l[íi]ngua\s+portuguesa|leitura\b|atividade\b|para\s+casa\b)/iu.test(cleaned)) {
+    return false;
+  }
   const good = words.filter((w) => /^[\p{L}][\p{L}'’-]*$/u.test(w));
-  if (!good.length || good.length / words.length < 0.6) return false;
+  if (!good.length || good.length / words.length < 0.65) return false;
   const lower = good.filter((w) => w.length >= 3 && /^\p{Ll}/u.test(w));
   const stop = good.filter((w) => STOPWORDS.has(stripAccents(w).toLowerCase())).length;
   const shortCaps = words.filter((w) => /^[\p{Lu}\p{Lt}]{1,3}$/u.test(w)).length;
-  if (shortCaps / words.length > 0.5) return false;
+  if (shortCaps / words.length > 0.35) return false;
+  // Linhas onde quase todas as palavras começam com maiúscula ("SUN À Fara Cara A") são falsos positivos de manuscrito/espiral
+  const initCaps = words.filter((w) => /^\p{Lu}/u.test(w)).length;
+  if (words.length >= 3 && initCaps / words.length > 0.6 && lower.length < 2) return false;
   if (words.length >= 4 && lower.length < 2 && stop === 0) return false;
-  // título curto todo em maiúsculas/iniciais, inclusive com hífen (ex.: "PLANTA-SE UMA ÁRVORE")
-  const title = words.length <= 6 && words.every((w) => /^[\p{Lu}\p{Lt}][\p{L}\p{Lt}-]*$/u.test(w));
+  // título curto todo em maiúsculas/iniciais ou título de texto (ex.: "Um presente inesperado", "PLANTA-SE UMA ÁRVORE")
+  const title = words.length >= 2 && words.length <= 6
+    && words.every((w) => /^[\p{L}][\p{L}-]*$/u.test(w))
+    && (/^\p{Lu}/u.test(words[0]))
+    && (lower.length >= 1 || words.every((w) => /^[\p{Lu}\p{Lt}-]+$/u.test(w)));
   if (words.length < 4 && !title) return false;
   return true;
 }
@@ -261,11 +372,12 @@ export function sanitizeOcr(raw, lines = null) {
   const keep = [];
   let dropped = 0;
   for (const line of source) {
-    const cleaned = cleanOcrLine(line.text);
+    if (line.conf != null && line.conf < MIN_LINE_CONF) { dropped++; continue; }
+    const preCleaned = line.words ? stripLineEdgeNoise(line) : line.text;
+    const cleaned = cleanOcrLine(preCleaned);
     const words = cleaned.split(' ').filter(Boolean);
     const letters = (cleaned.match(/\p{L}/gu) || []).length;
     if (words.length < 2 || letters < 4) { dropped++; continue; }
-    if (line.conf != null && line.conf < MIN_LINE_CONF) { dropped++; continue; }
     if (!looksLikeTextLine(cleaned)) { dropped++; continue; }
     keep.push(cleaned);
   }
