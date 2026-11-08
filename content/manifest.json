@@ -1,0 +1,8700 @@
+{
+  "schemaVersion": 1,
+  "counts": {
+    "words": 351,
+    "units": 14,
+    "texts": 22,
+    "glossary": 351,
+    "audioClips": 1116,
+    "missingWordAudio": 0,
+    "missingSyllables": 0
+  },
+  "units": [
+    {
+      "id": "u1",
+      "n": 1,
+      "titulo": "Brincar com os sons",
+      "sub": "Sílabas, rimas e sons",
+      "emoji": "👏",
+      "lessons": 3,
+      "skills": [
+        "consciencia"
+      ],
+      "teach": {
+        "titulo": "Os pedacinhos das palavras",
+        "fala": "Vamos brincar com os sons! Toda palavra é feita de pedacinhos chamados sílabas. Escuta: bo… la. Duas sílabas! Bata palmas comigo: bo! la!",
+        "dica": "Sílabas são os pedacinhos da palavra."
+      },
+      "words": [
+        "bola",
+        "bolo",
+        "casa",
+        "dedo",
+        "dia",
+        "fada",
+        "fogo",
+        "gato",
+        "lua",
+        "mala",
+        "mão",
+        "pato",
+        "pipa",
+        "pé",
+        "rato",
+        "sapo",
+        "sino",
+        "sol",
+        "tatu",
+        "vaca"
+      ],
+      "texts": []
+    },
+    {
+      "id": "u2",
+      "n": 2,
+      "titulo": "P, B, M, T, D, N",
+      "sub": "Primeiras sílabas e palavras",
+      "emoji": "🅰️",
+      "lessons": 4,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Juntando as letras",
+        "fala": "Quando a letra P encontra a letra A, nasce o som pa. P de pato! E B com A faz ba, de bola. Junte os pedacinhos e descubra a palavra.",
+        "dica": "p + a = pa   ·   b + a = ba   ·   m + a = ma"
+      },
+      "words": [
+        "bala",
+        "balão",
+        "banana",
+        "barco",
+        "bebê",
+        "bicicleta",
+        "bico",
+        "boca",
+        "bola",
+        "bolo",
+        "borboleta",
+        "dado",
+        "dedo",
+        "dente",
+        "dia",
+        "dinheiro",
+        "doce",
+        "dragão",
+        "duende",
+        "leite",
+        "macaco",
+        "mala",
+        "mapa",
+        "mel",
+        "mesa",
+        "mochila",
+        "moeda",
+        "morango",
+        "mula",
+        "mulher",
+        "mão",
+        "médico",
+        "nariz",
+        "navio",
+        "neve",
+        "ninho",
+        "ninja",
+        "noite",
+        "nota",
+        "nove",
+        "nuvem",
+        "panela",
+        "papai",
+        "pato",
+        "pia",
+        "picolé",
+        "pipa",
+        "pirata",
+        "porco",
+        "porta",
+        "pote",
+        "pão",
+        "pé",
+        "tapete",
+        "tartaruga",
+        "tatu",
+        "telefone",
+        "tesoura",
+        "teto",
+        "tigre",
+        "tijolo",
+        "tomate",
+        "tênis"
+      ],
+      "texts": [
+        "t1",
+        "t2"
+      ]
+    },
+    {
+      "id": "u3",
+      "n": 3,
+      "titulo": "F, V, L, R, S",
+      "sub": "Mais letras, mais palavras",
+      "emoji": "🦁",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Novas letras, novos sons",
+        "fala": "Agora vamos conhecer F, V, L, R e S. F de fada, V de vaca, L de lua, R de rato e S de sapo. Escuta o começo de cada palavra.",
+        "dica": "F de fada · V de vaca · L de lua · R de rato · S de sapo"
+      },
+      "words": [
+        "faca",
+        "fada",
+        "farol",
+        "feijão",
+        "festa",
+        "fila",
+        "flor",
+        "foca",
+        "fogo",
+        "futebol",
+        "lagoa",
+        "laranja",
+        "leão",
+        "limão",
+        "livro",
+        "lobo",
+        "lua",
+        "luva",
+        "lápis",
+        "lâmpada",
+        "rapaz",
+        "rato",
+        "rei",
+        "remo",
+        "robô",
+        "rosa",
+        "roupa",
+        "rua",
+        "sacola",
+        "sapato",
+        "sapo",
+        "semana",
+        "sino",
+        "sofá",
+        "sol",
+        "suco",
+        "sábado",
+        "vaca",
+        "vacina",
+        "vaso",
+        "vela",
+        "vestido",
+        "violão",
+        "vovó",
+        "vulcão"
+      ],
+      "texts": [
+        "t3",
+        "t4",
+        "t5"
+      ]
+    },
+    {
+      "id": "u4",
+      "n": 4,
+      "titulo": "C, G, J, X, Z",
+      "sub": "E também QU e GU",
+      "emoji": "🐊",
+      "lessons": 4,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Letras que mudam de som",
+        "fala": "O C tem dois sons: ca, co, cu têm som forte; ce, ci têm som de S. O G também: ga, go, gu têm som forte; ge, gi têm som de J. E o QU é sempre quê: que, qui.",
+        "dica": "CA-CO-CU × CE-CI   ·   GA-GO-GU × GE-GI   ·   QUE-QUI"
+      },
+      "words": [
+        "abacaxi",
+        "azeitona",
+        "azul",
+        "bruxa",
+        "buzina",
+        "cachorro",
+        "café",
+        "caixa",
+        "cama",
+        "caneta",
+        "casa",
+        "cavalo",
+        "cenoura",
+        "cidade",
+        "coelho",
+        "coração",
+        "cozinha",
+        "foguete",
+        "formiga",
+        "galo",
+        "gato",
+        "gaveta",
+        "gelo",
+        "gema",
+        "girafa",
+        "gorro",
+        "gota",
+        "guarda",
+        "guepardo",
+        "guerra",
+        "guitarra",
+        "jabuti",
+        "jacaré",
+        "janela",
+        "jarro",
+        "jipe",
+        "jogo",
+        "jornal",
+        "jujuba",
+        "linguiça",
+        "máquina",
+        "peixe",
+        "pijama",
+        "quadro",
+        "quatro",
+        "queijo",
+        "quilo",
+        "quintal",
+        "táxi",
+        "xadrez",
+        "xampu",
+        "xarope",
+        "xerife",
+        "xícara",
+        "zebra",
+        "zero",
+        "zoológico",
+        "zíper",
+        "água",
+        "águia"
+      ],
+      "texts": []
+    },
+    {
+      "id": "u5",
+      "n": 5,
+      "titulo": "CH, LH, NH, RR, SS",
+      "sub": "Dígrafos: duas letras, um som",
+      "emoji": "🌈",
+      "lessons": 4,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Duas letras, um som só",
+        "fala": "Algumas letras trabalham em dupla! CH de chuva, LH de milho, NH de banho. E o RR e o SS fazem o som forte e o som do s. Duas letras, um som só.",
+        "dica": "CH chuva · LH milho · NH banho · RR carro · SS pássaro"
+      },
+      "words": [
+        "aranha",
+        "arroz",
+        "assado",
+        "banho",
+        "baralho",
+        "barriga",
+        "bochecha",
+        "burro",
+        "cacho",
+        "cachorro",
+        "caminhão",
+        "carro",
+        "castanha",
+        "chapéu",
+        "chave",
+        "cheiro",
+        "chinelo",
+        "chocolate",
+        "chupeta",
+        "chuva",
+        "classe",
+        "coelho",
+        "corrida",
+        "ferro",
+        "filhote",
+        "flecha",
+        "galho",
+        "garrafa",
+        "jarro",
+        "massa",
+        "milho",
+        "molho",
+        "ninho",
+        "olho",
+        "osso",
+        "palhaço",
+        "passo",
+        "pinhão",
+        "pressa",
+        "pássaro",
+        "pêssego",
+        "rainha",
+        "sonho",
+        "telhado",
+        "terra",
+        "torre",
+        "unha",
+        "vassoura",
+        "velho"
+      ],
+      "texts": [
+        "t12",
+        "t6",
+        "t7"
+      ]
+    },
+    {
+      "id": "u6",
+      "n": 6,
+      "titulo": "M antes de P e B",
+      "sub": "Sons nasais e a regra do M",
+      "emoji": "🕵️",
+      "lessons": 5,
+      "skills": [
+        "ortografia",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "A regra do M e do N",
+        "fala": "Presta atenção nesta regra: antes de P e de B, a gente escreve M. Antes das outras letras, a gente escreve N. E no fim da palavra, quase sempre M. Vamos treinar!",
+        "dica": "M antes de P e B  ·  N antes das outras  ·  M no fim"
+      },
+      "words": [
+        "anjo",
+        "antes",
+        "avião",
+        "balão",
+        "bambu",
+        "banco",
+        "bem",
+        "bom",
+        "bomba",
+        "botões",
+        "branco",
+        "campainha",
+        "campeão",
+        "campo",
+        "canto",
+        "cinco",
+        "combinar",
+        "compra",
+        "coração",
+        "cães",
+        "cão",
+        "dente",
+        "emprego",
+        "fundo",
+        "grande",
+        "homem",
+        "hífen",
+        "importante",
+        "irmão",
+        "jovem",
+        "leão",
+        "leões",
+        "limpo",
+        "limão",
+        "limões",
+        "lâmpada",
+        "mundo",
+        "mãe",
+        "mão",
+        "nuvem",
+        "onça",
+        "pente",
+        "pombo",
+        "ponte",
+        "pão",
+        "quando",
+        "quente",
+        "samba",
+        "santo",
+        "sempre",
+        "simples",
+        "tambor",
+        "tampa",
+        "tanque",
+        "tempestade",
+        "tempo",
+        "tinta",
+        "um",
+        "umbigo"
+      ],
+      "texts": [
+        "t8",
+        "t9"
+      ]
+    },
+    {
+      "id": "u7",
+      "n": 7,
+      "titulo": "BR, PR, TR, FL...",
+      "sub": "Encontros consonantais",
+      "emoji": "🚀",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Duas consoantes juntas",
+        "fala": "Quando duas consoantes ficam juntinhas, as duas aparecem no som: PR de prato, BR de braço, TR de trator? Não… de três! Escuta: pra-to.",
+        "dica": "PR prato · BR braço · TR três · FL flor · CL classe"
+      },
+      "words": [
+        "Brasil",
+        "abraço",
+        "atleta",
+        "bicicleta",
+        "bloco",
+        "blusa",
+        "branco",
+        "braço",
+        "brinquedo",
+        "classe",
+        "clube",
+        "criança",
+        "crocodilo",
+        "dragão",
+        "flauta",
+        "flor",
+        "fralda",
+        "frase",
+        "frio",
+        "fruta",
+        "grama",
+        "grande",
+        "grilo",
+        "livro",
+        "pedra",
+        "placa",
+        "planeta",
+        "planta",
+        "praia",
+        "prato",
+        "presente",
+        "preto",
+        "primo",
+        "professor",
+        "vidro"
+      ],
+      "texts": [
+        "t10"
+      ]
+    },
+    {
+      "id": "u8",
+      "n": 8,
+      "titulo": "Finais R, L, S, M",
+      "sub": "Palavras compridas",
+      "emoji": "🎯",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "O fim das palavras",
+        "fala": "No fim de muitas palavras aparece R, L, S ou M. Escuta: mar, sol, lápis, também. Essas letras fecham a última sílaba.",
+        "dica": "mar · sol · lápis · também"
+      },
+      "words": [
+        "Brasil",
+        "animal",
+        "arroz",
+        "barco",
+        "bom",
+        "caderno",
+        "carta",
+        "difícil",
+        "farol",
+        "festa",
+        "futebol",
+        "fácil",
+        "jardim",
+        "luz",
+        "lápis",
+        "mar",
+        "mel",
+        "nariz",
+        "papel",
+        "pasta",
+        "paz",
+        "rapaz",
+        "sal",
+        "sol",
+        "sorte",
+        "talvez",
+        "vez",
+        "voz",
+        "ônibus"
+      ],
+      "texts": [
+        "t11",
+        "t13",
+        "t14"
+      ]
+    },
+    {
+      "id": "u10",
+      "n": 9,
+      "titulo": "R e RR",
+      "sub": "Um R ou dois?",
+      "emoji": "🚗",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Um R fraco, dois R fortes",
+        "fala": "Um R só, entre duas vogais, tem som fraco, como em caro e muro. Quando ele dobra, o som fica forte: carro, terra e cachorro!",
+        "dica": "caro × carro · muro × murro"
+      },
+      "words": [
+        "arroz",
+        "barriga",
+        "barro",
+        "burro",
+        "cachorro",
+        "caro",
+        "carro",
+        "carroça",
+        "corrida",
+        "ferro",
+        "garrafa",
+        "morro",
+        "muro",
+        "murro",
+        "rato",
+        "rico",
+        "roda",
+        "rua",
+        "terra",
+        "torre"
+      ],
+      "texts": [
+        "t15",
+        "t16"
+      ]
+    },
+    {
+      "id": "u11",
+      "n": 10,
+      "titulo": "S e SS",
+      "sub": "Quando dobra o S?",
+      "emoji": "🐦",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Um S ou dois?",
+        "fala": "Um S sozinho entre vogais fala com som de Z: casa, mesa e coisa. Quando o S dobra, o som fica forte e chiado: passa, osso e pássaro!",
+        "dica": "S = Z (casa) · SS = S forte (passa)"
+      },
+      "words": [
+        "assado",
+        "casa",
+        "classe",
+        "isso",
+        "massa",
+        "nossa",
+        "nosso",
+        "osso",
+        "passa",
+        "passo",
+        "pressa",
+        "professora",
+        "pássaro",
+        "pêssego",
+        "sapo",
+        "sino",
+        "sopa",
+        "sábado",
+        "travesseiro",
+        "vassoura"
+      ],
+      "texts": [
+        "t17",
+        "t18"
+      ]
+    },
+    {
+      "id": "u12",
+      "n": 11,
+      "titulo": "C e QU",
+      "sub": "Som de K e de S",
+      "emoji": "🧀",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "O C e o QU",
+        "fala": "Antes de A, O e U, o C tem som de K: casa, copo e cuca. Antes de E e I ele tem som de S, e o QU sempre traz o som de K: queijo e quilo!",
+        "dica": "CA-CO-CU = K · CE-CI = S · QUE-QUI = K"
+      },
+      "words": [
+        "boneca",
+        "caco",
+        "cadeira",
+        "café",
+        "camisa",
+        "caneca",
+        "caneta",
+        "cavalo",
+        "colher",
+        "copo",
+        "coração",
+        "escola",
+        "máquina",
+        "quando",
+        "quatro",
+        "queijo",
+        "quente",
+        "quero",
+        "quilo",
+        "quinta"
+      ],
+      "texts": [
+        "t19"
+      ]
+    },
+    {
+      "id": "u13",
+      "n": 12,
+      "titulo": "G e GU",
+      "sub": "Som de G e de guê",
+      "emoji": "🐱",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "O G e o GU",
+        "fala": "Antes de A, O e U, o G tem som forte: gato, gota e gude. Antes de E e I ele soa como J, mas o GU traz o som forte de volta: guerra, guitarra e águia!",
+        "dica": "GA-GO-GU forte · GE-GI = J · GUE-GUI = G"
+      },
+      "words": [
+        "foguete",
+        "formiga",
+        "gato",
+        "gaveta",
+        "gelo",
+        "gema",
+        "girafa",
+        "gola",
+        "gorro",
+        "gota",
+        "guarda",
+        "gude",
+        "guerra",
+        "guindaste",
+        "guitarra",
+        "guloso",
+        "língua",
+        "mangueira",
+        "água",
+        "águia"
+      ],
+      "texts": [
+        "t20"
+      ]
+    },
+    {
+      "id": "u14",
+      "n": 13,
+      "titulo": "Ç, X e CH",
+      "sub": "Sons escritos de vários jeitos",
+      "emoji": "🔑",
+      "lessons": 3,
+      "skills": [
+        "silabas",
+        "escrita",
+        "leitura"
+      ],
+      "teach": {
+        "titulo": "Ç, X e CH",
+        "fala": "O Ç tem sempre som de S: caça, poço e açúcar. O CH tem som de X, como em chave e chuva, e o X também pode soar como CH: peixe e caixa!",
+        "dica": "Ç = SS · CH = X · X = CH"
+      },
+      "words": [
+        "abacaxi",
+        "açúcar",
+        "bruxa",
+        "cabeça",
+        "caixa",
+        "caça",
+        "chave",
+        "chuva",
+        "chuveiro",
+        "chão",
+        "começar",
+        "dança",
+        "enxada",
+        "moça",
+        "pedaço",
+        "peixe",
+        "poço",
+        "queixo",
+        "xarope",
+        "xícara"
+      ],
+      "texts": [
+        "t21",
+        "t22"
+      ]
+    },
+    {
+      "id": "u9",
+      "n": 14,
+      "titulo": "Histórias",
+      "sub": "Ler e entender",
+      "emoji": "📖",
+      "lessons": 22,
+      "skills": [
+        "leitura",
+        "compreensao"
+      ],
+      "teach": {
+        "titulo": "Hora da história",
+        "fala": "Agora você vai ler histórias de verdade! Leia devagar, com carinho. Se travar em uma palavra, é só pedir ajuda: eu leio junto com você.",
+        "dica": "Ler devagar ajuda a entender melhor."
+      },
+      "words": [],
+      "texts": []
+    }
+  ],
+  "words": [
+    {
+      "w": "abacaxi",
+      "e": "🍍",
+      "u": [
+        "u14",
+        "u4"
+      ],
+      "syllables": [
+        "a",
+        "ba",
+        "ca",
+        "xi"
+      ],
+      "gloss": {
+        "d": "Fruta amarela, grande, com coroa de folhas.",
+        "ex": "Cortei o abacaxi em fatias.",
+        "e": "🍍",
+        "n": 4
+      },
+      "audio": {
+        "word": "abacaxi",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "abraço",
+      "e": "🤗",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "a",
+        "bra",
+        "ço"
+      ],
+      "gloss": {
+        "d": "Afago com os braços em volta de alguém.",
+        "ex": "Dei um abraço na vovó.",
+        "e": "🤗",
+        "n": 7
+      },
+      "audio": {
+        "word": "abraço",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "açúcar",
+      "e": "🍬",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "a",
+        "çú",
+        "car"
+      ],
+      "gloss": {
+        "d": "Pó branco e doce que adoça a comida.",
+        "ex": "Pus açúcar no suco.",
+        "e": "🍬",
+        "n": 14
+      },
+      "audio": {
+        "word": "açúcar",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "água",
+      "e": "💧",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "á",
+        "gua"
+      ],
+      "gloss": {
+        "d": "Líquido sem cor que bebemos e usamos.",
+        "ex": "Bebi água gelada do jarro.",
+        "e": "💧",
+        "n": 4
+      },
+      "audio": {
+        "word": "água",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "águia",
+      "e": "🦅",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "á",
+        "gui",
+        "a"
+      ],
+      "gloss": {
+        "d": "Ave grande de bico curvo que voa alto.",
+        "ex": "A águia planou no céu.",
+        "e": "🦅",
+        "n": 4
+      },
+      "audio": {
+        "word": "águia",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "animal",
+      "e": "🐾",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "a",
+        "ni",
+        "mal"
+      ],
+      "gloss": {
+        "d": "Ser vivo que come, respira e se move.",
+        "ex": "O cavalo é um animal.",
+        "e": "🐾",
+        "n": 8
+      },
+      "audio": {
+        "word": "animal",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "anjo",
+      "e": "😇",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "an",
+        "jo"
+      ],
+      "gloss": {
+        "d": "Ser de asas e auréola que cuida das pessoas.",
+        "ex": "O anjo apareceu no sonho.",
+        "e": "😇",
+        "n": 6
+      },
+      "audio": {
+        "word": "anjo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "antes",
+      "e": "⏮️",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "an",
+        "tes"
+      ],
+      "gloss": {
+        "d": "No momento que chega primeiro, não depois.",
+        "ex": "Lave as mãos antes de comer.",
+        "e": "⏮️",
+        "n": 6
+      },
+      "audio": {
+        "word": "antes",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "aranha",
+      "e": "🕷️",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "a",
+        "ra",
+        "nha"
+      ],
+      "gloss": {
+        "d": "Bicho de oito patas que faz teia.",
+        "ex": "A aranha subiu pela parede.",
+        "e": "🕷️",
+        "n": 5
+      },
+      "audio": {
+        "word": "aranha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "arroz",
+      "e": "🍚",
+      "u": [
+        "u10",
+        "u5",
+        "u8"
+      ],
+      "syllables": [
+        "ar",
+        "roz"
+      ],
+      "gloss": {
+        "d": "Grão branco cozido que acompanha o feijão.",
+        "ex": "O arroz ficou soltinho.",
+        "e": "🍚",
+        "n": 5
+      },
+      "audio": {
+        "word": "arroz",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "assado",
+      "e": "🍖",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "as",
+        "sa",
+        "do"
+      ],
+      "gloss": {
+        "d": "Comida feita no forno e dourada.",
+        "ex": "O frango assado ficou pronto.",
+        "e": "🍖",
+        "n": 5
+      },
+      "audio": {
+        "word": "assado",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "atleta",
+      "e": "🏃",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "a",
+        "tle",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Pessoa que treina esporte e compete.",
+        "ex": "O atleta corre rápido.",
+        "e": "🏃",
+        "n": 7
+      },
+      "audio": {
+        "word": "atleta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "avião",
+      "e": "✈️",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "a",
+        "vião"
+      ],
+      "gloss": {
+        "d": "Aeronave de asas que voa e leva gente.",
+        "ex": "O avião passou nas nuvens.",
+        "e": "✈️",
+        "n": 6
+      },
+      "audio": {
+        "word": "avião",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "azeitona",
+      "e": "🍇",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "a",
+        "zei",
+        "to",
+        "na"
+      ],
+      "gloss": {
+        "d": "Fruta pequena, preta ou verde, salgada.",
+        "ex": "Pus azeitona na pizza.",
+        "e": "🍇",
+        "n": 4
+      },
+      "audio": {
+        "word": "azeitona",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "azul",
+      "e": "🔵",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "a",
+        "zul"
+      ],
+      "gloss": {
+        "d": "Cor do céu limpo e do mar.",
+        "ex": "Minha camisa é azul.",
+        "e": "🔵",
+        "n": 4
+      },
+      "audio": {
+        "word": "azul",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bala",
+      "e": "🍬",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ba",
+        "la"
+      ],
+      "gloss": {
+        "d": "Doce pequeno que se chupa devagar.",
+        "ex": "Ganhei uma bala de hortelã.",
+        "e": "🍬",
+        "n": 2
+      },
+      "audio": {
+        "word": "bala",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "balão",
+      "e": "🎈",
+      "u": [
+        "u2",
+        "u6"
+      ],
+      "syllables": [
+        "ba",
+        "lão"
+      ],
+      "gloss": {
+        "d": "Bexiga de borracha que enche de ar e sobe.",
+        "ex": "O balão voou para o céu.",
+        "e": "🎈",
+        "n": 2
+      },
+      "audio": {
+        "word": "balão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bambu",
+      "e": "🎋",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "bam",
+        "bu"
+      ],
+      "gloss": {
+        "d": "Planta alta de caule fino e oco.",
+        "ex": "O bambu balança no vento.",
+        "e": "🎋",
+        "n": 6
+      },
+      "audio": {
+        "word": "bambu",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "banana",
+      "e": "🍌",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ba",
+        "na",
+        "na"
+      ],
+      "gloss": {
+        "d": "Fruta amarela, comprida e fácil de descascar.",
+        "ex": "Comi banana no café da manhã.",
+        "e": "🍌",
+        "n": 2
+      },
+      "audio": {
+        "word": "banana",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "banco",
+      "e": "🏦",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "ban",
+        "co"
+      ],
+      "gloss": {
+        "d": "Lugar onde as pessoas guardam seu dinheiro.",
+        "ex": "Papai foi ao banco.",
+        "e": "🏦",
+        "n": 6
+      },
+      "audio": {
+        "word": "banco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "banho",
+      "e": "🚿",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "ba",
+        "nho"
+      ],
+      "gloss": {
+        "d": "Água com sabão no corpo todo.",
+        "ex": "Tomei banho depois da praia.",
+        "e": "🚿",
+        "n": 5
+      },
+      "audio": {
+        "word": "banho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "baralho",
+      "e": "🃏",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "ba",
+        "ra",
+        "lho"
+      ],
+      "gloss": {
+        "d": "Conjunto de cinquenta e duas cartas.",
+        "ex": "Jogamos com o baralho novo.",
+        "e": "🃏",
+        "n": 5
+      },
+      "audio": {
+        "word": "baralho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "barco",
+      "e": "⛵",
+      "u": [
+        "u2",
+        "u8"
+      ],
+      "syllables": [
+        "bar",
+        "co"
+      ],
+      "gloss": {
+        "d": "Veículo que anda na água empurrado pelo vento.",
+        "ex": "O barco navega no rio.",
+        "e": "⛵",
+        "n": 2
+      },
+      "audio": {
+        "word": "barco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "barriga",
+      "e": "🫃",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "bar",
+        "ri",
+        "ga"
+      ],
+      "gloss": {
+        "d": "Parte da frente do corpo, acima da perna.",
+        "ex": "Minha barriga está cheia.",
+        "e": "🫃",
+        "n": 5
+      },
+      "audio": {
+        "word": "barriga",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "barro",
+      "e": "🟤",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "bar",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Terra molhada e mole que vira tijolo.",
+        "ex": "O barro sujou meu sapato.",
+        "e": "🟤",
+        "n": 10
+      },
+      "audio": {
+        "word": "barro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bebê",
+      "e": "👶",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "be",
+        "bê"
+      ],
+      "gloss": {
+        "d": "Criança bem pequena que usa fralda.",
+        "ex": "O bebê dorme no berço.",
+        "e": "👶",
+        "n": 2
+      },
+      "audio": {
+        "word": "bebê",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bem",
+      "e": "👍",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "bem"
+      ],
+      "gloss": {
+        "d": "De jeito bom, sem nenhum problema.",
+        "ex": "Eu dormi bem esta noite.",
+        "e": "👍",
+        "n": 6
+      },
+      "audio": {
+        "word": "bem",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bicicleta",
+      "e": "🚲",
+      "u": [
+        "u2",
+        "u7"
+      ],
+      "syllables": [
+        "bi",
+        "ci",
+        "cle",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Veículo de duas rodas movido a pedal.",
+        "ex": "Andei de bicicleta na rua.",
+        "e": "🚲",
+        "n": 2
+      },
+      "audio": {
+        "word": "bicicleta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bico",
+      "e": "🐦",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "bi",
+        "co"
+      ],
+      "gloss": {
+        "d": "Parte pontuda na cara do pássaro.",
+        "ex": "O passarinho abriu o bico.",
+        "e": "🐦",
+        "n": 2
+      },
+      "audio": {
+        "word": "bico",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bloco",
+      "e": "🧱",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "blo",
+        "co"
+      ],
+      "gloss": {
+        "d": "Peça retangular que se encaixa em construções.",
+        "ex": "Empilhei bloco por bloco.",
+        "e": "🧱",
+        "n": 7
+      },
+      "audio": {
+        "word": "bloco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "blusa",
+      "e": "👕",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "blu",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Roupa que cobre o tronco e os braços.",
+        "ex": "A blusa azul está limpa.",
+        "e": "👕",
+        "n": 7
+      },
+      "audio": {
+        "word": "blusa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "boca",
+      "e": "👄",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "bo",
+        "ca"
+      ],
+      "gloss": {
+        "d": "Parte do rosto usada para comer e falar.",
+        "ex": "Abra a boca para o dentista.",
+        "e": "👄",
+        "n": 2
+      },
+      "audio": {
+        "word": "boca",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bochecha",
+      "e": "😊",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "bo",
+        "che",
+        "cha"
+      ],
+      "gloss": {
+        "d": "Lado macio do rosto, abaixo do olho.",
+        "ex": "Vovó beijou minha bochecha.",
+        "e": "😊",
+        "n": 5
+      },
+      "audio": {
+        "word": "bochecha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bola",
+      "e": "⚽",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "bo",
+        "la"
+      ],
+      "gloss": {
+        "d": "Objeto redondo que rola e quica.",
+        "ex": "Joguei a bola no quintal.",
+        "e": "⚽",
+        "n": 1
+      },
+      "audio": {
+        "word": "bola",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bolo",
+      "e": "🎂",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "bo",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Doce assado de farinha, enfeitado no aniversário.",
+        "ex": "O bolo de chocolate ficou pronto.",
+        "e": "🎂",
+        "n": 1
+      },
+      "audio": {
+        "word": "bolo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bom",
+      "e": "👌",
+      "u": [
+        "u6",
+        "u8"
+      ],
+      "syllables": [
+        "bom"
+      ],
+      "gloss": {
+        "d": "Que agrada bastante e deixa feliz.",
+        "ex": "O bolo está bom.",
+        "e": "👌",
+        "n": 6
+      },
+      "audio": {
+        "word": "bom",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bomba",
+      "e": "💣",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "bom",
+        "ba"
+      ],
+      "gloss": {
+        "d": "Objeto que estoura com barulho forte.",
+        "ex": "A bomba fez muito barulho.",
+        "e": "💣",
+        "n": 6
+      },
+      "audio": {
+        "word": "bomba",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "boneca",
+      "e": "🪆",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "bo",
+        "ne",
+        "ca"
+      ],
+      "gloss": {
+        "d": "Brinquedo em forma de menina para brincar.",
+        "ex": "A boneca tem cabelo loiro.",
+        "e": "🪆",
+        "n": 12
+      },
+      "audio": {
+        "word": "boneca",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "borboleta",
+      "e": "🦋",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "bor",
+        "bo",
+        "le",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Inseto de asas coloridas que voa nas flores.",
+        "ex": "A borboleta pousou na flor.",
+        "e": "🦋",
+        "n": 2
+      },
+      "audio": {
+        "word": "borboleta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "botões",
+      "e": "🔘",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "bo",
+        "tões"
+      ],
+      "gloss": {
+        "d": "Pequenas peças que prendem a blusa.",
+        "ex": "Os botões da blusa soltaram.",
+        "e": "🔘",
+        "n": 6
+      },
+      "audio": {
+        "word": "botões",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "braço",
+      "e": "💪",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "bra",
+        "ço"
+      ],
+      "gloss": {
+        "d": "Parte do corpo que liga o ombro à mão.",
+        "ex": "Levantei o braço na aula.",
+        "e": "💪",
+        "n": 7
+      },
+      "audio": {
+        "word": "braço",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "branco",
+      "e": "⚪",
+      "u": [
+        "u6",
+        "u7"
+      ],
+      "syllables": [
+        "bran",
+        "co"
+      ],
+      "gloss": {
+        "d": "Cor do leite e da nuvem.",
+        "ex": "O muro é branco.",
+        "e": "⚪",
+        "n": 6
+      },
+      "audio": {
+        "word": "branco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "Brasil",
+      "e": "🇧🇷",
+      "u": [
+        "u7",
+        "u8"
+      ],
+      "syllables": [
+        "Bra",
+        "sil"
+      ],
+      "gloss": {
+        "d": "País grande da América onde falamos português.",
+        "ex": "O Brasil tem muitas praias.",
+        "e": "🇧🇷",
+        "n": 7
+      },
+      "audio": {
+        "word": "brasil",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "brinquedo",
+      "e": "🧸",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "brin",
+        "que",
+        "do"
+      ],
+      "gloss": {
+        "d": "Objeto divertido para a criança jogar e criar.",
+        "ex": "Guarde seu brinquedo no baú.",
+        "e": "🧸",
+        "n": 7
+      },
+      "audio": {
+        "word": "brinquedo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "bruxa",
+      "e": "🧙",
+      "u": [
+        "u14",
+        "u4"
+      ],
+      "syllables": [
+        "bru",
+        "xa"
+      ],
+      "gloss": {
+        "d": "Mulher mágica de chapéu e vassoura.",
+        "ex": "A bruxa voou na vassoura.",
+        "e": "🧙",
+        "n": 4
+      },
+      "audio": {
+        "word": "bruxa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "burro",
+      "e": "🐴",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "bur",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Animal parecido com cavalo, de orelhas grandes.",
+        "ex": "O burro carrega o saco.",
+        "e": "🐴",
+        "n": 5
+      },
+      "audio": {
+        "word": "burro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "buzina",
+      "e": "📯",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "bu",
+        "zi",
+        "na"
+      ],
+      "gloss": {
+        "d": "Objeto que faz som alto no carro.",
+        "ex": "O carro tocou a buzina.",
+        "e": "📯",
+        "n": 4
+      },
+      "audio": {
+        "word": "buzina",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cabeça",
+      "e": "🧠",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "ca",
+        "be",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Parte do corpo acima do pescoço.",
+        "ex": "Minha cabeça dói um pouco.",
+        "e": "🧠",
+        "n": 14
+      },
+      "audio": {
+        "word": "cabeça",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caça",
+      "e": "🏹",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "ca",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Ato de procurar e pegar animais no mato.",
+        "ex": "O leão saiu para a caça.",
+        "e": "🏹",
+        "n": 14
+      },
+      "audio": {
+        "word": "caça",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cacho",
+      "e": "🍇",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "ca",
+        "cho"
+      ],
+      "gloss": {
+        "d": "Monte de uvas presas no mesmo galho.",
+        "ex": "Comi um cacho de uva.",
+        "e": "🍇",
+        "n": 5
+      },
+      "audio": {
+        "word": "cacho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cachorro",
+      "e": "🐶",
+      "u": [
+        "u10",
+        "u4",
+        "u5"
+      ],
+      "syllables": [
+        "ca",
+        "chor",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Animal de patas, pelo e rabo que late.",
+        "ex": "O cachorro corre atrás da bola.",
+        "e": "🐶",
+        "n": 4
+      },
+      "audio": {
+        "word": "cachorro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caco",
+      "e": "🏺",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "ca",
+        "co"
+      ],
+      "gloss": {
+        "d": "Pedaço quebrado de vaso ou de vidro.",
+        "ex": "Um caco cortou meu dedo.",
+        "e": "🏺",
+        "n": 12
+      },
+      "audio": {
+        "word": "caco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cadeira",
+      "e": "🪑",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "ca",
+        "dei",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Móvel de quatro pernas com encosto para sentar.",
+        "ex": "Sentei na cadeira da sala.",
+        "e": "🪑",
+        "n": 12
+      },
+      "audio": {
+        "word": "cadeira",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caderno",
+      "e": "📓",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "ca",
+        "der",
+        "no"
+      ],
+      "gloss": {
+        "d": "Livro com folhas brancas para escrever.",
+        "ex": "Escrevi no caderno novo.",
+        "e": "📓",
+        "n": 8
+      },
+      "audio": {
+        "word": "caderno",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cães",
+      "e": "🐶",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "cães"
+      ],
+      "gloss": {
+        "d": "Animais de quatro patas que latem, em grupo.",
+        "ex": "Os cães latem no quintal.",
+        "e": "🐶",
+        "n": 6
+      },
+      "audio": {
+        "word": "cães",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "café",
+      "e": "☕",
+      "u": [
+        "u12",
+        "u4"
+      ],
+      "syllables": [
+        "ca",
+        "fé"
+      ],
+      "gloss": {
+        "d": "Bebida escura e amarga, feita de grãos.",
+        "ex": "Papai toma café de manhã.",
+        "e": "☕",
+        "n": 4
+      },
+      "audio": {
+        "word": "café",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caixa",
+      "e": "📦",
+      "u": [
+        "u14",
+        "u4"
+      ],
+      "syllables": [
+        "cai",
+        "xa"
+      ],
+      "gloss": {
+        "d": "Recipiente retangular de papelão para guardar algo.",
+        "ex": "Guarde os brinquedos na caixa.",
+        "e": "📦",
+        "n": 4
+      },
+      "audio": {
+        "word": "caixa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cama",
+      "e": "🛏️",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ca",
+        "ma"
+      ],
+      "gloss": {
+        "d": "Móvel macio onde se dorme à noite.",
+        "ex": "Arrumo minha cama cedo.",
+        "e": "🛏️",
+        "n": 4
+      },
+      "audio": {
+        "word": "cama",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caminhão",
+      "e": "🚚",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "ca",
+        "mi",
+        "nhão"
+      ],
+      "gloss": {
+        "d": "Veículo grande que carrega carga pesada.",
+        "ex": "O caminhão levou areia.",
+        "e": "🚚",
+        "n": 5
+      },
+      "audio": {
+        "word": "caminhão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "camisa",
+      "e": "👕",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "ca",
+        "mi",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Roupa que cobre o tronco e tem botões.",
+        "ex": "Vesti a camisa azul.",
+        "e": "👕",
+        "n": 12
+      },
+      "audio": {
+        "word": "camisa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "campainha",
+      "e": "🔔",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "cam",
+        "pai",
+        "nha"
+      ],
+      "gloss": {
+        "d": "Botão ou sino que chama a pessoa em casa.",
+        "ex": "Alguém tocou a campainha.",
+        "e": "🔔",
+        "n": 6
+      },
+      "audio": {
+        "word": "campainha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "campeão",
+      "e": "🏆",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "cam",
+        "peão"
+      ],
+      "gloss": {
+        "d": "Quem venceu a competição e ficou em primeiro.",
+        "ex": "O campeão levantou a taça.",
+        "e": "🏆",
+        "n": 6
+      },
+      "audio": {
+        "word": "campeão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "campo",
+      "e": "🌾",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "cam",
+        "po"
+      ],
+      "gloss": {
+        "d": "Grande área de grama ou plantação.",
+        "ex": "O time joga no campo.",
+        "e": "🌾",
+        "n": 6
+      },
+      "audio": {
+        "word": "campo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caneca",
+      "e": "🍵",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "ca",
+        "ne",
+        "ca"
+      ],
+      "gloss": {
+        "d": "Copo grande com asa para bebida quente.",
+        "ex": "O café está na caneca.",
+        "e": "🍵",
+        "n": 12
+      },
+      "audio": {
+        "word": "caneca",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caneta",
+      "e": "🖊️",
+      "u": [
+        "u12",
+        "u4"
+      ],
+      "syllables": [
+        "ca",
+        "ne",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Instrumento de tinta para escrever no papel.",
+        "ex": "Assinei com caneta azul.",
+        "e": "🖊️",
+        "n": 4
+      },
+      "audio": {
+        "word": "caneta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "canto",
+      "e": "🎤",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "can",
+        "to"
+      ],
+      "gloss": {
+        "d": "Ato de cantar uma canção com a voz.",
+        "ex": "O canto do pássaro é lindo.",
+        "e": "🎤",
+        "n": 6
+      },
+      "audio": {
+        "word": "canto",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cão",
+      "e": "🐕",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "cão"
+      ],
+      "gloss": {
+        "d": "Animal de quatro patas que late e vigia.",
+        "ex": "O cão vigia o portão.",
+        "e": "🐕",
+        "n": 6
+      },
+      "audio": {
+        "word": "cão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "caro",
+      "e": "💸",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "ca",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Que custa muito dinheiro para comprar.",
+        "ex": "Esse brinquedo é caro.",
+        "e": "💸",
+        "n": 10
+      },
+      "audio": {
+        "word": "caro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "carro",
+      "e": "🚗",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "car",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Veículo de quatro rodas movido a motor.",
+        "ex": "O carro do papai é vermelho.",
+        "e": "🚗",
+        "n": 5
+      },
+      "audio": {
+        "word": "carro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "carroça",
+      "e": "🛻",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "car",
+        "ro",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Caixa com rodas puxada por um animal.",
+        "ex": "O burro puxa a carroça.",
+        "e": "🛻",
+        "n": 10
+      },
+      "audio": {
+        "word": "carroça",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "carta",
+      "e": "✉️",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "car",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Mensagem escrita em papel, dentro do envelope.",
+        "ex": "Recebi uma carta da vó.",
+        "e": "✉️",
+        "n": 8
+      },
+      "audio": {
+        "word": "carta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "casa",
+      "e": "🏠",
+      "u": [
+        "u1",
+        "u11",
+        "u4"
+      ],
+      "syllables": [
+        "ca",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Construção com portas e janelas onde se mora.",
+        "ex": "Minha casa tem um quintal.",
+        "e": "🏠",
+        "n": 1
+      },
+      "audio": {
+        "word": "casa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "castanha",
+      "e": "🌰",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "cas",
+        "ta",
+        "nha"
+      ],
+      "gloss": {
+        "d": "Semente dura e marrom que se come assada.",
+        "ex": "Comi castanha no inverno.",
+        "e": "🌰",
+        "n": 5
+      },
+      "audio": {
+        "word": "castanha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cavalo",
+      "e": "🐴",
+      "u": [
+        "u12",
+        "u4"
+      ],
+      "syllables": [
+        "ca",
+        "va",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Animal grande de crina que galopa e carrega gente.",
+        "ex": "O cavalo branco corre.",
+        "e": "🐴",
+        "n": 4
+      },
+      "audio": {
+        "word": "cavalo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cenoura",
+      "e": "🥕",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ce",
+        "nou",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Raiz laranja e comprida que coelho adora.",
+        "ex": "Cortei cenoura para a sopa.",
+        "e": "🥕",
+        "n": 4
+      },
+      "audio": {
+        "word": "cenoura",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chão",
+      "e": "🟫",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "chão"
+      ],
+      "gloss": {
+        "d": "Superfície de baixo onde a gente pisa.",
+        "ex": "O chão está limpo.",
+        "e": "🟫",
+        "n": 14
+      },
+      "audio": {
+        "word": "chão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chapéu",
+      "e": "👒",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "cha",
+        "péu"
+      ],
+      "gloss": {
+        "d": "Peça que cobre a cabeça e faz sombra.",
+        "ex": "O chapéu protege do sol.",
+        "e": "👒",
+        "n": 5
+      },
+      "audio": {
+        "word": "chapéu",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chave",
+      "e": "🔑",
+      "u": [
+        "u14",
+        "u5"
+      ],
+      "syllables": [
+        "cha",
+        "ve"
+      ],
+      "gloss": {
+        "d": "Objeto de metal que abre e fecha portas.",
+        "ex": "Perdi a chave de casa.",
+        "e": "🔑",
+        "n": 5
+      },
+      "audio": {
+        "word": "chave",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cheiro",
+      "e": "👃",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "chei",
+        "ro"
+      ],
+      "gloss": {
+        "d": "O que o nariz sente no ar.",
+        "ex": "O cheiro do bolo é bom.",
+        "e": "👃",
+        "n": 5
+      },
+      "audio": {
+        "word": "cheiro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chinelo",
+      "e": "🩴",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "chi",
+        "ne",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Calçado aberto preso por uma tira.",
+        "ex": "Calcei o chinelo no quintal.",
+        "e": "🩴",
+        "n": 5
+      },
+      "audio": {
+        "word": "chinelo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chocolate",
+      "e": "🍫",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "cho",
+        "co",
+        "la",
+        "te"
+      ],
+      "gloss": {
+        "d": "Doce marrom e cremoso feito de cacau.",
+        "ex": "Comi chocolate de sobremesa.",
+        "e": "🍫",
+        "n": 5
+      },
+      "audio": {
+        "word": "chocolate",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chupeta",
+      "e": "🍼",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "chu",
+        "pe",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Objeto de borracha que o bebê chupa.",
+        "ex": "O bebê perdeu a chupeta.",
+        "e": "🍼",
+        "n": 5
+      },
+      "audio": {
+        "word": "chupeta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chuva",
+      "e": "🌧️",
+      "u": [
+        "u14",
+        "u5"
+      ],
+      "syllables": [
+        "chu",
+        "va"
+      ],
+      "gloss": {
+        "d": "Água que cai das nuvens em pingos.",
+        "ex": "A chuva molhou o quintal.",
+        "e": "🌧️",
+        "n": 5
+      },
+      "audio": {
+        "word": "chuva",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "chuveiro",
+      "e": "🚿",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "chu",
+        "vei",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Aparelho que solta água para o banho.",
+        "ex": "O chuveiro está gelado.",
+        "e": "🚿",
+        "n": 14
+      },
+      "audio": {
+        "word": "chuveiro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cidade",
+      "e": "🏙️",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ci",
+        "da",
+        "de"
+      ],
+      "gloss": {
+        "d": "Lugar com muitas casas, ruas e carros.",
+        "ex": "A cidade tem prédios altos.",
+        "e": "🏙️",
+        "n": 4
+      },
+      "audio": {
+        "word": "cidade",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cinco",
+      "e": "5️⃣",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "cin",
+        "co"
+      ],
+      "gloss": {
+        "d": "Número que vem depois do quatro.",
+        "ex": "Tenho cinco dedos na mão.",
+        "e": "5️⃣",
+        "n": 6
+      },
+      "audio": {
+        "word": "cinco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "classe",
+      "e": "🏫",
+      "u": [
+        "u11",
+        "u5",
+        "u7"
+      ],
+      "syllables": [
+        "clas",
+        "se"
+      ],
+      "gloss": {
+        "d": "Sala com carteiras onde os alunos aprendem.",
+        "ex": "A classe toda leu.",
+        "e": "🏫",
+        "n": 5
+      },
+      "audio": {
+        "word": "classe",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "clube",
+      "e": "🏟️",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "clu",
+        "be"
+      ],
+      "gloss": {
+        "d": "Lugar com quadras e amigos para o lazer.",
+        "ex": "Nado no clube aos sábados.",
+        "e": "🏟️",
+        "n": 7
+      },
+      "audio": {
+        "word": "clube",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "coelho",
+      "e": "🐰",
+      "u": [
+        "u4",
+        "u5"
+      ],
+      "syllables": [
+        "co",
+        "e",
+        "lho"
+      ],
+      "gloss": {
+        "d": "Bicho de orelhas longas que salta e come cenoura.",
+        "ex": "O coelho comeu a cenoura.",
+        "e": "🐰",
+        "n": 4
+      },
+      "audio": {
+        "word": "coelho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "colher",
+      "e": "🥄",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "co",
+        "lher"
+      ],
+      "gloss": {
+        "d": "Objeto fundo com cabo para tomar sopa.",
+        "ex": "Tomei sopa com colher.",
+        "e": "🥄",
+        "n": 12
+      },
+      "audio": {
+        "word": "colher",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "combinar",
+      "e": "🤝",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "com",
+        "bi",
+        "nar"
+      ],
+      "gloss": {
+        "d": "Ficar de acordo sobre alguma coisa.",
+        "ex": "Vamos combinar o jogo.",
+        "e": "🤝",
+        "n": 6
+      },
+      "audio": {
+        "word": "combinar",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "começar",
+      "e": "🏁",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "co",
+        "me",
+        "çar"
+      ],
+      "gloss": {
+        "d": "Dar o primeiro passo de uma coisa.",
+        "ex": "Vamos começar o jogo agora.",
+        "e": "🏁",
+        "n": 14
+      },
+      "audio": {
+        "word": "começar",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "compra",
+      "e": "🛒",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "com",
+        "pra"
+      ],
+      "gloss": {
+        "d": "Coisas levadas para casa depois de pagar.",
+        "ex": "A compra do mercado chegou.",
+        "e": "🛒",
+        "n": 6
+      },
+      "audio": {
+        "word": "compra",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "copo",
+      "e": "🥤",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "co",
+        "po"
+      ],
+      "gloss": {
+        "d": "Recipiente de vidro para beber água.",
+        "ex": "Bebi água no copo.",
+        "e": "🥤",
+        "n": 12
+      },
+      "audio": {
+        "word": "copo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "coração",
+      "e": "❤️",
+      "u": [
+        "u12",
+        "u4",
+        "u6"
+      ],
+      "syllables": [
+        "co",
+        "ra",
+        "ção"
+      ],
+      "gloss": {
+        "d": "Parte do peito que bate e empurra sangue.",
+        "ex": "Meu coração bate rápido.",
+        "e": "❤️",
+        "n": 4
+      },
+      "audio": {
+        "word": "coração",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "corrida",
+      "e": "🏃",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "cor",
+        "ri",
+        "da"
+      ],
+      "gloss": {
+        "d": "Brincadeira de quem chega primeiro correndo.",
+        "ex": "Ganhei a corrida na escola.",
+        "e": "🏃",
+        "n": 5
+      },
+      "audio": {
+        "word": "corrida",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "cozinha",
+      "e": "🍳",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "co",
+        "zi",
+        "nha"
+      ],
+      "gloss": {
+        "d": "Cômodo da casa onde a comida é preparada.",
+        "ex": "Mamãe está na cozinha.",
+        "e": "🍳",
+        "n": 4
+      },
+      "audio": {
+        "word": "cozinha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "criança",
+      "e": "🧒",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "cri",
+        "an",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Pessoa pequena, que ainda brinca muito.",
+        "ex": "A criança brinca no quintal.",
+        "e": "🧒",
+        "n": 7
+      },
+      "audio": {
+        "word": "criança",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "crocodilo",
+      "e": "🐊",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "cro",
+        "co",
+        "di",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Réptil grande de boca comprida e dentes.",
+        "ex": "O crocodilo nada devagar.",
+        "e": "🐊",
+        "n": 7
+      },
+      "audio": {
+        "word": "crocodilo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "dado",
+      "e": "🎲",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "da",
+        "do"
+      ],
+      "gloss": {
+        "d": "Cubo com pontos nos lados, usado em jogos.",
+        "ex": "Joguei o dado na mesa.",
+        "e": "🎲",
+        "n": 2
+      },
+      "audio": {
+        "word": "dado",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "dança",
+      "e": "💃",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "dan",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Movimento do corpo no ritmo da música.",
+        "ex": "A dança da festa foi linda.",
+        "e": "💃",
+        "n": 14
+      },
+      "audio": {
+        "word": "dança",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "dedo",
+      "e": "☝️",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "de",
+        "do"
+      ],
+      "gloss": {
+        "d": "Cada uma das cinco pontas da mão.",
+        "ex": "Apontou com o dedo.",
+        "e": "☝️",
+        "n": 1
+      },
+      "audio": {
+        "word": "dedo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "dente",
+      "e": "🦷",
+      "u": [
+        "u2",
+        "u6"
+      ],
+      "syllables": [
+        "den",
+        "te"
+      ],
+      "gloss": {
+        "d": "Peça branca e dura na boca para mastigar.",
+        "ex": "Meu dente caiu ontem.",
+        "e": "🦷",
+        "n": 2
+      },
+      "audio": {
+        "word": "dente",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "dia",
+      "e": "☀️",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "di",
+        "a"
+      ],
+      "gloss": {
+        "d": "Tempo claro entre o amanhecer e a noite.",
+        "ex": "O dia está quente e bonito.",
+        "e": "☀️",
+        "n": 1
+      },
+      "audio": {
+        "word": "dia",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "difícil",
+      "e": "😤",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "di",
+        "fí",
+        "cil"
+      ],
+      "gloss": {
+        "d": "Que exige esforço e custa a sair.",
+        "ex": "A conta é difícil.",
+        "e": "😤",
+        "n": 8
+      },
+      "audio": {
+        "word": "difícil",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "dinheiro",
+      "e": "💰",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "di",
+        "nhei",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Moedas e notas que servem para comprar.",
+        "ex": "Guardei dinheiro na caixa.",
+        "e": "💰",
+        "n": 2
+      },
+      "audio": {
+        "word": "dinheiro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "doce",
+      "e": "🍬",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "do",
+        "ce"
+      ],
+      "gloss": {
+        "d": "Sabor parecido com açúcar, agradável na boca.",
+        "ex": "O bolo é bem doce.",
+        "e": "🍬",
+        "n": 2
+      },
+      "audio": {
+        "word": "doce",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "dragão",
+      "e": "🐉",
+      "u": [
+        "u2",
+        "u7"
+      ],
+      "syllables": [
+        "dra",
+        "gão"
+      ],
+      "gloss": {
+        "d": "Animal de histórias com asas e fogo na boca.",
+        "ex": "O dragão soltou fogo.",
+        "e": "🐉",
+        "n": 2
+      },
+      "audio": {
+        "word": "dragão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "duende",
+      "e": "🧝",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "du",
+        "en",
+        "de"
+      ],
+      "gloss": {
+        "d": "Pessoa pequena de chapéu pontudo e barba.",
+        "ex": "O duende mora na floresta.",
+        "e": "🧝",
+        "n": 2
+      },
+      "audio": {
+        "word": "duende",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "emprego",
+      "e": "💼",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "em",
+        "pre",
+        "go"
+      ],
+      "gloss": {
+        "d": "Trabalho que a pessoa faz todo dia.",
+        "ex": "Papai saiu para o emprego.",
+        "e": "💼",
+        "n": 6
+      },
+      "audio": {
+        "word": "emprego",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "enxada",
+      "e": "⛏️",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "en",
+        "xa",
+        "da"
+      ],
+      "gloss": {
+        "d": "Ferramenta com cabo e lâmina para cavar.",
+        "ex": "Ele cavou com a enxada.",
+        "e": "⛏️",
+        "n": 14
+      },
+      "audio": {
+        "word": "enxada",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "escola",
+      "e": "🏫",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "es",
+        "co",
+        "la"
+      ],
+      "gloss": {
+        "d": "Prédio onde as crianças aprendem a ler.",
+        "ex": "A escola abre cedo.",
+        "e": "🏫",
+        "n": 12
+      },
+      "audio": {
+        "word": "escola",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "faca",
+      "e": "🔪",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "fa",
+        "ca"
+      ],
+      "gloss": {
+        "d": "Lâmina com cabo usada para cortar comida.",
+        "ex": "A faca corta o pão.",
+        "e": "🔪",
+        "n": 3
+      },
+      "audio": {
+        "word": "faca",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "fácil",
+      "e": "👌",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "fá",
+        "cil"
+      ],
+      "gloss": {
+        "d": "Que dá pouco trabalho e sai logo.",
+        "ex": "A lição é fácil.",
+        "e": "👌",
+        "n": 8
+      },
+      "audio": {
+        "word": "fácil",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "fada",
+      "e": "🧚",
+      "u": [
+        "u1",
+        "u3"
+      ],
+      "syllables": [
+        "fa",
+        "da"
+      ],
+      "gloss": {
+        "d": "Pessoa mágica de asas, com varinha.",
+        "ex": "A fada ajudou a menina.",
+        "e": "🧚",
+        "n": 1
+      },
+      "audio": {
+        "word": "fada",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "farol",
+      "e": "🚨",
+      "u": [
+        "u3",
+        "u8"
+      ],
+      "syllables": [
+        "fa",
+        "rol"
+      ],
+      "gloss": {
+        "d": "Luz forte que guia os barcos à noite.",
+        "ex": "O farol brilha no escuro.",
+        "e": "🚨",
+        "n": 3
+      },
+      "audio": {
+        "word": "farol",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "feijão",
+      "e": "🥘",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "fei",
+        "jão"
+      ],
+      "gloss": {
+        "d": "Grão escuro cozido no almoço com arroz.",
+        "ex": "Comi arroz com feijão.",
+        "e": "🥘",
+        "n": 3
+      },
+      "audio": {
+        "word": "feijão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "ferro",
+      "e": "🧲",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "fer",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Metal duro e pesado, usado em portões.",
+        "ex": "O portão é de ferro.",
+        "e": "🧲",
+        "n": 5
+      },
+      "audio": {
+        "word": "ferro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "festa",
+      "e": "🎉",
+      "u": [
+        "u3",
+        "u8"
+      ],
+      "syllables": [
+        "fes",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Encontro alegre com música, comida e gente.",
+        "ex": "A festa foi na casa da vovó.",
+        "e": "🎉",
+        "n": 3
+      },
+      "audio": {
+        "word": "festa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "fila",
+      "e": "🚶",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "fi",
+        "la"
+      ],
+      "gloss": {
+        "d": "Fileira de pessoas uma atrás da outra.",
+        "ex": "Ficamos na fila do lanche.",
+        "e": "🚶",
+        "n": 3
+      },
+      "audio": {
+        "word": "fila",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "filhote",
+      "e": "🐶",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "fi",
+        "lho",
+        "te"
+      ],
+      "gloss": {
+        "d": "Bicho novo, filho de outro animal.",
+        "ex": "O filhote de cachorro brinca.",
+        "e": "🐶",
+        "n": 5
+      },
+      "audio": {
+        "word": "filhote",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "flauta",
+      "e": "🎶",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "flau",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Instrumento de sopro comprido, com buracos.",
+        "ex": "Ela toca flauta na escola.",
+        "e": "🎶",
+        "n": 7
+      },
+      "audio": {
+        "word": "flauta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "flecha",
+      "e": "🏹",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "fle",
+        "cha"
+      ],
+      "gloss": {
+        "d": "Haste com ponta que sai do arco.",
+        "ex": "A flecha acertou o alvo.",
+        "e": "🏹",
+        "n": 5
+      },
+      "audio": {
+        "word": "flecha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "flor",
+      "e": "🌸",
+      "u": [
+        "u3",
+        "u7"
+      ],
+      "syllables": [
+        "flor"
+      ],
+      "gloss": {
+        "d": "Parte colorida e cheirosa da planta.",
+        "ex": "A flor abriu de manhã.",
+        "e": "🌸",
+        "n": 3
+      },
+      "audio": {
+        "word": "flor",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "foca",
+      "e": "🐟",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "fo",
+        "ca"
+      ],
+      "gloss": {
+        "d": "Animal marinho gordo que nada e late.",
+        "ex": "A foca brinca na água.",
+        "e": "🐟",
+        "n": 3
+      },
+      "audio": {
+        "word": "foca",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "fogo",
+      "e": "🔥",
+      "u": [
+        "u1",
+        "u3"
+      ],
+      "syllables": [
+        "fo",
+        "go"
+      ],
+      "gloss": {
+        "d": "Chama quente que queima e faz fumaça.",
+        "ex": "O fogo esquenta a panela.",
+        "e": "🔥",
+        "n": 1
+      },
+      "audio": {
+        "word": "fogo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "foguete",
+      "e": "🚀",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "fo",
+        "gue",
+        "te"
+      ],
+      "gloss": {
+        "d": "Veículo comprido que sobe ao espaço.",
+        "ex": "O foguete foi à lua.",
+        "e": "🚀",
+        "n": 4
+      },
+      "audio": {
+        "word": "foguete",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "formiga",
+      "e": "🐜",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "for",
+        "mi",
+        "ga"
+      ],
+      "gloss": {
+        "d": "Inseto bem pequeno que carrega folhas.",
+        "ex": "A formiga leva a migalha.",
+        "e": "🐜",
+        "n": 4
+      },
+      "audio": {
+        "word": "formiga",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "fralda",
+      "e": "👶",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "fral",
+        "da"
+      ],
+      "gloss": {
+        "d": "Pano que o bebê usa para não sujar.",
+        "ex": "A mamãe trocou a fralda.",
+        "e": "👶",
+        "n": 7
+      },
+      "audio": {
+        "word": "fralda",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "frase",
+      "e": "💬",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "fra",
+        "se"
+      ],
+      "gloss": {
+        "d": "Conjunto de palavras com sentido completo.",
+        "ex": "Escrevi uma frase no caderno.",
+        "e": "💬",
+        "n": 7
+      },
+      "audio": {
+        "word": "frase",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "frio",
+      "e": "🥶",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "fri",
+        "o"
+      ],
+      "gloss": {
+        "d": "Sensação de temperatura baixa, que faz tremer.",
+        "ex": "Está frio hoje cedo.",
+        "e": "🥶",
+        "n": 7
+      },
+      "audio": {
+        "word": "frio",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "fruta",
+      "e": "🍎",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "fru",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Alimento doce da planta, como a maçã.",
+        "ex": "Como fruta no lanche.",
+        "e": "🍎",
+        "n": 7
+      },
+      "audio": {
+        "word": "fruta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "fundo",
+      "e": "🔚",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "fun",
+        "do"
+      ],
+      "gloss": {
+        "d": "Parte de baixo de um lugar.",
+        "ex": "A chave caiu no fundo.",
+        "e": "🔚",
+        "n": 6
+      },
+      "audio": {
+        "word": "fundo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "futebol",
+      "e": "⚽",
+      "u": [
+        "u3",
+        "u8"
+      ],
+      "syllables": [
+        "fu",
+        "te",
+        "bol"
+      ],
+      "gloss": {
+        "d": "Jogo de duas equipes chutando uma bola.",
+        "ex": "Jogo futebol no quintal.",
+        "e": "⚽",
+        "n": 3
+      },
+      "audio": {
+        "word": "futebol",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "galho",
+      "e": "🌿",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "ga",
+        "lho"
+      ],
+      "gloss": {
+        "d": "Braço fino de madeira que sai do tronco.",
+        "ex": "O ninho está no galho.",
+        "e": "🌿",
+        "n": 5
+      },
+      "audio": {
+        "word": "galho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "galo",
+      "e": "🐓",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ga",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Ave do quintal que canta cedo.",
+        "ex": "O galo canta de madrugada.",
+        "e": "🐓",
+        "n": 4
+      },
+      "audio": {
+        "word": "galo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "garrafa",
+      "e": "🍾",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "gar",
+        "ra",
+        "fa"
+      ],
+      "gloss": {
+        "d": "Recipiente de boca estreita para levar água.",
+        "ex": "Enchi a garrafa na pia.",
+        "e": "🍾",
+        "n": 5
+      },
+      "audio": {
+        "word": "garrafa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gato",
+      "e": "🐱",
+      "u": [
+        "u1",
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "ga",
+        "to"
+      ],
+      "gloss": {
+        "d": "Bicho de bigode que mia e ronrona.",
+        "ex": "O gato dorme no sofá.",
+        "e": "🐱",
+        "n": 1
+      },
+      "audio": {
+        "word": "gato",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gaveta",
+      "e": "🗄️",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "ga",
+        "ve",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Caixa que desliza no móvel para guardar coisas.",
+        "ex": "As meias ficam na gaveta.",
+        "e": "🗄️",
+        "n": 4
+      },
+      "audio": {
+        "word": "gaveta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gelo",
+      "e": "🧊",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "ge",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Água dura e fria que virou pedra.",
+        "ex": "Pus gelo no suco.",
+        "e": "🧊",
+        "n": 4
+      },
+      "audio": {
+        "word": "gelo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gema",
+      "e": "🥚",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "ge",
+        "ma"
+      ],
+      "gloss": {
+        "d": "Parte amarela e redonda dentro do ovo.",
+        "ex": "A gema escorreu no prato.",
+        "e": "🥚",
+        "n": 4
+      },
+      "audio": {
+        "word": "gema",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "girafa",
+      "e": "🦒",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "gi",
+        "ra",
+        "fa"
+      ],
+      "gloss": {
+        "d": "Animal de pescoço comprido que come folhas altas.",
+        "ex": "A girafa alcança o galho.",
+        "e": "🦒",
+        "n": 4
+      },
+      "audio": {
+        "word": "girafa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gola",
+      "e": "👔",
+      "u": [
+        "u13"
+      ],
+      "syllables": [
+        "go",
+        "la"
+      ],
+      "gloss": {
+        "d": "Parte da camisa que fica no pescoço.",
+        "ex": "A gola da camisa está suja.",
+        "e": "👔",
+        "n": 13
+      },
+      "audio": {
+        "word": "gola",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gorro",
+      "e": "🧢",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "gor",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Chapéu de lã que esquenta a cabeça.",
+        "ex": "Usei gorro no frio.",
+        "e": "🧢",
+        "n": 4
+      },
+      "audio": {
+        "word": "gorro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gota",
+      "e": "💧",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "go",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Pingo pequeno de líquido que cai.",
+        "ex": "Uma gota caiu na mão.",
+        "e": "💧",
+        "n": 4
+      },
+      "audio": {
+        "word": "gota",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "grama",
+      "e": "🌱",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "gra",
+        "ma"
+      ],
+      "gloss": {
+        "d": "Planta rasteira que cobre o chão.",
+        "ex": "Sentamos na grama do quintal.",
+        "e": "🌱",
+        "n": 7
+      },
+      "audio": {
+        "word": "grama",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "grande",
+      "e": "📏",
+      "u": [
+        "u6",
+        "u7"
+      ],
+      "syllables": [
+        "gran",
+        "de"
+      ],
+      "gloss": {
+        "d": "De tamanho maior que os outros.",
+        "ex": "O elefante é grande.",
+        "e": "📏",
+        "n": 6
+      },
+      "audio": {
+        "word": "grande",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "grilo",
+      "e": "🦗",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "gri",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Inseto que canta à noite no mato.",
+        "ex": "O grilo canta no quintal.",
+        "e": "🦗",
+        "n": 7
+      },
+      "audio": {
+        "word": "grilo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "guarda",
+      "e": "🛡️",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "guar",
+        "da"
+      ],
+      "gloss": {
+        "d": "Pessoa que vigia e protege um lugar.",
+        "ex": "O guarda abriu o portão.",
+        "e": "🛡️",
+        "n": 4
+      },
+      "audio": {
+        "word": "guarda",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "gude",
+      "e": "🔮",
+      "u": [
+        "u13"
+      ],
+      "syllables": [
+        "gu",
+        "de"
+      ],
+      "gloss": {
+        "d": "Bolinha de vidro usada para brincar.",
+        "ex": "Perdi meu gude azul.",
+        "e": "🔮",
+        "n": 13
+      },
+      "audio": {
+        "word": "gude",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "guepardo",
+      "e": "🐆",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "gue",
+        "par",
+        "do"
+      ],
+      "gloss": {
+        "d": "Felino manchado, o mais rápido da terra.",
+        "ex": "O guepardo corre veloz.",
+        "e": "🐆",
+        "n": 4
+      },
+      "audio": {
+        "word": "guepardo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "guerra",
+      "e": "⚔️",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "guer",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Briga grande entre países, com armas.",
+        "ex": "O livro fala de guerra.",
+        "e": "⚔️",
+        "n": 4
+      },
+      "audio": {
+        "word": "guerra",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "guindaste",
+      "e": "🏗️",
+      "u": [
+        "u13"
+      ],
+      "syllables": [
+        "guin",
+        "das",
+        "te"
+      ],
+      "gloss": {
+        "d": "Máquina alta que levanta peso com cabo.",
+        "ex": "O guindaste levanta a viga.",
+        "e": "🏗️",
+        "n": 13
+      },
+      "audio": {
+        "word": "guindaste",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "guitarra",
+      "e": "🎸",
+      "u": [
+        "u13",
+        "u4"
+      ],
+      "syllables": [
+        "gui",
+        "tar",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Instrumento de cordas tocado com palheta.",
+        "ex": "Ele toca guitarra muito bem.",
+        "e": "🎸",
+        "n": 4
+      },
+      "audio": {
+        "word": "guitarra",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "guloso",
+      "e": "😋",
+      "u": [
+        "u13"
+      ],
+      "syllables": [
+        "gu",
+        "lo",
+        "so"
+      ],
+      "gloss": {
+        "d": "Que come muito e quer sempre mais.",
+        "ex": "O gato guloso comeu tudo.",
+        "e": "😋",
+        "n": 13
+      },
+      "audio": {
+        "word": "guloso",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "hífen",
+      "e": "➖",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "hí",
+        "fen"
+      ],
+      "gloss": {
+        "d": "Tracinho no meio de duas palavras.",
+        "ex": "A palavra guarda-chuva tem hífen.",
+        "e": "➖",
+        "n": 6
+      },
+      "audio": {
+        "word": "hífen",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "homem",
+      "e": "👨",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "ho",
+        "mem"
+      ],
+      "gloss": {
+        "d": "Pessoa adulta que pode ser pai.",
+        "ex": "O homem carrega a caixa.",
+        "e": "👨",
+        "n": 6
+      },
+      "audio": {
+        "word": "homem",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "importante",
+      "e": "⭐",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "im",
+        "por",
+        "tan",
+        "te"
+      ],
+      "gloss": {
+        "d": "Que vale muito e não pode faltar.",
+        "ex": "O remédio é importante.",
+        "e": "⭐",
+        "n": 6
+      },
+      "audio": {
+        "word": "importante",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "irmão",
+      "e": "👦",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "ir",
+        "mão"
+      ],
+      "gloss": {
+        "d": "Filho da mesma mãe ou do mesmo pai.",
+        "ex": "Meu irmão tem seis anos.",
+        "e": "👦",
+        "n": 6
+      },
+      "audio": {
+        "word": "irmão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "isso",
+      "e": "✅",
+      "u": [
+        "u11"
+      ],
+      "syllables": [
+        "is",
+        "so"
+      ],
+      "gloss": {
+        "d": "Palavra que aponta algo perto de quem fala.",
+        "ex": "Isso aqui é muito bonito.",
+        "e": "✅",
+        "n": 11
+      },
+      "audio": {
+        "word": "isso",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jabuti",
+      "e": "🐢",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ja",
+        "bu",
+        "ti"
+      ],
+      "gloss": {
+        "d": "Tartaruga de terra, lenta e com casco.",
+        "ex": "O jabuti comeu alface.",
+        "e": "🐢",
+        "n": 4
+      },
+      "audio": {
+        "word": "jabuti",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jacaré",
+      "e": "🐊",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ja",
+        "ca",
+        "ré"
+      ],
+      "gloss": {
+        "d": "Animal de couro duro e boca grande no rio.",
+        "ex": "O jacaré toma sol.",
+        "e": "🐊",
+        "n": 4
+      },
+      "audio": {
+        "word": "jacaré",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "janela",
+      "e": "🏠",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ja",
+        "ne",
+        "la"
+      ],
+      "gloss": {
+        "d": "Abertura de vidro por onde entra luz.",
+        "ex": "Abri a janela do quarto.",
+        "e": "🏠",
+        "n": 4
+      },
+      "audio": {
+        "word": "janela",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jardim",
+      "e": "🌳",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "jar",
+        "dim"
+      ],
+      "gloss": {
+        "d": "Área com flores e plantas ao redor da casa.",
+        "ex": "O jardim está cheio de rosas.",
+        "e": "🌳",
+        "n": 8
+      },
+      "audio": {
+        "word": "jardim",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jarro",
+      "e": "🏺",
+      "u": [
+        "u4",
+        "u5"
+      ],
+      "syllables": [
+        "jar",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Recipiente com bico para servir água.",
+        "ex": "Enchi o jarro de suco.",
+        "e": "🏺",
+        "n": 4
+      },
+      "audio": {
+        "word": "jarro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jipe",
+      "e": "🚙",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ji",
+        "pe"
+      ],
+      "gloss": {
+        "d": "Carro forte que anda em estrada de terra.",
+        "ex": "O jipe subiu o morro.",
+        "e": "🚙",
+        "n": 4
+      },
+      "audio": {
+        "word": "jipe",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jogo",
+      "e": "🎮",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "jo",
+        "go"
+      ],
+      "gloss": {
+        "d": "Brincadeira com regras e pontos no fim.",
+        "ex": "Ganhei o jogo de tabuleiro.",
+        "e": "🎮",
+        "n": 4
+      },
+      "audio": {
+        "word": "jogo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jornal",
+      "e": "📰",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "jor",
+        "nal"
+      ],
+      "gloss": {
+        "d": "Papel com notícias impressas do dia.",
+        "ex": "Vovô lê o jornal.",
+        "e": "📰",
+        "n": 4
+      },
+      "audio": {
+        "word": "jornal",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jovem",
+      "e": "🧑",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "jo",
+        "vem"
+      ],
+      "gloss": {
+        "d": "Pessoa nova, que ainda tem pouca idade.",
+        "ex": "O jovem joga bola bem.",
+        "e": "🧑",
+        "n": 6
+      },
+      "audio": {
+        "word": "jovem",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "jujuba",
+      "e": "🍬",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ju",
+        "ju",
+        "ba"
+      ],
+      "gloss": {
+        "d": "Bala macia em forma de fruta.",
+        "ex": "A jujuba gruda no dente.",
+        "e": "🍬",
+        "n": 4
+      },
+      "audio": {
+        "word": "jujuba",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "lagoa",
+      "e": "🏞️",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "la",
+        "go",
+        "a"
+      ],
+      "gloss": {
+        "d": "Água parada e rasa cercada de terra.",
+        "ex": "Os patos nadam na lagoa.",
+        "e": "🏞️",
+        "n": 3
+      },
+      "audio": {
+        "word": "lagoa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "lâmpada",
+      "e": "💡",
+      "u": [
+        "u3",
+        "u6"
+      ],
+      "syllables": [
+        "lâm",
+        "pa",
+        "da"
+      ],
+      "gloss": {
+        "d": "Objeto redondo que faz luz quando acende.",
+        "ex": "Acendi a lâmpada do quarto.",
+        "e": "💡",
+        "n": 3
+      },
+      "audio": {
+        "word": "lâmpada",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "lápis",
+      "e": "✏️",
+      "u": [
+        "u3",
+        "u8"
+      ],
+      "syllables": [
+        "lá",
+        "pis"
+      ],
+      "gloss": {
+        "d": "Objeto de madeira com ponta para escrever.",
+        "ex": "Meu lápis quebrou a ponta.",
+        "e": "✏️",
+        "n": 3
+      },
+      "audio": {
+        "word": "lápis",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "laranja",
+      "e": "🍊",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "la",
+        "ran",
+        "ja"
+      ],
+      "gloss": {
+        "d": "Fruta redonda, cítrica e cheia de gomos.",
+        "ex": "Chupei uma laranja doce.",
+        "e": "🍊",
+        "n": 3
+      },
+      "audio": {
+        "word": "laranja",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "leão",
+      "e": "🦁",
+      "u": [
+        "u3",
+        "u6"
+      ],
+      "syllables": [
+        "leão"
+      ],
+      "gloss": {
+        "d": "Felino grande com juba e rugido forte.",
+        "ex": "O leão dorme na sombra.",
+        "e": "🦁",
+        "n": 3
+      },
+      "audio": {
+        "word": "leão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "leite",
+      "e": "🥛",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "lei",
+        "te"
+      ],
+      "gloss": {
+        "d": "Líquido branco que vem da vaca.",
+        "ex": "Bebi leite com achocolatado.",
+        "e": "🥛",
+        "n": 2
+      },
+      "audio": {
+        "word": "leite",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "leões",
+      "e": "🦁",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "leões"
+      ],
+      "gloss": {
+        "d": "Felinos grandes com juba, vários no grupo.",
+        "ex": "Os leões dormem ao sol.",
+        "e": "🦁",
+        "n": 6
+      },
+      "audio": {
+        "word": "leões",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "limão",
+      "e": "🍋",
+      "u": [
+        "u3",
+        "u6"
+      ],
+      "syllables": [
+        "li",
+        "mão"
+      ],
+      "gloss": {
+        "d": "Fruta amarela azeda, cheia de sumo.",
+        "ex": "O limão deixa a água azeda.",
+        "e": "🍋",
+        "n": 3
+      },
+      "audio": {
+        "word": "limão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "limões",
+      "e": "🍋",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "li",
+        "mões"
+      ],
+      "gloss": {
+        "d": "Fruta amarela e azeda, em grande quantidade.",
+        "ex": "Comprei limões na feira.",
+        "e": "🍋",
+        "n": 6
+      },
+      "audio": {
+        "word": "limões",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "limpo",
+      "e": "🧼",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "lim",
+        "po"
+      ],
+      "gloss": {
+        "d": "Sem sujeira, brilho e cheiro bom.",
+        "ex": "O chão ficou limpo.",
+        "e": "🧼",
+        "n": 6
+      },
+      "audio": {
+        "word": "limpo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "língua",
+      "e": "👅",
+      "u": [
+        "u13"
+      ],
+      "syllables": [
+        "lín",
+        "gua"
+      ],
+      "gloss": {
+        "d": "Parte da boca usada para falar e lamber.",
+        "ex": "A língua sente o doce.",
+        "e": "👅",
+        "n": 13
+      },
+      "audio": {
+        "word": "língua",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "linguiça",
+      "e": "🌭",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "lin",
+        "gui",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Comida comprida de carne, assada na churrasqueira.",
+        "ex": "A linguiça está na churrasqueira.",
+        "e": "🌭",
+        "n": 4
+      },
+      "audio": {
+        "word": "linguiça",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "livro",
+      "e": "📖",
+      "u": [
+        "u3",
+        "u7"
+      ],
+      "syllables": [
+        "li",
+        "vro"
+      ],
+      "gloss": {
+        "d": "Objeto com páginas e histórias para ler.",
+        "ex": "Leio um livro antes de dormir.",
+        "e": "📖",
+        "n": 3
+      },
+      "audio": {
+        "word": "livro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "lobo",
+      "e": "🐺",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "lo",
+        "bo"
+      ],
+      "gloss": {
+        "d": "Animal cinza de matilha que uiva à noite.",
+        "ex": "O lobo uivou longe.",
+        "e": "🐺",
+        "n": 3
+      },
+      "audio": {
+        "word": "lobo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "lua",
+      "e": "🌙",
+      "u": [
+        "u1",
+        "u3"
+      ],
+      "syllables": [
+        "lu",
+        "a"
+      ],
+      "gloss": {
+        "d": "Esfera branca que brilha no céu à noite.",
+        "ex": "A lua está cheia hoje.",
+        "e": "🌙",
+        "n": 1
+      },
+      "audio": {
+        "word": "lua",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "luva",
+      "e": "🧤",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "lu",
+        "va"
+      ],
+      "gloss": {
+        "d": "Peça de roupa que cobre as mãos.",
+        "ex": "Calcei uma luva de lã.",
+        "e": "🧤",
+        "n": 3
+      },
+      "audio": {
+        "word": "luva",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "luz",
+      "e": "💡",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "luz"
+      ],
+      "gloss": {
+        "d": "Claridade que deixa o lugar visível.",
+        "ex": "Apague a luz, por favor.",
+        "e": "💡",
+        "n": 8
+      },
+      "audio": {
+        "word": "luz",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "macaco",
+      "e": "🐒",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ma",
+        "ca",
+        "co"
+      ],
+      "gloss": {
+        "d": "Animal peludo que sobe em árvore e come banana.",
+        "ex": "O macaco pulou no galho.",
+        "e": "🐒",
+        "n": 2
+      },
+      "audio": {
+        "word": "macaco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mãe",
+      "e": "👩",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "mãe"
+      ],
+      "gloss": {
+        "d": "Mulher que cuida dos filhos com amor.",
+        "ex": "Minha mãe me deu um abraço.",
+        "e": "👩",
+        "n": 6
+      },
+      "audio": {
+        "word": "mãe",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mala",
+      "e": "🧳",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "ma",
+        "la"
+      ],
+      "gloss": {
+        "d": "Caixa grande com alça para levar roupa.",
+        "ex": "Arrumei a mala para viajar.",
+        "e": "🧳",
+        "n": 1
+      },
+      "audio": {
+        "word": "mala",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mangueira",
+      "e": "🌿",
+      "u": [
+        "u13"
+      ],
+      "syllables": [
+        "man",
+        "guei",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Tubo comprido que leva água para o jardim.",
+        "ex": "Reguei as flores com mangueira.",
+        "e": "🌿",
+        "n": 13
+      },
+      "audio": {
+        "word": "mangueira",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mão",
+      "e": "✋",
+      "u": [
+        "u1",
+        "u2",
+        "u6"
+      ],
+      "syllables": [
+        "mão"
+      ],
+      "gloss": {
+        "d": "Parte do corpo com cinco dedos, usada para pegar.",
+        "ex": "Levantei a mão para responder.",
+        "e": "✋",
+        "n": 1
+      },
+      "audio": {
+        "word": "mão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mapa",
+      "e": "🗺️",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ma",
+        "pa"
+      ],
+      "gloss": {
+        "d": "Desenho de lugares com caminhos e nomes.",
+        "ex": "O mapa mostra a cidade.",
+        "e": "🗺️",
+        "n": 2
+      },
+      "audio": {
+        "word": "mapa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "máquina",
+      "e": "⚙️",
+      "u": [
+        "u12",
+        "u4"
+      ],
+      "syllables": [
+        "má",
+        "qui",
+        "na"
+      ],
+      "gloss": {
+        "d": "Aparelho com peças que faz trabalho pesado.",
+        "ex": "A máquina lava a roupa.",
+        "e": "⚙️",
+        "n": 4
+      },
+      "audio": {
+        "word": "máquina",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mar",
+      "e": "🌊",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "mar"
+      ],
+      "gloss": {
+        "d": "Água salgada e grande onde os barcos andam.",
+        "ex": "O mar está calmo.",
+        "e": "🌊",
+        "n": 8
+      },
+      "audio": {
+        "word": "mar",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "massa",
+      "e": "🍝",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "mas",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Comida de farinha, comprida e cozida.",
+        "ex": "A massa está no prato.",
+        "e": "🍝",
+        "n": 5
+      },
+      "audio": {
+        "word": "massa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "médico",
+      "e": "🩺",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "mé",
+        "di",
+        "co"
+      ],
+      "gloss": {
+        "d": "Pessoa que examina e cuida dos doentes.",
+        "ex": "O médico ouviu meu coração.",
+        "e": "🩺",
+        "n": 2
+      },
+      "audio": {
+        "word": "médico",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mel",
+      "e": "🍯",
+      "u": [
+        "u2",
+        "u8"
+      ],
+      "syllables": [
+        "mel"
+      ],
+      "gloss": {
+        "d": "Líquido doce e amarelo feito pelas abelhas.",
+        "ex": "Passei mel no pão.",
+        "e": "🍯",
+        "n": 2
+      },
+      "audio": {
+        "word": "mel",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mesa",
+      "e": "🪑",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "me",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Móvel com tampo e pernas para apoiar coisas.",
+        "ex": "O prato está na mesa.",
+        "e": "🪑",
+        "n": 2
+      },
+      "audio": {
+        "word": "mesa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "milho",
+      "e": "🌽",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "mi",
+        "lho"
+      ],
+      "gloss": {
+        "d": "Grão amarelo em espiga, cozido ou assado.",
+        "ex": "Comi milho na festa.",
+        "e": "🌽",
+        "n": 5
+      },
+      "audio": {
+        "word": "milho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "moça",
+      "e": "👩",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "mo",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Mulher nova, que já é adulta.",
+        "ex": "A moça vende flores.",
+        "e": "👩",
+        "n": 14
+      },
+      "audio": {
+        "word": "moça",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mochila",
+      "e": "🎒",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "mo",
+        "chi",
+        "la"
+      ],
+      "gloss": {
+        "d": "Bolsa com alças nas costas para levar material.",
+        "ex": "Minha mochila está cheia de livros.",
+        "e": "🎒",
+        "n": 2
+      },
+      "audio": {
+        "word": "mochila",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "moeda",
+      "e": "💰",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "mo",
+        "e",
+        "da"
+      ],
+      "gloss": {
+        "d": "Peça de metal usada para comprar.",
+        "ex": "Achei uma moeda no chão.",
+        "e": "💰",
+        "n": 2
+      },
+      "audio": {
+        "word": "moeda",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "molho",
+      "e": "🥫",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "mo",
+        "lho"
+      ],
+      "gloss": {
+        "d": "Caldo grosso que se põe na comida.",
+        "ex": "Pus molho no macarrão.",
+        "e": "🥫",
+        "n": 5
+      },
+      "audio": {
+        "word": "molho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "morango",
+      "e": "🍓",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "mo",
+        "ran",
+        "go"
+      ],
+      "gloss": {
+        "d": "Fruta vermelha, pequena, com pintinhas e coroa.",
+        "ex": "O morango é doce e suculento.",
+        "e": "🍓",
+        "n": 2
+      },
+      "audio": {
+        "word": "morango",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "morro",
+      "e": "⛰️",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "mor",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Montanha pequena e arredondada de terra.",
+        "ex": "Subimos o morro a pé.",
+        "e": "⛰️",
+        "n": 10
+      },
+      "audio": {
+        "word": "morro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mula",
+      "e": "🐴",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "mu",
+        "la"
+      ],
+      "gloss": {
+        "d": "Animal forte que carrega peso e não corre.",
+        "ex": "A mula carrega a sacola.",
+        "e": "🐴",
+        "n": 2
+      },
+      "audio": {
+        "word": "mula",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mulher",
+      "e": "👩",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "mu",
+        "lher"
+      ],
+      "gloss": {
+        "d": "Pessoa adulta, como a mãe ou a tia.",
+        "ex": "A mulher abriu a loja.",
+        "e": "👩",
+        "n": 2
+      },
+      "audio": {
+        "word": "mulher",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "mundo",
+      "e": "🌍",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "mun",
+        "do"
+      ],
+      "gloss": {
+        "d": "Tudo que existe: terra, mar, céu e gente.",
+        "ex": "O mundo é muito grande.",
+        "e": "🌍",
+        "n": 6
+      },
+      "audio": {
+        "word": "mundo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "muro",
+      "e": "🧱",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "mu",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Parede de tijolo que cerca o quintal.",
+        "ex": "O muro da casa é alto.",
+        "e": "🧱",
+        "n": 10
+      },
+      "audio": {
+        "word": "muro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "murro",
+      "e": "🤜",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "mur",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Batida forte com a mão fechada.",
+        "ex": "Ele deu um murro na porta.",
+        "e": "🤜",
+        "n": 10
+      },
+      "audio": {
+        "word": "murro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "nariz",
+      "e": "👃",
+      "u": [
+        "u2",
+        "u8"
+      ],
+      "syllables": [
+        "na",
+        "riz"
+      ],
+      "gloss": {
+        "d": "Parte do rosto usada para sentir cheiro.",
+        "ex": "Meu nariz está escorrendo.",
+        "e": "👃",
+        "n": 2
+      },
+      "audio": {
+        "word": "nariz",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "navio",
+      "e": "🚢",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "na",
+        "vi",
+        "o"
+      ],
+      "gloss": {
+        "d": "Barco grande que cruza o mar carregando gente.",
+        "ex": "O navio partiu do porto.",
+        "e": "🚢",
+        "n": 2
+      },
+      "audio": {
+        "word": "navio",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "neve",
+      "e": "❄️",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ne",
+        "ve"
+      ],
+      "gloss": {
+        "d": "Água branca e fofa que cai no frio.",
+        "ex": "A neve cobriu o telhado.",
+        "e": "❄️",
+        "n": 2
+      },
+      "audio": {
+        "word": "neve",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "ninho",
+      "e": "🐣",
+      "u": [
+        "u2",
+        "u5"
+      ],
+      "syllables": [
+        "ni",
+        "nho"
+      ],
+      "gloss": {
+        "d": "Casinha de palha onde o pássaro põe ovos.",
+        "ex": "O passarinho fez um ninho.",
+        "e": "🐣",
+        "n": 2
+      },
+      "audio": {
+        "word": "ninho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "ninja",
+      "e": "🥷",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "nin",
+        "ja"
+      ],
+      "gloss": {
+        "d": "Guerreiro de roupa escura, rápido e silencioso.",
+        "ex": "O ninja salta o muro.",
+        "e": "🥷",
+        "n": 2
+      },
+      "audio": {
+        "word": "ninja",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "noite",
+      "e": "🌙",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "noi",
+        "te"
+      ],
+      "gloss": {
+        "d": "Tempo escuro em que a lua aparece.",
+        "ex": "A noite chegou com estrelas.",
+        "e": "🌙",
+        "n": 2
+      },
+      "audio": {
+        "word": "noite",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "nossa",
+      "e": "😮",
+      "u": [
+        "u11"
+      ],
+      "syllables": [
+        "nos",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Palavra que mostra surpresa ou espanto.",
+        "ex": "Nossa, que susto grande!",
+        "e": "😮",
+        "n": 11
+      },
+      "audio": {
+        "word": "nossa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "nosso",
+      "e": "👪",
+      "u": [
+        "u11"
+      ],
+      "syllables": [
+        "nos",
+        "so"
+      ],
+      "gloss": {
+        "d": "Que pertence a mim e a mais gente.",
+        "ex": "Nosso quintal tem duas árvores.",
+        "e": "👪",
+        "n": 11
+      },
+      "audio": {
+        "word": "nosso",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "nota",
+      "e": "🎵",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "no",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Som de música, cantado num tom.",
+        "ex": "Ele cantou a nota certa.",
+        "e": "🎵",
+        "n": 2
+      },
+      "audio": {
+        "word": "nota",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "nove",
+      "e": "9️⃣",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "no",
+        "ve"
+      ],
+      "gloss": {
+        "d": "Número que vem depois do oito.",
+        "ex": "Tenho nove anos e meio.",
+        "e": "9️⃣",
+        "n": 2
+      },
+      "audio": {
+        "word": "nove",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "nuvem",
+      "e": "☁️",
+      "u": [
+        "u2",
+        "u6"
+      ],
+      "syllables": [
+        "nu",
+        "vem"
+      ],
+      "gloss": {
+        "d": "Massa branca de água no céu, que pode chover.",
+        "ex": "Uma nuvem cobriu o sol.",
+        "e": "☁️",
+        "n": 2
+      },
+      "audio": {
+        "word": "nuvem",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "olho",
+      "e": "👁️",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "o",
+        "lho"
+      ],
+      "gloss": {
+        "d": "Parte do rosto com que se vê.",
+        "ex": "Fechei o olho direito.",
+        "e": "👁️",
+        "n": 5
+      },
+      "audio": {
+        "word": "olho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "onça",
+      "e": "🐆",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "on",
+        "ça"
+      ],
+      "gloss": {
+        "d": "Felino brasileiro manchado, forte e pintado.",
+        "ex": "A onça vive na floresta.",
+        "e": "🐆",
+        "n": 6
+      },
+      "audio": {
+        "word": "onça",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "ônibus",
+      "e": "🚌",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "ô",
+        "ni",
+        "bus"
+      ],
+      "gloss": {
+        "d": "Veículo grande que leva muitas pessoas.",
+        "ex": "Peguei ônibus para a escola.",
+        "e": "🚌",
+        "n": 8
+      },
+      "audio": {
+        "word": "ônibus",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "osso",
+      "e": "🦴",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "os",
+        "so"
+      ],
+      "gloss": {
+        "d": "Peça dura e branca que sustenta o corpo.",
+        "ex": "O cachorro mordeu o osso.",
+        "e": "🦴",
+        "n": 5
+      },
+      "audio": {
+        "word": "osso",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "palhaço",
+      "e": "🤡",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "pa",
+        "lha",
+        "ço"
+      ],
+      "gloss": {
+        "d": "Pessoa de nariz vermelho que faz rir.",
+        "ex": "O palhaço fez todos rirem.",
+        "e": "🤡",
+        "n": 5
+      },
+      "audio": {
+        "word": "palhaço",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "panela",
+      "e": "🍳",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "pa",
+        "ne",
+        "la"
+      ],
+      "gloss": {
+        "d": "Utensílio de metal onde o alimento cozinha.",
+        "ex": "A panela está no fogo.",
+        "e": "🍳",
+        "n": 2
+      },
+      "audio": {
+        "word": "panela",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pão",
+      "e": "🥖",
+      "u": [
+        "u2",
+        "u6"
+      ],
+      "syllables": [
+        "pão"
+      ],
+      "gloss": {
+        "d": "Alimento assado de farinha, macio por dentro.",
+        "ex": "Comi pão com manteiga.",
+        "e": "🥖",
+        "n": 2
+      },
+      "audio": {
+        "word": "pão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "papai",
+      "e": "👨",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "pa",
+        "pai"
+      ],
+      "gloss": {
+        "d": "Homem que cuida dos filhos em casa.",
+        "ex": "Meu papai me levou à escola.",
+        "e": "👨",
+        "n": 2
+      },
+      "audio": {
+        "word": "papai",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "papel",
+      "e": "📄",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "pa",
+        "pel"
+      ],
+      "gloss": {
+        "d": "Folha fina e leve onde se escreve.",
+        "ex": "Desenhei no papel branco.",
+        "e": "📄",
+        "n": 8
+      },
+      "audio": {
+        "word": "papel",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "passa",
+      "e": "🚶",
+      "u": [
+        "u11"
+      ],
+      "syllables": [
+        "pas",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Vai por um lugar e segue adiante.",
+        "ex": "O ônibus passa na minha rua.",
+        "e": "🚶",
+        "n": 11
+      },
+      "audio": {
+        "word": "passa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pássaro",
+      "e": "🐦",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "pás",
+        "sa",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Ave pequena de penas que canta e voa.",
+        "ex": "O pássaro cantou cedo.",
+        "e": "🐦",
+        "n": 5
+      },
+      "audio": {
+        "word": "pássaro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "passo",
+      "e": "👣",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "pas",
+        "so"
+      ],
+      "gloss": {
+        "d": "Movimento de um pé de cada vez.",
+        "ex": "Dei um passo para trás.",
+        "e": "👣",
+        "n": 5
+      },
+      "audio": {
+        "word": "passo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pasta",
+      "e": "🍝",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "pas",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Comida feita de massa cozida e molho.",
+        "ex": "Comi pasta com molho.",
+        "e": "🍝",
+        "n": 8
+      },
+      "audio": {
+        "word": "pasta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pato",
+      "e": "🦆",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "pa",
+        "to"
+      ],
+      "gloss": {
+        "d": "Ave amarela que nada e faz quá.",
+        "ex": "O pato nada na lagoa.",
+        "e": "🦆",
+        "n": 1
+      },
+      "audio": {
+        "word": "pato",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "paz",
+      "e": "🕊️",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "paz"
+      ],
+      "gloss": {
+        "d": "Sossego e tranquilidade, quando ninguém briga.",
+        "ex": "A casa ficou em paz.",
+        "e": "🕊️",
+        "n": 8
+      },
+      "audio": {
+        "word": "paz",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pé",
+      "e": "🦶",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "pé"
+      ],
+      "gloss": {
+        "d": "Parte do corpo que fica no chão.",
+        "ex": "Meu pé ficou sujo de areia.",
+        "e": "🦶",
+        "n": 1
+      },
+      "audio": {
+        "word": "pé",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pedaço",
+      "e": "🍰",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "pe",
+        "da",
+        "ço"
+      ],
+      "gloss": {
+        "d": "Parte pequena que se tira de algo maior.",
+        "ex": "Comi um pedaço de bolo.",
+        "e": "🍰",
+        "n": 14
+      },
+      "audio": {
+        "word": "pedaço",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pedra",
+      "e": "🪨",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pe",
+        "dra"
+      ],
+      "gloss": {
+        "d": "Pedaço duro de rocha do chão.",
+        "ex": "A pedra é pesada.",
+        "e": "🪨",
+        "n": 7
+      },
+      "audio": {
+        "word": "pedra",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "peixe",
+      "e": "🐟",
+      "u": [
+        "u14",
+        "u4"
+      ],
+      "syllables": [
+        "pei",
+        "xe"
+      ],
+      "gloss": {
+        "d": "Animal de escamas que nada e respira na água.",
+        "ex": "O peixe nada no rio.",
+        "e": "🐟",
+        "n": 4
+      },
+      "audio": {
+        "word": "peixe",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pente",
+      "e": "💈",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "pen",
+        "te"
+      ],
+      "gloss": {
+        "d": "Objeto de dentes que arruma o cabelo.",
+        "ex": "Passei o pente no cabelo.",
+        "e": "💈",
+        "n": 6
+      },
+      "audio": {
+        "word": "pente",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pêssego",
+      "e": "🍑",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "pês",
+        "se",
+        "go"
+      ],
+      "gloss": {
+        "d": "Fruta redonda, amarela, macia e aveludada.",
+        "ex": "O pêssego está maduro.",
+        "e": "🍑",
+        "n": 5
+      },
+      "audio": {
+        "word": "pêssego",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pia",
+      "e": "🚰",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "pi",
+        "a"
+      ],
+      "gloss": {
+        "d": "Bacia com torneira onde se lava a louça.",
+        "ex": "Lavei as mãos na pia.",
+        "e": "🚰",
+        "n": 2
+      },
+      "audio": {
+        "word": "pia",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "picolé",
+      "e": "🍦",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "pi",
+        "co",
+        "lé"
+      ],
+      "gloss": {
+        "d": "Gelo doce em palito, colorido e gelado.",
+        "ex": "Comi picolé de morango.",
+        "e": "🍦",
+        "n": 2
+      },
+      "audio": {
+        "word": "picolé",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pijama",
+      "e": "🩳",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "pi",
+        "ja",
+        "ma"
+      ],
+      "gloss": {
+        "d": "Roupa macia e leve usada para dormir.",
+        "ex": "Vesti o pijama após o banho.",
+        "e": "🩳",
+        "n": 4
+      },
+      "audio": {
+        "word": "pijama",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pinhão",
+      "e": "🌰",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "pi",
+        "nhão"
+      ],
+      "gloss": {
+        "d": "Semente do pinheiro, cozida na festa.",
+        "ex": "O pinhão cozinhou na panela.",
+        "e": "🌰",
+        "n": 5
+      },
+      "audio": {
+        "word": "pinhão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pipa",
+      "e": "🪁",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "pi",
+        "pa"
+      ],
+      "gloss": {
+        "d": "Brinquedo que voa preso por um fio.",
+        "ex": "A pipa subiu no céu.",
+        "e": "🪁",
+        "n": 1
+      },
+      "audio": {
+        "word": "pipa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pirata",
+      "e": "🏴‍☠️",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "pi",
+        "ra",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Homem de navio que procura tesouros escondidos.",
+        "ex": "O pirata achou um baú.",
+        "e": "🏴‍☠️",
+        "n": 2
+      },
+      "audio": {
+        "word": "pirata",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "placa",
+      "e": "🪧",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pla",
+        "ca"
+      ],
+      "gloss": {
+        "d": "Tábua com letras que avisa ou indica.",
+        "ex": "A placa mostra o caminho.",
+        "e": "🪧",
+        "n": 7
+      },
+      "audio": {
+        "word": "placa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "planeta",
+      "e": "🪐",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pla",
+        "ne",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Corpo redondo que gira em volta do sol.",
+        "ex": "A Terra é nosso planeta.",
+        "e": "🪐",
+        "n": 7
+      },
+      "audio": {
+        "word": "planeta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "planta",
+      "e": "🌱",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "plan",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Ser vivo enraizado que cresce com água.",
+        "ex": "Reguei a planta da sala.",
+        "e": "🌱",
+        "n": 7
+      },
+      "audio": {
+        "word": "planta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "poço",
+      "e": "🕳️",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "po",
+        "ço"
+      ],
+      "gloss": {
+        "d": "Buraco fundo no chão que guarda água.",
+        "ex": "O poço do quintal secou.",
+        "e": "🕳️",
+        "n": 14
+      },
+      "audio": {
+        "word": "poço",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pombo",
+      "e": "🕊️",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "pom",
+        "bo"
+      ],
+      "gloss": {
+        "d": "Ave cinzenta que vive na praça.",
+        "ex": "O pombo comeu a migalha.",
+        "e": "🕊️",
+        "n": 6
+      },
+      "audio": {
+        "word": "pombo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "ponte",
+      "e": "🌉",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "pon",
+        "te"
+      ],
+      "gloss": {
+        "d": "Construção que liga duas margens sobre a água.",
+        "ex": "Atravessamos a ponte correndo.",
+        "e": "🌉",
+        "n": 6
+      },
+      "audio": {
+        "word": "ponte",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "porco",
+      "e": "🐷",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "por",
+        "co"
+      ],
+      "gloss": {
+        "d": "Animal gordo e rosado que vive na fazenda.",
+        "ex": "O porco come no chiqueiro.",
+        "e": "🐷",
+        "n": 2
+      },
+      "audio": {
+        "word": "porco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "porta",
+      "e": "🚪",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "por",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Tábua que abre e fecha para entrar no quarto.",
+        "ex": "Feche a porta, por favor.",
+        "e": "🚪",
+        "n": 2
+      },
+      "audio": {
+        "word": "porta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pote",
+      "e": "🍯",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "po",
+        "te"
+      ],
+      "gloss": {
+        "d": "Recipiente com tampa para guardar comida.",
+        "ex": "O pote de mel está fechado.",
+        "e": "🍯",
+        "n": 2
+      },
+      "audio": {
+        "word": "pote",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "praia",
+      "e": "🏖️",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "prai",
+        "a"
+      ],
+      "gloss": {
+        "d": "Areia perto do mar para brincar.",
+        "ex": "Fomos à praia no domingo.",
+        "e": "🏖️",
+        "n": 7
+      },
+      "audio": {
+        "word": "praia",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "prato",
+      "e": "🍽️",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pra",
+        "to"
+      ],
+      "gloss": {
+        "d": "Peça redonda onde a comida é servida.",
+        "ex": "O prato está na mesa.",
+        "e": "🍽️",
+        "n": 7
+      },
+      "audio": {
+        "word": "prato",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "presente",
+      "e": "🎁",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pre",
+        "sen",
+        "te"
+      ],
+      "gloss": {
+        "d": "Coisa boa que se dá a alguém.",
+        "ex": "Ganhei um presente de aniversário.",
+        "e": "🎁",
+        "n": 7
+      },
+      "audio": {
+        "word": "presente",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "pressa",
+      "e": "⏩",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "pres",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Vontade de terminar tudo muito rápido.",
+        "ex": "Estou com pressa hoje.",
+        "e": "⏩",
+        "n": 5
+      },
+      "audio": {
+        "word": "pressa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "preto",
+      "e": "⚫",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pre",
+        "to"
+      ],
+      "gloss": {
+        "d": "Cor mais escura, como a noite.",
+        "ex": "O gato é preto.",
+        "e": "⚫",
+        "n": 7
+      },
+      "audio": {
+        "word": "preto",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "primo",
+      "e": "🧑",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pri",
+        "mo"
+      ],
+      "gloss": {
+        "d": "Filho do tio ou da tia.",
+        "ex": "Meu primo mora longe.",
+        "e": "🧑",
+        "n": 7
+      },
+      "audio": {
+        "word": "primo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "professor",
+      "e": "👩‍🏫",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "pro",
+        "fes",
+        "sor"
+      ],
+      "gloss": {
+        "d": "Pessoa que ensina os alunos na escola.",
+        "ex": "O professor explica a conta.",
+        "e": "👩‍🏫",
+        "n": 7
+      },
+      "audio": {
+        "word": "professor",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "professora",
+      "e": "👩‍🏫",
+      "u": [
+        "u11"
+      ],
+      "syllables": [
+        "pro",
+        "fes",
+        "so",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Mulher que ensina os alunos na escola.",
+        "ex": "A professora leu a história.",
+        "e": "👩‍🏫",
+        "n": 11
+      },
+      "audio": {
+        "word": "professora",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quadro",
+      "e": "🖼️",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "qua",
+        "dro"
+      ],
+      "gloss": {
+        "d": "Pintura com moldura que fica na parede.",
+        "ex": "O quadro caiu da parede.",
+        "e": "🖼️",
+        "n": 4
+      },
+      "audio": {
+        "word": "quadro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quando",
+      "e": "❓",
+      "u": [
+        "u12",
+        "u6"
+      ],
+      "syllables": [
+        "quan",
+        "do"
+      ],
+      "gloss": {
+        "d": "Palavra que pergunta o momento de algo.",
+        "ex": "Quando você chega em casa?",
+        "e": "❓",
+        "n": 6
+      },
+      "audio": {
+        "word": "quando",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quatro",
+      "e": "4️⃣",
+      "u": [
+        "u12",
+        "u4"
+      ],
+      "syllables": [
+        "qua",
+        "tro"
+      ],
+      "gloss": {
+        "d": "Número que vem depois do três.",
+        "ex": "Tenho quatro lápis coloridos.",
+        "e": "4️⃣",
+        "n": 4
+      },
+      "audio": {
+        "word": "quatro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "queijo",
+      "e": "🧀",
+      "u": [
+        "u12",
+        "u4"
+      ],
+      "syllables": [
+        "quei",
+        "jo"
+      ],
+      "gloss": {
+        "d": "Alimento de leite, amarelo, de sabor forte.",
+        "ex": "Comi queijo com pão.",
+        "e": "🧀",
+        "n": 4
+      },
+      "audio": {
+        "word": "queijo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "queixo",
+      "e": "🧔",
+      "u": [
+        "u14"
+      ],
+      "syllables": [
+        "quei",
+        "xo"
+      ],
+      "gloss": {
+        "d": "Parte de baixo do rosto, sob a boca.",
+        "ex": "Ele machucou o queixo.",
+        "e": "🧔",
+        "n": 14
+      },
+      "audio": {
+        "word": "queixo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quente",
+      "e": "🔥",
+      "u": [
+        "u12",
+        "u6"
+      ],
+      "syllables": [
+        "quen",
+        "te"
+      ],
+      "gloss": {
+        "d": "Que esquenta e queima ao toque.",
+        "ex": "O leite está quente.",
+        "e": "🔥",
+        "n": 6
+      },
+      "audio": {
+        "word": "quente",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quero",
+      "e": "🙋",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "que",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Sinto vontade de ter ou fazer algo.",
+        "ex": "Eu quero um suco gelado.",
+        "e": "🙋",
+        "n": 12
+      },
+      "audio": {
+        "word": "quero",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quilo",
+      "e": "⚖️",
+      "u": [
+        "u12",
+        "u4"
+      ],
+      "syllables": [
+        "qui",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Mil gramas, usado para pesar comida.",
+        "ex": "Comprei um quilo de banana.",
+        "e": "⚖️",
+        "n": 4
+      },
+      "audio": {
+        "word": "quilo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quinta",
+      "e": "📆",
+      "u": [
+        "u12"
+      ],
+      "syllables": [
+        "quin",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Dia da semana depois da quarta-feira.",
+        "ex": "Na quinta tem educação física.",
+        "e": "📆",
+        "n": 12
+      },
+      "audio": {
+        "word": "quinta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "quintal",
+      "e": "🌳",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "quin",
+        "tal"
+      ],
+      "gloss": {
+        "d": "Terra atrás da casa com plantas e chão.",
+        "ex": "Brincamos no quintal de tarde.",
+        "e": "🌳",
+        "n": 4
+      },
+      "audio": {
+        "word": "quintal",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "rainha",
+      "e": "👸",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "ra",
+        "i",
+        "nha"
+      ],
+      "gloss": {
+        "d": "Mulher que governa um reino com coroa.",
+        "ex": "A rainha mora no castelo.",
+        "e": "👸",
+        "n": 5
+      },
+      "audio": {
+        "word": "rainha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "rapaz",
+      "e": "🧑",
+      "u": [
+        "u3",
+        "u8"
+      ],
+      "syllables": [
+        "ra",
+        "paz"
+      ],
+      "gloss": {
+        "d": "Jovem crescido, nem criança nem adulto.",
+        "ex": "O rapaz ajuda no mercado.",
+        "e": "🧑",
+        "n": 3
+      },
+      "audio": {
+        "word": "rapaz",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "rato",
+      "e": "🐀",
+      "u": [
+        "u1",
+        "u10",
+        "u3"
+      ],
+      "syllables": [
+        "ra",
+        "to"
+      ],
+      "gloss": {
+        "d": "Bicho pequeno de rabo comprido que roe.",
+        "ex": "O rato correu pelo chão.",
+        "e": "🐀",
+        "n": 1
+      },
+      "audio": {
+        "word": "rato",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "rei",
+      "e": "👑",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "rei"
+      ],
+      "gloss": {
+        "d": "Homem que governa um reino com coroa.",
+        "ex": "O rei sentou no trono.",
+        "e": "👑",
+        "n": 3
+      },
+      "audio": {
+        "word": "rei",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "remo",
+      "e": "🛶",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "re",
+        "mo"
+      ],
+      "gloss": {
+        "d": "Pá com cabo que move o barco na água.",
+        "ex": "Ele puxa o remo.",
+        "e": "🛶",
+        "n": 3
+      },
+      "audio": {
+        "word": "remo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "rico",
+      "e": "💰",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "ri",
+        "co"
+      ],
+      "gloss": {
+        "d": "Que tem muito dinheiro e muitas coisas.",
+        "ex": "O rei é muito rico.",
+        "e": "💰",
+        "n": 10
+      },
+      "audio": {
+        "word": "rico",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "robô",
+      "e": "🤖",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "ro",
+        "bô"
+      ],
+      "gloss": {
+        "d": "Máquina que anda e obedece a comandos.",
+        "ex": "O robô falou comigo.",
+        "e": "🤖",
+        "n": 3
+      },
+      "audio": {
+        "word": "robô",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "roda",
+      "e": "🛞",
+      "u": [
+        "u10"
+      ],
+      "syllables": [
+        "ro",
+        "da"
+      ],
+      "gloss": {
+        "d": "Peça redonda que gira e move o carro.",
+        "ex": "A roda da bicicleta furou.",
+        "e": "🛞",
+        "n": 10
+      },
+      "audio": {
+        "word": "roda",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "rosa",
+      "e": "🌹",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "ro",
+        "sa"
+      ],
+      "gloss": {
+        "d": "Flor cheirosa de pétalas macias e espinhos.",
+        "ex": "A rosa do jardim abriu.",
+        "e": "🌹",
+        "n": 3
+      },
+      "audio": {
+        "word": "rosa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "roupa",
+      "e": "👕",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "rou",
+        "pa"
+      ],
+      "gloss": {
+        "d": "Peça de tecido que veste o corpo.",
+        "ex": "Troquei de roupa depois do banho.",
+        "e": "👕",
+        "n": 3
+      },
+      "audio": {
+        "word": "roupa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "rua",
+      "e": "🛣️",
+      "u": [
+        "u10",
+        "u3"
+      ],
+      "syllables": [
+        "ru",
+        "a"
+      ],
+      "gloss": {
+        "d": "Caminho da cidade onde passam carros.",
+        "ex": "A rua está cheia hoje.",
+        "e": "🛣️",
+        "n": 3
+      },
+      "audio": {
+        "word": "rua",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sábado",
+      "e": "📅",
+      "u": [
+        "u11",
+        "u3"
+      ],
+      "syllables": [
+        "sá",
+        "ba",
+        "do"
+      ],
+      "gloss": {
+        "d": "Dia de descanso, depois da sexta-feira.",
+        "ex": "No sábado vamos à praia.",
+        "e": "📅",
+        "n": 3
+      },
+      "audio": {
+        "word": "sábado",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sacola",
+      "e": "🛍️",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "sa",
+        "co",
+        "la"
+      ],
+      "gloss": {
+        "d": "Bolsa de pano ou plástico para levar compras.",
+        "ex": "Pus as frutas na sacola.",
+        "e": "🛍️",
+        "n": 3
+      },
+      "audio": {
+        "word": "sacola",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sal",
+      "e": "🧂",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "sal"
+      ],
+      "gloss": {
+        "d": "Pó branco que deixa a comida saborosa.",
+        "ex": "Pus sal no arroz.",
+        "e": "🧂",
+        "n": 8
+      },
+      "audio": {
+        "word": "sal",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "samba",
+      "e": "💃",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "sam",
+        "ba"
+      ],
+      "gloss": {
+        "d": "Música brasileira alegre, dançada em rodas.",
+        "ex": "Dançamos samba na festa.",
+        "e": "💃",
+        "n": 6
+      },
+      "audio": {
+        "word": "samba",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "santo",
+      "e": "😇",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "san",
+        "to"
+      ],
+      "gloss": {
+        "d": "Pessoa boa e sagrada, das histórias de igreja.",
+        "ex": "O santo tem uma capela.",
+        "e": "😇",
+        "n": 6
+      },
+      "audio": {
+        "word": "santo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sapato",
+      "e": "👟",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "sa",
+        "pa",
+        "to"
+      ],
+      "gloss": {
+        "d": "Couro ou pano que protege o pé.",
+        "ex": "Calcei o sapato novo.",
+        "e": "👟",
+        "n": 3
+      },
+      "audio": {
+        "word": "sapato",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sapo",
+      "e": "🐸",
+      "u": [
+        "u1",
+        "u11",
+        "u3"
+      ],
+      "syllables": [
+        "sa",
+        "po"
+      ],
+      "gloss": {
+        "d": "Animal verde de pernas longas que pula.",
+        "ex": "O sapo pulou na lagoa.",
+        "e": "🐸",
+        "n": 1
+      },
+      "audio": {
+        "word": "sapo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "semana",
+      "e": "📅",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "se",
+        "ma",
+        "na"
+      ],
+      "gloss": {
+        "d": "Sete dias seguidos, de domingo a sábado.",
+        "ex": "A semana passa rápido.",
+        "e": "📅",
+        "n": 3
+      },
+      "audio": {
+        "word": "semana",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sempre",
+      "e": "♾️",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "sem",
+        "pre"
+      ],
+      "gloss": {
+        "d": "Em todos os dias, sem parar.",
+        "ex": "Sempre escovo os dentes.",
+        "e": "♾️",
+        "n": 6
+      },
+      "audio": {
+        "word": "sempre",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "simples",
+      "e": "✨",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "sim",
+        "ples"
+      ],
+      "gloss": {
+        "d": "Fácil de fazer, sem complicação nem enfeite.",
+        "ex": "A tarefa é simples.",
+        "e": "✨",
+        "n": 6
+      },
+      "audio": {
+        "word": "simples",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sino",
+      "e": "🔔",
+      "u": [
+        "u1",
+        "u11",
+        "u3"
+      ],
+      "syllables": [
+        "si",
+        "no"
+      ],
+      "gloss": {
+        "d": "Objeto de metal que balança e toca bim-bom.",
+        "ex": "O sino da igreja tocou.",
+        "e": "🔔",
+        "n": 1
+      },
+      "audio": {
+        "word": "sino",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sofá",
+      "e": "🛋️",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "so",
+        "fá"
+      ],
+      "gloss": {
+        "d": "Móvel macio para várias pessoas sentarem.",
+        "ex": "Sentei no sofá da sala.",
+        "e": "🛋️",
+        "n": 3
+      },
+      "audio": {
+        "word": "sofá",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sol",
+      "e": "☀️",
+      "u": [
+        "u1",
+        "u3",
+        "u8"
+      ],
+      "syllables": [
+        "sol"
+      ],
+      "gloss": {
+        "d": "Estrela que ilumina e aquece o dia.",
+        "ex": "O sol nasceu atrás do morro.",
+        "e": "☀️",
+        "n": 1
+      },
+      "audio": {
+        "word": "sol",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sonho",
+      "e": "💭",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "so",
+        "nho"
+      ],
+      "gloss": {
+        "d": "História que a cabeça vê dormindo.",
+        "ex": "Tive um sonho com dragões.",
+        "e": "💭",
+        "n": 5
+      },
+      "audio": {
+        "word": "sonho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sopa",
+      "e": "🍲",
+      "u": [
+        "u11"
+      ],
+      "syllables": [
+        "so",
+        "pa"
+      ],
+      "gloss": {
+        "d": "Comida líquida e quente que se toma com colher.",
+        "ex": "A sopa da vovó é gostosa.",
+        "e": "🍲",
+        "n": 11
+      },
+      "audio": {
+        "word": "sopa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "sorte",
+      "e": "🍀",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "sor",
+        "te"
+      ],
+      "gloss": {
+        "d": "Acontecer algo bom sem esperar nem planejar.",
+        "ex": "Tive sorte no jogo.",
+        "e": "🍀",
+        "n": 8
+      },
+      "audio": {
+        "word": "sorte",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "suco",
+      "e": "🧃",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "su",
+        "co"
+      ],
+      "gloss": {
+        "d": "Bebida feita de fruta espremida com água.",
+        "ex": "Bebi suco de laranja.",
+        "e": "🧃",
+        "n": 3
+      },
+      "audio": {
+        "word": "suco",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "talvez",
+      "e": "🤔",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "tal",
+        "vez"
+      ],
+      "gloss": {
+        "d": "Palavra que mostra dúvida sobre algo.",
+        "ex": "Talvez chova mais tarde.",
+        "e": "🤔",
+        "n": 8
+      },
+      "audio": {
+        "word": "talvez",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tambor",
+      "e": "🥁",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "tam",
+        "bor"
+      ],
+      "gloss": {
+        "d": "Instrumento redondo que se bate com baquetas.",
+        "ex": "O tambor faz muito barulho.",
+        "e": "🥁",
+        "n": 6
+      },
+      "audio": {
+        "word": "tambor",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tampa",
+      "e": "🥛",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "tam",
+        "pa"
+      ],
+      "gloss": {
+        "d": "Peça que encaixa e fecha a boca do pote.",
+        "ex": "A tampa do pote soltou.",
+        "e": "🥛",
+        "n": 6
+      },
+      "audio": {
+        "word": "tampa",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tanque",
+      "e": "⛽",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "tan",
+        "que"
+      ],
+      "gloss": {
+        "d": "Reservatório grande que guarda água ou gasolina.",
+        "ex": "O tanque está cheio.",
+        "e": "⛽",
+        "n": 6
+      },
+      "audio": {
+        "word": "tanque",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tapete",
+      "e": "🧶",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ta",
+        "pe",
+        "te"
+      ],
+      "gloss": {
+        "d": "Peça macia que cobre o chão.",
+        "ex": "O gato dorme no tapete.",
+        "e": "🧶",
+        "n": 2
+      },
+      "audio": {
+        "word": "tapete",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tartaruga",
+      "e": "🐢",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "tar",
+        "ta",
+        "ru",
+        "ga"
+      ],
+      "gloss": {
+        "d": "Animal lento com casco nas costas.",
+        "ex": "A tartaruga anda devagar.",
+        "e": "🐢",
+        "n": 2
+      },
+      "audio": {
+        "word": "tartaruga",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tatu",
+      "e": "🦡",
+      "u": [
+        "u1",
+        "u2"
+      ],
+      "syllables": [
+        "ta",
+        "tu"
+      ],
+      "gloss": {
+        "d": "Animal com casco duro que cava buracos.",
+        "ex": "O tatu mora no buraco.",
+        "e": "🦡",
+        "n": 1
+      },
+      "audio": {
+        "word": "tatu",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "táxi",
+      "e": "🚕",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "tá",
+        "xi"
+      ],
+      "gloss": {
+        "d": "Carro que leva gente e cobra por corrida.",
+        "ex": "Pegamos táxi até a praia.",
+        "e": "🚕",
+        "n": 4
+      },
+      "audio": {
+        "word": "táxi",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "telefone",
+      "e": "☎️",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "te",
+        "le",
+        "fo",
+        "ne"
+      ],
+      "gloss": {
+        "d": "Aparelho que leva a voz para longe.",
+        "ex": "O telefone tocou de manhã.",
+        "e": "☎️",
+        "n": 2
+      },
+      "audio": {
+        "word": "telefone",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "telhado",
+      "e": "🏠",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "te",
+        "lha",
+        "do"
+      ],
+      "gloss": {
+        "d": "Parte de cima que cobre e protege a casa.",
+        "ex": "O telhado é de telha vermelha.",
+        "e": "🏠",
+        "n": 5
+      },
+      "audio": {
+        "word": "telhado",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tempestade",
+      "e": "⛈️",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "tem",
+        "pes",
+        "ta",
+        "de"
+      ],
+      "gloss": {
+        "d": "Chuva forte com vento, raios e trovões.",
+        "ex": "A tempestade acordou a todos.",
+        "e": "⛈️",
+        "n": 6
+      },
+      "audio": {
+        "word": "tempestade",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tempo",
+      "e": "⏰",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "tem",
+        "po"
+      ],
+      "gloss": {
+        "d": "Cada momento que passa, medido no relógio.",
+        "ex": "Não tenho tempo agora.",
+        "e": "⏰",
+        "n": 6
+      },
+      "audio": {
+        "word": "tempo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tênis",
+      "e": "👟",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "tê",
+        "nis"
+      ],
+      "gloss": {
+        "d": "Sapato leve para correr e brincar.",
+        "ex": "Meu tênis está sujo de barro.",
+        "e": "👟",
+        "n": 2
+      },
+      "audio": {
+        "word": "tênis",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "terra",
+      "e": "🌍",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "ter",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Chão do quintal onde a planta cresce.",
+        "ex": "A terra está molhada hoje.",
+        "e": "🌍",
+        "n": 5
+      },
+      "audio": {
+        "word": "terra",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tesoura",
+      "e": "✂️",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "te",
+        "sou",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Objeto com duas lâminas para cortar papel.",
+        "ex": "Cortei o papel com tesoura.",
+        "e": "✂️",
+        "n": 2
+      },
+      "audio": {
+        "word": "tesoura",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "teto",
+      "e": "🏠",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "te",
+        "to"
+      ],
+      "gloss": {
+        "d": "Parte de cima da casa, que cobre tudo.",
+        "ex": "A chuva bate no teto.",
+        "e": "🏠",
+        "n": 2
+      },
+      "audio": {
+        "word": "teto",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tigre",
+      "e": "🐯",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ti",
+        "gre"
+      ],
+      "gloss": {
+        "d": "Felino grande de listras que ruge alto.",
+        "ex": "O tigre corre na floresta.",
+        "e": "🐯",
+        "n": 2
+      },
+      "audio": {
+        "word": "tigre",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tijolo",
+      "e": "🧱",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "ti",
+        "jo",
+        "lo"
+      ],
+      "gloss": {
+        "d": "Bloco retangular de barro usado em muro.",
+        "ex": "O muro é feito de tijolo.",
+        "e": "🧱",
+        "n": 2
+      },
+      "audio": {
+        "word": "tijolo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tinta",
+      "e": "🎨",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "tin",
+        "ta"
+      ],
+      "gloss": {
+        "d": "Líquido colorido para pintar parede e papel.",
+        "ex": "A tinta azul secou.",
+        "e": "🎨",
+        "n": 6
+      },
+      "audio": {
+        "word": "tinta",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "tomate",
+      "e": "🍅",
+      "u": [
+        "u2"
+      ],
+      "syllables": [
+        "to",
+        "ma",
+        "te"
+      ],
+      "gloss": {
+        "d": "Fruta vermelha e redonda usada na salada.",
+        "ex": "Cortei tomate para a salada.",
+        "e": "🍅",
+        "n": 2
+      },
+      "audio": {
+        "word": "tomate",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "torre",
+      "e": "🗼",
+      "u": [
+        "u10",
+        "u5"
+      ],
+      "syllables": [
+        "tor",
+        "re"
+      ],
+      "gloss": {
+        "d": "Construção alta e estreita que fica de pé.",
+        "ex": "A torre tem muitos andares.",
+        "e": "🗼",
+        "n": 5
+      },
+      "audio": {
+        "word": "torre",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "travesseiro",
+      "e": "🛏️",
+      "u": [
+        "u11"
+      ],
+      "syllables": [
+        "tra",
+        "ves",
+        "sei",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Almofada macia onde a cabeça descansa.",
+        "ex": "Meu travesseiro é muito macio.",
+        "e": "🛏️",
+        "n": 11
+      },
+      "audio": {
+        "word": "travesseiro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "um",
+      "e": "1️⃣",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "um"
+      ],
+      "gloss": {
+        "d": "Número do começo, antes do dois.",
+        "ex": "Quero um copo de água.",
+        "e": "1️⃣",
+        "n": 6
+      },
+      "audio": {
+        "word": "um",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "umbigo",
+      "e": "🫀",
+      "u": [
+        "u6"
+      ],
+      "syllables": [
+        "um",
+        "bi",
+        "go"
+      ],
+      "gloss": {
+        "d": "Marca redonda no meio da barriga.",
+        "ex": "Meu umbigo faz cócegas.",
+        "e": "🫀",
+        "n": 6
+      },
+      "audio": {
+        "word": "umbigo",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "unha",
+      "e": "💅",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "u",
+        "nha"
+      ],
+      "gloss": {
+        "d": "Lâmina dura na ponta do dedo.",
+        "ex": "Cortei a unha do pé.",
+        "e": "💅",
+        "n": 5
+      },
+      "audio": {
+        "word": "unha",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vaca",
+      "e": "🐄",
+      "u": [
+        "u1",
+        "u3"
+      ],
+      "syllables": [
+        "va",
+        "ca"
+      ],
+      "gloss": {
+        "d": "Animal grande que dá leite e come capim.",
+        "ex": "A vaca pasta no campo.",
+        "e": "🐄",
+        "n": 1
+      },
+      "audio": {
+        "word": "vaca",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vacina",
+      "e": "💉",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "va",
+        "ci",
+        "na"
+      ],
+      "gloss": {
+        "d": "Líquido que entra no braço com agulha e protege.",
+        "ex": "Tomei vacina no braço.",
+        "e": "💉",
+        "n": 3
+      },
+      "audio": {
+        "word": "vacina",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vaso",
+      "e": "🏺",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "va",
+        "so"
+      ],
+      "gloss": {
+        "d": "Recipiente de barro onde se planta.",
+        "ex": "O vaso caiu e quebrou.",
+        "e": "🏺",
+        "n": 3
+      },
+      "audio": {
+        "word": "vaso",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vassoura",
+      "e": "🧹",
+      "u": [
+        "u11",
+        "u5"
+      ],
+      "syllables": [
+        "vas",
+        "sou",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Objeto de cerdas e cabo usado para varrer.",
+        "ex": "Varri o chão com vassoura.",
+        "e": "🧹",
+        "n": 5
+      },
+      "audio": {
+        "word": "vassoura",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vela",
+      "e": "🕯️",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "ve",
+        "la"
+      ],
+      "gloss": {
+        "d": "Cera com pavio que queima devagar.",
+        "ex": "Acendi a vela do bolo.",
+        "e": "🕯️",
+        "n": 3
+      },
+      "audio": {
+        "word": "vela",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "velho",
+      "e": "👴",
+      "u": [
+        "u5"
+      ],
+      "syllables": [
+        "ve",
+        "lho"
+      ],
+      "gloss": {
+        "d": "Que tem muita idade, já viveu bastante.",
+        "ex": "Meu avô é velho.",
+        "e": "👴",
+        "n": 5
+      },
+      "audio": {
+        "word": "velho",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vestido",
+      "e": "👗",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "ves",
+        "ti",
+        "do"
+      ],
+      "gloss": {
+        "d": "Roupa feminina de uma peça só.",
+        "ex": "Ela usou vestido na festa.",
+        "e": "👗",
+        "n": 3
+      },
+      "audio": {
+        "word": "vestido",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vez",
+      "e": "⏱️",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "vez"
+      ],
+      "gloss": {
+        "d": "Momento de cada um fazer algo.",
+        "ex": "Agora é minha vez.",
+        "e": "⏱️",
+        "n": 8
+      },
+      "audio": {
+        "word": "vez",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vidro",
+      "e": "🪟",
+      "u": [
+        "u7"
+      ],
+      "syllables": [
+        "vi",
+        "dro"
+      ],
+      "gloss": {
+        "d": "Material duro e transparente, como da janela.",
+        "ex": "O vidro da janela quebrou.",
+        "e": "🪟",
+        "n": 7
+      },
+      "audio": {
+        "word": "vidro",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "violão",
+      "e": "🎸",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "vi",
+        "o",
+        "lão"
+      ],
+      "gloss": {
+        "d": "Instrumento de cordas que se toca com dedos.",
+        "ex": "Ele toca violão bem.",
+        "e": "🎸",
+        "n": 3
+      },
+      "audio": {
+        "word": "violão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vovó",
+      "e": "👵",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "vo",
+        "vó"
+      ],
+      "gloss": {
+        "d": "Mãe da mãe ou do pai.",
+        "ex": "A vovó fez um bolo.",
+        "e": "👵",
+        "n": 3
+      },
+      "audio": {
+        "word": "vovó",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "voz",
+      "e": "🎤",
+      "u": [
+        "u8"
+      ],
+      "syllables": [
+        "voz"
+      ],
+      "gloss": {
+        "d": "Som que sai da boca ao falar.",
+        "ex": "Sua voz está mais forte.",
+        "e": "🎤",
+        "n": 8
+      },
+      "audio": {
+        "word": "voz",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "vulcão",
+      "e": "🌋",
+      "u": [
+        "u3"
+      ],
+      "syllables": [
+        "vul",
+        "cão"
+      ],
+      "gloss": {
+        "d": "Montanha que solta lava quente e fumaça.",
+        "ex": "O vulcão entrou em fúria.",
+        "e": "🌋",
+        "n": 3
+      },
+      "audio": {
+        "word": "vulcão",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "xadrez",
+      "e": "♟️",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "xa",
+        "drez"
+      ],
+      "gloss": {
+        "d": "Jogo de tabuleiro com peças pretas e brancas.",
+        "ex": "Jogamos xadrez no clube.",
+        "e": "♟️",
+        "n": 4
+      },
+      "audio": {
+        "word": "xadrez",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "xampu",
+      "e": "🧴",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "xam",
+        "pu"
+      ],
+      "gloss": {
+        "d": "Sabão líquido que lava os cabelos.",
+        "ex": "Usei xampu no banho.",
+        "e": "🧴",
+        "n": 4
+      },
+      "audio": {
+        "word": "xampu",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "xarope",
+      "e": "💊",
+      "u": [
+        "u14",
+        "u4"
+      ],
+      "syllables": [
+        "xa",
+        "ro",
+        "pe"
+      ],
+      "gloss": {
+        "d": "Remédio líquido e doce, tomado com colher.",
+        "ex": "O xarope é bem doce.",
+        "e": "💊",
+        "n": 4
+      },
+      "audio": {
+        "word": "xarope",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "xerife",
+      "e": "🤠",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "xe",
+        "ri",
+        "fe"
+      ],
+      "gloss": {
+        "d": "Pessoa que prende ladrões e usa estrela.",
+        "ex": "O xerife buscou o ladrão.",
+        "e": "🤠",
+        "n": 4
+      },
+      "audio": {
+        "word": "xerife",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "xícara",
+      "e": "☕",
+      "u": [
+        "u14",
+        "u4"
+      ],
+      "syllables": [
+        "xí",
+        "ca",
+        "ra"
+      ],
+      "gloss": {
+        "d": "Copo pequeno com asa para bebida quente.",
+        "ex": "Bebi chá na xícara.",
+        "e": "☕",
+        "n": 4
+      },
+      "audio": {
+        "word": "xícara",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "zebra",
+      "e": "🦓",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ze",
+        "bra"
+      ],
+      "gloss": {
+        "d": "Animal de listras pretas e brancas.",
+        "ex": "A zebra corre na savana.",
+        "e": "🦓",
+        "n": 4
+      },
+      "audio": {
+        "word": "zebra",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "zero",
+      "e": "0️⃣",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "ze",
+        "ro"
+      ],
+      "gloss": {
+        "d": "Número que não vale nada, redondo como bola.",
+        "ex": "Zero vem antes do um.",
+        "e": "0️⃣",
+        "n": 4
+      },
+      "audio": {
+        "word": "zero",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "zíper",
+      "e": "🤐",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "zí",
+        "per"
+      ],
+      "gloss": {
+        "d": "Fecho de dentes que junta as duas partes.",
+        "ex": "O zíper ficou preso.",
+        "e": "🤐",
+        "n": 4
+      },
+      "audio": {
+        "word": "zíper",
+        "hasClip": true
+      }
+    },
+    {
+      "w": "zoológico",
+      "e": "🦁",
+      "u": [
+        "u4"
+      ],
+      "syllables": [
+        "zo",
+        "o",
+        "ló",
+        "gi",
+        "co"
+      ],
+      "gloss": {
+        "d": "Lugar com animais de vários lugares visitados.",
+        "ex": "Vimos leões no zoológico.",
+        "e": "🦁",
+        "n": 4
+      },
+      "audio": {
+        "word": "zoológico",
+        "hasClip": true
+      }
+    }
+  ],
+  "texts": [
+    {
+      "id": "t1",
+      "titulo": "O gato de Bia",
+      "unidade": "u2",
+      "emoji": "🐱",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "gato",
+        "leite",
+        "tapete",
+        "mia"
+      ]
+    },
+    {
+      "id": "t10",
+      "titulo": "Na praia",
+      "unidade": "u7",
+      "emoji": "🏖️",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "praia",
+        "prato",
+        "criança",
+        "areia"
+      ]
+    },
+    {
+      "id": "t11",
+      "titulo": "O livro da vovó",
+      "unidade": "u8",
+      "emoji": "📖",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "livro",
+        "vovó",
+        "história",
+        "sozinha"
+      ]
+    },
+    {
+      "id": "t12",
+      "titulo": "A aranha e o pássaro",
+      "unidade": "u5",
+      "emoji": "🕷️",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "aranha",
+        "teia",
+        "pássaro",
+        "ovos"
+      ]
+    },
+    {
+      "id": "t13",
+      "titulo": "Bom dia, sol!",
+      "unidade": "u8",
+      "emoji": "🌅",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "manhã",
+        "galo",
+        "mochila",
+        "escola"
+      ]
+    },
+    {
+      "id": "t14",
+      "titulo": "Trava-línguas",
+      "unidade": "u8",
+      "emoji": "🌀",
+      "linhas": 3,
+      "perguntas": 0,
+      "palavras": [
+        "rato",
+        "rei",
+        "pratos",
+        "tigres"
+      ]
+    },
+    {
+      "id": "t15",
+      "titulo": "O carro do vovô",
+      "unidade": "u10",
+      "emoji": "🚗",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "carro",
+        "rua",
+        "roda",
+        "cachorro"
+      ]
+    },
+    {
+      "id": "t16",
+      "titulo": "O burro e a torre",
+      "unidade": "u10",
+      "emoji": "🐴",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "burro",
+        "torre",
+        "morro",
+        "ferro"
+      ]
+    },
+    {
+      "id": "t17",
+      "titulo": "A sopa da vovó",
+      "unidade": "u11",
+      "emoji": "🍲",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "sopa",
+        "massa",
+        "osso",
+        "assado"
+      ]
+    },
+    {
+      "id": "t18",
+      "titulo": "A vassoura da professora",
+      "unidade": "u11",
+      "emoji": "🧹",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "vassoura",
+        "classe",
+        "sapo",
+        "professora"
+      ]
+    },
+    {
+      "id": "t19",
+      "titulo": "O café do papai",
+      "unidade": "u12",
+      "emoji": "☕",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "café",
+        "caneca",
+        "queijo",
+        "quente"
+      ]
+    },
+    {
+      "id": "t2",
+      "titulo": "A bola de Davi",
+      "unidade": "u2",
+      "emoji": "⚽",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "bola",
+        "azul",
+        "papai",
+        "joga"
+      ]
+    },
+    {
+      "id": "t20",
+      "titulo": "A águia e a água",
+      "unidade": "u13",
+      "emoji": "🦅",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "águia",
+        "água",
+        "formiga",
+        "gota"
+      ]
+    },
+    {
+      "id": "t21",
+      "titulo": "A chave da bruxa",
+      "unidade": "u14",
+      "emoji": "🔑",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "chave",
+        "bruxa",
+        "caixa",
+        "peixe"
+      ]
+    },
+    {
+      "id": "t22",
+      "titulo": "O abacaxi da moça",
+      "unidade": "u14",
+      "emoji": "🍍",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "abacaxi",
+        "moça",
+        "xícara",
+        "dança"
+      ]
+    },
+    {
+      "id": "t3",
+      "titulo": "O pato e a pata",
+      "unidade": "u3",
+      "emoji": "🦆",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "pato",
+        "pata",
+        "lagoa",
+        "milho"
+      ]
+    },
+    {
+      "id": "t4",
+      "titulo": "A fada e a lua",
+      "unidade": "u3",
+      "emoji": "🧚",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "fada",
+        "lua",
+        "pedido",
+        "céu"
+      ]
+    },
+    {
+      "id": "t5",
+      "titulo": "O sapo e o sol",
+      "unidade": "u3",
+      "emoji": "🐸",
+      "linhas": 4,
+      "perguntas": 2,
+      "palavras": [
+        "sapo",
+        "sol",
+        "suco",
+        "laranja"
+      ]
+    },
+    {
+      "id": "t6",
+      "titulo": "O carro do papai",
+      "unidade": "u5",
+      "emoji": "🚗",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "carro",
+        "lava",
+        "limpo",
+        "praia"
+      ]
+    },
+    {
+      "id": "t7",
+      "titulo": "A chuva e o milho",
+      "unidade": "u5",
+      "emoji": "🌧️",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "chuva",
+        "milho",
+        "vovô",
+        "vovó"
+      ]
+    },
+    {
+      "id": "t8",
+      "titulo": "O campo do vovô",
+      "unidade": "u6",
+      "emoji": "🌾",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "campo",
+        "pombo",
+        "milho",
+        "telhado"
+      ]
+    },
+    {
+      "id": "t9",
+      "titulo": "Cinco patos",
+      "unidade": "u6",
+      "emoji": "🦆",
+      "linhas": 5,
+      "perguntas": 2,
+      "palavras": [
+        "cinco",
+        "patos",
+        "ninho",
+        "ovos"
+      ]
+    }
+  ],
+  "audio": {
+    "clips": 1116,
+    "missingSyllables": []
+  },
+  "generatedAt": "2026-11-06T03:23:57.193Z"
+}

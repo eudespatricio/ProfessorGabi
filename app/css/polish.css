@@ -1,0 +1,80 @@
+/* Polimento: transições de tela e abertura do baú.
+   Animações só com transform/opacity e sempre respeitando reduce-motion. */
+
+@keyframes screenIn {
+  from { opacity: 0; transform: translateY(10px) scale(.997); }
+  to { opacity: 1; transform: none; }
+}
+#screen > .wrap { animation: screenIn .26s cubic-bezier(.2, .7, .2, 1); }
+html.reduce-motion #screen > .wrap { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  #screen > .wrap { animation: none; }
+}
+
+/* ---- baú do dia ---- */
+.chest-card { position: relative; overflow: hidden; }
+.chest-card__icon { font-size: 42px; line-height: 1; filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .14)); }
+.chest-card--opening { animation: chestGlow .75s ease; }
+.chest-card--opening .chest-card__icon { animation: chestPop .75s cubic-bezier(.2, .9, .3, 1.25) forwards; }
+.chest-card--opening::after {
+  content: ''; position: absolute; inset: -60%; pointer-events: none;
+  background: radial-gradient(circle at 50% 55%, rgba(255, 214, 102, .55), rgba(255, 214, 102, 0) 62%);
+  animation: chestBurst .75s ease-out forwards;
+}
+@keyframes chestGlow {
+  0% { box-shadow: none; }
+  45% { box-shadow: 0 0 0 6px rgba(255, 201, 77, .35), 0 0 42px rgba(255, 201, 77, .55); }
+  100% { box-shadow: none; }
+}
+@keyframes chestPop {
+  0% { transform: scale(1) rotate(0); }
+  25% { transform: scale(1.14) rotate(-7deg); }
+  55% { transform: scale(1.2) rotate(7deg); }
+  100% { transform: scale(1.35) translateY(-6px) rotate(0); }
+}
+@keyframes chestBurst {
+  0% { opacity: 0; transform: scale(.4); }
+  45% { opacity: 1; }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chest-card--opening,
+  .chest-card--opening .chest-card__icon,
+  .chest-card--opening::after { animation: none; }
+}
+html.reduce-motion .chest-card--opening,
+html.reduce-motion .chest-card--opening .chest-card__icon,
+html.reduce-motion .chest-card--opening::after { animation: none; }
+
+/* ---- profundidade no mapa da trilha ---- */
+.adventure { --par: 0; }
+.adventure .cloud { transform: translate3d(0, calc(var(--par) * -16px), 0); }
+.adventure .sun { transform: translate3d(0, calc(var(--par) * -7px), 0); }
+.adventure::before { transform: translate3d(0, calc(var(--par) * 8px), 0); transform-origin: 50% 100%; }
+.trail-card {
+  box-shadow: 0 1px 0 #fff inset, 0 6px 16px rgba(80, 60, 40, .10), 0 18px 34px rgba(80, 60, 40, .07);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+@media (hover: hover) {
+  .trail-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1px 0 #fff inset, 0 10px 22px rgba(80, 60, 40, .14), 0 26px 44px rgba(80, 60, 40, .10);
+  }
+}
+.trail-badge { filter: drop-shadow(0 8px 10px rgba(80, 60, 40, .16)); }
+
+/* ---- entrada dos modais ---- */
+@keyframes modalBackIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modalCardIn {
+  from { opacity: 0; transform: translateY(16px) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+.modal { animation: modalBackIn .18s ease; }
+.modal__card { animation: modalCardIn .24s cubic-bezier(.2, .85, .25, 1); }
+html.reduce-motion .modal,
+html.reduce-motion .modal__card { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .modal, .modal__card { animation: none; }
+  .adventure .cloud, .adventure .sun, .adventure::before { transform: none; }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "professor-gabi",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Gabi — professora virtual de leitura e escrita em português para tablet Android (PWA offline).",
+    "type": "module",
+    "scripts": {
+        "start": "node server/serve.mjs",
+        "test": "node --test tests/invariants.test.mjs tests/logic.test.mjs tests/store.test.mjs tests/ocr.test.mjs tests/speech.test.mjs tests/audio.test.mjs tests/encoding.test.mjs tests/reading.test.mjs tests/review.test.mjs && node tools/check-sw.mjs && node tools/content-manifest.mjs --check",
+        "smoke": "node tests/smoke.mjs",
+        "test:app": "node tests/smoke.mjs && node tests/full.mjs",
+        "test:story": "node tests/story-shot.mjs",
+        "test:reading": "node tests/reading-sim.mjs",
+        "test:lessons": "node tests/lesson-shots.mjs",
+        "check:sw": "node tools/check-sw.mjs",
+        "check:encoding": "node tools/encoding-check.mjs",
+        "check:lazy": "node tools/check-lazy.mjs",
+        "check:server": "node tools/check-server.mjs",
+        "check:map": "node tools/check-map.mjs",
+        "content:manifest": "node tools/content-manifest.mjs --write",
+        "content:check": "node tools/content-manifest.mjs --check",
+        "audio:opus-index": "node tools/build-opus-index.mjs",
+        "sw:build": "node tools/build-sw.mjs"
+    },
+    "engines": {
+        "node": ">=20"
+    },
+    "keywords": [
+        "alfabetização",
+        "leitura",
+        "português",
+        "pwa",
+        "educação"
+    ],
+    "license": "UNLICENSED"
+}

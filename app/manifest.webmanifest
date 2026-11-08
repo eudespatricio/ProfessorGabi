@@ -1,0 +1,21 @@
+{
+  "name": "Gabi — Ler e Escrever",
+  "short_name": "Gabi",
+  "description": "Professora virtual de leitura e escrita em português: sílabas, palavras, histórias e a regra do M antes de P e B.",
+  "id": "br.gabi.leitura",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#fff7ec",
+  "theme_color": "#fff7ec",
+  "categories": ["education", "kids"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

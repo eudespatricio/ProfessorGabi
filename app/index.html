@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR" translate="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gabi — Ler e Escrever</title>
+  <meta name="description" content="Professora virtual de leitura e escrita em português: sílabas, palavras, textos e ortografia.">
+  <meta name="google" content="notranslate">
+  <meta name="theme-color" content="#FFF7EC">
+  <meta name="color-scheme" content="light">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Gabi">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+  <div id="boot" class="boot">
+    <div class="boot-logo" aria-hidden="true">🦉</div>
+    <div class="boot-title">Gabi</div>
+    <div class="boot-sub">preparando a aula…</div>
+  </div>
+
+  <div id="app" hidden>
+    <main id="screen" class="screen" tabindex="-1"></main>
+    <nav id="tabbar" class="tabbar" aria-label="Navegação principal"></nav>
+  </div>
+
+  <div id="modal-root" class="modal-root"></div>
+  <div id="toast-root" class="toast-root" role="status" aria-live="polite"></div>
+  <div id="fx" class="fx" aria-hidden="true"></div>
+
+  <noscript>
+    <p style="padding:24px;font-family:sans-serif">Este app precisa de JavaScript ativado para funcionar.</p>
+  </noscript>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
