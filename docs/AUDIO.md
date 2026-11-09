@@ -1,6 +1,6 @@
 # Áudio: por que soa robótico e quais opções temos
 
-## Estado atual (v47)
+## Estado atual (v48)
 
 - **1.778 clipes** ElevenLabs (voz Raquel pt-BR): palavras, sílabas (inclusive vogais), frases, linhas de história, instruções e definições — **0 palavra ou sílaba sem áudio**.
 - **MP3: 55 MB** (fallback/compatibilidade) e **Opus mono 24 kbps: 13 MB**.
@@ -16,12 +16,13 @@
 - 28 clipes antigos com pitch muito baixo (139–159 Hz) foram regravados com a Raquel; o mais audível era **“Muito bem”**, que estava em 144 Hz e agora está em **250 Hz**.
 - Custo: **130 créditos**. O total continua **1.778 clipes**; os 1.116 originais foram preservados, exceto esses 28 substituídos.
 - O `muito bem` antigo (05/11) era um outlier; a auditoria de pitch encontrou o grupo e a voz masculina deixou de existir nos clipes.
+- **v48:** o app busca `audio/index.json?v=v48` e `index-opus.json?v=v48`; assim um índice antigo do cache `gabi-audio-v1` não esconde os clipes novos. Se a versão versionada falhar (offline), usa o índice simples em cache.
 
 ## Delta v43 e sotaque
 
 - O acervo original de **1.116** clipes foi mantido; entraram **662** clipes novos, gerados só para o que faltava: cartões de ensino, comandos de exercício, nomes **Gabi/Gabriela**, conversa e frases de interface.
 - Custo do delta: **28.065 créditos** ElevenLabs (1 crédito/caractere no `eleven_multilingual_v2`), dentro dos 30k disponibilizados.
-- Vozes `pt_PT`/Portugal e vozes masculinas são **rejeitadas** por `pickVoice()` e removidas do laboratório/ajustes; só vozes femininas `pt-BR` entram na síntese dinâmica. Ver `docs/STRESS-V47.md`.
+- Vozes `pt_PT`/Portugal e vozes masculinas são **rejeitadas** por `pickVoice()` e removidas do laboratório/ajustes; só vozes femininas `pt-BR` entram na síntese dinâmica. Ver `docs/STRESS-V48.md`.
 
 ## Diagnóstico (medido neste computador)
 

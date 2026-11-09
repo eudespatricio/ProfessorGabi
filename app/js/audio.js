@@ -1,5 +1,6 @@
 /* Voz da Gabi (TTS pt-BR) e efeitos sonoros sintetizados (sem arquivos). */
 import { state } from './store.js';
+import { APP_VERSION } from './version.js';
 
 let voices = [];
 let seq = 0;
@@ -203,12 +204,21 @@ async function fetchAudioIndex(url, timeout = 2200) {
   }
 }
 
+async function fetchFreshIndex(file) {
+  const versioned = `${file}?v=${encodeURIComponent(APP_VERSION)}`;
+  try {
+    const r = await fetchAudioIndex(versioned);
+    if (r.ok) return r;
+  } catch { /* offline: tenta o índice simples em cache */ }
+  return fetchAudioIndex(file);
+}
+
 async function loadClipIndex() {
   if (clipIndex) return clipIndex;
   if (!clipIndexPromise) {
     clipIndexPromise = (async () => {
       try {
-        const r = await fetchAudioIndex('audio/index.json');
+        const r = await fetchFreshIndex('audio/index.json');
         if (!r.ok) { clipStats.indexFail++; return {}; }
         clipIndex = await r.json();
         return clipIndex;
@@ -228,7 +238,7 @@ async function loadOpusIndex() {
   if (!opusIndexPromise) {
     opusIndexPromise = (async () => {
       try {
-        const r = await fetchAudioIndex('audio/index-opus.json');
+        const r = await fetchFreshIndex('audio/index-opus.json');
         if (!r.ok) { clipStats.indexFail++; return {}; }
         opusIndex = await r.json();
         return opusIndex;
