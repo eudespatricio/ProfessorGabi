@@ -18,8 +18,8 @@ import path from 'node:path';
 
 const DEVTOOLS = process.env.GABI_DEVTOOLS || 'http://127.0.0.1:9222';
 const APP_URL = process.env.GABI_URL || 'http://localhost:8080/';
-const EXPECTED_VERSION = process.env.GABI_VERSION || 'v46';
-const OUT = path.resolve(process.env.GABI_STRESS_OUT || 'tests/stress-v46');
+const EXPECTED_VERSION = process.env.GABI_VERSION || 'v47';
+const OUT = path.resolve(process.env.GABI_STRESS_OUT || 'tests/stress-v47');
 fs.mkdirSync(OUT, { recursive: true });
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -552,10 +552,10 @@ async function scenarioBoot(page) {
     caches: await caches.keys(),
     audio: window.__gabi?.audio?.(),
   }))()`);
-  check('app v46 carregado', boot.version === 'v46', JSON.stringify(boot.version));
-  check('dataset da versão = v46', boot.dataVersion === 'v46', JSON.stringify(boot.dataVersion));
+  check('app v47 carregado', boot.version === 'v47', JSON.stringify(boot.version));
+  check('dataset da versão = v47', boot.dataVersion === 'v47', JSON.stringify(boot.dataVersion));
   check('service worker controlando a página', /\/sw\.js$/.test(boot.controller || ''), String(boot.controller));
-  check('cache gabi-v46 presente', boot.caches.includes('gabi-v46'), boot.caches.join(','));
+  check('cache gabi-v47 presente', boot.caches.includes('gabi-v47'), boot.caches.join(','));
   check('cache de áudio gabi-audio-v1 presente', boot.caches.includes('gabi-audio-v1'), boot.caches.join(','));
   check('há voz pt-BR no tablet', (boot.audio?.ptVoices || 0) > 0, `ptVoices=${boot.audio?.ptVoices}`);
   check('Opus suportado no Chrome do emulador', boot.audio?.opusSupported === true);
@@ -565,7 +565,7 @@ async function scenarioBoot(page) {
     return out;
   })()`);
   results.cacheCounts = cacheCounts;
-  check('shell offline com 37 arquivos', cacheCounts['gabi-v46'] >= 37, `gabi-v46=${cacheCounts['gabi-v46']}`);
+  check('shell offline com 37 arquivos', cacheCounts['gabi-v47'] >= 37, `gabi-v47=${cacheCounts['gabi-v47']}`);
   check('áudio pré-cacheado 1000+', (cacheCounts['gabi-audio-v1'] || 0) >= 1000, `gabi-audio-v1=${cacheCounts['gabi-audio-v1']}`);
 
   await page.hash('#/');
@@ -1127,7 +1127,7 @@ async function main() {
   };
   const scenario = getArg('--scenario', 'all');
   const slowIndex = Number(getArg('--slow-index', 3000));
-  log(`Stress Professor Gabi v46 — ${stamp()}`);
+  log(`Stress Professor Gabi v47 — ${stamp()}`);
   log(`DevTools: ${DEVTOOLS} | App: ${APP_URL}`);
   const browser = await CDP.connect();
   log(`Chrome: ${browser.info.Browser}`);

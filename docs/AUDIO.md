@@ -1,6 +1,6 @@
 # Áudio: por que soa robótico e quais opções temos
 
-## Estado atual (v46)
+## Estado atual (v47)
 
 - **1.778 clipes** ElevenLabs (voz Raquel pt-BR): palavras, sílabas (inclusive vogais), frases, linhas de história, instruções e definições — **0 palavra ou sílaba sem áudio**.
 - **MP3: 55 MB** (fallback/compatibilidade) e **Opus mono 24 kbps: 13 MB**.
@@ -11,11 +11,17 @@
 - Verificação: `node tools/check-opus.mjs` (7 checagens), `node tests/audio.test.mjs` (índice completo + arquivos Ogg) e `node tools/check-lazy.mjs`.
 - **Alternativas locais avaliadas (06/11/2026):** `docs/AVALIACAO-KOKORO.md` e `docs/AVALIACAO-PIPER.md`. Resumo: Kokoro acerta frases e erra palavras isoladas; Piper é leve/rápido, mas não tem voz feminina pt-BR e o engine 1.8.0 é GPL-3.0. Nenhum dos dois substitui os clipes ElevenLabs do núcleo por enquanto.
 
+## Correção v47 de clipes fora do padrão
+
+- 28 clipes antigos com pitch muito baixo (139–159 Hz) foram regravados com a Raquel; o mais audível era **“Muito bem”**, que estava em 144 Hz e agora está em **250 Hz**.
+- Custo: **130 créditos**. O total continua **1.778 clipes**; os 1.116 originais foram preservados, exceto esses 28 substituídos.
+- O `muito bem` antigo (05/11) era um outlier; a auditoria de pitch encontrou o grupo e a voz masculina deixou de existir nos clipes.
+
 ## Delta v43 e sotaque
 
 - O acervo original de **1.116** clipes foi mantido; entraram **662** clipes novos, gerados só para o que faltava: cartões de ensino, comandos de exercício, nomes **Gabi/Gabriela**, conversa e frases de interface.
 - Custo do delta: **28.065 créditos** ElevenLabs (1 crédito/caractere no `eleven_multilingual_v2`), dentro dos 30k disponibilizados.
-- Vozes `pt_PT`/Portugal e vozes masculinas são **rejeitadas** por `pickVoice()` e removidas do laboratório/ajustes; só vozes femininas `pt-BR` entram na síntese dinâmica. Ver `docs/STRESS-V46.md`.
+- Vozes `pt_PT`/Portugal e vozes masculinas são **rejeitadas** por `pickVoice()` e removidas do laboratório/ajustes; só vozes femininas `pt-BR` entram na síntese dinâmica. Ver `docs/STRESS-V47.md`.
 
 ## Diagnóstico (medido neste computador)
 

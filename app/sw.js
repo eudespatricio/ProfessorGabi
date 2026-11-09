@@ -3,7 +3,7 @@
    - ÁUDIO: clipes Opus (4 MB) e índices, em cache próprio que sobrevive a upgrades
    - Navegação: rede primeiro, cache como rede de segurança
    - Demais arquivos: cache primeiro, atualizando em segundo plano */
-const VERSION = 'gabi-v46';
+const VERSION = 'gabi-v47';
 const AUDIO_CACHE = 'gabi-audio-v1';
 const AUDIO_INDEX = 'audio/index-opus.json';
 const CORE = [
