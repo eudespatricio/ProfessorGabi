@@ -48,8 +48,8 @@ export async function renderVoiceLab() {
 
   if (!voices.length) {
     wrap.append(el('div', { class: 'card card--warn' },
-      el('div', { class: 'strong', text: 'Nenhuma voz pt-BR encontrada' }),
-      el('div', { class: 'small mt', text: 'Instale o pacote “Português (Brasil)” no Google TTS/Android ou use o Edge com Francisca/Thalita. Vozes de Portugal não aparecem mais nesta lista.' })));
+      el('div', { class: 'strong', text: 'Nenhuma voz feminina pt-BR encontrada' }),
+      el('div', { class: 'small mt', text: 'Instale o pacote “Português (Brasil)” no Google TTS/Android ou use o Edge com Francisca/Thalita. Vozes de Portugal e masculinas não aparecem nesta lista.' })));
   }
 
   // controles de velocidade e tom

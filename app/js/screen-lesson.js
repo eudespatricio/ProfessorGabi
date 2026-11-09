@@ -13,10 +13,6 @@ function speakExerciseTarget(item) {
   if (!item) return;
   const userRate = store.state.settings.rate ?? 0.9;
   const calmRate = Math.min(userRate, 0.85);
-  if (item.sayParts?.length) {
-    speakSyllables(item.sayParts);
-    return;
-  }
   if (item.type === 'read-text' && item.lines?.length) {
     if (item.level === 1) speak(item.lines[0], { rate: calmRate });
     else speak('Vamos ler juntos.');
@@ -32,11 +28,21 @@ function speakExerciseTarget(item) {
     else speak('Agora leia você.');
     return;
   }
+  // o enunciado completo (com a palavra) tem clipe próprio; antes ele era
+  // substituído por só a palavra e a criança não ouvia a pergunta
+  if (item.say) {
+    speak(item.say);
+    return;
+  }
   if (item.word) {
     speak(item.word);
     return;
   }
-  if (item.say) speak(item.say);
+  if (item.sayParts?.length) {
+    speakSyllables(item.sayParts);
+    return;
+  }
+  if (item.prompt) speak(item.prompt);
 }
 
 let playerAlive = 0;

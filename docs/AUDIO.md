@@ -1,6 +1,6 @@
 # Áudio: por que soa robótico e quais opções temos
 
-## Estado atual (v44)
+## Estado atual (v46)
 
 - **1.778 clipes** ElevenLabs (voz Raquel pt-BR): palavras, sílabas (inclusive vogais), frases, linhas de história, instruções e definições — **0 palavra ou sílaba sem áudio**.
 - **MP3: 55 MB** (fallback/compatibilidade) e **Opus mono 24 kbps: 13 MB**.
@@ -15,7 +15,7 @@
 
 - O acervo original de **1.116** clipes foi mantido; entraram **662** clipes novos, gerados só para o que faltava: cartões de ensino, comandos de exercício, nomes **Gabi/Gabriela**, conversa e frases de interface.
 - Custo do delta: **28.065 créditos** ElevenLabs (1 crédito/caractere no `eleven_multilingual_v2`), dentro dos 30k disponibilizados.
-- Vozes `pt_PT`/Portugal são **rejeitadas** por `pickVoice()` e removidas do laboratório/ajustes; só vozes `pt-BR` entram na síntese dinâmica. Ver `docs/STRESS-V44.md`.
+- Vozes `pt_PT`/Portugal e vozes masculinas são **rejeitadas** por `pickVoice()` e removidas do laboratório/ajustes; só vozes femininas `pt-BR` entram na síntese dinâmica. Ver `docs/STRESS-V46.md`.
 
 ## Diagnóstico (medido neste computador)
 

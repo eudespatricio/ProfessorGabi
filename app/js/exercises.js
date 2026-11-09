@@ -69,7 +69,7 @@ function mountChoice(item, host, api) {
     'on:click': () => {
       stopSpeaking();
       if (item.sayParts?.length) speakSyllables(item.sayParts);
-      else speak(item.word || item.say || item.prompt);
+      else speak(item.say || item.word || item.prompt);
     },
   }, '🔊 Ouvir'));
   card.append(row);
@@ -121,7 +121,7 @@ function mountChoice(item, host, api) {
     const wrong = buttons.find((b, i) => i !== item.correct && !b.classList.contains('option--dim'));
     wrong?.classList.add('option--dim');
     if (item.sayParts?.length) speakSyllables(item.sayParts);
-    else speak(item.word || item.say || item.prompt);
+    else speak(item.say || item.word || item.prompt);
     return true;
   };
   return { showHint, destroy: () => stopSpeaking() };

@@ -18,8 +18,8 @@ import path from 'node:path';
 
 const DEVTOOLS = process.env.GABI_DEVTOOLS || 'http://127.0.0.1:9222';
 const APP_URL = process.env.GABI_URL || 'http://localhost:8080/';
-const EXPECTED_VERSION = process.env.GABI_VERSION || 'v44';
-const OUT = path.resolve(process.env.GABI_STRESS_OUT || 'tests/stress-v44');
+const EXPECTED_VERSION = process.env.GABI_VERSION || 'v46';
+const OUT = path.resolve(process.env.GABI_STRESS_OUT || 'tests/stress-v46');
 fs.mkdirSync(OUT, { recursive: true });
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -552,10 +552,10 @@ async function scenarioBoot(page) {
     caches: await caches.keys(),
     audio: window.__gabi?.audio?.(),
   }))()`);
-  check('app v44 carregado', boot.version === 'v44', JSON.stringify(boot.version));
-  check('dataset da versão = v44', boot.dataVersion === 'v44', JSON.stringify(boot.dataVersion));
+  check('app v46 carregado', boot.version === 'v46', JSON.stringify(boot.version));
+  check('dataset da versão = v46', boot.dataVersion === 'v46', JSON.stringify(boot.dataVersion));
   check('service worker controlando a página', /\/sw\.js$/.test(boot.controller || ''), String(boot.controller));
-  check('cache gabi-v44 presente', boot.caches.includes('gabi-v44'), boot.caches.join(','));
+  check('cache gabi-v46 presente', boot.caches.includes('gabi-v46'), boot.caches.join(','));
   check('cache de áudio gabi-audio-v1 presente', boot.caches.includes('gabi-audio-v1'), boot.caches.join(','));
   check('há voz pt-BR no tablet', (boot.audio?.ptVoices || 0) > 0, `ptVoices=${boot.audio?.ptVoices}`);
   check('Opus suportado no Chrome do emulador', boot.audio?.opusSupported === true);
@@ -565,7 +565,7 @@ async function scenarioBoot(page) {
     return out;
   })()`);
   results.cacheCounts = cacheCounts;
-  check('shell offline com 37 arquivos', cacheCounts['gabi-v44'] >= 37, `gabi-v44=${cacheCounts['gabi-v44']}`);
+  check('shell offline com 37 arquivos', cacheCounts['gabi-v46'] >= 37, `gabi-v46=${cacheCounts['gabi-v46']}`);
   check('áudio pré-cacheado 1000+', (cacheCounts['gabi-audio-v1'] || 0) >= 1000, `gabi-audio-v1=${cacheCounts['gabi-audio-v1']}`);
 
   await page.hash('#/');
@@ -998,6 +998,32 @@ async function scenarioAudioCold(page) {
   results.coldStart.bubbles = bubbles;
 }
 
+async function scenarioStatement(page) {
+  log('\n[11] Enunciado do exercício falado');
+  await reseed(page, SEED);
+  await page.hash('#/licao/u1/0');
+  await page.waitFor(`!!document.querySelector('.lesson')`, { timeout: 8000, label: 'lição' });
+  const teach = await page.click('.btn', 'Entendi', { optional: true });
+  if (!teach.ok) {
+    check('lição abriu no primeiro exercício', false, JSON.stringify(teach));
+    return;
+  }
+  await page.waitFor(`document.querySelectorAll('.option').length >= 2`, { timeout: 8000, label: 'primeiro exercício' });
+  // o enunciado "fogo. Quantas sílabas tem a palavra fogo?" tem ~2,3 s
+  await sleep(4500);
+  const last = await page.ev(`window.__gabi.audio().clips.last`);
+  const key = String(last?.key || '');
+  const clips = await page.ev(`window.__gabi.audio().clips`);
+  const hasStatement = /quantas sílabas|qual palavra|com que sílaba|monte a palavra|complete a palavra|escreva a palavra|leia esta palavra/i.test(key);
+  const spoke = hasStatement || clips.opusOk > 0 || clips.ttsOk > 0;
+  results.statement = { key, last, clips };
+  check('enunciado completo do exercício tem áudio', spoke, JSON.stringify({ last, clips }));
+  if (!spoke) {
+    finding('L1', 'alta', 'Enunciado do exercício não é falado', 'O exercício mostra a pergunta, mas o áudio não toca o enunciado completo.', { key, last, clips });
+  }
+  await page.shot('17-enunciado-licao.png');
+}
+
 async function scenarioLessonRapid(page) {
   log('\n[5] Lição completa com avanço rápido e replay');
   await reseed(page, SEED);
@@ -1101,7 +1127,7 @@ async function main() {
   };
   const scenario = getArg('--scenario', 'all');
   const slowIndex = Number(getArg('--slow-index', 3000));
-  log(`Stress Professor Gabi v44 — ${stamp()}`);
+  log(`Stress Professor Gabi v46 — ${stamp()}`);
   log(`DevTools: ${DEVTOOLS} | App: ${APP_URL}`);
   const browser = await CDP.connect();
   log(`Chrome: ${browser.info.Browser}`);
@@ -1110,7 +1136,7 @@ async function main() {
   let page;
   let prevState;
   try {
-    if (scenario === 'all' || scenario === 'boot' || scenario === 'talk' || scenario === 'interrupt' || scenario === 'lesson' || scenario === 'nav' || scenario === 'voice' || scenario === 'search' || scenario === 'name') {
+    if (scenario === 'all' || scenario === 'boot' || scenario === 'talk' || scenario === 'interrupt' || scenario === 'lesson' || scenario === 'nav' || scenario === 'voice' || scenario === 'search' || scenario === 'name' || scenario === 'statement') {
       page = await openPage(browser);
       await bootApp(page);
       prevState = page.__prevState;
@@ -1120,6 +1146,7 @@ async function main() {
       if (scenario === 'all' || scenario === 'voice') await scenarioTalkVoice(page);
       if (scenario === 'all' || scenario === 'search') await scenarioSearch(page);
       if (scenario === 'all' || scenario === 'name') await scenarioName(page);
+      if (scenario === 'all' || scenario === 'statement') await scenarioStatement(page);
       if (scenario === 'all' || scenario === 'lesson') await scenarioLessonRapid(page);
       if (scenario === 'all' || scenario === 'nav') await scenarioNavigation(page);
       await restore(page);

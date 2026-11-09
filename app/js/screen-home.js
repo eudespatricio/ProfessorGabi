@@ -3,7 +3,7 @@ import { el, pct, clamp, sleep, fmtMinutes } from './utils.js';
 import * as store from './store.js';
 import { UNITS, UNIT_BY_ID, getUnit, unitIndexOf } from './curriculum.js';
 import { TEXTS } from './content.js';
-import { speak, stopSpeaking, listVoices, pickVoice, ensureVoices, sfx, unlockAudio, ttsSupported, isBrazilianVoice } from './audio.js';
+import { speak, stopSpeaking, listVoices, pickVoice, ensureVoices, sfx, unlockAudio, ttsSupported, isEligibleVoice } from './audio.js';
 import { requestMic, listen, asrSupported, asrErrorMessage, getMicPermission } from './speech.js';
 import { gabiEl, toast, progressRing, starsHTML, tabbar, hideTabbar, clearScreen, modal, confetti } from './ui.js';
 import { greeting, greetingPhrase, greetingLine, childName } from './tutor.js';
@@ -71,8 +71,8 @@ export function renderHome() {
     } else {
       // no Android a lista de vozes chega atrasada; só avisa se realmente não houver pt-BR
       ensureVoices(2600).then((vs) => {
-        if (!vs.some(isBrazilianVoice) && !voiceNote.textContent) {
-          voiceNote.textContent = 'Não encontrei voz em português do Brasil neste tablet. Instale a voz pt-BR nas configurações; a voz de Portugal é ignorada.';
+        if (!vs.some(isEligibleVoice) && !voiceNote.textContent) {
+          voiceNote.textContent = 'Não encontrei voz feminina em português do Brasil neste tablet. Instale a voz pt-BR nas configurações; vozes de Portugal e masculinas são ignoradas.';
         }
       });
     }

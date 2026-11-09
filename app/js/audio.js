@@ -28,8 +28,9 @@ function note(detail) {
 
 export function audioDiagnostics() {
   const all = window.speechSynthesis?.getVoices?.() || voices;
-  const pt = all.filter(isBrazilianVoice);
+  const pt = all.filter(isEligibleVoice);
   const ptPt = all.filter((v) => normalizeVoiceLang(v.lang) === 'pt-pt' || /portugal|europeu|european/i.test(String(v.name || '')));
+  const male = all.filter((v) => isBrazilianVoice(v) && !isFemaleVoice(v));
   return {
     ttsSupported: ttsSupported(),
     opusSupported,
@@ -37,6 +38,7 @@ export function audioDiagnostics() {
     voices: all.length,
     ptVoices: pt.length,
     ptPtVoices: ptPt.length,
+    maleVoices: male.length,
     voice: pickVoice()?.name || '',
     lastSpeechError,
     clips: { ...clipStats },
@@ -56,7 +58,7 @@ export function initAudio() {
 
 export function listVoices() {
   if (!voices.length) voices = window.speechSynthesis?.getVoices?.() || [];
-  return voices.filter(isBrazilianVoice);
+  return voices.filter(isEligibleVoice);
 }
 
 function refreshVoices() {
@@ -99,13 +101,32 @@ export function isBrazilianVoice(v) {
   return false;
 }
 
+const MALE_NAMES = /ant[oô]nio|antonio|daniel|duarte|jo[aã]o|joao|thiago|tiago|felipe|ricardo|bruno|marcos|paulo|pedro|rafael|heitor|f[aá]bio|fabio|donato|h[eé]lio|helio|j[uú]lio|julio|wilson|anderson|cl[aá]udio|claudio/i;
+const FEMALE_NAMES = /francisca|thalita|beatriz|maria|luciana|yara|fernanda|raquel|joana|camila|vit[oó]ria|vitoria|helo[ií]sa|heloisa|alice|sofia|laura|isabela|julia|j[uú]lia|clara|cecilia|cec[ií]lia/i;
+
+/** Heurística de gênero: rejeita nomes masculinos conhecidos. */
+export function isFemaleVoice(v) {
+  if (!v) return false;
+  const name = String(v.name || '');
+  if (MALE_NAMES.test(name)) return false;
+  if (/\bmale\b/i.test(name) && !/female/i.test(name)) return false;
+  if (FEMALE_NAMES.test(name)) return true;
+  if (/female/i.test(name)) return true;
+  return true; // voz genérica do sistema (ex.: "Portuguese Brazil") é aceita
+}
+
+/** Voz utilizável pela Gabi: pt-BR e feminina. */
+export function isEligibleVoice(v) {
+  return isBrazilianVoice(v) && isFemaleVoice(v);
+}
+
 function voiceScore(v) {
   const lang = normalizeVoiceLang(v.lang);
   const name = String(v.name || '');
   let s = 0;
   if (lang.startsWith('pt-br')) s += 72;
   if (/natural|neural|online/i.test(name)) s += 45;
-  if (/francisca|thalita|beatriz|yara|maria|luciana/i.test(name)) s += 10;
+  if (FEMALE_NAMES.test(name)) s += 20;
   if (/google/i.test(name)) s += 8;
   if (v.localService) s -= 4;
   return s;
@@ -117,10 +138,10 @@ export function pickVoice() {
   const wanted = state.settings.voiceURI;
   if (wanted) {
     const v = voices.find((x) => x.voiceURI === wanted);
-    // um voiceURI salvo de Portugal não pode voltar a ser usado
-    if (v && isBrazilianVoice(v)) return v;
+    // voiceURI salvo de Portugal ou masculino não volta a ser usado
+    if (v && isEligibleVoice(v)) return v;
   }
-  const pt = voices.filter(isBrazilianVoice);
+  const pt = voices.filter(isEligibleVoice);
   if (!pt.length) return null;
   return pt.slice().sort((a, b) => voiceScore(b) - voiceScore(a))[0];
 }
@@ -172,12 +193,22 @@ export function stopClip() {
   activeClips.clear();
 }
 
+async function fetchAudioIndex(url, timeout = 2200) {
+  const ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+  const timer = ctrl ? setTimeout(() => ctrl.abort(), timeout) : null;
+  try {
+    return await fetch(url, ctrl ? { signal: ctrl.signal } : undefined);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
 async function loadClipIndex() {
   if (clipIndex) return clipIndex;
   if (!clipIndexPromise) {
     clipIndexPromise = (async () => {
       try {
-        const r = await fetch('audio/index.json');
+        const r = await fetchAudioIndex('audio/index.json');
         if (!r.ok) { clipStats.indexFail++; return {}; }
         clipIndex = await r.json();
         return clipIndex;
@@ -197,7 +228,7 @@ async function loadOpusIndex() {
   if (!opusIndexPromise) {
     opusIndexPromise = (async () => {
       try {
-        const r = await fetch('audio/index-opus.json');
+        const r = await fetchAudioIndex('audio/index-opus.json');
         if (!r.ok) { clipStats.indexFail++; return {}; }
         opusIndex = await r.json();
         return opusIndex;
@@ -390,7 +421,7 @@ export async function speak(text, opts = {}) {
     if (!voices.length) await ensureVoices(700);
     if (my !== seq) return { spoken: false, via: 'superseded' };
     // Sem voz pt-BR, não usa a voz de Portugal como fallback silencioso.
-    if (!voices.some(isBrazilianVoice)) {
+    if (!voices.some(isEligibleVoice)) {
       lastSpeechError = 'no-pt-br';
       note({ kind: 'tts', why: 'sem voz pt-BR' });
       return { spoken: false, via: 'unsupported', error: 'no-pt-br' };
@@ -398,7 +429,7 @@ export async function speak(text, opts = {}) {
     let voice = pickVoice();
     if (opts.voiceURI) {
       const chosen = voices.find((v) => v.voiceURI === opts.voiceURI);
-      if (chosen && isBrazilianVoice(chosen)) voice = chosen;
+      if (chosen && isEligibleVoice(chosen)) voice = chosen;
     }
 
     const chunks = chunkText(text);
@@ -436,7 +467,7 @@ export async function speakSyllables(parts, opts = {}) {
   setGabiSpeaking(true);
   try {
     const voice = pickVoice();
-    const hasBr = voices.some(isBrazilianVoice);
+    const hasBr = voices.some(isEligibleVoice);
     const baseRate = state.settings.rate ?? 0.9;
     const rate = opts.rate ?? Math.max(0.55, baseRate - 0.15);
     await new Promise((r) => setTimeout(r, 200));

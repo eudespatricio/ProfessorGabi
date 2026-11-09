@@ -5,7 +5,7 @@
 | Módulo | Possui (Responsabilidade) | Quando carregar |
 | --- | --- | --- |
 | `app/js/main.js` | Router hash (`#/`), boot, tema, registro do SW e banner PWA | Mudar rotas globais ou ciclo de vida inicial |
-| `app/js/version.js` | Constante única `APP_VERSION` (`v44`) | Ao subir versão (sincronizar com `app/sw.js`) |
+| `app/js/version.js` | Constante única `APP_VERSION` (`v46`) | Ao subir versão (sincronizar com `app/sw.js`) |
 | `app/sw.js` | Cache offline (`CORE` 36 arqs) + pré-cache Opus (`gabi-audio-v1`) | Alterar cache offline ou adicionar novo `.js`/`.css` |
 | `app/js/store.js` | Estado `gabi.state.v1` (`v2`), `migrate()`, SRS, XP, níveis, backup | Alterar persistência, progresso ou estatísticas |
 | `app/js/content.js` | Banco base (`RAW`), rimas, parlendas, frases e merge com `content-units.js` | Adicionar/editar palavras, frases ou textos |

@@ -246,7 +246,7 @@ function settingsTab() {
     if (st.voiceURI === v.voiceURI || (!st.voiceURI && pickVoice()?.voiceURI === v.voiceURI)) o.selected = true;
     sel.append(o);
   });
-  if (!voices.length) sel.append(el('option', { value: '' }, 'Voz padrão do tablet (sem voz pt-BR instalada)'));
+  if (!voices.length) sel.append(el('option', { value: '' }, 'Voz padrão do tablet (sem voz feminina pt-BR instalada)'));
   sel.addEventListener('change', () => { store.setSetting('voiceURI', sel.value); speak('Agora eu falo assim. Vamos ler juntos!'); });
   voiceCard.append(sel);
   voiceCard.append(el('button', {
