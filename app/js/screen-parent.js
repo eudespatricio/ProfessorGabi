@@ -237,21 +237,22 @@ function settingsTab() {
 
   const voiceCard = el('div', { class: 'card' });
   voiceCard.append(el('div', { class: 'card__title', text: 'Voz da Gabi' }));
-  voiceCard.append(el('div', { class: 'small muted', text: ttsSupported() ? 'Vozes em português encontradas no aparelho:' : 'Sem síntese de voz neste navegador.' }));
+  voiceCard.append(el('div', { class: 'small muted', text: ttsSupported() ? 'Vozes em português do Brasil encontradas no aparelho:' : 'Sem síntese de voz neste navegador.' }));
   const sel = el('select', { class: 'select', style: { marginTop: '8px' } });
   const voices = listVoices();
-  if (!voices.length) sel.append(el('option', { value: '' }, 'Voz padrão do sistema'));
+  if (st.voiceURI && !voices.some((v) => v.voiceURI === st.voiceURI)) store.setSetting('voiceURI', '');
   voices.forEach((v) => {
     const o = el('option', { value: v.voiceURI }, `${v.name} (${v.lang})`);
     if (st.voiceURI === v.voiceURI || (!st.voiceURI && pickVoice()?.voiceURI === v.voiceURI)) o.selected = true;
     sel.append(o);
   });
+  if (!voices.length) sel.append(el('option', { value: '' }, 'Voz padrão do tablet (sem voz pt-BR instalada)'));
   sel.addEventListener('change', () => { store.setSetting('voiceURI', sel.value); speak('Agora eu falo assim. Vamos ler juntos!'); });
   voiceCard.append(sel);
   voiceCard.append(el('button', {
     class: 'btn btn--teal btn--sm', style: { marginTop: '10px' },
     'on:click': () => { location.hash = '#/vozes'; },
-  }, '🎧 Comparar todas as vozes do aparelho'));
+  }, '🎧 Comparar vozes do Brasil'));
 
   const rateLabel = el('label', { text: `Velocidade da fala (${Math.round((st.rate ?? 0.9) * 100)}%)` });
   const rate = el('input', { class: 'input', type: 'range', min: '0.6', max: '1.2', step: '0.05', value: String(st.rate), style: { marginTop: '10px' } });

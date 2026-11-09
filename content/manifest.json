@@ -5,7 +5,7 @@
     "units": 14,
     "texts": 22,
     "glossary": 351,
-    "audioClips": 1116,
+    "audioClips": 1778,
     "missingWordAudio": 0,
     "missingSyllables": 0
   },
@@ -8693,8 +8693,8 @@
     }
   ],
   "audio": {
-    "clips": 1116,
+    "clips": 1778,
     "missingSyllables": []
   },
-  "generatedAt": "2026-11-06T03:23:57.193Z"
+  "generatedAt": "2026-11-09T02:23:41.809Z"
 }

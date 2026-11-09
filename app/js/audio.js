@@ -28,13 +28,15 @@ function note(detail) {
 
 export function audioDiagnostics() {
   const all = window.speechSynthesis?.getVoices?.() || voices;
-  const pt = all.filter((v) => /^pt/i.test(v.lang));
+  const pt = all.filter(isBrazilianVoice);
+  const ptPt = all.filter((v) => normalizeVoiceLang(v.lang) === 'pt-pt' || /portugal|europeu|european/i.test(String(v.name || '')));
   return {
     ttsSupported: ttsSupported(),
     opusSupported,
     unlocked,
     voices: all.length,
     ptVoices: pt.length,
+    ptPtVoices: ptPt.length,
     voice: pickVoice()?.name || '',
     lastSpeechError,
     clips: { ...clipStats },
@@ -54,8 +56,7 @@ export function initAudio() {
 
 export function listVoices() {
   if (!voices.length) voices = window.speechSynthesis?.getVoices?.() || [];
-  const pt = voices.filter((v) => /^pt/i.test(v.lang));
-  return pt.length ? pt : voices;
+  return voices.filter(isBrazilianVoice);
 }
 
 function refreshVoices() {
@@ -82,12 +83,27 @@ export function ensureVoices(timeout = 1600) {
   });
 }
 
+/** Normaliza pt_BR/pt-BR e pt_PT/pt-PT para o mesmo formato. */
+export function normalizeVoiceLang(lang) {
+  return String(lang || '').toLowerCase().replace(/_/g, '-');
+}
+
+/** Voz brasileira? pt-PT/Portugal é explicitamente rejeitada. */
+export function isBrazilianVoice(v) {
+  if (!v) return false;
+  const lang = normalizeVoiceLang(v.lang);
+  const name = String(v.name || '');
+  if (lang === 'pt-pt' || /portugal|europeu|european/i.test(name)) return false;
+  if (lang.startsWith('pt-br')) return true;
+  if (lang === 'pt' && /brasil|brazil|português do brasil|portugues do brasil/i.test(name)) return true;
+  return false;
+}
+
 function voiceScore(v) {
-  const lang = String(v.lang || '').toLowerCase();
+  const lang = normalizeVoiceLang(v.lang);
   const name = String(v.name || '');
   let s = 0;
-  if (lang.startsWith('pt')) s += 60;
-  if (lang === 'pt-br') s += 12;
+  if (lang.startsWith('pt-br')) s += 72;
   if (/natural|neural|online/i.test(name)) s += 45;
   if (/francisca|thalita|beatriz|yara|maria|luciana/i.test(name)) s += 10;
   if (/google/i.test(name)) s += 8;
@@ -101,9 +117,10 @@ export function pickVoice() {
   const wanted = state.settings.voiceURI;
   if (wanted) {
     const v = voices.find((x) => x.voiceURI === wanted);
-    if (v) return v;
+    // um voiceURI salvo de Portugal não pode voltar a ser usado
+    if (v && isBrazilianVoice(v)) return v;
   }
-  const pt = voices.filter((v) => /^pt/i.test(v.lang) || /portugu/i.test(v.name));
+  const pt = voices.filter(isBrazilianVoice);
   if (!pt.length) return null;
   return pt.slice().sort((a, b) => voiceScore(b) - voiceScore(a))[0];
 }
@@ -141,19 +158,18 @@ let clipIndex = null;
 let opusIndex = null;
 let clipIndexPromise = null;
 let opusIndexPromise = null;
-let clipAudio = null;
+const activeClips = new Set();
 export const opusSupported = (() => {
   try { return typeof Audio !== 'undefined' && new Audio().canPlayType('audio/ogg; codecs="opus"') !== ''; } catch { return false; }
 })();
 const clipKey = (t) => String(t || '').toLowerCase().replace(/[.!?…:;,]+$/g, '').replace(/\s+/g, ' ').trim();
 
 export function stopClip() {
-  if (clipAudio) {
-    const a = clipAudio;
-    clipAudio = null;
+  for (const a of [...activeClips]) {
     try { a._cancel?.(); } catch { /* ignore */ }
     try { a.pause(); } catch { /* ignore */ }
   }
+  activeClips.clear();
 }
 
 async function loadClipIndex() {
@@ -196,14 +212,15 @@ async function loadOpusIndex() {
   return opusIndexPromise;
 }
 
-/** Toca uma URL de áudio. Retorna false (em vez de travar) se demorar ou falhar. */
-function playUrl(file, rate, kind) {
+/** Toca uma URL de áudio. Retorna false (em vez de travar) se demorar, falhar ou for cancelado. */
+function playUrl(file, rate, kind, token = seq) {
+  if (token !== seq) return Promise.resolve(false);
   return new Promise((resolve) => {
     const a = new Audio();
     let settled = false;
     let started = false;
     let watchdog = null;
-    clipAudio = a;
+    activeClips.add(a);
 
     // Respeita o ajuste de velocidade dos pais (state.settings.rate) e aplica cadência pedagógica
     // suave (×0.90) nos clipes da ElevenLabs, cuja gravação nativa tem ritmo adulto acelerado.
@@ -219,12 +236,12 @@ function playUrl(file, rate, kind) {
       a.onplaying = null;
       a.onended = null;
       a.onerror = null;
+      activeClips.delete(a);
       if (!ok && why !== 'stopped') {
         if (kind === 'opus') clipStats.opusFail++;
         else clipStats.mp3Fail++;
         note({ kind, file, why: why || 'erro' });
       }
-      if (clipAudio === a) clipAudio = null;
       resolve(ok);
     };
 
@@ -243,6 +260,12 @@ function playUrl(file, rate, kind) {
       try { a.defaultPlaybackRate = effectiveRate; a.playbackRate = effectiveRate; } catch { /* ignore */ }
     };
     a.onplaying = () => {
+      // uma fala nova pode ter começado enquanto o arquivo carregava: não deixa este clipe entrar
+      if (token !== seq) {
+        finish(false, 'stopped');
+        try { a.pause(); } catch { /* ignore */ }
+        return;
+      }
       started = true;
       clearTimeout(watchdog);
       if (Math.abs(a.playbackRate - effectiveRate) > 0.01) {
@@ -251,6 +274,7 @@ function playUrl(file, rate, kind) {
     };
     a.onended = () => finish(true);
     a.onerror = () => finish(false, `media-${a.error?.code || 'error'}`);
+    if (token !== seq) { finish(false, 'stopped'); return; }
     a.src = file;
     const p = a.play();
     if (p && typeof p.catch === 'function') p.catch((e) => finish(false, e?.name || 'play-rejected'));
@@ -258,22 +282,29 @@ function playUrl(file, rate, kind) {
 }
 
 /** Toca o clipe neural do texto: Opus (menor) com fallback para MP3. */
-export async function playClip(text, rate = state.settings.rate ?? 0.9) {
+export async function playClip(text, rate = state.settings.rate ?? 0.9, token = seq) {
+  const my = token;
+  if (my !== seq) return false;
   const key = clipKey(text);
   clipStats.clipAttempts++;
   const idx = await loadClipIndex();
+  if (my !== seq) return false;
   const mp3 = idx[key];
   const opus = opusSupported ? (await loadOpusIndex())[key] : null;
-  if (opus && await playUrl(opus, rate, 'opus')) {
+  if (my !== seq) return false;
+  if (opus && await playUrl(opus, rate, 'opus', my)) {
     clipStats.opusOk++;
     note({ kind: 'opus', ok: true, key });
     return true;
   }
-  if (mp3 && await playUrl(mp3, rate, 'mp3')) {
+  // o Opus pode ter sido cancelado por uma fala nova: não começa o MP3 atrasado
+  if (my !== seq) return false;
+  if (mp3 && await playUrl(mp3, rate, 'mp3', my)) {
     clipStats.mp3Ok++;
     note({ kind: 'mp3', ok: true, key });
     return true;
   }
+  if (my !== seq) return false;
   if (!opus && !mp3) {
     clipStats.noClip++;
     note({ kind: 'none', key, why: 'sem clipe' });
@@ -343,7 +374,7 @@ export async function speak(text, opts = {}) {
   try {
     // 1) clipe neural gravado (ElevenLabs) — melhor qualidade e offline
     if (opts.clip !== false && !opts.voiceURI) {
-      const played = await playClip(text, rate);
+      const played = await playClip(text, rate, my);
       if (played) return { spoken: true, via: 'clip' };
     }
     if (my !== seq) return { spoken: false, via: 'superseded' };
@@ -358,9 +389,17 @@ export async function speak(text, opts = {}) {
     if (!voices.length) await ensureVoices(2000);
     if (!voices.length) await ensureVoices(700);
     if (my !== seq) return { spoken: false, via: 'superseded' };
+    // Sem voz pt-BR, não usa a voz de Portugal como fallback silencioso.
+    if (!voices.some(isBrazilianVoice)) {
+      lastSpeechError = 'no-pt-br';
+      note({ kind: 'tts', why: 'sem voz pt-BR' });
+      return { spoken: false, via: 'unsupported', error: 'no-pt-br' };
+    }
     let voice = pickVoice();
-    if (opts.voiceURI) voice = voices.find((v) => v.voiceURI === opts.voiceURI) || voice;
-    if (!voice && voices.length) note({ kind: 'tts', why: 'sem voz pt-BR' });
+    if (opts.voiceURI) {
+      const chosen = voices.find((v) => v.voiceURI === opts.voiceURI);
+      if (chosen && isBrazilianVoice(chosen)) voice = chosen;
+    }
 
     const chunks = chunkText(text);
     let any = false;
@@ -397,6 +436,7 @@ export async function speakSyllables(parts, opts = {}) {
   setGabiSpeaking(true);
   try {
     const voice = pickVoice();
+    const hasBr = voices.some(isBrazilianVoice);
     const baseRate = state.settings.rate ?? 0.9;
     const rate = opts.rate ?? Math.max(0.55, baseRate - 0.15);
     await new Promise((r) => setTimeout(r, 200));
@@ -404,8 +444,8 @@ export async function speakSyllables(parts, opts = {}) {
       if (my !== seq) return;
       const syl = String(p || '').trim();
       if (!syl) continue;
-      const played = await playClip(syl, rate);
-      if (!played && my === seq && ttsSupported()) {
+      const played = await playClip(syl, rate, my);
+      if (!played && my === seq && hasBr && ttsSupported()) {
         await speakOne(syl, rate, 1, voice);
       }
       if (my !== seq) return;

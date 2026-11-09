@@ -3,7 +3,7 @@
    - ÁUDIO: clipes Opus (4 MB) e índices, em cache próprio que sobrevive a upgrades
    - Navegação: rede primeiro, cache como rede de segurança
    - Demais arquivos: cache primeiro, atualizando em segundo plano */
-const VERSION = 'gabi-v38';
+const VERSION = 'gabi-v44';
 const AUDIO_CACHE = 'gabi-audio-v1';
 const AUDIO_INDEX = 'audio/index-opus.json';
 const CORE = [
@@ -37,6 +37,7 @@ const CORE = [
   './js/speech.js',
   './js/store.js',
   './js/syllables.js',
+  './js/talk-reply.js',
   './js/tutor.js',
   './js/ui.js',
   './js/utils.js',
@@ -164,11 +165,12 @@ async function precacheAudio(maxMs = 20000) {
   precachePromise = (async () => {
     const cache = await caches.open(AUDIO_CACHE);
     for (const file of ['audio/index.json', AUDIO_INDEX]) {
+      // os índices precisam ser atualizados a cada versão: o cache de áudio
+      // sobrevive a upgrades e um índice antigo esconde os clipes novos
       try {
-        if (await cache.match(file)) continue;
-        const res = await fetch(file);
+        const res = await fetch(file, { cache: 'no-store' });
         if (res && res.ok) await cache.put(file, res);
-      } catch { /* segue com o que der */ }
+      } catch { /* offline: mantém o índice antigo se existir */ }
     }
 
     const urls = await opusUrls();

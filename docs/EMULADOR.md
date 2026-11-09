@@ -76,6 +76,21 @@ node tests/emu-tablet.mjs           # emula 1024x768 e 768x1024 e mede o dock da
 `emu-probe` mostra `window.__gabi.audio()`: quantas vozes o tablet tem, se o Opus é suportado e
 quantos clipes tocaram por Opus, MP3 ou TTS — é a forma mais rápida de conferir o achado 3.
 
+## Stress test automatizado
+
+Com o app aberto no Chrome do emulador e `adb forward tcp:9222 localabstract:chrome_devtools_remote`:
+
+```powershell
+node tests/stress-emu.mjs                    # bateria completa
+node tests/stress-emu.mjs --scenario talk    # conversa (roteiro + interrupções)
+node tests/stress-emu.mjs --scenario voice   # latência do TTS até as opções
+node tests/stress-emu.mjs --scenario lesson  # lição + concorrência de clipes
+node tests/stress-emu.mjs --scenario mic     # microfone ao sair da conversa
+```
+
+Os resultados ficam em `tests/stress-v44/` (JSON + prints). A bateria restaura o `localStorage`
+original no fim e não altera o código do app.
+
 ## Limitações honestas
 
 - **A voz sintetizada sai pelo áudio do PC**; o volume do Windows manda.

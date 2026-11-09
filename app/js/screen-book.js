@@ -261,7 +261,8 @@ function stripLineEdgeNoise(line) {
     for (let i = 0; i < Math.min(5, words.length - 2); i++) {
       const gap = lefts[i + 1] - rights[i];
       const prefixConf = confs.slice(0, i + 1).reduce((a, b) => a + b, 0) / (i + 1);
-      if (gap > 85 && prefixConf < 78) start = i + 1;
+      // só corta um prefixo se sobrar texto suficiente; senão o "gap" é o início do ruído do fim da linha
+      if (gap > 85 && prefixConf < 78 && i + 1 <= words.length - 3) start = i + 1;
     }
     for (let i = words.length - 1; i >= Math.max(start + 2, words.length - 5); i--) {
       const gap = lefts[i] - rights[i - 1];

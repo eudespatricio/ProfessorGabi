@@ -17,7 +17,7 @@ export async function renderVoiceLab() {
   wrap.append(el('div', { class: 'row' }, back,
     el('div', { class: 'grow' },
       el('div', { class: 'topbar__title', text: 'Laboratório de voz' }),
-      el('div', { class: 'small muted', text: 'Compare as vozes de português do aparelho e escolha a mais natural.' }))));
+      el('div', { class: 'small muted', text: 'Compare as vozes de português do Brasil do aparelho e escolha a mais natural.' }))));
 
   let rate = store.state.settings.rate ?? 0.9;
   let pitch = store.state.settings.pitch ?? 1;
@@ -28,19 +28,28 @@ export async function renderVoiceLab() {
     return;
   }
 
-  const voices = listVoices().filter((v) => /^pt/i.test(v.lang));
+  const voices = listVoices();
+  if (store.state.settings.voiceURI && !voices.some((v) => v.voiceURI === store.state.settings.voiceURI)) {
+    store.setSetting('voiceURI', '');
+  }
   const isEdge = /Edg\//.test(navigator.userAgent);
   const naturals = voices.filter((v) => /natural|neural|online/i.test(v.name));
 
   if (naturals.length) {
     wrap.append(el('div', { class: 'card', style: { background: 'linear-gradient(150deg,#e9fbf7,#fff)' } },
       el('div', { class: 'strong', text: '✅ Vozes neurais encontradas' }),
-      el('div', { class: 'small muted', text: `Este navegador oferece ${naturals.length} voz(es) natural(is) em português — são as mesmas do Azure, sem custo. Use as que têm “Natural” no nome.` })));
+      el('div', { class: 'small muted', text: `Este navegador oferece ${naturals.length} voz(es) natural(is) em português do Brasil — são as mesmas do Azure, sem custo. Use as que têm “Natural” no nome.` })));
   } else {
     wrap.append(el('div', { class: 'card card--warn' },
       el('div', { class: 'strong', text: 'Dica para melhorar muito o áudio' }),
       el('div', { class: 'small mt', text: 'Abra este app no Microsoft Edge: ele libera as vozes neurais da Microsoft (Francisca, Thalita, Antônio) de graça. No Chrome ficam só as vozes do sistema, mais robóticas.' }),
       el('div', { class: 'small muted mt', text: 'No tablet, instale o Edge e abra o mesmo endereço; depois escolha a voz aqui. No Edge do Android as vozes naturais também costumam aparecer.' })));
+  }
+
+  if (!voices.length) {
+    wrap.append(el('div', { class: 'card card--warn' },
+      el('div', { class: 'strong', text: 'Nenhuma voz pt-BR encontrada' }),
+      el('div', { class: 'small mt', text: 'Instale o pacote “Português (Brasil)” no Google TTS/Android ou use o Edge com Francisca/Thalita. Vozes de Portugal não aparecem mais nesta lista.' })));
   }
 
   // controles de velocidade e tom
@@ -67,7 +76,7 @@ export async function renderVoiceLab() {
   const selectedURI = store.state.settings.voiceURI || pickVoice()?.voiceURI || '';
   const list = el('div', { class: 'col' });
   const ordered = voices.slice().sort((a, b) => {
-    const score = (v) => (/natural|neural|online/i.test(v.name) ? 40 : 0) + (/francisca|thalita|maria/i.test(v.name) ? 8 : 0) + (/google/i.test(v.name) ? 5 : 0) + (v.lang === 'pt-BR' ? 6 : 0);
+    const score = (v) => (/natural|neural|online/i.test(v.name) ? 40 : 0) + (/francisca|thalita|maria/i.test(v.name) ? 8 : 0) + (/google/i.test(v.name) ? 5 : 0) + (String(v.lang || '').toLowerCase().replace(/_/g, '-') === 'pt-br' ? 6 : 0);
     return score(b) - score(a);
   });
 
@@ -97,7 +106,7 @@ export async function renderVoiceLab() {
     list.append(row);
   });
 
-  wrap.append(el('div', { class: 'section-title', text: `Vozes em português (${voices.length})` }), list);
+  wrap.append(el('div', { class: 'section-title', text: `Vozes em português do Brasil (${voices.length})` }), list);
 
   wrap.append(el('div', { class: 'card card--soft small muted' },
     el('div', { class: 'strong', text: 'Por que a voz soa melhor em um navegador e não em outro?' }),

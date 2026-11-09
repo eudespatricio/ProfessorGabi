@@ -92,6 +92,7 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
   let idx = 0;
   let current = null;
   let handle = null;
+  let speakTimer = null;
   let locked = false;
   let gained = 0;
   let newStickers = [];
@@ -128,6 +129,7 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
   }
 
   async function tryExit() {
+    clearTimeout(speakTimer);
     if (mode === 'diag') { location.hash = '#/'; return; }
     // sair no meio da revisão não pode perder a lição que já terminou
     if (inReview) { finish(); return; }
@@ -147,6 +149,9 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
     current = (inReview ? reviewItems : items)[i];
     attemptsThis = 0;
     locked = false;
+    clearTimeout(speakTimer);
+    try { handle?.destroy?.(); } catch { /* ignore */ }
+    handle = null;
     body.innerHTML = '';
     foot.innerHTML = '';
     renderDots();
@@ -195,8 +200,8 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
     }
 
     if (current.say || current.word || current.sayParts) {
-      stopSpeaking();
-      setTimeout(() => { if (alive() && !locked) speakExerciseTarget(current); }, 380);
+      clearTimeout(speakTimer);
+      speakTimer = setTimeout(() => { if (alive() && !locked) speakExerciseTarget(current); }, 380);
     }
   }
 
@@ -224,6 +229,7 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
   function onDone(res) {
     if (!alive() || locked || finished) return;
     locked = true;
+    clearTimeout(speakTimer);
     stopSpeaking();
 
     if (res.teach) { next(); return; }
@@ -297,6 +303,7 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
 
   function next() {
     if (!alive()) return;
+    clearTimeout(speakTimer);
     stopSpeaking();
     const list = inReview ? reviewItems : items;
     if (idx + 1 >= list.length) {
@@ -322,6 +329,7 @@ function startPlayer({ items, unitId, lessonIndex, title, mode, firstRun = false
 
   function finish() {
     if (finished || !alive()) return;
+    clearTimeout(speakTimer);
     finished = true;
     const scoredResults = results;
     const total = scoredResults.length || 1;

@@ -6,9 +6,10 @@
     "type": "module",
     "scripts": {
         "start": "node server/serve.mjs",
-        "test": "node --test tests/invariants.test.mjs tests/logic.test.mjs tests/store.test.mjs tests/ocr.test.mjs tests/speech.test.mjs tests/audio.test.mjs tests/encoding.test.mjs tests/reading.test.mjs tests/review.test.mjs && node tools/check-sw.mjs && node tools/content-manifest.mjs --check",
+        "test": "node --test tests/invariants.test.mjs tests/talk-reply.test.mjs tests/voice.test.mjs tests/logic.test.mjs tests/store.test.mjs tests/ocr.test.mjs tests/speech.test.mjs tests/audio.test.mjs tests/encoding.test.mjs tests/reading.test.mjs tests/review.test.mjs && node tools/check-sw.mjs && node tools/content-manifest.mjs --check",
         "smoke": "node tests/smoke.mjs",
         "test:app": "node tests/smoke.mjs && node tests/full.mjs",
+        "test:stress": "node tests/stress-emu.mjs",
         "test:story": "node tests/story-shot.mjs",
         "test:reading": "node tests/reading-sim.mjs",
         "test:lessons": "node tests/lesson-shots.mjs",
@@ -20,6 +21,8 @@
         "content:manifest": "node tools/content-manifest.mjs --write",
         "content:check": "node tools/content-manifest.mjs --check",
         "audio:opus-index": "node tools/build-opus-index.mjs",
+        "audio:delta": "node tools/render-delta.mjs",
+        "audio:delta:dry": "node tools/render-delta.mjs --dry-run",
         "sw:build": "node tools/build-sw.mjs"
     },
     "engines": {

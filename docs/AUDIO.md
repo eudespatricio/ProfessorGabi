@@ -1,15 +1,21 @@
 # Áudio: por que soa robótico e quais opções temos
 
-## Estado atual (v35)
+## Estado atual (v44)
 
-- **1.116 clipes** ElevenLabs (voz Raquel pt-BR): palavras, sílabas (inclusive vogais), frases, linhas de história, instruções e definições — **0 palavra ou sílaba sem áudio**.
-- **MP3: 23,6 MB** (fallback/compatibilidade) e **Opus mono 24 kbps: 4,09 MB** (83% menor).
+- **1.778 clipes** ElevenLabs (voz Raquel pt-BR): palavras, sílabas (inclusive vogais), frases, linhas de história, instruções e definições — **0 palavra ou sílaba sem áudio**.
+- **MP3: 55 MB** (fallback/compatibilidade) e **Opus mono 24 kbps: 13 MB**.
 - `playClip()` prefere Opus (`audio/ogg; codecs="opus"`) e cai para MP3; “Baixar todo o áudio” usa o índice Opus quando o aparelho suporta.
-- **Pré-cache automático (v33):** na instalação o service worker baixa `index.json`, `index-opus.json` e os 1.116 clipes Opus (4,1 MB) para o cache `gabi-audio-v1`, que **sobrevive a upgrades** e migra o áudio do cache antigo. Antes, o tablet só guardava o clipe que tocasse online e podia cair no Google TTS.
+- **Pré-cache automático (v33):** na instalação o service worker baixa `index.json`, `index-opus.json` e os 1.778 clipes Opus (13 MB) para o cache `gabi-audio-v1`, que **sobrevive a upgrades** e migra o áudio do cache antigo. Antes, o tablet só guardava o clipe que tocasse online e podia cair no Google TTS.
 - **Diagnóstico:** `window.__gabi.audio()` (console/`chrome://inspect`) e o cartão “Diagnóstico do tablet” em `Pais → Dados` mostram quantos clipes estão em cache e quantos tocaram por Opus, MP3 ou TTS.
 - Fluxo de geração: `tools/render-audio.mjs` → `tools/make-opus.sh` (WSL) → `tools/build-opus-index.mjs`.
 - Verificação: `node tools/check-opus.mjs` (7 checagens), `node tests/audio.test.mjs` (índice completo + arquivos Ogg) e `node tools/check-lazy.mjs`.
 - **Alternativas locais avaliadas (06/11/2026):** `docs/AVALIACAO-KOKORO.md` e `docs/AVALIACAO-PIPER.md`. Resumo: Kokoro acerta frases e erra palavras isoladas; Piper é leve/rápido, mas não tem voz feminina pt-BR e o engine 1.8.0 é GPL-3.0. Nenhum dos dois substitui os clipes ElevenLabs do núcleo por enquanto.
+
+## Delta v43 e sotaque
+
+- O acervo original de **1.116** clipes foi mantido; entraram **662** clipes novos, gerados só para o que faltava: cartões de ensino, comandos de exercício, nomes **Gabi/Gabriela**, conversa e frases de interface.
+- Custo do delta: **28.065 créditos** ElevenLabs (1 crédito/caractere no `eleven_multilingual_v2`), dentro dos 30k disponibilizados.
+- Vozes `pt_PT`/Portugal são **rejeitadas** por `pickVoice()` e removidas do laboratório/ajustes; só vozes `pt-BR` entram na síntese dinâmica. Ver `docs/STRESS-V44.md`.
 
 ## Diagnóstico (medido neste computador)
 
@@ -44,12 +50,12 @@ Referências: [vozes neurais pt-BR no Azure](https://news.microsoft.com/pt-br/po
 
 **Passo 1 — hoje, custo zero.** Use o **Edge** no computador/tablet e escolha “Microsoft Francisca Online (Natural)” no laboratório de voz (`Pais → Ajustes → 🎧 Comparar todas as vozes` ou `#/vozes`). Isso já muda de patamar sem contratar nada.
 
-**Passo 2 — o conserto definitivo: pacote de áudio pré-renderizado.** ✅ Feito: 1.116 clipes com voz neural ElevenLabs, em MP3 e Opus (4,09 MB), embarcados no app e cacheados pelo Service Worker.
+**Passo 2 — o conserto definitivo: pacote de áudio pré-renderizado.** ✅ Feito: 1.778 clipes com voz neural ElevenLabs, em MP3 e Opus (13 MB), embarcados no app e cacheados pelo Service Worker.
 
 - qualidade constante e natural, igual em qualquer aparelho;
 - **offline de verdade** (hoje a voz natural depende de internet);
 - resposta instantânea, sem espera de síntese;
-- ~15–25 MB em Opus/MP3, cacheado pelo Service Worker;
+- ~68 MB em Opus/MP3, cacheado pelo Service Worker;
 - sobra para o texto dinâmico (nome da criança, respostas da IA) a voz do sistema.
 
 O app procura primeiro o clipe pré-renderizado pelo texto normalizado (`Opus → MP3`) e só cai no TTS do sistema para falas dinâmicas (nome da criança ou textos novos do OCR).

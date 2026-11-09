@@ -57,19 +57,19 @@ def test_i4_lazy_load_ocr_dictionary():
 
 
 def test_i5_i6_canonical_manifest_and_audio_coverage():
-    """I5 & I6: 14 unidades, 351 palavras, 22 textos, 351 glossário e 1.116 clipes MP3/Opus."""
+    """I5 & I6: 14 unidades, 351 palavras, 22 textos, 351 glossário e 1.778 clipes MP3/Opus."""
     manifest = json.loads((ROOT / "content" / "manifest.json").read_text(encoding="utf-8"))
     counts = manifest["counts"]
     assert counts["units"] == 14
     assert counts["words"] == 351
     assert counts["texts"] == 22
     assert counts["glossary"] == 351
-    assert counts["audioClips"] == 1116
+    assert counts["audioClips"] == 1778
     assert counts["missingWordAudio"] == 0
 
     mp3_idx = json.loads((APP / "audio" / "index.json").read_text(encoding="utf-8"))
     opus_idx = json.loads((APP / "audio" / "index-opus.json").read_text(encoding="utf-8"))
-    assert len(mp3_idx) == 1116
+    assert len(mp3_idx) == 1778
     assert set(mp3_idx.keys()) == set(opus_idx.keys()), "Desalinhamento entre index.json e index-opus.json"
 
     for rel in set(opus_idx.values()):
@@ -109,7 +109,8 @@ def test_i10_v37_audio_speech_pedagogy_and_animations():
     audio = (APP / "js" / "audio.js").read_text(encoding="utf-8")
     assert "a._cancel" in audio, "stopClip deve cancelar a Promise pendente em playUrl"
     assert "1500" in audio, "Watchdog de playUrl deve ser 1500ms"
-    assert "playClip(syl, rate)" in audio, "speakSyllables deve priorizar clipes neurais via playClip respeitando rate"
+    assert "playClip(syl, rate" in audio, "speakSyllables deve priorizar clipes neurais via playClip respeitando rate"
+    assert "token" in audio and "seq" in audio, "playClip/playUrl devem invalidar clipes de falas canceladas"
     assert "rawRate * 0.90" in audio, "playUrl deve respeitar rate dos pais com cadência pedagógica (×0.90)"
     assert "gabi-speaking" in audio, "speak/speakSyllables devem alternar classe gabi-speaking no body"
 

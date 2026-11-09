@@ -1,0 +1,5525 @@
+{
+  "started": "2026-11-09T01:08:39.343Z",
+  "app": "http://localhost:8080/",
+  "devtools": "http://127.0.0.1:9222",
+  "scenarios": [],
+  "checks": [
+    {
+      "name": "app v38 carregado",
+      "ok": true,
+      "detail": "\"v38\""
+    },
+    {
+      "name": "dataset da versão = v38",
+      "ok": true,
+      "detail": "\"v38\""
+    },
+    {
+      "name": "service worker controlando a página",
+      "ok": true,
+      "detail": "http://localhost:8080/sw.js"
+    },
+    {
+      "name": "cache gabi-v38 presente",
+      "ok": true,
+      "detail": "gabi-audio-v1,gabi-v38"
+    },
+    {
+      "name": "cache de áudio gabi-audio-v1 presente",
+      "ok": true,
+      "detail": "gabi-audio-v1,gabi-v38"
+    },
+    {
+      "name": "há voz pt-BR no tablet",
+      "ok": true,
+      "detail": "ptVoices=2"
+    },
+    {
+      "name": "Opus suportado no Chrome do emulador",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shell offline com 36 arquivos",
+      "ok": true,
+      "detail": "gabi-v38=37"
+    },
+    {
+      "name": "áudio pré-cacheado 1000+",
+      "ok": true,
+      "detail": "gabi-audio-v1=1118"
+    },
+    {
+      "name": "aviso \"sem voz pt-BR\" não aparece com 2 vozes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sem erros de JavaScript no boot",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cartinha abre",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"🎁🐾Bichos\"}"
+    },
+    {
+      "name": "humor \"Bem\" responde",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"Bem! 😃\"}"
+    },
+    {
+      "name": "turno livre faz pergunta de continuidade",
+      "ok": true,
+      "detail": "Me conta uma coisa boa que aconteceu hoje?"
+    },
+    {
+      "name": "resposta da Gabi usa frase gramatical",
+      "ok": false,
+      "detail": "Que legal! Você gosta de eu gosto de brincar no parque? Eu também gosto de aprender coisas novas."
+    },
+    {
+      "name": "se a Gabi pergunta, a criança pode responder",
+      "ok": false,
+      "detail": "pergunta=true mic=false"
+    },
+    {
+      "name": "avança do turno livre",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"Continuar ➜\"}"
+    },
+    {
+      "name": "palavra do turno de sílabas identificada",
+      "ok": true,
+      "detail": "gato → 2"
+    },
+    {
+      "name": "responde 2 sílabas",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"2 sílabas\"}"
+    },
+    {
+      "name": "trava-língua identificado",
+      "ok": true,
+      "detail": "O rato roeu a roupa do rei de Roma."
+    },
+    {
+      "name": "eco do trava-língua responde",
+      "ok": true,
+      "detail": "Isso! Você repetiu direitinho."
+    },
+    {
+      "name": "segundo turno livre responde",
+      "ok": true,
+      "detail": "Entendi! Você falou “bicho”. Essa palavra começa com o som de B. Muito bem!"
+    },
+    {
+      "name": "resposta do 2º turno considera o conteúdo (tatu)",
+      "ok": false,
+      "detail": "Entendi! Você falou “bicho”. Essa palavra começa com o som de B. Muito bem!"
+    },
+    {
+      "name": "conversa tem saudação e despedida",
+      "ok": true,
+      "detail": "13 falas da Gabi"
+    },
+    {
+      "name": "conversa registra as 5 falas da criança",
+      "ok": true,
+      "detail": "5: Bem! 😃 | eu gosto de brincar no parque | 2 sílabas | O rato roeu a roupa do rei de Roma. | meu bicho favorito é o tatu"
+    },
+    {
+      "name": "despedida não repete a mesma frase",
+      "ok": false,
+      "detail": "Adorei conversar com você, Ana. Adorei conversar com você. Você pode voltar quando quiser!"
+    },
+    {
+      "name": "card final de despedida visível sem rolar",
+      "ok": true,
+      "detail": "endVisible=true"
+    },
+    {
+      "name": "sem sobreposição de áudio no fluxo feliz",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "sem erros de JavaScript na conversa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "botão Pular responde durante a escuta",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"Pular\"}"
+    },
+    {
+      "name": "Pular descarta a resposta que chega depois",
+      "ok": false,
+      "detail": "fala atrasada no índice 7"
+    },
+    {
+      "name": "Pular preserva o turno de sílabas (3 opções)",
+      "ok": false,
+      "detail": "options=0"
+    },
+    {
+      "name": "Pular não insere a fala atrasada depois da pergunta seguinte",
+      "ok": false,
+      "detail": "sílabas@6, atrasada@7"
+    },
+    {
+      "name": "sair da conversa para o áudio da Gabi",
+      "ok": true,
+      "detail": "{\"media\":0,\"tts\":0,\"speaking\":false,\"onHome\":false}"
+    },
+    {
+      "name": "sair da conversa remove o estado \"falando\"",
+      "ok": true,
+      "detail": "{\"media\":0,\"tts\":0,\"speaking\":false,\"onHome\":false}"
+    },
+    {
+      "name": "toques rápidos abrem só uma cartinha",
+      "ok": true,
+      "detail": "{\"cards\":3,\"dim\":2,\"picked\":1}"
+    },
+    {
+      "name": "toques rápidos não sobrepõem áudio",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "opções aparecem em até 3s depois da cartinha",
+      "ok": false,
+      "detail": "delay=6874ms shown=true"
+    },
+    {
+      "name": "lição chega ao resultado",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "lição rápida sem sobreposição de áudio",
+      "ok": false,
+      "detail": "[\"overlap-media\"]"
+    },
+    {
+      "name": "lição rápida sem erros de JavaScript",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "navegação termina em uma tela válida",
+      "ok": true,
+      "detail": "Professora\nGabi\n🔥 1\n⭐ 44\n☁️\n☁️\nBOM DIA!\nAna\nVamos começar com uma historinha?\n🔊 Ouvir a Gabi\nSUA PRÓXIMA AULA\nP, B, M,"
+    },
+    {
+      "name": "navegação não deixa áudio preso",
+      "ok": false,
+      "detail": "{\"screen\":\"Professora\\nGabi\\n🔥 1\\n⭐ 44\\n☁️\\n☁️\\nBOM DIA!\\nAna\\nVamos começar com uma historinha?\\n🔊 Ouvir a Gabi\\nSUA PRÓXIMA AULA\\nP, B, M,\",\"speaking\":true,\"media\":0,\"tts\":1,\"modal\":false}"
+    },
+    {
+      "name": "navegação não deixa modal preso",
+      "ok": true,
+      "detail": "{\"screen\":\"Professora\\nGabi\\n🔥 1\\n⭐ 44\\n☁️\\n☁️\\nBOM DIA!\\nAna\\nVamos começar com uma historinha?\\n🔊 Ouvir a Gabi\\nSUA PRÓXIMA AULA\\nP, B, M,\",\"speaking\":true,\"media\":0,\"tts\":1,\"modal\":false}"
+    },
+    {
+      "name": "navegação sem erros de JavaScript",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "o microfone falso começou a ouvir",
+      "ok": true,
+      "detail": "{\"started\":1,\"aborted\":0,\"listening\":true}"
+    },
+    {
+      "name": "sair da conversa aborta o reconhecimento",
+      "ok": false,
+      "detail": "{\"started\":1,\"aborted\":0,\"stopped\":0,\"listening\":true,\"onHome\":false}"
+    },
+    {
+      "name": "sair da conversa desliga o indicador de escuta",
+      "ok": false,
+      "detail": "{\"started\":1,\"aborted\":0,\"stopped\":0,\"listening\":true,\"onHome\":false}"
+    },
+    {
+      "name": "cold start: sem sobreposição de clipes",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C1",
+      "severity": "alta",
+      "title": "Resposta da conversa repete a frase da criança e quebra a gramática",
+      "detail": "Com a criança dizendo \"eu gosto de brincar no parque\", a Gabi responde \"Que legal! Você gosta de eu gosto de brincar no parque?\".",
+      "evidence": {
+        "child": "eu gosto de brincar no parque",
+        "freeReply": "Que legal! Você gosta de eu gosto de brincar no parque? Eu também gosto de aprender coisas novas."
+      },
+      "at": "2026-11-09T01:08:53.213Z"
+    },
+    {
+      "id": "C3",
+      "severity": "alta",
+      "title": "A Gabi faz uma pergunta e o app não deixa a criança responder",
+      "detail": "gabiReply termina com pergunta (\"Você gosta de ...?\" / \"Agora me conta: ...\"), mas freeTurn só oferece \"Continuar\"; o microfone sumiu e o próximo turno é \"Palavra nova\". A conversa pergunta e não escuta a resposta.",
+      "evidence": {
+        "freeReply": "Que legal! Você gosta de eu gosto de brincar no parque? Eu também gosto de aprender coisas novas.",
+        "buttons": [
+          "🔊 Ouvir",
+          "🔊 Ouvir",
+          "🔊 Ouvir",
+          "🔊 Ouvir",
+          "🔊 Ouvir",
+          "Continuar ➜"
+        ]
+      },
+      "at": "2026-11-09T01:08:53.560Z"
+    },
+    {
+      "id": "C4",
+      "severity": "alta",
+      "title": "A Gabi ignora o conteúdo principal da resposta da criança",
+      "detail": "A criança responde \"meu bicho favorito é o tatu\" e a Gabi fala do \"bicho\" e da letra B, sem mencionar o tatu. gabiReply pega as duas primeiras palavras longas, não a informação principal.",
+      "evidence": {
+        "child": "meu bicho favorito é o tatu",
+        "freeReply2": "Entendi! Você falou “bicho”. Essa palavra começa com o som de B. Muito bem!"
+      },
+      "at": "2026-11-09T01:08:55.677Z"
+    },
+    {
+      "id": "C5",
+      "severity": "media",
+      "title": "Despedida repete \"Adorei conversar com você\" duas vezes",
+      "detail": "O turno de despedida concatena um prefixo que já é a primeira frase da lista FAREWELLS.",
+      "evidence": {
+        "goodbye": "Adorei conversar com você, Ana. Adorei conversar com você. Você pode voltar quando quiser!"
+      },
+      "at": "2026-11-09T01:08:56.958Z"
+    },
+    {
+      "id": "C2",
+      "severity": "alta",
+      "title": "Pular durante a escuta não cancela a escuta: a resposta atrasada invade o próximo turno",
+      "detail": "Ao tocar Pular enquanto o microfone está ouvindo, a promessa de listen continua; quando o reconhecimento devolve a fala, o app registra a fala da criança e avança outro turno por cima do turno de sílabas.",
+      "evidence": {
+        "childBefore": 1,
+        "immediate": {
+          "options": 3,
+          "title": true,
+          "cards": 1
+        },
+        "after": {
+          "options": 0,
+          "childBubbles": 2,
+          "mic": false,
+          "continueButtons": 1,
+          "title": true,
+          "text": "←\nConversar com a Gabi\n🪁 Brincadeiras\nGABI\nOi, Ana! Antes de conversar, escolhe uma cartinha surpresa!\n🔊 Ouvir\nGABI\nBoa escolha! Brincadeira é comigo mesma!\n🔊 Ouvir\nGABI\nAgora me conta, Ana: como você está hoje?\n🔊 Ouvir\nBem! 😃\nGABI\nIsso me deixa feliz também!\n🔊 Ouvir\nGABI\nO que você fez de legal hoje?\n🔊 Ouvir\nGABI\nPalavra nova: peteca! Bata palmas e me diga: quantas sílabas tem?\n🔊 Ouvir\neu gosto de brincar no parque\nGABI\nAdorei saber! Eu gosto de brincar no parque. Agora me conta: você faz isso com quem?\n🔊 Ouvir\nContinuar ➜\n🏠\nInício\n🗺️\nTrilha\n🔁\nRevisar\n👨‍👩‍👧\nPais"
+        },
+        "bubbles": [
+          {
+            "role": "gabi",
+            "text": "Oi, Ana! Antes de conversar, escolhe uma cartinha surpresa!",
+            "cls": "bubble bubble--gabi grow"
+          },
+          {
+            "role": "gabi",
+            "text": "Boa escolha! Brincadeira é comigo mesma!",
+            "cls": "bubble bubble--gabi grow"
+          },
+          {
+            "role": "gabi",
+            "text": "Agora me conta, Ana: como você está hoje?",
+            "cls": "bubble bubble--gabi grow"
+          },
+          {
+            "role": "child",
+            "text": "Bem! 😃",
+            "cls": "bubble bubble--child grow"
+          },
+          {
+            "role": "gabi",
+            "text": "Isso me deixa feliz também!",
+            "cls": "bubble bubble--gabi grow"
+          },
+          {
+            "role": "gabi",
+            "text": "O que você fez de legal hoje?",
+            "cls": "bubble bubble--gabi grow"
+          },
+          {
+            "role": "gabi",
+            "text": "Palavra nova: peteca! Bata palmas e me diga: quantas sílabas tem?",
+            "cls": "bubble bubble--gabi grow"
+          },
+          {
+            "role": "child",
+            "text": "eu gosto de brincar no parque",
+            "cls": "bubble bubble--child grow"
+          },
+          {
+            "role": "gabi",
+            "text": "Adorei saber! Eu gosto de brincar no parque. Agora me conta: você faz isso com quem?",
+            "cls": "bubble bubble--gabi grow"
+          }
+        ]
+      },
+      "at": "2026-11-09T01:09:03.771Z"
+    },
+    {
+      "id": "C7",
+      "severity": "alta",
+      "title": "Escolher a cartinha bloqueia a conversa até o áudio terminar",
+      "detail": "O app só mostra a pergunta de humor depois de await sayAndWait(cheer). Com TTS lento/ travado, a criança fica vários segundos sem opção; o busy=true também ignora novos toques.",
+      "evidence": {
+        "delayMs": 6874,
+        "optionsShown": true,
+        "waitError": "",
+        "audio": {
+          "events": 11,
+          "overlaps": 0,
+          "overlapKinds": [],
+          "maxConcurrent": 0,
+          "active": [],
+          "tts": [],
+          "types": {
+            "tts-cancel": 4,
+            "tts-call": 3,
+            "tts-start": 2,
+            "tts-end": 2
+          },
+          "last": [
+            {
+              "t": 2378,
+              "wall": 1794186550576,
+              "type": "tts-cancel",
+              "hash": "#/conversar",
+              "active": [],
+              "tts": []
+            },
+            {
+              "t": 2679,
+              "wall": 1794186550878,
+              "type": "tts-call",
+              "hash": "#/conversar",
+              "id": 2,
+              "text": "Boa escolha!",
+              "volume": 1,
+              "active": [],
+              "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+            },
+            {
+              "t": 2684,
+              "wall": 1794186550882,
+              "type": "tts-start",
+              "hash": "#/conversar",
+              "id": 2,
+              "text": "Boa escolha!",
+              "active": []
+            },
+            {
+              "t": 4147,
+              "wall": 1794186552345,
+              "type": "tts-end",
+              "hash": "#/conversar",
+              "id": 2,
+              "text": "Boa escolha!"
+            },
+            {
+              "t": 4258,
+              "wall": 1794186552457,
+              "type": "tts-call",
+              "hash": "#/conversar",
+              "id": 3,
+              "text": "Hmm, comida é um ótimo assunto!",
+              "volume": 1,
+              "active": [],
+              "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+            },
+            {
+              "t": 4265,
+              "wall": 1794186552463,
+              "type": "tts-start",
+              "hash": "#/conversar",
+              "id": 3,
+              "text": "Hmm, comida é um ótimo assunto!",
+              "active": []
+            },
+            {
+              "t": 8183,
+              "wall": 1794186556381,
+              "type": "tts-end",
+              "hash": "#/conversar",
+              "id": 3,
+              "text": "Hmm, comida é um ótimo assunto!"
+            },
+            {
+              "t": 8566,
+              "wall": 1794186556765,
+              "type": "tts-cancel",
+              "hash": "#/conversar",
+              "active": [],
+              "tts": []
+            }
+          ]
+        }
+      },
+      "at": "2026-11-09T01:09:18.081Z"
+    },
+    {
+      "id": "A3",
+      "severity": "alta",
+      "title": "Áudio da lição se sobrepõe ao avançar rápido",
+      "detail": "O timer de 380ms de show() não é cancelado ao trocar de exercício; dois speak() do mesmo item podem disparar juntos.",
+      "evidence": {
+        "steps": 17,
+        "summary": {
+          "events": 336,
+          "overlaps": 40,
+          "overlapKinds": [
+            "overlap-media"
+          ],
+          "maxConcurrent": 11,
+          "active": [
+            {
+              "id": 50,
+              "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+              "ms": 87
+            },
+            {
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "ms": 64
+            }
+          ],
+          "tts": [],
+          "types": {
+            "tts-cancel": 67,
+            "play-call": 51,
+            "media-playing": 45,
+            "play-while-active": 50,
+            "media-pause": 43,
+            "start-after-stop": 40,
+            "overlap-media": 40
+          },
+          "last": [
+            {
+              "t": 7129,
+              "wall": 1794186564356,
+              "type": "play-call",
+              "hash": "#/licao/u1/0",
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "rate": 0.9,
+              "volume": 1,
+              "active": [
+                {
+                  "id": 49,
+                  "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+                  "ms": 101
+                }
+              ],
+              "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:255:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:201:10) |     at playClip (http://localhost:8080/js/audio.js:267:21)"
+            },
+            {
+              "t": 7130,
+              "wall": 1794186564356,
+              "type": "play-while-active",
+              "hash": "#/licao/u1/0",
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "active": [
+                {
+                  "id": 49,
+                  "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+                  "ms": 101
+                }
+              ]
+            },
+            {
+              "t": 7130,
+              "wall": 1794186564357,
+              "type": "media-pause",
+              "hash": "#/licao/u1/0",
+              "id": 49,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "currentTime": 0.047
+            },
+            {
+              "t": 7160,
+              "wall": 1794186564386,
+              "type": "media-playing",
+              "hash": "#/licao/u1/0",
+              "id": 50,
+              "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+              "rate": 0.9,
+              "active": [
+                {
+                  "id": 50,
+                  "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+                  "ms": 0
+                }
+              ]
+            },
+            {
+              "t": 7160,
+              "wall": 1794186564386,
+              "type": "start-after-stop",
+              "hash": "#/licao/u1/0",
+              "id": 50,
+              "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+              "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "gap": 30
+            },
+            {
+              "t": 7182,
+              "wall": 1794186564409,
+              "type": "media-playing",
+              "hash": "#/licao/u1/0",
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "rate": 0.9,
+              "active": [
+                {
+                  "id": 50,
+                  "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+                  "ms": 22
+                },
+                {
+                  "id": 51,
+                  "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+                  "ms": 0
+                }
+              ]
+            },
+            {
+              "t": 7182,
+              "wall": 1794186564409,
+              "type": "overlap-media",
+              "hash": "#/licao/u1/0",
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "active": [
+                {
+                  "id": 50,
+                  "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+                  "ms": 22
+                },
+                {
+                  "id": 51,
+                  "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+                  "ms": 0
+                }
+              ],
+              "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+            },
+            {
+              "t": 7182,
+              "wall": 1794186564409,
+              "type": "start-after-stop",
+              "hash": "#/licao/u1/0",
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "gap": 53
+            }
+          ]
+        }
+      },
+      "at": "2026-11-09T01:09:25.784Z"
+    },
+    {
+      "id": "A2",
+      "severity": "alta",
+      "title": "Trocar de tela não interrompe o áudio da tela anterior",
+      "detail": "O roteador não chama stopSpeaking() ao trocar de rota. A fala de um card de ensino ou de um exercício continua no alto-falante depois de voltar para a home; se a próxima tela falar, os dois áudios se sobrepõem.",
+      "evidence": {
+        "state": {
+          "screen": "Professora\nGabi\n🔥 1\n⭐ 44\n☁️\n☁️\nBOM DIA!\nAna\nVamos começar com uma historinha?\n🔊 Ouvir a Gabi\nSUA PRÓXIMA AULA\nP, B, M,",
+          "speaking": true,
+          "media": 0,
+          "tts": 1,
+          "modal": false
+        }
+      },
+      "at": "2026-11-09T01:09:33.339Z"
+    },
+    {
+      "id": "C6",
+      "severity": "media",
+      "title": "Sair da conversa durante a escuta não aborta o microfone",
+      "detail": "onExit() chama stopSpeaking(), mas não abortListening(); o SpeechRecognition continua ativo por até 12s (ou até o serviço responder) depois de trocar de tela.",
+      "evidence": {
+        "before": {
+          "started": 1,
+          "aborted": 0,
+          "listening": true
+        },
+        "after": {
+          "started": 1,
+          "aborted": 0,
+          "stopped": 0,
+          "listening": true,
+          "onHome": false
+        }
+      },
+      "at": "2026-11-09T01:09:47.643Z"
+    }
+  ],
+  "cacheCounts": {
+    "gabi-audio-v1": 1118,
+    "gabi-v38": 37
+  },
+  "talk": {
+    "freeQuestion": "Me conta uma coisa boa que aconteceu hoje?",
+    "freeReply": "Que legal! Você gosta de eu gosto de brincar no parque? Eu também gosto de aprender coisas novas.",
+    "twister": "O rato roeu a roupa do rei de Roma.",
+    "echoReply": "Isso! Você repetiu direitinho.",
+    "freeReply2": "Entendi! Você falou “bicho”. Essa palavra começa com o som de B. Muito bem!",
+    "bubbles": [
+      {
+        "role": "gabi",
+        "text": "Oi, Ana! Hoje tem surpresa: escolhe uma cartinha para descobrir o assunto do nosso papo!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Boa escolha! Adoro bichos!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Bora começar, Ana! Como você está hoje?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "Bem! 😃",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Que bom! Sua energia contagia.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Me conta uma coisa boa que aconteceu hoje?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "eu gosto de brincar no parque",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Que legal! Você gosta de eu gosto de brincar no parque? Eu também gosto de aprender coisas novas.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Palavra nova: gato! Bata palmas e me diga: quantas sílabas tem?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "2 sílabas",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Isso! gato: ga · to. 2 sílabas. Você contou muito bem.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Trava-língua de bichos: “O rato roeu a roupa do rei de Roma.” Repita comigo.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "O rato roeu a roupa do rei de Roma.",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Isso! Você repetiu direitinho.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Que bicho você acha mais engraçado?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "meu bicho favorito é o tatu",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Entendi! Você falou “bicho”. Essa palavra começa com o som de B. Muito bem!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Adorei conversar com você, Ana. Adorei conversar com você. Você pode voltar quando quiser!",
+        "cls": "bubble bubble--gabi grow"
+      }
+    ],
+    "order": [
+      "gabi:Oi, Ana! Hoje tem surpre",
+      "gabi:Boa escolha! Adoro bicho",
+      "gabi:Bora começar, Ana! Como ",
+      "child:Bem! 😃",
+      "gabi:Que bom! Sua energia con",
+      "gabi:Me conta uma coisa boa q",
+      "child:eu gosto de brincar no p",
+      "gabi:Que legal! Você gosta de",
+      "gabi:Palavra nova: gato! Bata",
+      "child:2 sílabas",
+      "gabi:Isso! gato: ga · to. 2 s",
+      "gabi:Trava-língua de bichos: ",
+      "child:O rato roeu a roupa do r",
+      "gabi:Isso! Você repetiu direi",
+      "gabi:Que bicho você acha mais",
+      "child:meu bicho favorito é o t",
+      "gabi:Entendi! Você falou “bic",
+      "gabi:Adorei conversar com voc"
+    ],
+    "audio": {
+      "events": 9,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 9
+      },
+      "last": [
+        {
+          "t": 3262,
+          "wall": 1794186530785,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 3830,
+          "wall": 1794186531352,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 4762,
+          "wall": 1794186532284,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 4846,
+          "wall": 1794186532368,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 5396,
+          "wall": 1794186532919,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 6305,
+          "wall": 1794186533827,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 6339,
+          "wall": 1794186533861,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 6916,
+          "wall": 1794186534438,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        }
+      ]
+    }
+  },
+  "skipListening": {
+    "childBefore": 1,
+    "immediate": {
+      "options": 3,
+      "title": true,
+      "cards": 1
+    },
+    "before": [
+      {
+        "role": "gabi",
+        "text": "Oi, Ana! Antes de conversar, escolhe uma cartinha surpresa!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Boa escolha! Brincadeira é comigo mesma!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Agora me conta, Ana: como você está hoje?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "Bem! 😃",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Isso me deixa feliz também!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "O que você fez de legal hoje?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Palavra nova: peteca! Bata palmas e me diga: quantas sílabas tem?",
+        "cls": "bubble bubble--gabi grow"
+      }
+    ],
+    "after": {
+      "options": 0,
+      "childBubbles": 2,
+      "mic": false,
+      "continueButtons": 1,
+      "title": true,
+      "text": "←\nConversar com a Gabi\n🪁 Brincadeiras\nGABI\nOi, Ana! Antes de conversar, escolhe uma cartinha surpresa!\n🔊 Ouvir\nGABI\nBoa escolha! Brincadeira é comigo mesma!\n🔊 Ouvir\nGABI\nAgora me conta, Ana: como você está hoje?\n🔊 Ouvir\nBem! 😃\nGABI\nIsso me deixa feliz também!\n🔊 Ouvir\nGABI\nO que você fez de legal hoje?\n🔊 Ouvir\nGABI\nPalavra nova: peteca! Bata palmas e me diga: quantas sílabas tem?\n🔊 Ouvir\neu gosto de brincar no parque\nGABI\nAdorei saber! Eu gosto de brincar no parque. Agora me conta: você faz isso com quem?\n🔊 Ouvir\nContinuar ➜\n🏠\nInício\n🗺️\nTrilha\n🔁\nRevisar\n👨‍👩‍👧\nPais",
+      "bubbles": [
+        {
+          "role": "gabi",
+          "text": "Oi, Ana! Antes de conversar, escolhe uma cartinha surpresa!",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Boa escolha! Brincadeira é comigo mesma!",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Agora me conta, Ana: como você está hoje?",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "child",
+          "text": "Bem! 😃",
+          "cls": "bubble bubble--child grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Isso me deixa feliz também!",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "O que você fez de legal hoje?",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Palavra nova: peteca! Bata palmas e me diga: quantas sílabas tem?",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "child",
+          "text": "eu gosto de brincar no parque",
+          "cls": "bubble bubble--child grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Adorei saber! Eu gosto de brincar no parque. Agora me conta: você faz isso com quem?",
+          "cls": "bubble bubble--gabi grow"
+        }
+      ]
+    }
+  },
+  "leaveDuringSpeech": {
+    "media": 0,
+    "tts": 0,
+    "speaking": false,
+    "onHome": false,
+    "audio": {
+      "events": 3,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 3
+      },
+      "last": [
+        {
+          "t": 6782,
+          "wall": 1794186542695,
+          "type": "tts-cancel",
+          "hash": "#/",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 7512,
+          "wall": 1794186543424,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 8422,
+          "wall": 1794186544334,
+          "type": "tts-cancel",
+          "hash": "#/",
+          "active": [],
+          "tts": []
+        }
+      ]
+    }
+  },
+  "rapidCards": {
+    "cards": 3,
+    "dim": 2,
+    "picked": 1,
+    "audio": {
+      "events": 1,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 1
+      },
+      "last": [
+        {
+          "t": 11663,
+          "wall": 1794186547575,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        }
+      ]
+    }
+  },
+  "talkVoice": {
+    "delayMs": 6874,
+    "optionsShown": true,
+    "waitError": "",
+    "audio": {
+      "events": 11,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 4,
+        "tts-call": 3,
+        "tts-start": 2,
+        "tts-end": 2
+      },
+      "last": [
+        {
+          "t": 2378,
+          "wall": 1794186550576,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 2679,
+          "wall": 1794186550878,
+          "type": "tts-call",
+          "hash": "#/conversar",
+          "id": 2,
+          "text": "Boa escolha!",
+          "volume": 1,
+          "active": [],
+          "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+        },
+        {
+          "t": 2684,
+          "wall": 1794186550882,
+          "type": "tts-start",
+          "hash": "#/conversar",
+          "id": 2,
+          "text": "Boa escolha!",
+          "active": []
+        },
+        {
+          "t": 4147,
+          "wall": 1794186552345,
+          "type": "tts-end",
+          "hash": "#/conversar",
+          "id": 2,
+          "text": "Boa escolha!"
+        },
+        {
+          "t": 4258,
+          "wall": 1794186552457,
+          "type": "tts-call",
+          "hash": "#/conversar",
+          "id": 3,
+          "text": "Hmm, comida é um ótimo assunto!",
+          "volume": 1,
+          "active": [],
+          "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+        },
+        {
+          "t": 4265,
+          "wall": 1794186552463,
+          "type": "tts-start",
+          "hash": "#/conversar",
+          "id": 3,
+          "text": "Hmm, comida é um ótimo assunto!",
+          "active": []
+        },
+        {
+          "t": 8183,
+          "wall": 1794186556381,
+          "type": "tts-end",
+          "hash": "#/conversar",
+          "id": 3,
+          "text": "Hmm, comida é um ótimo assunto!"
+        },
+        {
+          "t": 8566,
+          "wall": 1794186556765,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        }
+      ]
+    }
+  },
+  "lessonRapid": {
+    "steps": 17,
+    "summary": {
+      "events": 336,
+      "overlaps": 40,
+      "overlapKinds": [
+        "overlap-media"
+      ],
+      "maxConcurrent": 11,
+      "active": [
+        {
+          "id": 50,
+          "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+          "ms": 87
+        },
+        {
+          "id": 51,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "ms": 64
+        }
+      ],
+      "tts": [],
+      "types": {
+        "tts-cancel": 67,
+        "play-call": 51,
+        "media-playing": 45,
+        "play-while-active": 50,
+        "media-pause": 43,
+        "start-after-stop": 40,
+        "overlap-media": 40
+      },
+      "last": [
+        {
+          "t": 7129,
+          "wall": 1794186564356,
+          "type": "play-call",
+          "hash": "#/licao/u1/0",
+          "id": 51,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "rate": 0.9,
+          "volume": 1,
+          "active": [
+            {
+              "id": 49,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "ms": 101
+            }
+          ],
+          "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:255:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:201:10) |     at playClip (http://localhost:8080/js/audio.js:267:21)"
+        },
+        {
+          "t": 7130,
+          "wall": 1794186564356,
+          "type": "play-while-active",
+          "hash": "#/licao/u1/0",
+          "id": 51,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "active": [
+            {
+              "id": 49,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "ms": 101
+            }
+          ]
+        },
+        {
+          "t": 7130,
+          "wall": 1794186564357,
+          "type": "media-pause",
+          "hash": "#/licao/u1/0",
+          "id": 49,
+          "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+          "currentTime": 0.047
+        },
+        {
+          "t": 7160,
+          "wall": 1794186564386,
+          "type": "media-playing",
+          "hash": "#/licao/u1/0",
+          "id": 50,
+          "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 50,
+              "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+              "ms": 0
+            }
+          ]
+        },
+        {
+          "t": 7160,
+          "wall": 1794186564386,
+          "type": "start-after-stop",
+          "hash": "#/licao/u1/0",
+          "id": 50,
+          "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+          "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+          "gap": 30
+        },
+        {
+          "t": 7182,
+          "wall": 1794186564409,
+          "type": "media-playing",
+          "hash": "#/licao/u1/0",
+          "id": 51,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 50,
+              "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+              "ms": 22
+            },
+            {
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "ms": 0
+            }
+          ]
+        },
+        {
+          "t": 7182,
+          "wall": 1794186564409,
+          "type": "overlap-media",
+          "hash": "#/licao/u1/0",
+          "id": 51,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "active": [
+            {
+              "id": 50,
+              "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+              "ms": 22
+            },
+            {
+              "id": 51,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "ms": 0
+            }
+          ],
+          "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+        },
+        {
+          "t": 7182,
+          "wall": 1794186564409,
+          "type": "start-after-stop",
+          "hash": "#/licao/u1/0",
+          "id": 51,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+          "gap": 53
+        }
+      ]
+    },
+    "body": "★★★\nAula perfeita!\nQue aula! Você acertou 5 de 5. Estou muito orgulhosa. Ana!\n5/5\nACERTOS\n+85\nESTRELINHAS\n1m\nTEMPO\nAdesivo novo: 🎒 Primeira aula\nRevisão rápida: 2/2\nVoltar ao inícioRepetir esta lição",
+    "log": [
+      {
+        "t": 2042,
+        "wall": 1794186559269,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 4,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 131
+          },
+          {
+            "id": 7,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 16
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2042,
+        "wall": 1794186559269,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 4,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "gap": 68
+      },
+      {
+        "t": 2051,
+        "wall": 1794186559277,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 6,
+        "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 140
+          },
+          {
+            "id": 7,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 24
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 9
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2051,
+        "wall": 1794186559277,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 6,
+        "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "gap": 76
+      },
+      {
+        "t": 2072,
+        "wall": 1794186559299,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 8,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 161
+          },
+          {
+            "id": 7,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 46
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 30
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 22
+          }
+        ]
+      },
+      {
+        "t": 2073,
+        "wall": 1794186559300,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 9,
+        "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 163
+          },
+          {
+            "id": 7,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 47
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 32
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 23
+          }
+        ]
+      },
+      {
+        "t": 2093,
+        "wall": 1794186559320,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 8,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 182
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 51
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 43
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2093,
+        "wall": 1794186559320,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 8,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "gap": 19
+      },
+      {
+        "t": 2096,
+        "wall": 1794186559323,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 9,
+        "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 185
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 54
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 45
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 3
+          },
+          {
+            "id": 9,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2180,
+        "wall": 1794186559407,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 10,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 269
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 138
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 130
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 87
+          },
+          {
+            "id": 9,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 85
+          }
+        ]
+      },
+      {
+        "t": 2181,
+        "wall": 1794186559407,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 11,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 270
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 139
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 130
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 88
+          },
+          {
+            "id": 9,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 85
+          }
+        ]
+      },
+      {
+        "t": 2210,
+        "wall": 1794186559437,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 10,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 299
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 168
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 160
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 117
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2210,
+        "wall": 1794186559437,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 10,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "gap": 29
+      },
+      {
+        "t": 2216,
+        "wall": 1794186559442,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 11,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 305
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 174
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 165
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 123
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 6
+          },
+          {
+            "id": 11,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2216,
+        "wall": 1794186559442,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 11,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "lastStop": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "gap": 35
+      },
+      {
+        "t": 2278,
+        "wall": 1794186559505,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 12,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 367
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 236
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 228
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 185
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 68
+          },
+          {
+            "id": 11,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 63
+          }
+        ]
+      },
+      {
+        "t": 2279,
+        "wall": 1794186559506,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 13,
+        "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 368
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 237
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 229
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 186
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 69
+          },
+          {
+            "id": 11,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 64
+          }
+        ]
+      },
+      {
+        "t": 2308,
+        "wall": 1794186559534,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 14,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 397
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 266
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 257
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 215
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 98
+          }
+        ]
+      },
+      {
+        "t": 2403,
+        "wall": 1794186559629,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 14,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 492
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 361
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 352
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 310
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 193
+          },
+          {
+            "id": 14,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2403,
+        "wall": 1794186559629,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 14,
+        "src": "http://localhost:8080/audio/080f1d9588.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "gap": 123
+      },
+      {
+        "t": 2404,
+        "wall": 1794186559631,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 12,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 493
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 362
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 354
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 311
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 194
+          },
+          {
+            "id": 14,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 2
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2404,
+        "wall": 1794186559631,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 12,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "gap": 125
+      },
+      {
+        "t": 2430,
+        "wall": 1794186559656,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 15,
+        "src": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 519
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 388
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 379
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 337
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 220
+          },
+          {
+            "id": 14,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 27
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 26
+          }
+        ]
+      },
+      {
+        "t": 2481,
+        "wall": 1794186559708,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 15,
+        "src": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 570
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 439
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 431
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 388
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 271
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 77
+          },
+          {
+            "id": 15,
+            "src": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2481,
+        "wall": 1794186559708,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 15,
+        "src": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+        "lastStop": "http://localhost:8080/audio/080f1d9588.mp3",
+        "gap": 51
+      },
+      {
+        "t": 2541,
+        "wall": 1794186559768,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 16,
+        "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 630
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 499
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 491
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 448
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 331
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 137
+          },
+          {
+            "id": 15,
+            "src": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+            "ms": 60
+          }
+        ]
+      },
+      {
+        "t": 2541,
+        "wall": 1794186559768,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 17,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 631
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 499
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 491
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 449
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 331
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 137
+          },
+          {
+            "id": 15,
+            "src": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+            "ms": 60
+          }
+        ]
+      },
+      {
+        "t": 2595,
+        "wall": 1794186559822,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 17,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 684
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 553
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 544
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 502
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 385
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 191
+          },
+          {
+            "id": 17,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2595,
+        "wall": 1794186559822,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 17,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "lastStop": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+        "gap": 53
+      },
+      {
+        "t": 2596,
+        "wall": 1794186559823,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 16,
+        "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 685
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 554
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 545
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 503
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 386
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 192
+          },
+          {
+            "id": 17,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 1
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2596,
+        "wall": 1794186559823,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 16,
+        "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/8bbba7a2cb.opus",
+        "gap": 54
+      },
+      {
+        "t": 2667,
+        "wall": 1794186559894,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 18,
+        "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 756
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 625
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 617
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 574
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 457
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 263
+          },
+          {
+            "id": 17,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 72
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 71
+          }
+        ]
+      },
+      {
+        "t": 2668,
+        "wall": 1794186559894,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 19,
+        "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 757
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 626
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 617
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 575
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 458
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 264
+          },
+          {
+            "id": 17,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 73
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 72
+          }
+        ]
+      },
+      {
+        "t": 2720,
+        "wall": 1794186559947,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 19,
+        "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 809
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 678
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 669
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 627
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 510
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 316
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 124
+          },
+          {
+            "id": 19,
+            "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2720,
+        "wall": 1794186559947,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 19,
+        "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "lastStop": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "gap": 52
+      },
+      {
+        "t": 2725,
+        "wall": 1794186559952,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 18,
+        "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 814
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 683
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 675
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 632
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 515
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 321
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 129
+          },
+          {
+            "id": 19,
+            "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+            "ms": 5
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2725,
+        "wall": 1794186559952,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 18,
+        "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "gap": 57
+      },
+      {
+        "t": 2767,
+        "wall": 1794186559993,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 20,
+        "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 856
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 725
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 716
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 674
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 557
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 363
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 171
+          },
+          {
+            "id": 19,
+            "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+            "ms": 47
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 42
+          }
+        ]
+      },
+      {
+        "t": 2768,
+        "wall": 1794186559995,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 21,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 857
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 726
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 717
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 675
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 558
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 364
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 172
+          },
+          {
+            "id": 19,
+            "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+            "ms": 48
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 43
+          }
+        ]
+      },
+      {
+        "t": 2787,
+        "wall": 1794186560013,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 22,
+        "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 876
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 745
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 736
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 694
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 577
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 383
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 191
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 62
+          }
+        ]
+      },
+      {
+        "t": 2878,
+        "wall": 1794186560105,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 22,
+        "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 967
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 836
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 828
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 785
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 668
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 474
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 283
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 153
+          },
+          {
+            "id": 22,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2878,
+        "wall": 1794186560105,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 22,
+        "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "gap": 110
+      },
+      {
+        "t": 2889,
+        "wall": 1794186560116,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 20,
+        "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 977
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 846
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 837
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 795
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 677
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 483
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 292
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 163
+          },
+          {
+            "id": 22,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 10
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2889,
+        "wall": 1794186560116,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 20,
+        "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "gap": 121
+      },
+      {
+        "t": 2908,
+        "wall": 1794186560135,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 23,
+        "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 998
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 866
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 858
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 816
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 698
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 504
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 313
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 184
+          },
+          {
+            "id": 22,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 30
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 21
+          }
+        ]
+      },
+      {
+        "t": 2909,
+        "wall": 1794186560136,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 24,
+        "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 998
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 867
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 859
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 816
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 699
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 505
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 313
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 184
+          },
+          {
+            "id": 22,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 31
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 22
+          }
+        ]
+      },
+      {
+        "t": 2950,
+        "wall": 1794186560177,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 24,
+        "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1039
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 908
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 900
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 857
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 740
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 546
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 355
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 225
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 63
+          },
+          {
+            "id": 24,
+            "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2950,
+        "wall": 1794186560177,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 24,
+        "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "lastStop": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "gap": 39
+      },
+      {
+        "t": 2963,
+        "wall": 1794186560190,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 23,
+        "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1052
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 921
+          },
+          {
+            "id": 6,
+            "src": "http://localhost:8080/audio/87e40f6c56.mp3",
+            "ms": 912
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 870
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 753
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 559
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 367
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 238
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 76
+          },
+          {
+            "id": 24,
+            "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+            "ms": 13
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 2963,
+        "wall": 1794186560190,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 23,
+        "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+        "lastStop": "http://localhost:8080/audio/e7a8963dc2.mp3",
+        "gap": 51
+      },
+      {
+        "t": 3015,
+        "wall": 1794186560242,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 25,
+        "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1104
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 973
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 922
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 805
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 611
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 419
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 290
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 128
+          },
+          {
+            "id": 24,
+            "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+            "ms": 65
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 52
+          }
+        ]
+      },
+      {
+        "t": 3036,
+        "wall": 1794186560263,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 25,
+        "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1125
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 994
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 943
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 826
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 632
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 440
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 311
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 149
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 73
+          },
+          {
+            "id": 25,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3036,
+        "wall": 1794186560263,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 25,
+        "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "gap": 20
+      },
+      {
+        "t": 3149,
+        "wall": 1794186560375,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 26,
+        "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1237
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1106
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1055
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 938
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 744
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 553
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 424
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 261
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 186
+          },
+          {
+            "id": 25,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 113
+          }
+        ]
+      },
+      {
+        "t": 3183,
+        "wall": 1794186560409,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 26,
+        "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1271
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1140
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1089
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 972
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 778
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 587
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 457
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 295
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 220
+          },
+          {
+            "id": 26,
+            "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3183,
+        "wall": 1794186560409,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 26,
+        "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+        "lastStop": "http://localhost:8080/audio/8c4c9c2809.mp3",
+        "gap": 30
+      },
+      {
+        "t": 3248,
+        "wall": 1794186560474,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 27,
+        "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1337
+          },
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1206
+          },
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1155
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1038
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 844
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 652
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 523
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 360
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 285
+          },
+          {
+            "id": 26,
+            "src": "http://localhost:8080/audio/opus/18c06c8bad.opus",
+            "ms": 66
+          }
+        ]
+      },
+      {
+        "t": 3361,
+        "wall": 1794186560588,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 28,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1450
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1151
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 957
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 765
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 636
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 474
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 398
+          }
+        ]
+      },
+      {
+        "t": 3362,
+        "wall": 1794186560589,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 29,
+        "src": "http://localhost:8080/audio/opus/b6255117ca.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1451
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1152
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 958
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 766
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 637
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 475
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 399
+          }
+        ]
+      },
+      {
+        "t": 3417,
+        "wall": 1794186560644,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 28,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1505
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1206
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1012
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 821
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 691
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 529
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 453
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3417,
+        "wall": 1794186560644,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 28,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "lastStop": "http://localhost:8080/audio/080f1d9588.mp3",
+        "gap": 61
+      },
+      {
+        "t": 3435,
+        "wall": 1794186560662,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 29,
+        "src": "http://localhost:8080/audio/opus/b6255117ca.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1524
+          },
+          {
+            "id": 10,
+            "src": "http://localhost:8080/audio/080f1d9588.mp3",
+            "ms": 1224
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1030
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 839
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 710
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 547
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 472
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 19
+          },
+          {
+            "id": 29,
+            "src": "http://localhost:8080/audio/opus/b6255117ca.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3436,
+        "wall": 1794186560662,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 29,
+        "src": "http://localhost:8080/audio/opus/b6255117ca.opus",
+        "lastStop": "http://localhost:8080/audio/080f1d9588.mp3",
+        "gap": 80
+      },
+      {
+        "t": 3473,
+        "wall": 1794186560699,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 30,
+        "src": "http://localhost:8080/audio/b6255117ca.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1562
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1068
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 877
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 748
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 585
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 510
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 57
+          },
+          {
+            "id": 29,
+            "src": "http://localhost:8080/audio/opus/b6255117ca.opus",
+            "ms": 38
+          }
+        ]
+      },
+      {
+        "t": 3474,
+        "wall": 1794186560700,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 31,
+        "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1563
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1070
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 878
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 749
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 586
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 511
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 58
+          },
+          {
+            "id": 29,
+            "src": "http://localhost:8080/audio/opus/b6255117ca.opus",
+            "ms": 39
+          }
+        ]
+      },
+      {
+        "t": 3516,
+        "wall": 1794186560742,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 31,
+        "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1605
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1111
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 920
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 791
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 628
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 553
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 100
+          },
+          {
+            "id": 31,
+            "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3516,
+        "wall": 1794186560742,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 31,
+        "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "lastStop": "http://localhost:8080/audio/opus/b6255117ca.opus",
+        "gap": 42
+      },
+      {
+        "t": 3522,
+        "wall": 1794186560749,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 30,
+        "src": "http://localhost:8080/audio/b6255117ca.mp3",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/8c4c9c2809.mp3",
+            "ms": 1611
+          },
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1118
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 926
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 797
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 635
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 559
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 106
+          },
+          {
+            "id": 31,
+            "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+            "ms": 7
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3522,
+        "wall": 1794186560749,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 30,
+        "src": "http://localhost:8080/audio/b6255117ca.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/b6255117ca.opus",
+        "gap": 48
+      },
+      {
+        "t": 3590,
+        "wall": 1794186560817,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 32,
+        "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+        "active": [
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1185
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 994
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 865
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 703
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 627
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 174
+          },
+          {
+            "id": 31,
+            "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+            "ms": 75
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 68
+          }
+        ]
+      },
+      {
+        "t": 3590,
+        "wall": 1794186560817,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 33,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "active": [
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1186
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 995
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 866
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 703
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 628
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 175
+          },
+          {
+            "id": 31,
+            "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+            "ms": 75
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 69
+          }
+        ]
+      },
+      {
+        "t": 3633,
+        "wall": 1794186560860,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 33,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "active": [
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1229
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1037
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 908
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 746
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 670
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 217
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 111
+          },
+          {
+            "id": 33,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3633,
+        "wall": 1794186560860,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 33,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "lastStop": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "gap": 40
+      },
+      {
+        "t": 3650,
+        "wall": 1794186560877,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 32,
+        "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+        "active": [
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1246
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1054
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 925
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 763
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 687
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 234
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 128
+          },
+          {
+            "id": 33,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 17
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3650,
+        "wall": 1794186560877,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 32,
+        "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "gap": 57
+      },
+      {
+        "t": 3702,
+        "wall": 1794186560929,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 34,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "active": [
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1298
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1107
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 977
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 815
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 739
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 286
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 180
+          },
+          {
+            "id": 33,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 69
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 52
+          }
+        ]
+      },
+      {
+        "t": 3703,
+        "wall": 1794186560929,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 35,
+        "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "active": [
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1299
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1107
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 978
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 815
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 740
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 287
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 181
+          },
+          {
+            "id": 33,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 70
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 53
+          }
+        ]
+      },
+      {
+        "t": 3713,
+        "wall": 1794186560940,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 36,
+        "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+        "active": [
+          {
+            "id": 12,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1309
+          },
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1118
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 988
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 826
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 751
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 298
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 192
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 63
+          }
+        ]
+      },
+      {
+        "t": 3728,
+        "wall": 1794186560955,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 34,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1132
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 1003
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 841
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 765
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 312
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 206
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 78
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3748,
+        "wall": 1794186560975,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 36,
+        "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1153
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 1023
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 861
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 785
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 332
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 226
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 98
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 21
+          },
+          {
+            "id": 36,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3748,
+        "wall": 1794186560975,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 36,
+        "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+        "lastStop": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "gap": 25
+      },
+      {
+        "t": 3831,
+        "wall": 1794186561058,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 37,
+        "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1235
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 1106
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 943
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 868
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 415
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 309
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 181
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 103
+          },
+          {
+            "id": 36,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 83
+          }
+        ]
+      },
+      {
+        "t": 3885,
+        "wall": 1794186561111,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 37,
+        "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1289
+          },
+          {
+            "id": 18,
+            "src": "http://localhost:8080/audio/e7a8963dc2.mp3",
+            "ms": 1160
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 997
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 922
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 469
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 363
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 235
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 157
+          },
+          {
+            "id": 37,
+            "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 3885,
+        "wall": 1794186561112,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 37,
+        "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "lastStop": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+        "gap": 53
+      },
+      {
+        "t": 3934,
+        "wall": 1794186561161,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 38,
+        "src": "http://localhost:8080/audio/771c56454e.mp3",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1338
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 1046
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 971
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 518
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 412
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 284
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 206
+          },
+          {
+            "id": 37,
+            "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+            "ms": 49
+          }
+        ]
+      },
+      {
+        "t": 3934,
+        "wall": 1794186561161,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 39,
+        "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1339
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 1047
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 972
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 519
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 413
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 285
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 207
+          },
+          {
+            "id": 37,
+            "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+            "ms": 50
+          }
+        ]
+      },
+      {
+        "t": 3965,
+        "wall": 1794186561192,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 40,
+        "src": "http://localhost:8080/audio/18c0d2709b.mp3",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1370
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 1078
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 1002
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 549
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 443
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 315
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 238
+          }
+        ]
+      },
+      {
+        "t": 4027,
+        "wall": 1794186561254,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 38,
+        "src": "http://localhost:8080/audio/771c56454e.mp3",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1430
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 1138
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 1063
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 610
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 504
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 376
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 298
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 4027,
+        "wall": 1794186561254,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 38,
+        "src": "http://localhost:8080/audio/771c56454e.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "gap": 92
+      },
+      {
+        "t": 4042,
+        "wall": 1794186561269,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 40,
+        "src": "http://localhost:8080/audio/18c0d2709b.mp3",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1446
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 1154
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 1079
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 626
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 520
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 392
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 314
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 16
+          },
+          {
+            "id": 40,
+            "src": "http://localhost:8080/audio/18c0d2709b.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 4042,
+        "wall": 1794186561269,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 40,
+        "src": "http://localhost:8080/audio/18c0d2709b.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "gap": 107
+      },
+      {
+        "t": 4095,
+        "wall": 1794186561322,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 41,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1499
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 1207
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 1132
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 679
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 573
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 445
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 367
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 69
+          }
+        ]
+      },
+      {
+        "t": 4128,
+        "wall": 1794186561355,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 41,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "active": [
+          {
+            "id": 16,
+            "src": "http://localhost:8080/audio/8bbba7a2cb.mp3",
+            "ms": 1533
+          },
+          {
+            "id": 20,
+            "src": "http://localhost:8080/audio/18c06c8bad.mp3",
+            "ms": 1241
+          },
+          {
+            "id": 23,
+            "src": "http://localhost:8080/audio/opus/b8bd907ab8.opus",
+            "ms": 1165
+          },
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 712
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 606
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 478
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 401
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 103
+          },
+          {
+            "id": 41,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 4128,
+        "wall": 1794186561355,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 41,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "lastStop": "http://localhost:8080/audio/18c0d2709b.mp3",
+        "gap": 38
+      },
+      {
+        "t": 4347,
+        "wall": 1794186561574,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 42,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "active": [
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 931
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 825
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 697
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 619
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 321
+          },
+          {
+            "id": 41,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 219
+          }
+        ]
+      },
+      {
+        "t": 4347,
+        "wall": 1794186561574,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 43,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "active": [
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 931
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 825
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 697
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 619
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 322
+          },
+          {
+            "id": 41,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 219
+          }
+        ]
+      },
+      {
+        "t": 4364,
+        "wall": 1794186561590,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 43,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "active": [
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 948
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 842
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 714
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 636
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 338
+          },
+          {
+            "id": 43,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 4378,
+        "wall": 1794186561605,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 42,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "active": [
+          {
+            "id": 28,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 962
+          },
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 856
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 728
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 650
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 352
+          },
+          {
+            "id": 43,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 14
+          },
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 4378,
+        "wall": 1794186561605,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 42,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "gap": 30
+      },
+      {
+        "t": 4816,
+        "wall": 1794186562042,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 44,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "active": [
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 1294
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 1166
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1088
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 790
+          },
+          {
+            "id": 43,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 452
+          },
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 438
+          }
+        ]
+      },
+      {
+        "t": 4845,
+        "wall": 1794186562072,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 44,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "active": [
+          {
+            "id": 30,
+            "src": "http://localhost:8080/audio/b6255117ca.mp3",
+            "ms": 1323
+          },
+          {
+            "id": 32,
+            "src": "http://localhost:8080/audio/eb1c0d7aaf.mp3",
+            "ms": 1195
+          },
+          {
+            "id": 34,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 1117
+          },
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 819
+          },
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 467
+          },
+          {
+            "id": 44,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 4845,
+        "wall": 1794186562072,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 44,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "gap": 26
+      },
+      {
+        "t": 5443,
+        "wall": 1794186562670,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 45,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "active": [
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 1418
+          },
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 1066
+          },
+          {
+            "id": 44,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 598
+          }
+        ]
+      },
+      {
+        "t": 5468,
+        "wall": 1794186562695,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 45,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "active": [
+          {
+            "id": 38,
+            "src": "http://localhost:8080/audio/771c56454e.mp3",
+            "ms": 1442
+          },
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 1090
+          },
+          {
+            "id": 45,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 5468,
+        "wall": 1794186562695,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 45,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "lastStop": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "gap": 22
+      },
+      {
+        "t": 5539,
+        "wall": 1794186562766,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 46,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "active": [
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 1162
+          },
+          {
+            "id": 45,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 72
+          }
+        ]
+      },
+      {
+        "t": 5575,
+        "wall": 1794186562802,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 46,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "active": [
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 1196
+          },
+          {
+            "id": 46,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 2
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 5575,
+        "wall": 1794186562802,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 46,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "gap": 36
+      },
+      {
+        "t": 5920,
+        "wall": 1794186563147,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 47,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "active": [
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 1543
+          }
+        ]
+      },
+      {
+        "t": 5932,
+        "wall": 1794186563159,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 47,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "active": [
+          {
+            "id": 42,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 1555
+          },
+          {
+            "id": 47,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 5932,
+        "wall": 1794186563159,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 47,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "lastStop": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "gap": 267
+      },
+      {
+        "t": 6388,
+        "wall": 1794186563615,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 48,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "active": [
+          {
+            "id": 47,
+            "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+            "ms": 456
+          }
+        ]
+      },
+      {
+        "t": 6407,
+        "wall": 1794186563634,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 48,
+        "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "gap": 19
+      },
+      {
+        "t": 7014,
+        "wall": 1794186564241,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 49,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "active": [
+          {
+            "id": 48,
+            "src": "http://localhost:8080/audio/0ff440b4da.mp3",
+            "ms": 607
+          }
+        ]
+      },
+      {
+        "t": 7028,
+        "wall": 1794186564255,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 49,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "lastStop": "http://localhost:8080/audio/0ff440b4da.mp3",
+        "gap": 14
+      },
+      {
+        "t": 7129,
+        "wall": 1794186564356,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 50,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "active": [
+          {
+            "id": 49,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 101
+          }
+        ]
+      },
+      {
+        "t": 7130,
+        "wall": 1794186564356,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 51,
+        "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "active": [
+          {
+            "id": 49,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 101
+          }
+        ]
+      },
+      {
+        "t": 7160,
+        "wall": 1794186564386,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 50,
+        "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+        "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "gap": 30
+      },
+      {
+        "t": 7182,
+        "wall": 1794186564409,
+        "type": "overlap-media",
+        "hash": "#/licao/u1/0",
+        "id": 51,
+        "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "active": [
+          {
+            "id": 50,
+            "src": "http://localhost:8080/audio/ea2c1af751.mp3",
+            "ms": 22
+          },
+          {
+            "id": 51,
+            "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+            "ms": 0
+          }
+        ],
+        "stack": "    at Audio.onPlaying (<anonymous>:56:66)"
+      },
+      {
+        "t": 7182,
+        "wall": 1794186564409,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 51,
+        "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "gap": 53
+      }
+    ]
+  },
+  "navigation": {
+    "screen": "Professora\nGabi\n🔥 1\n⭐ 44\n☁️\n☁️\nBOM DIA!\nAna\nVamos começar com uma historinha?\n🔊 Ouvir a Gabi\nSUA PRÓXIMA AULA\nP, B, M,",
+    "speaking": true,
+    "media": 0,
+    "tts": 1,
+    "modal": false
+  },
+  "micExit": {
+    "before": {
+      "started": 1,
+      "aborted": 0,
+      "listening": true
+    },
+    "after": {
+      "started": 1,
+      "aborted": 0,
+      "stopped": 0,
+      "listening": true,
+      "onHome": false
+    }
+  },
+  "coldStart": {
+    "summary": {
+      "events": 8,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [
+        {
+          "id": 2,
+          "text": "Brincadeira é comigo mesma!"
+        }
+      ],
+      "types": {
+        "tts-cancel": 3,
+        "tts-call": 2,
+        "tts-start": 2,
+        "tts-end": 1
+      },
+      "last": [
+        {
+          "t": 2757,
+          "wall": 1794186591063,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 3116,
+          "wall": 1794186591422,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 3770,
+          "wall": 1794186592077,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 4698,
+          "wall": 1794186593004,
+          "type": "tts-call",
+          "hash": "#/conversar",
+          "id": 1,
+          "text": "Boa escolha!",
+          "volume": 1,
+          "active": [],
+          "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+        },
+        {
+          "t": 4723,
+          "wall": 1794186593029,
+          "type": "tts-start",
+          "hash": "#/conversar",
+          "id": 1,
+          "text": "Boa escolha!",
+          "active": []
+        },
+        {
+          "t": 6179,
+          "wall": 1794186594485,
+          "type": "tts-end",
+          "hash": "#/conversar",
+          "id": 1,
+          "text": "Boa escolha!"
+        },
+        {
+          "t": 6290,
+          "wall": 1794186594596,
+          "type": "tts-call",
+          "hash": "#/conversar",
+          "id": 2,
+          "text": "Brincadeira é comigo mesma!",
+          "volume": 1,
+          "active": [],
+          "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+        },
+        {
+          "t": 6296,
+          "wall": 1794186594602,
+          "type": "tts-start",
+          "hash": "#/conversar",
+          "id": 2,
+          "text": "Brincadeira é comigo mesma!",
+          "active": []
+        }
+      ]
+    },
+    "log": [
+      {
+        "t": 2757,
+        "wall": 1794186591063,
+        "type": "tts-cancel",
+        "hash": "#/conversar",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 3116,
+        "wall": 1794186591422,
+        "type": "tts-cancel",
+        "hash": "#/conversar",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 3770,
+        "wall": 1794186592077,
+        "type": "tts-cancel",
+        "hash": "#/conversar",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 4698,
+        "wall": 1794186593004,
+        "type": "tts-call",
+        "hash": "#/conversar",
+        "id": 1,
+        "text": "Boa escolha!",
+        "volume": 1,
+        "active": [],
+        "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+      },
+      {
+        "t": 4723,
+        "wall": 1794186593029,
+        "type": "tts-start",
+        "hash": "#/conversar",
+        "id": 1,
+        "text": "Boa escolha!",
+        "active": []
+      },
+      {
+        "t": 6179,
+        "wall": 1794186594485,
+        "type": "tts-end",
+        "hash": "#/conversar",
+        "id": 1,
+        "text": "Boa escolha!"
+      },
+      {
+        "t": 6290,
+        "wall": 1794186594596,
+        "type": "tts-call",
+        "hash": "#/conversar",
+        "id": 2,
+        "text": "Brincadeira é comigo mesma!",
+        "volume": 1,
+        "active": [],
+        "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:316:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:305:10) |     at speak (http://localhost:8080/js/audio.js:369:23)"
+      },
+      {
+        "t": 6296,
+        "wall": 1794186594602,
+        "type": "tts-start",
+        "hash": "#/conversar",
+        "id": 2,
+        "text": "Brincadeira é comigo mesma!",
+        "active": []
+      }
+    ],
+    "bubbles": [
+      {
+        "role": "gabi",
+        "text": "Oi, Ana! Antes de conversar, escolhe uma cartinha surpresa!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Boa escolha! Brincadeira é comigo mesma!",
+        "cls": "bubble bubble--gabi grow"
+      }
+    ]
+  },
+  "finished": "2026-11-09T01:09:56.086Z"
+}

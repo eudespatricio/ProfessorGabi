@@ -2,13 +2,14 @@
 import { el, sleep, pick } from './utils.js';
 import * as store from './store.js';
 import { speak, stopSpeaking, sfx, unlockAudio } from './audio.js';
-import { listen, asrSupported, requestMic, asrErrorMessage } from './speech.js';
+import { listen, abortListening, asrSupported, requestMic, asrErrorMessage } from './speech.js';
 import { clearScreen, tabbar, gabiEl, confetti } from './ui.js';
 import { childName } from './tutor.js';
 import { similarity } from './exercises.js';
 import { splitSyllables } from './syllables.js';
+import { replyToChild, followUpAck, farewell } from './talk-reply.js';
 
-const TONGUE_TWISTERS = [
+export const TONGUE_TWISTERS = [
   // bichos
   { themes: ['bichos'], text: 'O rato roeu a roupa do rei de Roma.' },
   { themes: ['bichos'], text: 'Três pratos de trigo para três tigres tristes.' },
@@ -39,7 +40,7 @@ const TONGUE_TWISTERS = [
   { themes: ['nomes'], text: 'O Mário mora no morro e o morro tem muro.' },
 ];
 
-const THEMES = [
+export const THEMES = [
   {
     id: 'bichos', emoji: '🐾', label: 'Bichos',
     words: ['gato', 'sapo', 'macaco', 'borboleta', 'tigre', 'tatu'],
@@ -74,7 +75,7 @@ const THEMES = [
 
 const THEME_BY_ID = Object.fromEntries(THEMES.map((t) => [t.id, t]));
 
-const MOODS = [
+export const MOODS = [
   {
     label: 'Bem! 😃',
     replies: [
@@ -116,11 +117,6 @@ const MOODS = [
   },
 ];
 
-const FAREWELLS = [
-  'Adorei conversar com você. Você pode voltar quando quiser!',
-  'Foi ótimo te ouvir. Volta logo para conversar de novo!',
-  'Que conversa boa! Até a próxima!',
-];
 
 function shuffle(list) {
   const a = [...list];
@@ -137,6 +133,7 @@ export function renderTalk() {
   let step = 0;
   let busy = false;
   let alive = true;
+  let listenSeq = 0;
   let mood = 0;
   const history = []; // {role:'gabi'|'child', text}
   let theme = null;
@@ -148,8 +145,15 @@ export function renderTalk() {
   let twister = null;
   let turns = [];
 
+  function cancelListen() {
+    listenSeq++;
+    abortListening();
+    busy = false;
+  }
+
   const onExit = () => {
     alive = false;
+    cancelListen();
     stopSpeaking();
     window.removeEventListener('hashchange', onExit);
   };
@@ -264,7 +268,7 @@ export function renderTalk() {
     },
     {
       id: 'bye',
-      say: (n) => `Adorei conversar com você${n ? ', ' + n : ''}. ${pick(FAREWELLS)}`,
+      say: (n) => farewell(n),
     },
   ];
   }
@@ -312,26 +316,29 @@ export function renderTalk() {
       if (!store.state.settings.llm?.enabled) themePill.textContent = `${t.emoji} ${t.label}`;
       const cheer = `Boa escolha! ${t.cheer}`;
       bubble('gabi', cheer);
-      await sayAndWait(cheer, 380);
+      // A fala do elogio não bloqueia a pergunta: as opções aparecem já e a
+      // pergunta é falada quando o elogio terminar (ou é cancelada se a criança tocar).
+      const cheerSpeech = speak(cheer);
       if (!alive) return;
       busy = false;
       step = 0;
-      await askTurn();
+      await askTurn({ after: cheerSpeech });
     }, 650);
   }
 
-  async function askTurn() {
+  async function askTurn(opts = {}) {
     if (!alive) return;
     if (step >= turns.length) { finish(); return; }
     const turn = turns[step];
+    const startStep = step;
     const text = turn.say(childName());
     bubble('gabi', text);
     store.addTime(3);
 
     if (turn.options) {
-      const opts = el('div', { class: 'options options--3' });
+      const optsEl = el('div', { class: 'options options--3' });
       turn.options.forEach((o, i) => {
-        opts.append(el('button', {
+        optsEl.append(el('button', {
           class: 'option', 'on:click': async () => {
             if (busy || !alive) return;
             busy = true;
@@ -355,19 +362,26 @@ export function renderTalk() {
           },
         }, o));
       });
-      const box = controls(el('div', { class: 'section-title', text: 'Sua vez' }), opts);
+      const box = controls(el('div', { class: 'section-title', text: 'Sua vez' }), optsEl);
       requestAnimationFrame(() => box.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
-      await speak(text);
+      if (opts.after) {
+        Promise.resolve(opts.after).then(() => {
+          if (!alive || busy || step !== startStep) return;
+          speak(text);
+        });
+      } else if (opts.speak !== false) {
+        await speak(text);
+      }
       return;
     }
 
     if (turn.echo) {
-      await echoTurn(turn, text);
+      await echoTurn(turn, text, opts);
       return;
     }
 
     if (turn.free) {
-      await freeTurn(turn, text);
+      await freeTurn(turn, text, 0, opts);
       return;
     }
 
@@ -386,22 +400,23 @@ export function renderTalk() {
     const row = el('div', { class: 'mic-wrap' },
       ...(asrSupported ? [mic] : []),
       hint,
-      el('button', { class: 'btn btn--soft btn--sm', 'on:click': () => { stopSpeaking(); speak(target, { rate: 0.65 }); } }, '🔊 Ouvir de novo'),
+      el('button', { class: 'btn btn--soft btn--sm', 'on:click': () => { cancelListen(); stopSpeaking(); speak(target, { rate: 0.65 }); } }, '🔊 Ouvir de novo'),
       el('button', { class: 'btn btn--soft btn--sm', 'on:click': () => changeTwister(turn) }, '🔁 Trocar'),
-      el('button', { class: 'btn btn--ghost btn--sm', 'on:click': () => { stopSpeaking(); clearControls(); step++; askTurn(); } }, 'Pular'));
+      el('button', { class: 'btn btn--ghost btn--sm', 'on:click': () => { cancelListen(); stopSpeaking(); clearControls(); step++; askTurn(); } }, 'Pular'));
     controls(title, row);
     if (initialSpeech) speak(initialSpeech);
     if (!asrSupported) return;
 
     mic.addEventListener('click', async () => {
       if (busy || !alive) return;
+      const my = ++listenSeq;
       busy = true;
       stopSpeaking();
       hint.textContent = 'Estou ouvindo…';
       await sleep(180);
       const res = await listen({ onPartial: (t) => { hint.textContent = `“${t}”`; } });
       busy = false;
-      if (!alive) return;
+      if (!alive || my !== listenSeq) return;
       if (!res.ok) {
         if (res.error === 'not-allowed' || res.error === 'service-not-allowed') {
           const ok = await requestMic();
@@ -435,12 +450,12 @@ export function renderTalk() {
       if (ok) {
         acts.append(el('button', {
           class: 'btn btn--primary',
-          'on:click': () => { stopSpeaking(); clearControls(); step++; askTurn(); },
+          'on:click': () => { cancelListen(); stopSpeaking(); clearControls(); step++; askTurn(); },
         }, 'Continuar ➜'));
       } else {
         acts.append(el('button', {
           class: 'btn btn--primary',
-          'on:click': () => { stopSpeaking(); clearControls(); echoTurn(turn); },
+          'on:click': () => { cancelListen(); stopSpeaking(); clearControls(); echoTurn(turn); },
         }, '🎤 Tentar de novo'));
       }
       controls(acts);
@@ -449,6 +464,7 @@ export function renderTalk() {
   }
 
   function changeTwister(turn) {
+    cancelListen();
     stopSpeaking();
     nextTwister();
     clearControls();
@@ -457,10 +473,10 @@ export function renderTalk() {
     echoTurn(turn, intro);
   }
 
-  async function freeTurn(turn, initialSpeech = null) {
+  async function freeTurn(turn, initialSpeech = null, depth = 0) {
     const mic = el('button', { class: 'mic', 'aria-label': 'Falar' }, '🎤');
     const hint = el('div', { class: 'mic__hint', text: asrSupported ? 'Toque e fale à vontade.' : 'Toque em “Pular” para continuar.' });
-    const skip = el('button', { class: 'btn btn--soft btn--sm', 'on:click': () => { stopSpeaking(); clearControls(); step++; askTurn(); } }, 'Pular');
+    const skip = el('button', { class: 'btn btn--soft btn--sm', 'on:click': () => { cancelListen(); stopSpeaking(); clearControls(); step++; askTurn(); } }, 'Pular');
     const row = el('div', { class: 'mic-wrap' }, mic, hint, skip);
     controls(el('div', { class: 'section-title', text: 'Sua vez de falar' }), row);
     if (initialSpeech) speak(initialSpeech);
@@ -468,13 +484,14 @@ export function renderTalk() {
 
     mic.addEventListener('click', async () => {
       if (busy || !alive) return;
+      const my = ++listenSeq;
       busy = true;
       stopSpeaking();
       hint.textContent = 'Estou ouvindo…';
       await sleep(180);
       const res = await listen({ onPartial: (t) => { hint.textContent = `“${t}”`; } });
       busy = false;
-      if (!alive) return;
+      if (!alive || my !== listenSeq) return;
       if (!res.ok) {
         if (res.error === 'not-allowed' || res.error === 'service-not-allowed') {
           const ok = await requestMic();
@@ -486,13 +503,21 @@ export function renderTalk() {
       }
       bubble('child', res.transcript);
       clearControls();
-      const reply = await gabiReply(turn, res.transcript);
+      const reply = depth === 0
+        ? await gabiReply(turn, res.transcript)
+        : followUpAck(res.transcript);
       if (!alive) return;
-      bubble('gabi', reply);
+      bubble('gabi', reply.text);
+      if (reply.expectsAnswer && depth === 0) {
+        // a Gabi perguntou: mantém o turno aberto para a criança responder de verdade
+        await freeTurn(turn, null, 1);
+        await speak(reply.text);
+        return;
+      }
       step++;
-      const next = el('button', { class: 'btn btn--primary btn--block mt', 'on:click': () => { stopSpeaking(); clearControls(); askTurn(); } }, 'Continuar ➜');
+      const next = el('button', { class: 'btn btn--primary btn--block mt', 'on:click': () => { cancelListen(); stopSpeaking(); clearControls(); askTurn(); } }, 'Continuar ➜');
       controls(next);
-      await speak(reply);
+      await speak(reply.text);
     });
   }
 
@@ -501,21 +526,12 @@ export function renderTalk() {
     if (llm?.enabled && llm.key) {
       try {
         const reply = await callLLM(childText);
-        if (reply) return reply;
+        if (reply) return { text: reply, expectsAnswer: /\?\s*$/.test(reply) };
       } catch (e) {
         console.warn('LLM falhou', e);
       }
     }
-    // resposta por roteiro: recast + elogio específico
-    const clean = childText.replace(/\s+/g, ' ').trim();
-    const words = clean.split(' ').filter((w) => w.length > 2).slice(0, 2);
-    if (!words.length) return 'Que legal! Eu gosto de conversar com você.';
-    const focus = words[words.length - 1].replace(/[.,!?]/g, '');
-    return pick([
-      `Que legal! Você gosta de ${clean}? Eu também gosto de aprender coisas novas.`,
-      `Adorei saber! ${clean[0].toUpperCase() + clean.slice(1)}. Agora me conta: você faz isso com quem?`,
-      `Entendi! Você falou “${focus}”. Essa palavra começa com o som de ${focus[0].toUpperCase()}. Muito bem!`,
-    ]);
+    return replyToChild(childText);
   }
 
   function finish() {
@@ -541,9 +557,13 @@ Regras rígidas:
 - Quando aparecer uma palavra interessante, separe em sílabas oralmente (ex.: bo-la) e convide a criança a repetir.
 - Nunca dê conselhos médicos, nunca fale de violência, política, religião ou temas adultos. Se a criança tocar nesses assuntos, diga gentilmente que vocês podem falar de outra coisa e proponha uma palavra para ler.
 - Use no máximo 1 emoji. Não use markdown.`;
+    // freeTurn já registrou a fala da criança em history; não manda a mesma mensagem duas vezes
+    const convo = history.slice(-6);
+    const last = convo[convo.length - 1];
+    if (last && last.role === 'child' && last.text === childText) convo.pop();
     const messages = [
       { role: 'system', content: sys },
-      ...history.slice(-6).map((h) => ({ role: h.role === 'gabi' ? 'assistant' : 'user', content: h.text })),
+      ...convo.map((h) => ({ role: h.role === 'gabi' ? 'assistant' : 'user', content: h.text })),
       { role: 'user', content: childText },
     ];
     const r = await fetch(`${base}/chat/completions`, {

@@ -1,6 +1,6 @@
 /* Caça-palavras: grade 8×8 determinística e jogo por toque. */
-import { el, rng, shuffle, stripAccents, norm } from './utils.js';
-import { speak, sfx, haptic } from './audio.js';
+import { el, rng, shuffle, stripAccents, norm, sleep } from './utils.js';
+import { speak, stopSpeaking, sfx, haptic } from './audio.js';
 import * as store from './store.js';
 import { UNITS } from './curriculum.js';
 import { wordsOfUnit } from './content.js';
@@ -357,22 +357,34 @@ export function renderSearch({ bonus = false } = {}) {
     score.textContent = `${found.size}/${total}`;
     sfx('ok');
     haptic(16);
-    speak(word);
+    const wordSpeech = speak(word);
     setStatus(`Achou: ${word.toUpperCase()}!`, 'ok');
-    if (found.size === total) finish();
+    if (found.size === total) finish(wordSpeech);
   }
 
-  function finish() {
+  async function finish(wordSpeech = null) {
     finished = true;
     start = null;
     paintSel([]);
     confetti(24);
     sfx('great');
     setStatus('Você encontrou todas as palavras!', 'ok');
-    speak('Você encontrou todas as palavras!');
     store.awardBonus(bonus ? 40 : 25);
     win.hidden = false;
     win.scrollIntoView?.({ block: 'nearest' });
+
+    // Deixa a última palavra terminar antes de falar o resultado. Se ela demorar
+    // demais (TTS travado), corta e fala o resultado; nunca deixa as duas juntas.
+    if (wordSpeech) {
+      const finishedSpeech = await Promise.race([
+        Promise.resolve(wordSpeech).then(() => true),
+        sleep(2200).then(() => false),
+      ]);
+      if (!wrap.isConnected) return;
+      if (!finishedSpeech) stopSpeaking();
+    }
+    if (!wrap.isConnected) return;
+    speak('Você encontrou todas as palavras!');
   }
 
   function tap(r, c) {

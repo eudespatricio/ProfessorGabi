@@ -1,0 +1,1735 @@
+{
+  "started": "2026-11-09T02:30:34.364Z",
+  "app": "http://localhost:8080/",
+  "devtools": "http://127.0.0.1:9222",
+  "scenarios": [],
+  "checks": [
+    {
+      "name": "app v44 carregado",
+      "ok": true,
+      "detail": "\"v44\""
+    },
+    {
+      "name": "dataset da versão = v44",
+      "ok": true,
+      "detail": "\"v44\""
+    },
+    {
+      "name": "service worker controlando a página",
+      "ok": true,
+      "detail": "http://localhost:8080/sw.js"
+    },
+    {
+      "name": "cache gabi-v44 presente",
+      "ok": true,
+      "detail": "gabi-audio-v1,gabi-v44"
+    },
+    {
+      "name": "cache de áudio gabi-audio-v1 presente",
+      "ok": true,
+      "detail": "gabi-audio-v1,gabi-v44"
+    },
+    {
+      "name": "há voz pt-BR no tablet",
+      "ok": true,
+      "detail": "ptVoices=1"
+    },
+    {
+      "name": "Opus suportado no Chrome do emulador",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "shell offline com 37 arquivos",
+      "ok": true,
+      "detail": "gabi-v44=38"
+    },
+    {
+      "name": "áudio pré-cacheado 1000+",
+      "ok": true,
+      "detail": "gabi-audio-v1=1780"
+    },
+    {
+      "name": "aviso \"sem voz pt-BR\" não aparece com 2 vozes",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "voz ativa não é de Portugal",
+      "ok": true,
+      "detail": "Portuguese Brazil"
+    },
+    {
+      "name": "lista de vozes não oferece pt-PT",
+      "ok": true,
+      "detail": "voz do sistema · pt_BR"
+    },
+    {
+      "name": "sem erros de JavaScript no boot",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "cartinha abre",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"🎁🍎Comida\"}"
+    },
+    {
+      "name": "humor \"Bem\" responde",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"Bem! 😃\"}"
+    },
+    {
+      "name": "turno livre faz pergunta de continuidade",
+      "ok": true,
+      "detail": "Qual foi a melhor parte do seu dia até agora?"
+    },
+    {
+      "name": "resposta da Gabi usa frase gramatical",
+      "ok": true,
+      "detail": "Que legal! Você gosta de brincar no parque. Do que você mais gosta de brincar?"
+    },
+    {
+      "name": "resposta do 1º turno considera o conteúdo (parque)",
+      "ok": true,
+      "detail": "Que legal! Você gosta de brincar no parque. Do que você mais gosta de brincar?"
+    },
+    {
+      "name": "se a Gabi pergunta, a criança pode responder",
+      "ok": true,
+      "detail": "mic=true"
+    },
+    {
+      "name": "follow-up fecha o turno sem nova pergunta",
+      "ok": true,
+      "detail": "Adorei saber! Patos é um bom assunto."
+    },
+    {
+      "name": "avança do turno livre",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"Continuar ➜\"}"
+    },
+    {
+      "name": "palavra do turno de sílabas identificada",
+      "ok": true,
+      "detail": "pipoca → 3"
+    },
+    {
+      "name": "responde 3 sílabas",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"3 sílabas\"}"
+    },
+    {
+      "name": "trava-língua identificado",
+      "ok": true,
+      "detail": "A pipoca estala na panela quente."
+    },
+    {
+      "name": "eco do trava-língua responde",
+      "ok": true,
+      "detail": "Muito bem! Saiu bonito."
+    },
+    {
+      "name": "segundo turno livre responde",
+      "ok": true,
+      "detail": "Tatu! Que bicho legal. O que tatu mais gosta de comer?"
+    },
+    {
+      "name": "resposta do 2º turno considera o conteúdo (tatu)",
+      "ok": true,
+      "detail": "Tatu! Que bicho legal. O que tatu mais gosta de comer?"
+    },
+    {
+      "name": "segundo follow-up também pode ser respondido",
+      "ok": true,
+      "detail": "mic=true"
+    },
+    {
+      "name": "segundo follow-up pode ser pulado",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"Pular\"}"
+    },
+    {
+      "name": "conversa tem saudação e despedida",
+      "ok": true,
+      "detail": "14 falas da Gabi"
+    },
+    {
+      "name": "conversa registra as 6 falas da criança",
+      "ok": true,
+      "detail": "6: Bem! 😃 | eu gosto de brincar no parque | no parque eu corro atrás dos patos | 3 sílabas | A pipoca estala na panela quente. | meu bicho favorito é o tatu"
+    },
+    {
+      "name": "despedida não repete a mesma frase",
+      "ok": true,
+      "detail": "Adorei conversar com você, Ana. Volta logo para conversar de novo!"
+    },
+    {
+      "name": "card final de despedida visível sem rolar",
+      "ok": true,
+      "detail": "endVisible=true"
+    },
+    {
+      "name": "sem sobreposição de áudio no fluxo feliz",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "sem erros de JavaScript na conversa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "botão Pular responde durante a escuta",
+      "ok": true,
+      "detail": "{\"ok\":true,\"text\":\"Pular\"}"
+    },
+    {
+      "name": "Pular descarta a resposta que chega depois",
+      "ok": true,
+      "detail": "fala atrasada no índice -1"
+    },
+    {
+      "name": "Pular preserva o turno de sílabas (3 opções)",
+      "ok": true,
+      "detail": "options=3"
+    },
+    {
+      "name": "Pular não insere a fala atrasada depois da pergunta seguinte",
+      "ok": true,
+      "detail": "sílabas@6, atrasada@-1"
+    },
+    {
+      "name": "sair da conversa para o áudio da Gabi",
+      "ok": true,
+      "detail": "{\"media\":0,\"tts\":0,\"speaking\":false,\"onHome\":false}"
+    },
+    {
+      "name": "sair da conversa remove o estado \"falando\"",
+      "ok": true,
+      "detail": "{\"media\":0,\"tts\":0,\"speaking\":false,\"onHome\":false}"
+    },
+    {
+      "name": "toques rápidos abrem só uma cartinha",
+      "ok": true,
+      "detail": "{\"cards\":3,\"dim\":2,\"picked\":1}"
+    },
+    {
+      "name": "toques rápidos não sobrepõem áudio",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "opções aparecem em até 3s depois da cartinha",
+      "ok": true,
+      "detail": "delay=756ms shown=true"
+    },
+    {
+      "name": "caça-palavras: última palavra marcada",
+      "ok": true,
+      "detail": "mala"
+    },
+    {
+      "name": "caça-palavras: tela de vitória aparece",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "voz do resultado não sobrepõe a última palavra",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "última palavra é falada antes do resultado",
+      "ok": true,
+      "detail": "lastWord=mala"
+    },
+    {
+      "name": "resultado do caça-palavras é falado",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "saudação com Gabi usa clipe neural",
+      "ok": true,
+      "detail": "{\"before\":{\"clipAttempts\":0,\"opusOk\":0,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":null},\"after\":{\"clipAttempts\":1,\"opusOk\":1,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":{\"kind\":\"opus\",\"ok\":true,\"key\":\"bom dia, gabi! vamos nos divertir aprendendo\",\"at\":1794191482510}}}"
+    },
+    {
+      "name": "saudação com Gabi não cai no TTS",
+      "ok": true,
+      "detail": "{\"before\":{\"clipAttempts\":0,\"opusOk\":0,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":null},\"after\":{\"clipAttempts\":1,\"opusOk\":1,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":{\"kind\":\"opus\",\"ok\":true,\"key\":\"bom dia, gabi! vamos nos divertir aprendendo\",\"at\":1794191482510}}}"
+    },
+    {
+      "name": "saudação com Gabriela usa clipe neural",
+      "ok": true,
+      "detail": "{\"before\":{\"clipAttempts\":0,\"opusOk\":0,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":null},\"after\":{\"clipAttempts\":1,\"opusOk\":1,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":{\"kind\":\"opus\",\"ok\":true,\"key\":\"bom dia, gabriela! vamos começar com uma historinha\",\"at\":1794191489377}}}"
+    },
+    {
+      "name": "saudação com Gabriela não cai no TTS",
+      "ok": true,
+      "detail": "{\"before\":{\"clipAttempts\":0,\"opusOk\":0,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":null},\"after\":{\"clipAttempts\":1,\"opusOk\":1,\"mp3Ok\":0,\"opusFail\":0,\"mp3Fail\":0,\"noClip\":0,\"indexFail\":0,\"ttsOk\":0,\"ttsFail\":0,\"last\":{\"kind\":\"opus\",\"ok\":true,\"key\":\"bom dia, gabriela! vamos começar com uma historinha\",\"at\":1794191489377}}}"
+    },
+    {
+      "name": "lição chega ao resultado",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "lição rápida sem sobreposição de áudio",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "lição rápida sem erros de JavaScript",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "navegação termina em uma tela válida",
+      "ok": true,
+      "detail": "Professora\nGabi\n🔥 1\n⭐ 44\n☁️\n☁️\nBOM DIA!\nAna\nVamos começar com uma historinha?\n🔊 Ouvir a Gabi\nSUA PRÓXIMA AULA\nP, B, M,"
+    },
+    {
+      "name": "navegação não deixa áudio preso",
+      "ok": true,
+      "detail": "{\"screen\":\"Professora\\nGabi\\n🔥 1\\n⭐ 44\\n☁️\\n☁️\\nBOM DIA!\\nAna\\nVamos começar com uma historinha?\\n🔊 Ouvir a Gabi\\nSUA PRÓXIMA AULA\\nP, B, M,\",\"speaking\":false,\"media\":0,\"tts\":0,\"modal\":false}"
+    },
+    {
+      "name": "navegação não deixa modal preso",
+      "ok": true,
+      "detail": "{\"screen\":\"Professora\\nGabi\\n🔥 1\\n⭐ 44\\n☁️\\n☁️\\nBOM DIA!\\nAna\\nVamos começar com uma historinha?\\n🔊 Ouvir a Gabi\\nSUA PRÓXIMA AULA\\nP, B, M,\",\"speaking\":false,\"media\":0,\"tts\":0,\"modal\":false}"
+    },
+    {
+      "name": "navegação sem erros de JavaScript",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "o microfone falso começou a ouvir",
+      "ok": true,
+      "detail": "{\"started\":1,\"aborted\":0,\"listening\":true}"
+    },
+    {
+      "name": "sair da conversa aborta o reconhecimento",
+      "ok": true,
+      "detail": "{\"started\":1,\"aborted\":1,\"stopped\":0,\"listening\":false,\"onHome\":false}"
+    },
+    {
+      "name": "sair da conversa desliga o indicador de escuta",
+      "ok": true,
+      "detail": "{\"started\":1,\"aborted\":1,\"stopped\":0,\"listening\":false,\"onHome\":false}"
+    },
+    {
+      "name": "cold start: sem sobreposição de clipes",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "findings": [],
+  "cacheCounts": {
+    "gabi-audio-v1": 1780,
+    "gabi-v44": 38
+  },
+  "talk": {
+    "freeQuestion": "Qual foi a melhor parte do seu dia até agora?",
+    "freeReply": "Que legal! Você gosta de brincar no parque. Do que você mais gosta de brincar?",
+    "followAck": "Adorei saber! Patos é um bom assunto.",
+    "twister": "A pipoca estala na panela quente.",
+    "echoReply": "Muito bem! Saiu bonito.",
+    "freeReply2": "Tatu! Que bicho legal. O que tatu mais gosta de comer?",
+    "bubbles": [
+      {
+        "role": "gabi",
+        "text": "Oi, Ana! Antes de conversar, escolhe uma cartinha surpresa!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Boa escolha! Hmm, comida é um ótimo assunto!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Agora me conta, Ana: como você está hoje?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "Bem! 😃",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Isso me deixa feliz também!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Qual foi a melhor parte do seu dia até agora?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "eu gosto de brincar no parque",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Que legal! Você gosta de brincar no parque. Do que você mais gosta de brincar?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "no parque eu corro atrás dos patos",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Adorei saber! Patos é um bom assunto.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Palavra nova: pipoca! Bata palmas e me diga: quantas sílabas tem?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "3 sílabas",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Isso! pipoca: pi · po · ca. 3 sílabas. Você contou muito bem.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Trava-língua de comida: “A pipoca estala na panela quente.” Repita comigo.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "A pipoca estala na panela quente.",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Muito bem! Saiu bonito.",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Qual é o seu lanche preferido?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "meu bicho favorito é o tatu",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Tatu! Que bicho legal. O que tatu mais gosta de comer?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Adorei conversar com você, Ana. Volta logo para conversar de novo!",
+        "cls": "bubble bubble--gabi grow"
+      }
+    ],
+    "order": [
+      "gabi:Oi, Ana! Antes de conver",
+      "gabi:Boa escolha! Hmm, comida",
+      "gabi:Agora me conta, Ana: com",
+      "child:Bem! 😃",
+      "gabi:Isso me deixa feliz tamb",
+      "gabi:Qual foi a melhor parte ",
+      "child:eu gosto de brincar no p",
+      "gabi:Que legal! Você gosta de",
+      "child:no parque eu corro atrás",
+      "gabi:Adorei saber! Patos é um",
+      "gabi:Palavra nova: pipoca! Ba",
+      "child:3 sílabas",
+      "gabi:Isso! pipoca: pi · po · ",
+      "gabi:Trava-língua de comida: ",
+      "child:A pipoca estala na panel",
+      "gabi:Muito bem! Saiu bonito.",
+      "gabi:Qual é o seu lanche pref",
+      "child:meu bicho favorito é o t",
+      "gabi:Tatu! Que bicho legal. O",
+      "gabi:Adorei conversar com voc"
+    ],
+    "audio": {
+      "events": 11,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 11
+      },
+      "last": [
+        {
+          "t": 3383,
+          "wall": 1794191448523,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 4285,
+          "wall": 1794191449425,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 4834,
+          "wall": 1794191449974,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 4882,
+          "wall": 1794191450022,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 5447,
+          "wall": 1794191450587,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 6282,
+          "wall": 1794191451422,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 6314,
+          "wall": 1794191451454,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 7178,
+          "wall": 1794191452317,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        }
+      ]
+    }
+  },
+  "skipListening": {
+    "childBefore": 1,
+    "immediate": {
+      "options": 3,
+      "title": true,
+      "cards": 1
+    },
+    "before": [
+      {
+        "role": "gabi",
+        "text": "Oi, Ana! Antes de conversar, escolhe uma cartinha surpresa!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Boa escolha! Brincadeira é comigo mesma!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Agora me conta, Ana: como você está hoje?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "child",
+        "text": "Bem! 😃",
+        "cls": "bubble bubble--child grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Isso me deixa feliz também!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Qual foi a melhor parte do seu dia até agora?",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Palavra nova: bola! Bata palmas e me diga: quantas sílabas tem?",
+        "cls": "bubble bubble--gabi grow"
+      }
+    ],
+    "after": {
+      "options": 3,
+      "childBubbles": 1,
+      "mic": false,
+      "continueButtons": 0,
+      "title": true,
+      "text": "←\nConversar com a Gabi\n🪁 Brincadeiras\nGABI\nOi, Ana! Antes de conversar, escolhe uma cartinha surpresa!\n🔊 Ouvir\nGABI\nBoa escolha! Brincadeira é comigo mesma!\n🔊 Ouvir\nGABI\nAgora me conta, Ana: como você está hoje?\n🔊 Ouvir\nBem! 😃\nGABI\nIsso me deixa feliz também!\n🔊 Ouvir\nGABI\nQual foi a melhor parte do seu dia até agora?\n🔊 Ouvir\nGABI\nPalavra nova: bola! Bata palmas e me diga: quantas sílabas tem?\n🔊 Ouvir\nSUA VEZ\n2 sílabas\n3 sílabas\n4 sílabas\n🏠\nInício\n🗺️\nTrilha\n🔁\nRevisar\n👨‍👩‍👧\nPais",
+      "bubbles": [
+        {
+          "role": "gabi",
+          "text": "Oi, Ana! Antes de conversar, escolhe uma cartinha surpresa!",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Boa escolha! Brincadeira é comigo mesma!",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Agora me conta, Ana: como você está hoje?",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "child",
+          "text": "Bem! 😃",
+          "cls": "bubble bubble--child grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Isso me deixa feliz também!",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Qual foi a melhor parte do seu dia até agora?",
+          "cls": "bubble bubble--gabi grow"
+        },
+        {
+          "role": "gabi",
+          "text": "Palavra nova: bola! Bata palmas e me diga: quantas sílabas tem?",
+          "cls": "bubble bubble--gabi grow"
+        }
+      ]
+    }
+  },
+  "leaveDuringSpeech": {
+    "media": 0,
+    "tts": 0,
+    "speaking": false,
+    "onHome": false,
+    "audio": {
+      "events": 6,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 6
+      },
+      "last": [
+        {
+          "t": 6379,
+          "wall": 1794191460123,
+          "type": "tts-cancel",
+          "hash": "#/",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 6386,
+          "wall": 1794191460130,
+          "type": "tts-cancel",
+          "hash": "#/",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 6747,
+          "wall": 1794191460491,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 7120,
+          "wall": 1794191460863,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 8032,
+          "wall": 1794191461775,
+          "type": "tts-cancel",
+          "hash": "#/",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 8041,
+          "wall": 1794191461785,
+          "type": "tts-cancel",
+          "hash": "#/",
+          "active": [],
+          "tts": []
+        }
+      ]
+    }
+  },
+  "rapidCards": {
+    "cards": 3,
+    "dim": 2,
+    "picked": 1,
+    "audio": {
+      "events": 2,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 0,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 2
+      },
+      "last": [
+        {
+          "t": 10921,
+          "wall": 1794191464664,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 11289,
+          "wall": 1794191465032,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        }
+      ]
+    }
+  },
+  "talkVoice": {
+    "delayMs": 756,
+    "optionsShown": true,
+    "waitError": "",
+    "audio": {
+      "events": 7,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 1,
+      "active": [
+        {
+          "id": 2,
+          "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+          "ms": 56
+        }
+      ],
+      "tts": [],
+      "types": {
+        "tts-cancel": 4,
+        "tts-call": 1,
+        "play-call": 1,
+        "media-playing": 1
+      },
+      "last": [
+        {
+          "t": 1313,
+          "wall": 1794191466952,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 1320,
+          "wall": 1794191466958,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 1623,
+          "wall": 1794191467262,
+          "type": "tts-call",
+          "hash": "#/conversar",
+          "id": 1,
+          "text": "Oi, Ana!",
+          "volume": 1,
+          "active": [],
+          "stack": "    at synth.speak (<anonymous>:126:83) |     at http://localhost:8080/js/audio.js:347:30 |     at new Promise (<anonymous>) |     at speakOne (http://localhost:8080/js/audio.js:336:10) |     at speak (http://localhost:8080/js/audio.js:408:23)"
+        },
+        {
+          "t": 1679,
+          "wall": 1794191467317,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 2333,
+          "wall": 1794191467972,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 2336,
+          "wall": 1794191467975,
+          "type": "play-call",
+          "hash": "#/conversar",
+          "id": 2,
+          "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+          "rate": 0.9,
+          "volume": 1,
+          "active": [],
+          "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:279:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:218:10) |     at playClip (http://localhost:8080/js/audio.js:295:21)"
+        },
+        {
+          "t": 2379,
+          "wall": 1794191468018,
+          "type": "media-playing",
+          "hash": "#/conversar",
+          "id": 2,
+          "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 2,
+              "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+              "ms": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "search": {
+    "words": [
+      "mel",
+      "teto",
+      "tijolo",
+      "mala"
+    ],
+    "lastWord": "mala",
+    "tried": 4,
+    "winVisible": true,
+    "wordHeard": true,
+    "resultSpoken": true,
+    "summary": {
+      "events": 9,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 1,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 2,
+        "play-call": 2,
+        "media-playing": 2,
+        "media-pause": 2,
+        "start-after-stop": 1
+      },
+      "last": [
+        {
+          "t": 4078,
+          "wall": 1794191472441,
+          "type": "play-call",
+          "hash": "#/caca",
+          "id": 4,
+          "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+          "rate": 0.9,
+          "volume": 1,
+          "active": [],
+          "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:279:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:218:10) |     at playClip (http://localhost:8080/js/audio.js:295:21)"
+        },
+        {
+          "t": 4124,
+          "wall": 1794191472487,
+          "type": "media-playing",
+          "hash": "#/caca",
+          "id": 4,
+          "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 4,
+              "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+              "ms": 0
+            }
+          ]
+        },
+        {
+          "t": 5470,
+          "wall": 1794191473833,
+          "type": "media-pause",
+          "hash": "#/caca",
+          "id": 4,
+          "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+          "currentTime": 0.982
+        },
+        {
+          "t": 5471,
+          "wall": 1794191473834,
+          "type": "tts-cancel",
+          "hash": "#/caca",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 5471,
+          "wall": 1794191473834,
+          "type": "play-call",
+          "hash": "#/caca",
+          "id": 5,
+          "src": "http://localhost:8080/audio/opus/235fa1c3b0.opus",
+          "rate": 0.9,
+          "volume": 1,
+          "active": [],
+          "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:279:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:218:10) |     at playClip (http://localhost:8080/js/audio.js:295:21)"
+        },
+        {
+          "t": 5495,
+          "wall": 1794191473857,
+          "type": "media-playing",
+          "hash": "#/caca",
+          "id": 5,
+          "src": "http://localhost:8080/audio/opus/235fa1c3b0.opus",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 5,
+              "src": "http://localhost:8080/audio/opus/235fa1c3b0.opus",
+              "ms": 0
+            }
+          ]
+        },
+        {
+          "t": 5495,
+          "wall": 1794191473858,
+          "type": "start-after-stop",
+          "hash": "#/caca",
+          "id": 5,
+          "src": "http://localhost:8080/audio/opus/235fa1c3b0.opus",
+          "lastStop": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+          "gap": 25
+        },
+        {
+          "t": 7918,
+          "wall": 1794191476281,
+          "type": "media-pause",
+          "hash": "#/caca",
+          "id": 5,
+          "src": "http://localhost:8080/audio/opus/235fa1c3b0.opus",
+          "currentTime": 2.003
+        }
+      ]
+    },
+    "log": [
+      {
+        "t": 4124,
+        "wall": 1794191472487,
+        "type": "media-playing",
+        "hash": "#/caca",
+        "id": 4,
+        "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+        "rate": 0.9,
+        "active": [
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+            "ms": 0
+          }
+        ]
+      },
+      {
+        "t": 5495,
+        "wall": 1794191473857,
+        "type": "media-playing",
+        "hash": "#/caca",
+        "id": 5,
+        "src": "http://localhost:8080/audio/opus/235fa1c3b0.opus",
+        "rate": 0.9,
+        "active": [
+          {
+            "id": 5,
+            "src": "http://localhost:8080/audio/opus/235fa1c3b0.opus",
+            "ms": 0
+          }
+        ]
+      }
+    ]
+  },
+  "nameClip": {
+    "Gabi": {
+      "before": {
+        "clipAttempts": 0,
+        "opusOk": 0,
+        "mp3Ok": 0,
+        "opusFail": 0,
+        "mp3Fail": 0,
+        "noClip": 0,
+        "indexFail": 0,
+        "ttsOk": 0,
+        "ttsFail": 0,
+        "last": null
+      },
+      "after": {
+        "clipAttempts": 1,
+        "opusOk": 1,
+        "mp3Ok": 0,
+        "opusFail": 0,
+        "mp3Fail": 0,
+        "noClip": 0,
+        "indexFail": 0,
+        "ttsOk": 0,
+        "ttsFail": 0,
+        "last": {
+          "kind": "opus",
+          "ok": true,
+          "key": "bom dia, gabi! vamos nos divertir aprendendo",
+          "at": 1794191482510
+        }
+      },
+      "playedClip": true,
+      "noTts": true
+    },
+    "Gabriela": {
+      "before": {
+        "clipAttempts": 0,
+        "opusOk": 0,
+        "mp3Ok": 0,
+        "opusFail": 0,
+        "mp3Fail": 0,
+        "noClip": 0,
+        "indexFail": 0,
+        "ttsOk": 0,
+        "ttsFail": 0,
+        "last": null
+      },
+      "after": {
+        "clipAttempts": 1,
+        "opusOk": 1,
+        "mp3Ok": 0,
+        "opusFail": 0,
+        "mp3Fail": 0,
+        "noClip": 0,
+        "indexFail": 0,
+        "ttsOk": 0,
+        "ttsFail": 0,
+        "last": {
+          "kind": "opus",
+          "ok": true,
+          "key": "bom dia, gabriela! vamos começar com uma historinha",
+          "at": 1794191489377
+        }
+      },
+      "playedClip": true,
+      "noTts": true
+    }
+  },
+  "lessonRapid": {
+    "steps": 16,
+    "summary": {
+      "events": 152,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 1,
+      "active": [
+        {
+          "id": 23,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "ms": 103
+        }
+      ],
+      "tts": [],
+      "types": {
+        "tts-cancel": 64,
+        "play-call": 23,
+        "media-playing": 19,
+        "media-pause": 18,
+        "start-after-stop": 16,
+        "play-while-active": 12
+      },
+      "last": [
+        {
+          "t": 7082,
+          "wall": 1794191496827,
+          "type": "tts-cancel",
+          "hash": "#/licao/u1/0",
+          "active": [
+            {
+              "id": 22,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "ms": 99
+            }
+          ],
+          "tts": []
+        },
+        {
+          "t": 7084,
+          "wall": 1794191496829,
+          "type": "tts-cancel",
+          "hash": "#/licao/u1/0",
+          "active": [
+            {
+              "id": 22,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "ms": 101
+            }
+          ],
+          "tts": []
+        },
+        {
+          "t": 7086,
+          "wall": 1794191496831,
+          "type": "tts-cancel",
+          "hash": "#/licao/u1/0",
+          "active": [
+            {
+              "id": 22,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "ms": 103
+            }
+          ],
+          "tts": []
+        },
+        {
+          "t": 7086,
+          "wall": 1794191496832,
+          "type": "play-call",
+          "hash": "#/licao/u1/0",
+          "id": 23,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "rate": 0.9,
+          "volume": 1,
+          "active": [
+            {
+              "id": 22,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "ms": 104
+            }
+          ],
+          "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:279:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:218:10) |     at playClip (http://localhost:8080/js/audio.js:295:21)"
+        },
+        {
+          "t": 7086,
+          "wall": 1794191496832,
+          "type": "play-while-active",
+          "hash": "#/licao/u1/0",
+          "id": 23,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "active": [
+            {
+              "id": 22,
+              "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+              "ms": 104
+            }
+          ]
+        },
+        {
+          "t": 7087,
+          "wall": 1794191496833,
+          "type": "media-pause",
+          "hash": "#/licao/u1/0",
+          "id": 22,
+          "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+          "currentTime": 0.065
+        },
+        {
+          "t": 7101,
+          "wall": 1794191496846,
+          "type": "media-playing",
+          "hash": "#/licao/u1/0",
+          "id": 23,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 23,
+              "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+              "ms": 0
+            }
+          ]
+        },
+        {
+          "t": 7101,
+          "wall": 1794191496846,
+          "type": "start-after-stop",
+          "hash": "#/licao/u1/0",
+          "id": 23,
+          "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+          "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+          "gap": 14
+        }
+      ]
+    },
+    "body": "★★★\nAula perfeita!\nQue aula! Você acertou 5 de 5. Estou muito orgulhosa.\n5/5\nACERTOS\n+85\nESTRELINHAS\n1m\nTEMPO\nAdesivo novo: 🎒 Primeira aula\nRevisão rápida: 2/2\nVoltar ao inícioRepetir esta lição",
+    "log": [
+      {
+        "t": 1972,
+        "wall": 1794191491717,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 2,
+        "src": "http://localhost:8080/audio/opus/87e40f6c56.opus",
+        "lastStop": "http://localhost:8080/audio/opus/95aabeb756.opus",
+        "gap": 245
+      },
+      {
+        "t": 2025,
+        "wall": 1794191491770,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 3,
+        "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "active": [
+          {
+            "id": 2,
+            "src": "http://localhost:8080/audio/opus/87e40f6c56.opus",
+            "ms": 53
+          }
+        ]
+      },
+      {
+        "t": 2057,
+        "wall": 1794191491803,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 3,
+        "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "lastStop": "http://localhost:8080/audio/opus/87e40f6c56.opus",
+        "gap": 32
+      },
+      {
+        "t": 2109,
+        "wall": 1794191491855,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 4,
+        "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "active": [
+          {
+            "id": 3,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 52
+          }
+        ]
+      },
+      {
+        "t": 2140,
+        "wall": 1794191491886,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 5,
+        "src": "http://localhost:8080/audio/opus/1428280996.opus",
+        "active": [
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+            "ms": 17
+          }
+        ]
+      },
+      {
+        "t": 2183,
+        "wall": 1794191491929,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 5,
+        "src": "http://localhost:8080/audio/opus/1428280996.opus",
+        "lastStop": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "gap": 43
+      },
+      {
+        "t": 2241,
+        "wall": 1794191491987,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 6,
+        "src": "http://localhost:8080/audio/opus/080f1d9588.opus",
+        "active": [
+          {
+            "id": 5,
+            "src": "http://localhost:8080/audio/opus/1428280996.opus",
+            "ms": 58
+          }
+        ]
+      },
+      {
+        "t": 2419,
+        "wall": 1794191492164,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 7,
+        "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "lastStop": "http://localhost:8080/audio/opus/1428280996.opus",
+        "gap": 177
+      },
+      {
+        "t": 2483,
+        "wall": 1794191492229,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 8,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "active": [
+          {
+            "id": 7,
+            "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+            "ms": 65
+          }
+        ]
+      },
+      {
+        "t": 2528,
+        "wall": 1794191492274,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 8,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "lastStop": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "gap": 44
+      },
+      {
+        "t": 2600,
+        "wall": 1794191492346,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 9,
+        "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "active": [
+          {
+            "id": 8,
+            "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+            "ms": 72
+          }
+        ]
+      },
+      {
+        "t": 2641,
+        "wall": 1794191492387,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 9,
+        "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "lastStop": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "gap": 41
+      },
+      {
+        "t": 2700,
+        "wall": 1794191492446,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 10,
+        "src": "http://localhost:8080/audio/opus/e7a8963dc2.opus",
+        "active": [
+          {
+            "id": 9,
+            "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+            "ms": 60
+          }
+        ]
+      },
+      {
+        "t": 2946,
+        "wall": 1794191492692,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 11,
+        "src": "http://localhost:8080/audio/opus/b6255117ca.opus",
+        "lastStop": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "gap": 245
+      },
+      {
+        "t": 3093,
+        "wall": 1794191492839,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 12,
+        "src": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "lastStop": "http://localhost:8080/audio/opus/b6255117ca.opus",
+        "gap": 127
+      },
+      {
+        "t": 3341,
+        "wall": 1794191493087,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 13,
+        "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "lastStop": "http://localhost:8080/audio/opus/771c56454e.opus",
+        "gap": 160
+      },
+      {
+        "t": 3413,
+        "wall": 1794191493159,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 14,
+        "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "active": [
+          {
+            "id": 13,
+            "src": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+            "ms": 72
+          }
+        ]
+      },
+      {
+        "t": 3460,
+        "wall": 1794191493206,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 14,
+        "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "lastStop": "http://localhost:8080/audio/opus/8c4c9c2809.opus",
+        "gap": 46
+      },
+      {
+        "t": 3537,
+        "wall": 1794191493283,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 15,
+        "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "active": [
+          {
+            "id": 14,
+            "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+            "ms": 77
+          }
+        ]
+      },
+      {
+        "t": 3577,
+        "wall": 1794191493322,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 15,
+        "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "lastStop": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "gap": 39
+      },
+      {
+        "t": 3637,
+        "wall": 1794191493383,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 16,
+        "src": "http://localhost:8080/audio/opus/eb1c0d7aaf.opus",
+        "active": [
+          {
+            "id": 15,
+            "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+            "ms": 61
+          }
+        ]
+      },
+      {
+        "t": 3884,
+        "wall": 1794191493630,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 18,
+        "src": "http://localhost:8080/audio/opus/18c0d2709b.opus",
+        "active": [
+          {
+            "id": 17,
+            "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+            "ms": 71
+          }
+        ]
+      },
+      {
+        "t": 4322,
+        "wall": 1794191494068,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 19,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "lastStop": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "gap": 438
+      },
+      {
+        "t": 5416,
+        "wall": 1794191495162,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 20,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "lastStop": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "gap": 654
+      },
+      {
+        "t": 5886,
+        "wall": 1794191495631,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 21,
+        "src": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "gap": 395
+      },
+      {
+        "t": 6983,
+        "wall": 1794191496728,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 22,
+        "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "lastStop": "http://localhost:8080/audio/opus/0ff440b4da.opus",
+        "gap": 639
+      },
+      {
+        "t": 7086,
+        "wall": 1794191496832,
+        "type": "play-while-active",
+        "hash": "#/licao/u1/0",
+        "id": 23,
+        "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "active": [
+          {
+            "id": 22,
+            "src": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+            "ms": 104
+          }
+        ]
+      },
+      {
+        "t": 7101,
+        "wall": 1794191496846,
+        "type": "start-after-stop",
+        "hash": "#/licao/u1/0",
+        "id": 23,
+        "src": "http://localhost:8080/audio/opus/de65cf1be7.opus",
+        "lastStop": "http://localhost:8080/audio/opus/ea2c1af751.opus",
+        "gap": 14
+      }
+    ]
+  },
+  "navigation": {
+    "screen": "Professora\nGabi\n🔥 1\n⭐ 44\n☁️\n☁️\nBOM DIA!\nAna\nVamos começar com uma historinha?\n🔊 Ouvir a Gabi\nSUA PRÓXIMA AULA\nP, B, M,",
+    "speaking": false,
+    "media": 0,
+    "tts": 0,
+    "modal": false
+  },
+  "micExit": {
+    "before": {
+      "started": 1,
+      "aborted": 0,
+      "listening": true
+    },
+    "after": {
+      "started": 1,
+      "aborted": 1,
+      "stopped": 0,
+      "listening": false,
+      "onHome": false
+    }
+  },
+  "coldStart": {
+    "summary": {
+      "events": 7,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 1,
+      "active": [
+        {
+          "id": 1,
+          "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+          "ms": 1607
+        }
+      ],
+      "tts": [],
+      "types": {
+        "tts-cancel": 5,
+        "play-call": 1,
+        "media-playing": 1
+      },
+      "last": [
+        {
+          "t": 1656,
+          "wall": 1794191515584,
+          "type": "tts-cancel",
+          "hash": "#/",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 2024,
+          "wall": 1794191515952,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 2032,
+          "wall": 1794191515961,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 2394,
+          "wall": 1794191516322,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 3050,
+          "wall": 1794191516978,
+          "type": "tts-cancel",
+          "hash": "#/conversar",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 3962,
+          "wall": 1794191517891,
+          "type": "play-call",
+          "hash": "#/conversar",
+          "id": 1,
+          "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+          "rate": 0.9,
+          "volume": 1,
+          "active": [],
+          "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:279:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:218:10) |     at playClip (http://localhost:8080/js/audio.js:295:21)"
+        },
+        {
+          "t": 3993,
+          "wall": 1794191517922,
+          "type": "media-playing",
+          "hash": "#/conversar",
+          "id": 1,
+          "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 1,
+              "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+              "ms": 0
+            }
+          ]
+        }
+      ]
+    },
+    "log": [
+      {
+        "t": 1656,
+        "wall": 1794191515584,
+        "type": "tts-cancel",
+        "hash": "#/",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 2024,
+        "wall": 1794191515952,
+        "type": "tts-cancel",
+        "hash": "#/conversar",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 2032,
+        "wall": 1794191515961,
+        "type": "tts-cancel",
+        "hash": "#/conversar",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 2394,
+        "wall": 1794191516322,
+        "type": "tts-cancel",
+        "hash": "#/conversar",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 3050,
+        "wall": 1794191516978,
+        "type": "tts-cancel",
+        "hash": "#/conversar",
+        "active": [],
+        "tts": []
+      },
+      {
+        "t": 3962,
+        "wall": 1794191517891,
+        "type": "play-call",
+        "hash": "#/conversar",
+        "id": 1,
+        "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+        "rate": 0.9,
+        "volume": 1,
+        "active": [],
+        "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:279:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:218:10) |     at playClip (http://localhost:8080/js/audio.js:295:21)"
+      },
+      {
+        "t": 3993,
+        "wall": 1794191517922,
+        "type": "media-playing",
+        "hash": "#/conversar",
+        "id": 1,
+        "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+        "rate": 0.9,
+        "active": [
+          {
+            "id": 1,
+            "src": "http://localhost:8080/audio/opus/3b6efb4c57.opus",
+            "ms": 0
+          }
+        ]
+      }
+    ],
+    "bubbles": [
+      {
+        "role": "gabi",
+        "text": "Oi, Ana! Hoje tem surpresa: escolhe uma cartinha para descobrir o assunto do nosso papo!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Boa escolha! Adoro bichos!",
+        "cls": "bubble bubble--gabi grow"
+      },
+      {
+        "role": "gabi",
+        "text": "Agora me conta, Ana: como você está hoje?",
+        "cls": "bubble bubble--gabi grow"
+      }
+    ]
+  },
+  "finished": "2026-11-09T02:32:01.021Z"
+}

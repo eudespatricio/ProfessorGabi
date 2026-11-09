@@ -1,6 +1,6 @@
 /* Ponto de entrada: configurações, rotas e instalação da PWA. */
 import * as store from './store.js';
-import { initAudio, unlockAudio, ttsSupported, audioDiagnostics } from './audio.js';
+import { initAudio, unlockAudio, ttsSupported, audioDiagnostics, stopSpeaking } from './audio.js';
 import { APP_VERSION } from './version.js';
 import { renderHome, renderTrilha, renderStickers, renderHistorias, renderOnboarding } from './screen-home.js';
 import { renderLesson, renderReview, renderDiagnostic } from './screen-lesson.js';
@@ -9,6 +9,7 @@ import { renderVoiceLab } from './screen-voice.js';
 import { renderBook } from './screen-book.js';
 import { renderSearch } from './screen-search.js';
 import { renderTalk } from './screen-talk.js';
+import { abortListening } from './speech.js';
 import { clearScreen, tabbar, toast } from './ui.js';
 import { el } from './utils.js';
 
@@ -19,6 +20,10 @@ function applySettings() {
 }
 
 function route() {
+  // troca de tela nunca pode deixar a fala/microfone da tela anterior vazando
+  stopSpeaking();
+  abortListening();
+
   const raw = location.hash.replace(/^#/, '') || '/';
   const [pathPart, queryPart] = raw.split('?');
   const parts = pathPart.split('/').filter(Boolean);
@@ -126,8 +131,8 @@ function boot() {
   document.addEventListener('keydown', () => unlockAudio(), { once: true });
 
   window.addEventListener('hashchange', () => {
-    if (location.hash) route();
-    else renderHome();
+    // route() cobre hash vazio e sempre corta fala/escuta da tela anterior
+    route();
   });
 
   if (!location.hash) {

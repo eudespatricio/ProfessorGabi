@@ -66,7 +66,7 @@ test('I4: Lazy-load de wordlist-pt.js e ocr-fix.js (proibido import estático no
   }
 });
 
-test('I5 & I6: Paridade canônica de conteúdo, glossário e áudio (351 palavras, 14 unidades, 22 textos, 1116 clipes)', () => {
+test('I5 & I6: Paridade canônica de conteúdo, glossário e áudio (351 palavras, 14 unidades, 22 textos, 1778 clipes)', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'manifest.json'), 'utf8'));
   const words = allWords();
   assert.equal(UNITS.length, 14);

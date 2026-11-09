@@ -3,10 +3,10 @@ import { el, pct, clamp, sleep, fmtMinutes } from './utils.js';
 import * as store from './store.js';
 import { UNITS, UNIT_BY_ID, getUnit, unitIndexOf } from './curriculum.js';
 import { TEXTS } from './content.js';
-import { speak, stopSpeaking, listVoices, pickVoice, ensureVoices, sfx, unlockAudio, ttsSupported } from './audio.js';
+import { speak, stopSpeaking, listVoices, pickVoice, ensureVoices, sfx, unlockAudio, ttsSupported, isBrazilianVoice } from './audio.js';
 import { requestMic, listen, asrSupported, asrErrorMessage, getMicPermission } from './speech.js';
 import { gabiEl, toast, progressRing, starsHTML, tabbar, hideTabbar, clearScreen, modal, confetti } from './ui.js';
-import { greeting, greetingPhrase, greetingLine, streakLine, childName } from './tutor.js';
+import { greeting, greetingPhrase, greetingLine, childName } from './tutor.js';
 
 /* ================================ INÍCIO ================================ */
 export function renderHome() {
@@ -54,7 +54,7 @@ export function renderHome() {
       unlockAudio();
       let res = null;
       try {
-        res = await speak(`${greetingLine()} ${streakLine()}`);
+        res = await speak(greetingLine());
       } finally {
         sayBtn.textContent = '🔊 Ouvir a Gabi';
         delete sayBtn.dataset.busy;
@@ -71,8 +71,8 @@ export function renderHome() {
     } else {
       // no Android a lista de vozes chega atrasada; só avisa se realmente não houver pt-BR
       ensureVoices(2600).then((vs) => {
-        if (!vs.some((v) => /^pt/i.test(v.lang)) && !voiceNote.textContent) {
-          voiceNote.textContent = 'Não encontrei voz em português neste tablet. Se ela não falar, instale a voz pt-BR nas configurações.';
+        if (!vs.some(isBrazilianVoice) && !voiceNote.textContent) {
+          voiceNote.textContent = 'Não encontrei voz em português do Brasil neste tablet. Instale a voz pt-BR nas configurações; a voz de Portugal é ignorada.';
         }
       });
     }

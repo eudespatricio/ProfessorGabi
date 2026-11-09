@@ -1,19 +1,19 @@
 # ESTADO — Professor Gabi
 > Sobrescrito a cada versão (nunca append-only). Soma `ESTADO + MAPA + REJEITADOS < 150 linhas`.
 
-- **Data / Versão:** 2026-11-08 · App `v38` (`app/js/version.js`) · Service Worker `gabi-v38` (`app/sw.js`)
+- **Data / Versão:** 2026-11-08 · App `v44` (`app/js/version.js`) · Service Worker `gabi-v44` (`app/sw.js`)
 - **Resumo:** PWA offline-first de alfabetização em português (leitura guiada sílaba a sílaba, fala neural, escuta tolerante, OCR de livros e jogos) em ES Modules nativos sem bundler.
 
 ## 1. Números Canônicos (validados por `tests/invariants.test.mjs` e `tests/test_invariants.py`)
 | Métrica | Valor Real | Fonte Canônica |
 | --- | --- | --- |
-| Versão App / SW | `v38` / `gabi-v38` | `app/js/version.js` e `app/sw.js` |
+| Versão App / SW | `v44` / `gabi-v44` | `app/js/version.js` e `app/sw.js` |
 | Estado Local (`localStorage`) | `gabi.state.v1` (`STATE_VERSION = 2`) | `app/js/store.js` (`HISTORY_MAX = 300`) |
 | Currículo e Conteúdo | **14** unidades (`u1`–`u14`), **351** palavras, **22** histórias | `content/manifest.json` |
 | Dicionário Infantil (Glossário) | **351 / 351** definições (100% cobertura, 0 órfãos) | `app/js/glossary.js` |
 | Corretor de OCR (Lazy-loaded) | **12.000** palavras pt-BR (94 KB, fora do boot inicial) | `app/js/wordlist-pt.js` |
-| Áudio Neural Offline (ElevenLabs) | **1.116** clipes Opus (`4,09 MB`) + **1.116** MP3 (`23,6 MB`) | `app/audio/index-opus.json` (`gabi-audio-v1`) |
-| Shell Offline (`CORE` do SW) | **36** entradas (`25` módulos JS + `3` CSS + fontes/ícones) | `app/sw.js` |
+| Áudio Neural Offline (ElevenLabs) | **1.778** clipes Opus (`13 MB`) + **1.778** MP3 (`55 MB`) | `app/audio/index-opus.json` (`gabi-audio-v1`) |
+| Shell Offline (`CORE` do SW) | **37** entradas (`26` módulos JS + `3` CSS + fontes/ícones) | `app/sw.js` |
 
 ## 2. O que está funcionando (Pronto em Produção)
 - **Trilha completa (14 fases)**: sons/sílabas → P/B/M/T/D/N → F/V/L/R/S → C/G/J/X/Z → dígrafos → M antes de P/B → encontros → finais → histórias → R/RR → S/SS → C/QU → G/GU → Ç/X/CH.
@@ -22,6 +22,7 @@
 - **Modo Livro (OCR) & Jogos**: foto → normalização Sauvola/Otsu → Tesseract TSV → corretor 12k → leitura guiada; Caça-palavras 8×8, Baú do Dia animado e Conversa com 3 cartinhas 3D + 21 trava-línguas.
 
 ## 3. O que está congelado / Pendente de Campo
+- **Correções v44:** voz pt-BR sem mistura de Portugal, 662 clipes novos (nomes Gabi/Gabriela, lições e conversa) e stress em `docs/STRESS-V44.md`.
 - **Validação física no tablet real**: testar microfone sem headset e confirmar cache `1116/1116` em `Pais → Dados`.
 - **Backlog P1/P2 congelado até validação de campo**: palavras cruzadas, monstrinho, publicação TWA Play Store / MSIX e migração do runtime para ler `content/manifest.json` direto (planejado para `v3`).
 

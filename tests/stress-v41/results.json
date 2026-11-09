@@ -1,0 +1,129 @@
+{
+  "started": "2026-11-09T01:51:19.566Z",
+  "app": "http://localhost:8080/",
+  "devtools": "http://127.0.0.1:9222",
+  "scenarios": [],
+  "checks": [
+    {
+      "name": "caça-palavras: última palavra marcada",
+      "ok": true,
+      "detail": "picolé"
+    },
+    {
+      "name": "caça-palavras: tela de vitória aparece",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "voz do resultado não sobrepõe a última palavra",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "última palavra é falada antes do resultado",
+      "ok": true,
+      "detail": "lastWord=picolé"
+    }
+  ],
+  "findings": [],
+  "search": {
+    "words": [
+      "boca",
+      "tigre",
+      "navio",
+      "picolé"
+    ],
+    "lastWord": "picolé",
+    "tried": 4,
+    "winVisible": true,
+    "wordHeard": true,
+    "summary": {
+      "events": 5,
+      "overlaps": 0,
+      "overlapKinds": [],
+      "maxConcurrent": 1,
+      "active": [],
+      "tts": [],
+      "types": {
+        "tts-cancel": 2,
+        "play-call": 1,
+        "media-playing": 1,
+        "media-pause": 1
+      },
+      "last": [
+        {
+          "t": 4283,
+          "wall": 1794189085328,
+          "type": "tts-cancel",
+          "hash": "#/caca",
+          "active": [],
+          "tts": []
+        },
+        {
+          "t": 4288,
+          "wall": 1794189085333,
+          "type": "play-call",
+          "hash": "#/caca",
+          "id": 4,
+          "src": "http://localhost:8080/audio/opus/0129f61705.opus",
+          "rate": 0.9,
+          "volume": 1,
+          "active": [],
+          "stack": "    at proto.play (<anonymous>:99:38) |     at http://localhost:8080/js/audio.js:262:17 |     at new Promise (<anonymous>) |     at playUrl (http://localhost:8080/js/audio.js:201:10) |     at playClip (http://localhost:8080/js/audio.js:278:21)"
+        },
+        {
+          "t": 4317,
+          "wall": 1794189085363,
+          "type": "media-playing",
+          "hash": "#/caca",
+          "id": 4,
+          "src": "http://localhost:8080/audio/opus/0129f61705.opus",
+          "rate": 0.9,
+          "active": [
+            {
+              "id": 4,
+              "src": "http://localhost:8080/audio/opus/0129f61705.opus",
+              "ms": 0
+            }
+          ]
+        },
+        {
+          "t": 5610,
+          "wall": 1794189086655,
+          "type": "media-pause",
+          "hash": "#/caca",
+          "id": 4,
+          "src": "http://localhost:8080/audio/opus/0129f61705.opus",
+          "currentTime": 0.935
+        },
+        {
+          "t": 5611,
+          "wall": 1794189086656,
+          "type": "tts-cancel",
+          "hash": "#/caca",
+          "active": [],
+          "tts": []
+        }
+      ]
+    },
+    "log": [
+      {
+        "t": 4317,
+        "wall": 1794189085363,
+        "type": "media-playing",
+        "hash": "#/caca",
+        "id": 4,
+        "src": "http://localhost:8080/audio/opus/0129f61705.opus",
+        "rate": 0.9,
+        "active": [
+          {
+            "id": 4,
+            "src": "http://localhost:8080/audio/opus/0129f61705.opus",
+            "ms": 0
+          }
+        ]
+      }
+    ]
+  },
+  "finished": "2026-11-09T01:51:28.171Z"
+}

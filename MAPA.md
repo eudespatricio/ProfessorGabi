@@ -5,7 +5,7 @@
 | Módulo | Possui (Responsabilidade) | Quando carregar |
 | --- | --- | --- |
 | `app/js/main.js` | Router hash (`#/`), boot, tema, registro do SW e banner PWA | Mudar rotas globais ou ciclo de vida inicial |
-| `app/js/version.js` | Constante única `APP_VERSION` (`v37`) | Ao subir versão (sincronizar com `app/sw.js`) |
+| `app/js/version.js` | Constante única `APP_VERSION` (`v44`) | Ao subir versão (sincronizar com `app/sw.js`) |
 | `app/sw.js` | Cache offline (`CORE` 36 arqs) + pré-cache Opus (`gabi-audio-v1`) | Alterar cache offline ou adicionar novo `.js`/`.css` |
 | `app/js/store.js` | Estado `gabi.state.v1` (`v2`), `migrate()`, SRS, XP, níveis, backup | Alterar persistência, progresso ou estatísticas |
 | `app/js/content.js` | Banco base (`RAW`), rimas, parlendas, frases e merge com `content-units.js` | Adicionar/editar palavras, frases ou textos |
@@ -22,6 +22,7 @@
 | `app/js/ui.js` | Componentes visuais (Gabi SVG, topbar, tabbar, modal, toast, confete) | Mudar layout estrutural ou animações compartilhadas |
 | `app/js/utils.js` | Helper DOM `el()`, PRNG determinístico `rng()`, `readingKey()`, `lev()` | Funções utilitárias e tolerância fonética da leitura |
 | `app/js/screen-*.js` | Telas: `home`, `lesson`, `book`, `talk`, `search`, `parent`, `voice` | Editar a UI de uma tela específica |
+| `app/js/talk-reply.js` | Respostas do roteiro sem LLM: parser de intenção, follow-up e despedida | Ajustar o que a Gabi responde sem IA |
 | `server/serve.mjs` | Servidor HTTP/HTTPS zero-deps com gzip, Range `206`, `/ca.crt` e `/healthz` | Alterar headers HTTP, MIME types ou certificados |
 
 ## 2. Armadilhas Conhecidas (Leia antes de editar)
