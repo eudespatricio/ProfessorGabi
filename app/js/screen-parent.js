@@ -253,11 +253,22 @@ function settingsTab() {
     'on:click': () => { location.hash = '#/vozes'; },
   }, '🎧 Comparar todas as vozes do aparelho'));
 
+  const rateLabel = el('label', { text: `Velocidade da fala (${Math.round((st.rate ?? 0.9) * 100)}%)` });
   const rate = el('input', { class: 'input', type: 'range', min: '0.6', max: '1.2', step: '0.05', value: String(st.rate), style: { marginTop: '10px' } });
-  rate.addEventListener('change', () => { store.setSetting('rate', Number(rate.value)); speak('Esta é a minha velocidade.'); });
-  voiceCard.append(el('div', { class: 'field', style: { marginTop: '8px' } }, el('label', { text: 'Velocidade' }), rate));
-  voiceCard.append(el('div', { class: 'row', gap: '8px' },
-    el('button', { class: 'btn btn--soft btn--sm', 'on:click': () => speak('O rato roeu a roupa do rei de Roma.') }, '🔊 Ouvir exemplo')));
+  rate.addEventListener('input', () => {
+    const val = Number(rate.value);
+    rateLabel.textContent = `Velocidade da fala (${Math.round(val * 100)}%)`;
+    store.setSetting('rate', val);
+  });
+  rate.addEventListener('change', () => {
+    const val = Number(rate.value);
+    store.setSetting('rate', val);
+    speak('Vamos ler juntos.');
+  });
+  voiceCard.append(el('div', { class: 'field', style: { marginTop: '8px' } }, rateLabel, rate));
+  voiceCard.append(el('div', { class: 'row', style: { gap: '8px', flexWrap: 'wrap' } },
+    el('button', { class: 'btn btn--soft btn--sm', 'on:click': () => speak('Vamos ler juntos.') }, '🔊 Ouvir voz da Gabi (ElevenLabs)'),
+    el('button', { class: 'btn btn--ghost btn--sm', 'on:click': () => speak('O rato roeu a roupa do rei de Roma.') }, '🔊 Ouvir frase longa')));
   box.append(voiceCard);
 
   const a11y = el('div', { class: 'card' });

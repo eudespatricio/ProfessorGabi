@@ -121,7 +121,7 @@ function mountChoice(item, host, api) {
     const wrong = buttons.find((b, i) => i !== item.correct && !b.classList.contains('option--dim'));
     wrong?.classList.add('option--dim');
     if (item.sayParts?.length) speakSyllables(item.sayParts);
-    else speak(item.word || item.say || item.prompt, { rate: 0.85 });
+    else speak(item.word || item.say || item.prompt);
     return true;
   };
   return { showHint, destroy: () => stopSpeaking() };
@@ -161,7 +161,7 @@ function mountBuild(item, host, api) {
     else card.append(el('div', { class: 'q-sub', text: 'Escute com atenção.' }));
     card.append(el('button', {
       class: 'btn btn--soft mt', type: 'button',
-      'on:click': () => { stopSpeaking(); speak(item.answer, { rate: 0.85 }); },
+      'on:click': () => { stopSpeaking(); speak(item.answer); },
     }, '🔊 Ouvir a palavra'));
   }
   wrap.append(card);

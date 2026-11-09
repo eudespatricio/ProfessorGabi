@@ -109,7 +109,8 @@ def test_i10_v37_audio_speech_pedagogy_and_animations():
     audio = (APP / "js" / "audio.js").read_text(encoding="utf-8")
     assert "a._cancel" in audio, "stopClip deve cancelar a Promise pendente em playUrl"
     assert "1500" in audio, "Watchdog de playUrl deve ser 1500ms"
-    assert "playClip(syl, 1)" in audio, "speakSyllables deve priorizar clipes neurais via playClip"
+    assert "playClip(syl, rate)" in audio, "speakSyllables deve priorizar clipes neurais via playClip respeitando rate"
+    assert "rawRate * 0.90" in audio, "playUrl deve respeitar rate dos pais com cadência pedagógica (×0.90)"
     assert "gabi-speaking" in audio, "speak/speakSyllables devem alternar classe gabi-speaking no body"
 
     wc = (APP / "js" / "word-card.js").read_text(encoding="utf-8")

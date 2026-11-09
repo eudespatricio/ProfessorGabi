@@ -205,8 +205,10 @@ function playUrl(file, rate, kind) {
     let watchdog = null;
     clipAudio = a;
 
-    // Nitidez no áudio Opus 24 kbps: mantém 1.0 em velocidade normal para evitar artefato metálico
-    const effectiveRate = rate < 0.8 ? Math.max(0.85, rate) : 1.0;
+    // Respeita o ajuste de velocidade dos pais (state.settings.rate) e aplica cadência pedagógica
+    // suave (×0.90) nos clipes da ElevenLabs, cuja gravação nativa tem ritmo adulto acelerado.
+    const rawRate = Number.isFinite(rate) ? rate : (state.settings.rate ?? 0.9);
+    const effectiveRate = Number(Math.min(1.15, Math.max(0.55, rawRate * 0.90)).toFixed(2));
 
     const finish = (ok, why) => {
       if (settled) return;
@@ -235,15 +237,15 @@ function playUrl(file, rate, kind) {
     }, 1500);
 
     a.preload = 'auto';
+    try { a.preservesPitch = true; a.webkitPreservesPitch = true; } catch { /* ignore */ }
+    try { a.defaultPlaybackRate = effectiveRate; a.playbackRate = effectiveRate; } catch { /* ignore */ }
     a.onloadedmetadata = () => {
-      if (effectiveRate !== 1.0) {
-        try { a.playbackRate = effectiveRate; } catch { /* ignore */ }
-      }
+      try { a.defaultPlaybackRate = effectiveRate; a.playbackRate = effectiveRate; } catch { /* ignore */ }
     };
     a.onplaying = () => {
       started = true;
       clearTimeout(watchdog);
-      if (effectiveRate !== 1.0 && a.playbackRate !== effectiveRate) {
+      if (Math.abs(a.playbackRate - effectiveRate) > 0.01) {
         try { a.playbackRate = effectiveRate; } catch { /* ignore */ }
       }
     };
@@ -256,7 +258,7 @@ function playUrl(file, rate, kind) {
 }
 
 /** Toca o clipe neural do texto: Opus (menor) com fallback para MP3. */
-export async function playClip(text, rate = 1) {
+export async function playClip(text, rate = state.settings.rate ?? 0.9) {
   const key = clipKey(text);
   clipStats.clipAttempts++;
   const idx = await loadClipIndex();
@@ -395,13 +397,14 @@ export async function speakSyllables(parts, opts = {}) {
   setGabiSpeaking(true);
   try {
     const voice = pickVoice();
-    const rate = opts.rate ?? Math.max(0.55, (state.settings.rate ?? 0.9) - 0.2);
+    const baseRate = state.settings.rate ?? 0.9;
+    const rate = opts.rate ?? Math.max(0.55, baseRate - 0.15);
     await new Promise((r) => setTimeout(r, 200));
     for (const p of parts) {
       if (my !== seq) return;
       const syl = String(p || '').trim();
       if (!syl) continue;
-      const played = await playClip(syl, 1);
+      const played = await playClip(syl, rate);
       if (!played && my === seq && ttsSupported()) {
         await speakOne(syl, rate, 1, voice);
       }

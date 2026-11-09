@@ -139,11 +139,15 @@ function boot() {
 
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     const hadController = !!navigator.serviceWorker.controller;
+    let refreshing = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      if (!hadController) return;
-      toast('Atualização pronta. Feche e abra o app para usar a versão nova.', 'ok');
+      if (!hadController || refreshing) return;
+      refreshing = true;
+      location.reload();
     });
-    navigator.serviceWorker.register('sw.js').catch((e) => console.warn('SW:', e?.message));
+    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
+      .then((reg) => reg.update().catch(() => {}))
+      .catch((e) => console.warn('SW:', e?.message));
   }
 
   if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});

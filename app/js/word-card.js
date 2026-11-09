@@ -40,9 +40,9 @@ export function showWordCard(raw) {
     class: 'btn btn--soft grow',
     'on:click': async () => {
       clearCardAudio();
-      await speak(key, { rate: 0.85 });
+      await speak(key);
       if (g?.d) {
-        defTimer = setTimeout(() => { defTimer = null; speak(g.d, { rate: 0.9 }); }, 280);
+        defTimer = setTimeout(() => { defTimer = null; speak(g.d); }, 280);
       }
     },
   }, '🔊 Ouvir'));

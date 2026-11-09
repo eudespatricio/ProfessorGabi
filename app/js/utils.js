@@ -89,6 +89,8 @@ export function norm(s) {
 export function readingKey(s) {
   return norm(s).split(' ').filter(Boolean).map((w) => {
     let x = w;
+    if (x === 'o') return 'u';
+    if (x === 'e') return 'i';
     if (x.length > 1) {
       x = x.replace(/l$/, 'u').replace(/r$/, '');
       x = x.replace(/o$/, 'u').replace(/e$/, 'i');

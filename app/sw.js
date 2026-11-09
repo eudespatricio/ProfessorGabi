@@ -3,7 +3,7 @@
    - ÁUDIO: clipes Opus (4 MB) e índices, em cache próprio que sobrevive a upgrades
    - Navegação: rede primeiro, cache como rede de segurança
    - Demais arquivos: cache primeiro, atualizando em segundo plano */
-const VERSION = 'gabi-v37';
+const VERSION = 'gabi-v38';
 const AUDIO_CACHE = 'gabi-audio-v1';
 const AUDIO_INDEX = 'audio/index-opus.json';
 const CORE = [
@@ -61,9 +61,9 @@ self.addEventListener('install', (event) => {
     if (failed.length) {
       throw new Error(`sem rede para ${failed.length} arquivo(s) do CORE: ${failed.join(', ')}`);
     }
-    // Ativa a nova versão imediatamente sem travar a instalação em 20s de download de áudio.
-    // O pré-cache de áudio roda em segundo plano sem bloquear o boot nem a troca do SW.
-    precacheAudio(15000).catch(() => {});
+    // Ativa a nova versão imediatamente sem travar a instalação nem saturar o servidor no boot.
+    // O pré-cache de áudio roda de forma suave após 2.5s com baixa concorrência.
+    setTimeout(() => { precacheAudio(25000).catch(() => {}); }, 2500);
     self.skipWaiting();
   })());
 });
@@ -91,11 +91,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // navegação: rede com timeout curto (1.2s) e cache como resposta imediata se o servidor demorar
+  // navegação: rede com timeout de 4.5s e cache como resposta imediata se sem conexão
   if (req.mode === 'navigate') {
     event.respondWith((async () => {
       const ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      const timer = ctrl ? setTimeout(() => ctrl.abort(), 1200) : null;
+      const timer = ctrl ? setTimeout(() => ctrl.abort(), 4500) : null;
       try {
         const fresh = await fetch(req, ctrl ? { signal: ctrl.signal } : undefined);
         clearTimeout(timer);
@@ -173,7 +173,7 @@ async function precacheAudio(maxMs = 20000) {
 
     const urls = await opusUrls();
     const queue = urls.slice();
-    const workers = Array.from({ length: 6 }, async () => {
+    const workers = Array.from({ length: 2 }, async () => {
       while (queue.length && Date.now() - started < maxMs) {
         const file = queue.shift();
         try {

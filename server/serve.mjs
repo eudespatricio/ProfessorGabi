@@ -29,6 +29,19 @@ const MIME = {
 };
 const COMPRESSIBLE = /\.(html|js|mjs|css|json|webmanifest|svg|txt|md)$/;
 const gzipCache = new Map();
+const rawCache = new Map();
+
+function rawBytes(filePath, st) {
+  const key = `${filePath}:${st.size}:${st.mtimeMs}`;
+  const hit = rawCache.get(key);
+  if (hit) return hit;
+  const buf = fs.readFileSync(filePath);
+  if (st.size <= 262144) {
+    if (rawCache.size > 1500) rawCache.clear();
+    rawCache.set(key, buf);
+  }
+  return buf;
+}
 
 const SECURITY_HEADERS = {
   'X-Content-Type-Options': 'nosniff',
@@ -61,6 +74,10 @@ function sendAudio(req, res, filePath, st, ext, urlPath) {
   if (!range) {
     res.writeHead(200, { ...headers, 'Content-Length': size });
     if (req.method === 'HEAD') { res.end(); return; }
+    if (size <= 262144) {
+      res.end(rawBytes(filePath, st));
+      return;
+    }
     fs.createReadStream(filePath).pipe(res);
     return;
   }
@@ -90,6 +107,10 @@ function sendAudio(req, res, filePath, st, ext, urlPath) {
     'Content-Length': end - start + 1,
   });
   if (req.method === 'HEAD') { res.end(); return; }
+  if (size <= 262144) {
+    res.end(rawBytes(filePath, st).subarray(start, end + 1));
+    return;
+  }
   fs.createReadStream(filePath, { start, end }).pipe(res);
 }
 
@@ -113,6 +134,10 @@ function sendFile(req, res, filePath, urlPath, st) {
   }
   res.writeHead(200, { ...headers, 'Content-Length': st.size });
   if (req.method === 'HEAD') { res.end(); return; }
+  if (st.size <= 262144) {
+    res.end(rawBytes(filePath, st));
+    return;
+  }
   fs.createReadStream(filePath).pipe(res);
 }
 
@@ -171,6 +196,12 @@ if (USE_HTTPS) {
 } else {
   server = http.createServer(handler);
 }
+
+server.keepAliveTimeout = 65000;
+server.headersTimeout = 66000;
+server.on('error', (err) => console.error('Server error:', err));
+process.on('uncaughtException', (err) => console.error('Uncaught:', err));
+process.on('unhandledRejection', (err) => console.error('Unhandled:', err));
 
 server.listen(PORT, HOST, () => {
   const scheme = USE_HTTPS ? 'https' : 'http';

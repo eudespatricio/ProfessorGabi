@@ -11,27 +11,29 @@ import { gabiEl, setGabiMood, confetti, flyingStars, starsHTML, clearScreen, hid
 /** Toca o alvo neural do exercício sem concatenar textos variáveis que forçam Google TTS. */
 function speakExerciseTarget(item) {
   if (!item) return;
+  const userRate = store.state.settings.rate ?? 0.9;
+  const calmRate = Math.min(userRate, 0.85);
   if (item.sayParts?.length) {
     speakSyllables(item.sayParts);
     return;
   }
   if (item.type === 'read-text' && item.lines?.length) {
-    if (item.level === 1) speak(item.lines[0], { rate: 0.85 });
+    if (item.level === 1) speak(item.lines[0], { rate: calmRate });
     else speak('Vamos ler juntos.');
     return;
   }
   if (item.type === 'read-phrase' && item.target) {
-    if (item.level === 1) speak(item.target, { rate: 0.85 });
+    if (item.level === 1) speak(item.target, { rate: calmRate });
     else speak('Agora leia você.');
     return;
   }
   if (item.type === 'read-word' && item.word) {
-    if (item.level === 1) speak(item.word, { rate: 0.85 });
+    if (item.level === 1) speak(item.word, { rate: calmRate });
     else speak('Agora leia você.');
     return;
   }
   if (item.word) {
-    speak(item.word, { rate: 0.9 });
+    speak(item.word);
     return;
   }
   if (item.say) speak(item.say);
