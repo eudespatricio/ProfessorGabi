@@ -18,8 +18,8 @@ import path from 'node:path';
 
 const DEVTOOLS = process.env.GABI_DEVTOOLS || 'http://127.0.0.1:9222';
 const APP_URL = process.env.GABI_URL || 'http://localhost:8080/';
-const EXPECTED_VERSION = process.env.GABI_VERSION || 'v48';
-const OUT = path.resolve(process.env.GABI_STRESS_OUT || 'tests/stress-v48');
+const EXPECTED_VERSION = process.env.GABI_VERSION || 'v49';
+const OUT = path.resolve(process.env.GABI_STRESS_OUT || 'tests/stress-v49');
 fs.mkdirSync(OUT, { recursive: true });
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -552,10 +552,10 @@ async function scenarioBoot(page) {
     caches: await caches.keys(),
     audio: window.__gabi?.audio?.(),
   }))()`);
-  check('app v48 carregado', boot.version === 'v48', JSON.stringify(boot.version));
-  check('dataset da versão = v48', boot.dataVersion === 'v48', JSON.stringify(boot.dataVersion));
+  check('app v49 carregado', boot.version === 'v49', JSON.stringify(boot.version));
+  check('dataset da versão = v49', boot.dataVersion === 'v49', JSON.stringify(boot.dataVersion));
   check('service worker controlando a página', /\/sw\.js$/.test(boot.controller || ''), String(boot.controller));
-  check('cache gabi-v48 presente', boot.caches.includes('gabi-v48'), boot.caches.join(','));
+  check('cache gabi-v49 presente', boot.caches.includes('gabi-v49'), boot.caches.join(','));
   check('cache de áudio gabi-audio-v1 presente', boot.caches.includes('gabi-audio-v1'), boot.caches.join(','));
   check('há voz pt-BR no tablet', (boot.audio?.ptVoices || 0) > 0, `ptVoices=${boot.audio?.ptVoices}`);
   check('Opus suportado no Chrome do emulador', boot.audio?.opusSupported === true);
@@ -565,7 +565,7 @@ async function scenarioBoot(page) {
     return out;
   })()`);
   results.cacheCounts = cacheCounts;
-  check('shell offline com 37 arquivos', cacheCounts['gabi-v48'] >= 37, `gabi-v48=${cacheCounts['gabi-v48']}`);
+  check('shell offline com 37 arquivos', cacheCounts['gabi-v49'] >= 37, `gabi-v49=${cacheCounts['gabi-v49']}`);
   check('áudio pré-cacheado 1000+', (cacheCounts['gabi-audio-v1'] || 0) >= 1000, `gabi-audio-v1=${cacheCounts['gabi-audio-v1']}`);
 
   await page.hash('#/');
@@ -998,6 +998,23 @@ async function scenarioAudioCold(page) {
   results.coldStart.bubbles = bubbles;
 }
 
+async function scenarioCopyright(page) {
+  log('\n[12] Copyright e créditos');
+  await reseed(page, SEED);
+  await page.hash('#/pais');
+  await page.waitFor(`document.querySelectorAll('.tabs button').length >= 4`, { timeout: 8000, label: 'abas dos pais' });
+  await page.click('.tabs button', 'Ajustes', { optional: true });
+  await sleep(700);
+  const text = await page.ev(`document.body.innerText`);
+  const ok = /Sobre e direitos/.test(text)
+    && /Idealizador e criador: Eudes Patricio/.test(text)
+    && /Todos os direitos reservados/.test(text);
+  check('seção Sobre e direitos com Eudes Patricio', ok, text.slice(0, 300));
+  await page.ev(`(() => { const sc = document.querySelector('#screen'); if (sc) sc.scrollTop = sc.scrollHeight; window.scrollTo(0, document.documentElement.scrollHeight); })()`);
+  await sleep(350);
+  await page.shot('18-copyright.png');
+}
+
 async function scenarioStatement(page) {
   log('\n[11] Enunciado do exercício falado');
   await reseed(page, SEED);
@@ -1127,7 +1144,7 @@ async function main() {
   };
   const scenario = getArg('--scenario', 'all');
   const slowIndex = Number(getArg('--slow-index', 3000));
-  log(`Stress Professor Gabi v48 — ${stamp()}`);
+  log(`Stress Professor Gabi v49 — ${stamp()}`);
   log(`DevTools: ${DEVTOOLS} | App: ${APP_URL}`);
   const browser = await CDP.connect();
   log(`Chrome: ${browser.info.Browser}`);
@@ -1136,7 +1153,7 @@ async function main() {
   let page;
   let prevState;
   try {
-    if (scenario === 'all' || scenario === 'boot' || scenario === 'talk' || scenario === 'interrupt' || scenario === 'lesson' || scenario === 'nav' || scenario === 'voice' || scenario === 'search' || scenario === 'name' || scenario === 'statement') {
+    if (scenario === 'all' || scenario === 'boot' || scenario === 'talk' || scenario === 'interrupt' || scenario === 'lesson' || scenario === 'nav' || scenario === 'voice' || scenario === 'search' || scenario === 'name' || scenario === 'statement' || scenario === 'copyright') {
       page = await openPage(browser);
       await bootApp(page);
       prevState = page.__prevState;
@@ -1146,6 +1163,7 @@ async function main() {
       if (scenario === 'all' || scenario === 'voice') await scenarioTalkVoice(page);
       if (scenario === 'all' || scenario === 'search') await scenarioSearch(page);
       if (scenario === 'all' || scenario === 'name') await scenarioName(page);
+      if (scenario === 'all' || scenario === 'copyright') await scenarioCopyright(page);
       if (scenario === 'all' || scenario === 'statement') await scenarioStatement(page);
       if (scenario === 'all' || scenario === 'lesson') await scenarioLessonRapid(page);
       if (scenario === 'all' || scenario === 'nav') await scenarioNavigation(page);

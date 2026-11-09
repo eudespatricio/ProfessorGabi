@@ -14,7 +14,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { APP_VERSION } from '../app/js/version.js';
+import { APP_AUTHOR, APP_COPYRIGHT, APP_VERSION } from '../app/js/version.js';
 import { STATE_VERSION, defaultState } from '../app/js/store.js';
 import { allWords, TEXTS } from '../app/js/content.js';
 import { GLOSSARY } from '../app/js/glossary.js';
@@ -111,4 +111,17 @@ test('I9 & I10: Sanitização OCR v36 e pacote de áudio/pedagogia/animações v
   const appCss = fs.readFileSync(path.join(APP, 'css', 'app.css'), 'utf8');
   assert.ok(appCss.includes('scaleY(0.04)'), 'blink deve abrir os olhos por padrão (scaleY(0.04))');
   assert.ok(!appCss.includes('prefers-reduced-motion'), 'prefers-reduced-motion global removido em favor de html.reduce-motion');
+});
+
+test('I9: autoria, idealizador e copyright', () => {
+  assert.equal(APP_AUTHOR, 'Eudes Patricio');
+  assert.match(APP_COPYRIGHT, /Eudes Patricio/);
+  assert.match(APP_COPYRIGHT, /Todos os direitos reservados/);
+  const parent = fs.readFileSync(path.join(APP, 'js', 'screen-parent.js'), 'utf8');
+  const html = fs.readFileSync(path.join(APP, 'index.html'), 'utf8');
+  assert.match(parent, /Sobre e direitos/);
+  assert.match(parent, /Idealizador e criador/);
+  assert.match(parent, /APP_COPYRIGHT/);
+  assert.match(html, /name="author" content="Eudes Patricio"/);
+  assert.match(html, /name="copyright" content="Copyright © 2026 Eudes Patricio/);
 });

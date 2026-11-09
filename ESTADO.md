@@ -1,13 +1,13 @@
 # ESTADO — Professor Gabi
 > Sobrescrito a cada versão (nunca append-only). Soma `ESTADO + MAPA + REJEITADOS < 150 linhas`.
 
-- **Data / Versão:** 2026-11-09 · App `v48` (`app/js/version.js`) · Service Worker `gabi-v48` (`app/sw.js`)
+- **Data / Versão:** 2026-11-09 · App `v49` (`app/js/version.js`) · Service Worker `gabi-v49` (`app/sw.js`)
 - **Resumo:** PWA offline-first de alfabetização em português (leitura guiada sílaba a sílaba, fala neural, escuta tolerante, OCR de livros e jogos) em ES Modules nativos sem bundler.
 
 ## 1. Números Canônicos (validados por `tests/invariants.test.mjs` e `tests/test_invariants.py`)
 | Métrica | Valor Real | Fonte Canônica |
 | --- | --- | --- |
-| Versão App / SW | `v48` / `gabi-v48` | `app/js/version.js` e `app/sw.js` |
+| Versão App / SW | `v49` / `gabi-v49` | `app/js/version.js` e `app/sw.js` |
 | Estado Local (`localStorage`) | `gabi.state.v1` (`STATE_VERSION = 2`) | `app/js/store.js` (`HISTORY_MAX = 300`) |
 | Currículo e Conteúdo | **14** unidades (`u1`–`u14`), **351** palavras, **22** histórias | `content/manifest.json` |
 | Dicionário Infantil (Glossário) | **351 / 351** definições (100% cobertura, 0 órfãos) | `app/js/glossary.js` |
@@ -22,7 +22,7 @@
 - **Modo Livro (OCR) & Jogos**: foto → normalização Sauvola/Otsu → Tesseract TSV → corretor 12k → leitura guiada; Caça-palavras 8×8, Baú do Dia animado e Conversa com 3 cartinhas 3D + 21 trava-línguas.
 
 ## 3. O que está congelado / Pendente de Campo
-- **Correções v48:** índice de áudio versionado (cache novo a cada release), 28 clipes antigos fora do padrão regravados com Raquel e auditoria dos 1.778; stress em `docs/STRESS-V48.md`.
+- **Correções v49:** seção “Sobre e direitos” no app (idealizador/criador Eudes Patricio e copyright), metadados de autoria e créditos no README; stress em `docs/STRESS-V49.md`.
 - **Validação física no tablet real**: testar microfone sem headset e confirmar cache `1778/1778` em `Pais → Dados`.
 - **Backlog P1/P2 congelado até validação de campo**: palavras cruzadas, monstrinho, publicação TWA Play Store / MSIX e migração do runtime para ler `content/manifest.json` direto (planejado para `v3`).
 

@@ -88,7 +88,7 @@ node tests/stress-emu.mjs --scenario lesson  # lição + concorrência de clipes
 node tests/stress-emu.mjs --scenario mic     # microfone ao sair da conversa
 ```
 
-Os resultados ficam em `tests/stress-v48/` (JSON + prints). A bateria restaura o `localStorage`
+Os resultados ficam em `tests/stress-v49/` (JSON + prints). A bateria restaura o `localStorage`
 original no fim e não altera o código do app.
 
 ## Limitações honestas

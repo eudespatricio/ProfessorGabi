@@ -6,7 +6,7 @@ A Gabi é uma coruja professora que **fala, escuta a criança ler em voz alta, c
 
 ![Tela inicial](tests/screenshots/02-home.png)
 
-> **Estado atual (09/11/2026):** service worker `gabi-v48`, 14 unidades, 22 textos, 351 palavras, 1.778 clipes de áudio (55 MB em MP3, **13 MB em Opus**). O áudio Opus é pré-cacheado na instalação e sobrevive a atualizações. Cada lição termina com uma **revisão rápida** de 2 itens.
+> **Estado atual (09/11/2026):** service worker `gabi-v49`, 14 unidades, 22 textos, 351 palavras, 1.778 clipes de áudio (55 MB em MP3, **13 MB em Opus**). O áudio Opus é pré-cacheado na instalação e sobrevive a atualizações. Cada lição termina com uma **revisão rápida** de 2 itens.
 > Documentação completa em [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md), ideias em [`docs/BACKLOG.md`](docs/BACKLOG.md) e critérios de qualidade em [`docs/QUALIDADE.md`](docs/QUALIDADE.md).
 
 ---
@@ -52,11 +52,11 @@ No Chrome: ⋮ → **Instalar app**.
 node server/serve.mjs                 # http://localhost:8080
 node server/serve.mjs 8443 --https    # microfone + instalação PWA
 
-npm test                              # 69 testes (lógica, store, OCR, áudio, encoding, leitura, revisão, conversa, vozes)
+npm test                              # 70 testes (lógica, store, OCR, áudio, encoding, leitura, revisão, conversa, vozes)
 node tests/smoke.mjs                  # fluxo real no Chrome + prints
 node tests/story-shot.mjs             # dock do microfone na história em 5 viewports
 node tests/reading-sim.mjs            # validação da leitura com escuta simulada
-node tests/stress-emu.mjs             # stress test no Chrome do emulador (ver docs/STRESS-V48.md)
+node tests/stress-emu.mjs             # stress test no Chrome do emulador (ver docs/STRESS-V49.md)
 node tests/lesson-shots.mjs           # lacuna da sílaba + pecinhas repetidas
 node tools/check-modules.mjs          # valida todos os módulos
 node tools/test-talk.mjs              # cartinhas de tema e respostas
@@ -85,6 +85,7 @@ Requisitos: Node.js 20+ apenas para servir/testar. O app não tem dependências.
 | [`STRESS-V46.md`](docs/STRESS-V46.md) | v46: enunciados completos, voz feminina e timeout de áudio |
 | [`STRESS-V47.md`](docs/STRESS-V47.md) | v47: 28 clipes antigos regravados com Raquel |
 | [`STRESS-V48.md`](docs/STRESS-V48.md) | v48: índice versionado e auditoria dos 1.778 |
+| [`STRESS-V49.md`](docs/STRESS-V49.md) | v49: seção de copyright e créditos |
 | [`CONTEUDO.md`](docs/CONTEUDO.md) | currículo (14 unidades, 351 palavras, 22 histórias) |
 | [`AUDIO.md`](docs/AUDIO.md) | pipeline ElevenLabs (1.778 Opus/MP3) e manifesto |
 | [`AVALIACAO-KOKORO.md`](docs/AVALIACAO-KOKORO.md) | Kokoro local: o que acerta, o que erra e quando usar |
@@ -105,7 +106,7 @@ Requisitos: Node.js 20+ apenas para servir/testar. O app não tem dependências.
 app/                  PWA estática (sem build)
   index.html
   manifest.webmanifest
-  sw.js               service worker (gabi-v48)
+  sw.js               service worker (gabi-v49)
   css/                app.css (base/componentes) + game.css (jogo)
   js/                 25 módulos ES (telas, domínio, infraestrutura)
   audio/              1.116 clipes + index.json + opus/ (index-opus.json)
@@ -128,3 +129,11 @@ docs/                 documentação
 ## Próximos passos
 
 Ver [`ESTADO.md`](ESTADO.md) e [`BACKLOG.md`](docs/BACKLOG.md). Prioridades atuais: validar no tablet físico (microfone sem headset e cache Opus 1.116/1.116), palavras cruzadas (3 formatos), monstrinho e publicação nas lojas (TWA Play Store / MSIX).
+
+---
+
+## Créditos e direitos
+
+Idealizador e criador: **Eudes Patricio**.
+
+Copyright © 2026 Eudes Patricio. Todos os direitos reservados.

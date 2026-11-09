@@ -5,7 +5,7 @@ import { UNITS, SKILL_LABEL } from './curriculum.js';
 import { wordsOfUnit, TEXTS } from './content.js';
 import { speak, listVoices, pickVoice, ttsSupported, unlockAudio, opusSupported, audioDiagnostics } from './audio.js';
 import { requestMic, listen, asrSupported, asrErrorMessage } from './speech.js';
-import { APP_VERSION } from './version.js';
+import { APP_VERSION, APP_AUTHOR, APP_COPYRIGHT } from './version.js';
 import { clearScreen, tabbar, pinGate, modal, toast, gabiEl, starsHTML, progressRing } from './ui.js';
 
 let tab = 'resumo';
@@ -315,7 +315,17 @@ function settingsTab() {
   box.append(routine);
 
   box.append(llmCard());
+  box.append(aboutCard());
   return box;
+}
+
+function aboutCard() {
+  const card = el('div', { class: 'card' });
+  card.append(el('div', { class: 'card__title', text: 'Sobre e direitos' }));
+  card.append(el('div', { class: 'small', text: 'Professor Gabi — leitura e escrita com carinho.' }));
+  card.append(el('div', { class: 'small muted mt', text: `Idealizador e criador: ${APP_AUTHOR}.` }));
+  card.append(el('div', { class: 'tiny muted mt', text: APP_COPYRIGHT }));
+  return card;
 }
 
 function toggleRow(title, hint, checked, onChange) {
